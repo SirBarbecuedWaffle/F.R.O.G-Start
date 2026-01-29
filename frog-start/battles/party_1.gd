@@ -33,9 +33,6 @@ var turnTime:=randi_range(120,450)
 @onready var def_down_lab: Label = $arrowHandler/badArrows/defDownInd/defDownLab
 @onready var spd_down_lab: Label = $arrowHandler/badArrows/spdDownInd/spdDownLab
 
-func getChar()->String:
-	return character
-
 func _process(delta: float) -> void:
 	atk_up_ind.visible=atkUp>1
 	if atkUp>0:
@@ -111,3 +108,6 @@ func _on_move_handler_move_used(move: String) -> void:
 	print(move)
 	moveProgress=0
 	turnTime=randi_range(420,650)
+	
+func getChar()->String:
+	return character

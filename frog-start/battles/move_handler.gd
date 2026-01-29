@@ -18,6 +18,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if get_parent().getChar()=="frog":
 		move_1_lab.text="Arrow Barrage"
+		move_2_lab.text="Block"
+		move_3_lab.text="Strike"
+		move_4_lab.text="Frogsicle"
 
 func fadeIn()->void:
 	animation_player.play("fadeIn")
