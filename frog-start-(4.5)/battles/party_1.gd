@@ -13,10 +13,10 @@ extends Node2D
 @export var fire:=0
 @export var atkDown:=20.0
 @export var defDown:=10.0
-@export var spdDown:=30.0
+@export var spdDown:=0.0
 @export var atkUp:=20.0
 @export var defUp:=20.0
-@export var spdUp:=10.0
+@export var spdUp:=15.0
 @export var stun:=0
 var turnTime:=randi_range(120,450)
 @onready var def_up_ind: Sprite2D = $arrowHandler/goodArrows/defUpInd
@@ -32,8 +32,6 @@ var turnTime:=randi_range(120,450)
 @onready var atk_down_lab: Label = $arrowHandler/badArrows/atkDownInd/atkDownLab
 @onready var def_down_lab: Label = $arrowHandler/badArrows/defDownInd/defDownLab
 @onready var spd_down_lab: Label = $arrowHandler/badArrows/spdDownInd/spdDownLab
-
-
 
 func _process(delta: float) -> void:
 	atk_up_ind.visible=atkUp>1
@@ -90,11 +88,11 @@ func _process(delta: float) -> void:
 		turn_bar.scale.x=(moveProgress/turnTime)*0.354
 		health_bar.scale.x=(health/maxHealth)*-0.377
 		if moveProgress<turnTime:
-			moveProgress+=70*delta
+			moveProgress+=1
 			if spdUp>0:
-				moveProgress+=70*delta
+				moveProgress+=0.5
 			if spdDown>0:
-				moveProgress-=20*delta
+				moveProgress-=0.5
 		else:
 			if !move_handler.visible:
 				move_handler.visible=true

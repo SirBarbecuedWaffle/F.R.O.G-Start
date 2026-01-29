@@ -13,10 +13,10 @@ extends Node2D
 @export var fire:=0
 @export var atkDown:=20.0
 @export var defDown:=10.0
-@export var spdDown:=30.0
+@export var spdDown:=0.0
 @export var atkUp:=20.0
 @export var defUp:=20.0
-@export var spdUp:=10.0
+@export var spdUp:=15.0
 @export var stun:=0
 var turnTime:=randi_range(120,450)
 @onready var def_up_ind: Sprite2D = $arrowHandler/goodArrows/defUpInd
@@ -33,7 +33,7 @@ var turnTime:=randi_range(120,450)
 @onready var def_down_lab: Label = $arrowHandler/badArrows/defDownInd/defDownLab
 @onready var spd_down_lab: Label = $arrowHandler/badArrows/spdDownInd/spdDownLab
 
-
+@onready var attack_animator: AnimationPlayer = $attackAnimator
 
 func _process(delta: float) -> void:
 	atk_up_ind.visible=atkUp>1
@@ -84,26 +84,21 @@ func _process(delta: float) -> void:
 	if health>maxHealth:
 		health=maxHealth
 	health_label.text=str(int(health))
-	health-=0.05
 	if health>0:
 		health_label.modulate=Color(1.0, 1.0, 1.0, 1.0)
-		turn_bar.scale.x=(moveProgress/turnTime)*0.354
 		health_bar.scale.x=(health/maxHealth)*-0.377
 		if moveProgress<turnTime:
-			moveProgress+=70*delta
+			moveProgress+=60*delta
 			if spdUp>0:
-				moveProgress+=70*delta
+				moveProgress+=30*delta
 			if spdDown>0:
-				moveProgress-=20*delta
+				moveProgress-=30*delta
 		else:
-			if !move_handler.visible:
-				move_handler.visible=true
-				move_handler.fadeIn()
+			attack_animator.play("attack")
+			moveProgress=0
+			turnTime=randi_range(320,550)
 	else:
-		health_label.modulate=Color(1.0, 0.0, 0.0, 1.0)
-		move_handler.visible=false
-		moveProgress=0
-		turn_bar.scale.x=(moveProgress/turnTime)*0.354
+		queue_free()
 
 
 func _on_move_handler_move_used(move: String) -> void:

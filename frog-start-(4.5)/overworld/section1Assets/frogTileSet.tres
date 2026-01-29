@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" format=3 uid="uid://b6eeitxjself2"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b6eeitxjself2"]
 
 [ext_resource type="Texture2D" uid="uid://do5qq0cx63j3f" path="res://overworld/section1Assets/sloppymess.png" id="1_lsaoq"]
 
