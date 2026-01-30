@@ -3,10 +3,24 @@ extends Node2D
 @onready var turn_bar: Sprite2D = $turnBar
 @onready var health_label: Label = $healthLabel
 @onready var move_handler: Node2D = $moveHandler
-
 @export var character:=""
+@onready var hit_sprite: AnimatedSprite2D = $hitSprite
 
-@export var health:=140.0
+var deathAnim=preload("res://2DAssets/deathAnimation.tscn")
+
+var basicHit=preload("res://battles/battle_projectile.tscn")
+@onready var party_handler: Node2D = $"../../partyHandler"
+
+@export var health:=140.0:
+	set(newHP):
+		if newHP<health-1:
+			hit_sprite.play("default")
+		if defUp:
+			newHP+=(health-newHP)/2
+		if defDown:
+			newHP-=(health-newHP)/2
+		health=newHP
+		
 @export var maxHealth:=140.0
 @export var moveProgress:=0.0
 @export var poison:=0
@@ -18,7 +32,9 @@ extends Node2D
 @export var defUp:=20.0
 @export var spdUp:=15.0
 @export var stun:=0
+@onready var enemy_spr_1: AnimatedSprite2D = $enemySpr1
 var turnTime:=randi_range(120,450)
+@onready var frog_layer: CanvasLayer = $"../.."
 @onready var def_up_ind: Sprite2D = $arrowHandler/goodArrows/defUpInd
 @onready var spd_up_ind: Sprite2D = $arrowHandler/goodArrows/spdUpInd
 @onready var atk_up_ind: Sprite2D = $arrowHandler/goodArrows/atkUpInd
@@ -97,14 +113,73 @@ func _process(delta: float) -> void:
 			attack_animator.play("attack")
 			moveProgress=0
 			turnTime=randi_range(320,550)
+			await get_tree().create_timer(0.36).timeout
+			var hit=basicHit.instantiate()
+			hit.damage=30
+			var alivePeople=party_handler.getAlivePlayers()
+			if alivePeople==[0,0,0,0]:
+				get_tree().quit()
+			var numTargets=0
+			for i in range(4):
+				if alivePeople[i] is partyMember:
+					numTargets+=1
+			var target=randi_range(0,numTargets)
+			while target==0:
+				target=randi_range(0,numTargets)
+			party_handler.getAlivePlayers()[target-1].health-=randi_range(27,47)
+			print(hit.global_position)
 	else:
+		if attack_animator.current_animation!="die":
+			attack_animator.play("die")
+			await get_tree().create_timer(0.1).timeout
+			var deathThing=deathAnim.instantiate()
+			frog_layer.add_child(deathThing)
+			deathThing.global_position=global_position
+
+
+func _on_hit_box_area_entered(area: Area2D) -> void:
+	if area is damager:
+		health-=area.damage
+		poison+=area.poison
+		stun+=area.stun
+		fire+=area.burn
+		
+		#applies buffs
+		if spdUp<area.spdBuf:
+			spdUp=area.spdBuf
+		else:
+			spdUp+=(area.spdBuf/2)
+		if atkUp<area.strBuf:
+			atkUp=area.strBuf
+		else:
+			atkUp+=(area.strBuf/2)
+		if defUp<area.spdBuf:
+			defUp=area.defBuf
+		else:
+			defUp+=(area.defBuf/2)
+			
+		#applies debuffs
+		if spdDown<area.spdRev:
+			spdDown=area.spdRev
+		else:
+			spdDown+=(area.spdRev/2)
+		if atkDown<area.strRev:
+			atkDown=area.strRev
+		else:
+			atkDown+=(area.strRev/2)
+		if defDown<area.defRev:
+			defDown=area.defRev
+		else:
+			defDown+=(area.defRev/2)
+		
+		if area.oneHit:
+			area.queue_free()
+
+
+func _on_death_anim_animation_finished() -> void:
+	queue_free()
+
+
+func _on_attack_animator_animation_finished(anim_name: StringName) -> void:
+	if anim_name=="die":
 		queue_free()
-
-
-func _on_move_handler_move_used(move: String) -> void:
-	print(move)
-	moveProgress=0
-	turnTime=randi_range(420,650)
-	
-func getChar()->String:
-	return character
