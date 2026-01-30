@@ -100,7 +100,7 @@ func _process(delta: float) -> void:
 	if health>maxHealth:
 		health=maxHealth
 	health_label.text=str(int(health))
-	if health>0:
+	if health>=1:
 		health_label.modulate=Color(1.0, 1.0, 1.0, 1.0)
 		health_bar.scale.x=(health/maxHealth)*-0.377
 		if moveProgress<turnTime:
@@ -130,6 +130,7 @@ func _process(delta: float) -> void:
 			print(hit.global_position)
 	else:
 		if attack_animator.current_animation!="die":
+			health_label.modulate=Color(1.0, 1.0, 1.0, 0.0)
 			attack_animator.play("die")
 			await get_tree().create_timer(0.1).timeout
 			var deathThing=deathAnim.instantiate()

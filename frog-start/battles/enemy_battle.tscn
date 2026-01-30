@@ -2285,6 +2285,7 @@ script = ExtResource("3_uk303")
 position = Vector2(1465, 540)
 scale = Vector2(1.0000001, 1.0000001)
 script = ExtResource("4_oikim")
+defUp = 0.0
 
 [node name="TextureRect" type="TextureRect" parent="frogLayer/partyHandler/party1" unique_id=2133704799]
 modulate = Color(0.20511743, 0.20511743, 0.20511743, 1)
@@ -2542,6 +2543,8 @@ libraries/ = SubResource("AnimationLibrary_sl4dh")
 
 [node name="hitBox" type="Area2D" parent="frogLayer/partyHandler/party1" unique_id=1099899184]
 z_index = 10
+collision_layer = 16
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="frogLayer/partyHandler/party1/hitBox" unique_id=1538024165]
 position = Vector2(10.869385, 30.41455)
@@ -2781,7 +2784,7 @@ autoplay = &"arrowBob"
 [node name="hitBox" type="Area2D" parent="frogLayer/enemyHandler/enemy1" unique_id=1783736877]
 z_index = 10
 collision_layer = 16
-collision_mask = 4
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="frogLayer/enemyHandler/enemy1/hitBox" unique_id=841504729]
 position = Vector2(10.869385, 30.41455)

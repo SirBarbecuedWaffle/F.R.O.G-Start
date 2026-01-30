@@ -14,14 +14,16 @@ class_name partyMember
 
 #move preloads
 var strikeMove=preload("res://moves/strike_move.tscn")
+var blockMove=preload("res://moves/block_move.tscn")
 
 
 @export var health:=140.0:
 	set(newHP):
-		if newHP<health-1:
-			hit_sprite.play("default")
-			if curChar.animation=="idle":
-				curChar.play("hurt")
+		if health<maxHealth:
+			if newHP<health-1:
+				hit_sprite.play("default")
+				if curChar.animation=="idle":
+					curChar.play("hurt")
 		if defUp:
 			newHP+=(health-newHP)/2
 		if defDown:
@@ -156,14 +158,17 @@ func _on_move_handler_move_used(move: String) -> void:
 	if move=="Strike":
 		var striked=strikeMove.instantiate()
 		frog_layer.add_child(striked)
-		
+	if move=="Block":
+		var blocked=blockMove.instantiate()
+		frog_layer.add_child(blocked)
 func getChar()->String:
 	return character
 
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area is damager:
-		health-=area.damage
+		if area.damage!=0:
+			health-=area.damage
 		poison+=area.poison
 		stun+=area.stun
 		fire+=area.burn
@@ -177,7 +182,7 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 			atkUp=area.strBuf
 		else:
 			atkUp+=(area.strBuf/2)
-		if defUp<area.spdBuf:
+		if defUp<area.defBuf:
 			defUp=area.defBuf
 		else:
 			defUp+=(area.defBuf/2)

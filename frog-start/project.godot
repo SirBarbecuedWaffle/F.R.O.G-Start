@@ -29,11 +29,8 @@ PManager="*res://Managers/p_manager.tscn"
 
 window/size/viewport_width=2027
 window/size/viewport_height=1037
+window/size/mode=3
 window/stretch/mode="canvas_items"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/ridiculous_coding/plugin.cfg")
 
 [input]
 
