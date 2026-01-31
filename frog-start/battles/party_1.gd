@@ -17,7 +17,7 @@ var strikeMove=preload("res://moves/strike_move.tscn")
 var blockMove=preload("res://moves/block_move.tscn")
 var arrowMove=preload("res://moves/arrow_barrage.tscn")
 var frogMove=preload("res://moves/frogsicle.tscn")
-
+var damageIcon=preload("res://damageIndicator.tscn")
 
 @export var health:=140.0:
 	set(newHP):
@@ -26,10 +26,11 @@ var frogMove=preload("res://moves/frogsicle.tscn")
 				hit_sprite.play("default")
 				if curChar.animation=="idle":
 					curChar.play("hurt")
-		if defUp:
-			newHP+=(health-newHP)/2
-		if defDown:
-			newHP-=(health-newHP)/2
+		if newHP<health:
+			if defUp>0:
+				newHP+=(health-newHP)/2
+			if defDown>0:
+				newHP-=(health-newHP)/2
 		health=newHP
 		
 			
@@ -180,6 +181,15 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area is damager:
 		if area.damage!=0:
 			health-=area.damage
+			if area.damage>0:
+				if defUp>0:
+					area.damage-=(area.damage)/2
+				if defDown>0:
+					area.damage+=(area.damage)/2
+			var movie=damageIcon.instantiate()
+			movie.damageAmount=area.damage
+			movie.global_position=global_position
+			frog_layer.add_child(movie)
 		poison+=area.poison
 		stun+=area.stun
 		fire+=area.burn

@@ -11,6 +11,8 @@ class_name damager
 @export var defBuf:=0
 @export var stun:=0
 @export var oneHit:=true
+@export var randomNumbers:=false
 
 func _ready() -> void:
-	damage=randi_range(damage*0.95,damage*1.05)
+	if randomNumbers:
+		damage=randi_range(damage*0.95,damage*1.05)

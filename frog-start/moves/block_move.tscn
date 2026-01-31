@@ -8,22 +8,22 @@ script = ExtResource("1_1roiq")
 
 [node name="strikeProjectile" parent="." unique_id=1142312808 instance=ExtResource("2_vllom")]
 position = Vector2(1452, 559)
-damage = -10
+damage = -15
 defBuf = 31
 
 [node name="strikeProjectile2" parent="." unique_id=251642194 instance=ExtResource("2_vllom")]
 position = Vector2(1653, 269)
-damage = -10
+damage = -15
 defBuf = 31
 
 [node name="strikeProjectile3" parent="." unique_id=125973024 instance=ExtResource("2_vllom")]
 position = Vector2(1900, 524)
-damage = -10
+damage = -15
 defBuf = 31
 
 [node name="strikeProjectile4" parent="." unique_id=1413958594 instance=ExtResource("2_vllom")]
 position = Vector2(1680, 848)
-damage = -10
+damage = -15
 defBuf = 31
 
 [connection signal="area_entered" from="strikeProjectile" to="." method="_on_strike_projectile_area_entered"]

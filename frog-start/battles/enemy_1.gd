@@ -9,15 +9,16 @@ extends Node2D
 var deathAnim=preload("res://2DAssets/deathAnimation.tscn")
 
 var basicHit=preload("res://battles/battle_projectile.tscn")
+var damageIcon=preload("res://damageIndicator.tscn")
 @onready var party_handler: Node2D = $"../../partyHandler"
 
 @export var health:=140.0:
 	set(newHP):
 		if newHP<health-1:
 			hit_sprite.play("default")
-		if defUp:
+		if defUp>0:
 			newHP+=(health-newHP)/2
-		if defDown:
+		if defDown>0:
 			newHP-=(health-newHP)/2
 		health=newHP
 		
@@ -116,6 +117,9 @@ func _process(delta: float) -> void:
 			await get_tree().create_timer(0.36).timeout
 			var hit=basicHit.instantiate()
 			hit.damage=30
+			hit.collision_layer=4
+			hit.collision_mask=5
+			hit.randomNumbers=true
 			var alivePeople=party_handler.getAlivePlayers()
 			if alivePeople==[0,0,0,0]:
 				get_tree().quit()
@@ -126,8 +130,10 @@ func _process(delta: float) -> void:
 			var target=randi_range(0,numTargets)
 			while target==0:
 				target=randi_range(0,numTargets)
-			party_handler.getAlivePlayers()[target-1].health-=randi_range(27,47)
+			
+			hit.global_position=party_handler.getAlivePlayers()[target-1].global_position
 			print(hit.global_position)
+			frog_layer.add_child(hit)
 	else:
 		if attack_animator.current_animation!="die":
 			health_label.modulate=Color(1.0, 1.0, 1.0, 0.0)
@@ -141,6 +147,16 @@ func _process(delta: float) -> void:
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area is damager:
 		health-=area.damage
+		if area.damage!=0:
+			if area.damage>0:
+				if defUp>0:
+					area.damage-=(area.damage)/2
+				if defDown>0:
+					area.damage+=(area.damage)/2
+			var movie=damageIcon.instantiate()
+			movie.damageAmount=area.damage
+			movie.global_position=global_position
+			frog_layer.add_child(movie)
 		poison+=area.poison
 		stun+=area.stun
 		fire+=area.burn
