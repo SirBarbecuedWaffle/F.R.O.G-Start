@@ -3,7 +3,7 @@ extends Node2D
 @onready var strike_projectile: damager = $strikeProjectile
 
 func _ready() -> void:
-	strike_projectile.damage=randi_range(60,90)
+	pass
 
 func _process(delta: float) -> void:
 	strike_projectile.global_position=places.get_children()[randi_range(0,3)].global_position

@@ -9,12 +9,6 @@ script = ExtResource("1_ivmcl")
 [node name="strikeProjectile" parent="." unique_id=1142312808 instance=ExtResource("2_7e0eo")]
 collision_layer = 8
 damage = 100
-strRev = 10
-defRev = 10
-spdRev = 10
-strBuf = 10
-spdBuf = 10
-defBuf = 10
 
 [node name="places" type="Node2D" parent="." unique_id=881540487]
 position = Vector2(-952, 0)

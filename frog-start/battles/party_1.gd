@@ -15,6 +15,8 @@ class_name partyMember
 #move preloads
 var strikeMove=preload("res://moves/strike_move.tscn")
 var blockMove=preload("res://moves/block_move.tscn")
+var arrowMove=preload("res://moves/arrow_barrage.tscn")
+var frogMove=preload("res://moves/frogsicle.tscn")
 
 
 @export var health:=140.0:
@@ -70,7 +72,7 @@ func _ready() -> void:
 		curChar=pink
 
 func _process(delta: float) -> void:
-	if health<0:
+	if health<1:
 		if curChar.animation!="die":
 			curChar.play("die")
 	atk_up_ind.visible=atkUp>1
@@ -121,7 +123,7 @@ func _process(delta: float) -> void:
 	if health>maxHealth:
 		health=maxHealth
 	health_label.text=str(int(health))
-	if health>0:
+	if health>=1:
 		if health_label.modulate==Color(1.0, 0.0, 0.0, 1.0):
 			curChar.play("unDie")
 			health_label.modulate=Color(1.0, 1.0, 1.0, 1.0)
@@ -138,6 +140,7 @@ func _process(delta: float) -> void:
 				move_handler.visible=true
 				move_handler.fadeIn()
 	else:
+		health_bar.scale.x=0
 		health_label.modulate=Color(1.0, 0.0, 0.0, 1.0)
 		move_handler.visible=false
 		spdUp=0
@@ -161,6 +164,14 @@ func _on_move_handler_move_used(move: String) -> void:
 	if move=="Block":
 		var blocked=blockMove.instantiate()
 		frog_layer.add_child(blocked)
+	if move=="Frogsicle":
+		var siced=frogMove.instantiate()
+		frog_layer.add_child(siced)
+	if move=="Arrow Barrage":
+			var arrowed=arrowMove.instantiate()
+			arrowed.spawnLoca=global_position
+			arrowed.spawnLoca.y=global_position.y-150
+			frog_layer.add_child(arrowed)
 func getChar()->String:
 	return character
 

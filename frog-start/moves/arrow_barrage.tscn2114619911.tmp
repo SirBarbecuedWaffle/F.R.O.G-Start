@@ -33,34 +33,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("..:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_l6svt"]
-resource_name = "arrowFade"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_4toh0"]
 resource_name = "arrowsSpawn"
@@ -165,7 +137,6 @@ tracks/7/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l6svt"]
 _data = {
 &"RESET": SubResource("Animation_8ikig"),
-&"arrowFade": SubResource("Animation_l6svt"),
 &"arrowsSpawn": SubResource("Animation_4toh0")
 }
 
@@ -220,8 +191,6 @@ position = Vector2(1394, 374)
 position = Vector2(1504, 605)
 
 [node name="arrow1" parent="Arrows" unique_id=1142312808 instance=ExtResource("2_8ikig")]
-collision_layer = 8
-damage = 25
 
 [node name="Sprite2D" type="Sprite2D" parent="Arrows/arrow1" unique_id=1995694293]
 modulate = Color(1, 1, 0, 1)
@@ -235,9 +204,6 @@ region_rect = Rect2(0, 0, 17.867775, 18)
 modulate = Color(1, 1, 1, 0)
 position = Vector2(56, -44)
 rotation = -0.7853982
-collision_layer = 8
-damage = 5
-spdRev = 15
 
 [node name="Sprite2D2" type="Sprite2D" parent="Arrows/arrow2" unique_id=397954698]
 modulate = Color(0, 1, 0, 1)
@@ -251,9 +217,6 @@ region_rect = Rect2(0, 0, 17.867775, 18)
 modulate = Color(1, 1, 1, 0)
 position = Vector2(111, 0)
 rotation = -0.7853982
-collision_layer = 8
-damage = 5
-strRev = 15
 
 [node name="Sprite2D3" type="Sprite2D" parent="Arrows/arrow3" unique_id=232750836]
 modulate = Color(1, 0, 0, 1)
@@ -268,9 +231,6 @@ region_rect = Rect2(0, 0, 17.867775, 18)
 modulate = Color(1, 1, 1, 0)
 position = Vector2(56, 41)
 rotation = -0.7853982
-collision_layer = 8
-damage = 5
-defRev = 15
 
 [node name="Sprite2D4" type="Sprite2D" parent="Arrows/arrow4" unique_id=1461095681]
 modulate = Color(0, 0.5833335, 1, 1)
@@ -281,12 +241,11 @@ texture = ExtResource("3_4toh0")
 region_enabled = true
 region_rect = Rect2(0, 0, 17.867775, 18)
 
-[node name="targets" type="Node2D" parent="." unique_id=1186052481]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=4047694]
-root_node = NodePath("../Arrows")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Arrows" unique_id=4047694]
 libraries/ = SubResource("AnimationLibrary_l6svt")
 autoplay = &"arrowsSpawn"
+
+[node name="targets" type="Node2D" parent="." unique_id=1186052481]
 
 [connection signal="area_entered" from="places/place1" to="." method="_on_place_1_area_entered"]
 [connection signal="area_entered" from="places/place2" to="." method="_on_place_2_area_entered"]

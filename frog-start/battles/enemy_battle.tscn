@@ -759,6 +759,66 @@ _data = {
 &"press4": SubResource("Animation_qc7af")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_p8gpp"]
+font = ExtResource("7_ugcq3")
+font_size = 34
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_mo84x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("moveExplainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vnxuq"]
+resource_name = "hideText"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("moveExplainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w42gv"]
+resource_name = "showText"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("moveExplainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w42gv"]
+_data = {
+&"RESET": SubResource("Animation_mo84x"),
+&"hideText": SubResource("Animation_vnxuq"),
+&"showText": SubResource("Animation_w42gv")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3a61k"]
 size = Vector2(95, 122.999954)
 
@@ -2072,10 +2132,10 @@ tracks/1/path = NodePath(".:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": []
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_t55pq"]
@@ -2286,6 +2346,7 @@ position = Vector2(1465, 540)
 scale = Vector2(1.0000001, 1.0000001)
 script = ExtResource("4_oikim")
 defUp = 0.0
+spdUp = 0.0
 
 [node name="TextureRect" type="TextureRect" parent="frogLayer/partyHandler/party1" unique_id=2133704799]
 modulate = Color(0.20511743, 0.20511743, 0.20511743, 1)
@@ -2540,6 +2601,30 @@ vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="frogLayer/partyHandler/party1/moveHandler" unique_id=676118701]
 libraries/ = SubResource("AnimationLibrary_sl4dh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="frogLayer/partyHandler/party1/moveHandler" unique_id=309475075]
+
+[node name="moveExplainer" type="Label" parent="frogLayer/partyHandler/party1/moveHandler/CanvasLayer" unique_id=1574743738]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -425.5
+offset_top = -144.0
+offset_right = 426.5
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Hover over a move to see what it does"
+label_settings = SubResource("LabelSettings_p8gpp")
+horizontal_alignment = 1
+autowrap_mode = 3
+visible_characters_behavior = 1
+
+[node name="explanAnimator" type="AnimationPlayer" parent="frogLayer/partyHandler/party1/moveHandler/CanvasLayer" unique_id=688217455]
+libraries/ = SubResource("AnimationLibrary_w42gv")
 
 [node name="hitBox" type="Area2D" parent="frogLayer/partyHandler/party1" unique_id=1099899184]
 z_index = 10
@@ -2810,9 +2895,211 @@ sprite_frames = SubResource("SpriteFrames_rmn6k")
 frame = 5
 frame_progress = 1.0
 
+[node name="enemy2" type="Node2D" parent="frogLayer/enemyHandler" unique_id=1817827187]
+position = Vector2(1370, 773)
+scale = Vector2(1.0000001, 1.0000001)
+script = ExtResource("18_uf5a6")
+atkDown = 0.0
+defDown = 0.0
+atkUp = 0.0
+defUp = 0.0
+spdUp = 0.0
+
+[node name="TextureRect" type="TextureRect" parent="frogLayer/enemyHandler/enemy2" unique_id=714605560]
+modulate = Color(0.20511743, 0.20511743, 0.20511743, 1)
+offset_left = -65.16259
+offset_top = 105.7426
+offset_right = 71.83741
+offset_bottom = 146.99998
+texture = SubResource("CanvasTexture_ugcq3")
+
+[node name="healthBar" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2" unique_id=1337564742]
+position = Vector2(67.83742, 108.89929)
+scale = Vector2(-0.37718385, 0.10028164)
+texture = ExtResource("4_doav6")
+centered = false
+
+[node name="front" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2" unique_id=2144362875]
+position = Vector2(0, 100.99997)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_78c3t")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 63.99984)
+
+[node name="healthLabel" type="Label" parent="frogLayer/enemyHandler/enemy2" unique_id=899068240]
+offset_left = -52.162598
+offset_top = 109.99997
+offset_right = 64.8374
+offset_bottom = 151.99997
+text = "140"
+label_settings = SubResource("LabelSettings_p3ynn")
+horizontal_alignment = 2
+
+[node name="arrowHandler" type="Node2D" parent="frogLayer/enemyHandler/enemy2" unique_id=1451796643]
+scale = Vector2(1.0012685, 1.0012685)
+
+[node name="goodArrows" type="Node2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler" unique_id=989078717]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="defUpInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler/goodArrows" unique_id=630842196]
+self_modulate = Color(0, 0.2627451, 1, 1)
+position = Vector2(30.331226, -82.257416)
+scale = Vector2(3.0000005, 3.0000005)
+texture = ExtResource("9_ose5c")
+region_enabled = true
+region_rect = Rect2(0, 0, 17.898651, 18)
+
+[node name="defTimeLab" type="Label" parent="frogLayer/enemyHandler/enemy2/arrowHandler/goodArrows/defUpInd" unique_id=1768211925]
+z_index = 1
+offset_left = -1.3333515
+offset_top = 3.333331
+offset_right = 26.666649
+offset_bottom = 26.333332
+scale = Vector2(0.25, 0.25)
+text = "10"
+label_settings = SubResource("LabelSettings_ose5c")
+horizontal_alignment = 2
+
+[node name="spdUpInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler/goodArrows" unique_id=1714817429]
+self_modulate = Color(0, 1, 0, 1)
+position = Vector2(99.33122, -82.257416)
+scale = Vector2(3.0000005, 3.0000005)
+texture = ExtResource("9_ose5c")
+region_enabled = true
+region_rect = Rect2(0, 0, 17.898651, 18)
+
+[node name="spdTimeLab" type="Label" parent="frogLayer/enemyHandler/enemy2/arrowHandler/goodArrows/spdUpInd" unique_id=1443939122]
+z_index = 1
+offset_left = -1.0000038
+offset_top = 3.3333359
+offset_right = 26.999996
+offset_bottom = 26.333336
+scale = Vector2(0.25, 0.25)
+text = "10"
+label_settings = SubResource("LabelSettings_ose5c")
+horizontal_alignment = 2
+
+[node name="atkUpInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler/goodArrows" unique_id=331376908]
+self_modulate = Color(1, 0, 0, 1)
+position = Vector2(64.33122, -102.257385)
+scale = Vector2(3.0000005, 3.0000005)
+texture = ExtResource("9_ose5c")
+region_enabled = true
+region_rect = Rect2(0, 0, 17.898651, 18)
+
+[node name="atkTimeLab" type="Label" parent="frogLayer/enemyHandler/enemy2/arrowHandler/goodArrows/atkUpInd" unique_id=1670104278]
+z_index = 1
+offset_left = -0.9999998
+offset_top = 2.6666613
+offset_right = 27.0
+offset_bottom = 25.66666
+scale = Vector2(0.25, 0.25)
+text = "10"
+label_settings = SubResource("LabelSettings_ose5c")
+horizontal_alignment = 2
+
+[node name="badArrows" type="Node2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler" unique_id=1971098352]
+
+[node name="atkDownInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler/badArrows" unique_id=795720256]
+self_modulate = Color(0.75743943, 0.37918973, 0, 1)
+position = Vector2(-61.509037, -102.25734)
+rotation = -3.1415925
+scale = Vector2(2.9999998, 2.9999998)
+texture = ExtResource("9_ose5c")
+region_enabled = true
+region_rect = Rect2(0, 0, 17.898651, 18)
+
+[node name="atkDownLab" type="Label" parent="frogLayer/enemyHandler/enemy2/arrowHandler/badArrows/atkDownInd" unique_id=290561496]
+z_index = 1
+offset_left = 1.1903365
+offset_top = -2.3735554
+offset_right = 29.190336
+offset_bottom = 20.626444
+rotation = 3.1415927
+scale = Vector2(0.25, 0.25)
+text = "10"
+label_settings = SubResource("LabelSettings_ose5c")
+horizontal_alignment = 2
+
+[node name="defDownInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler/badArrows" unique_id=1834116554]
+self_modulate = Color(0.24179506, 0.2000911, 0.606258, 1)
+position = Vector2(-95.50904, -82.25737)
+rotation = -3.1415925
+scale = Vector2(2.9999998, 2.9999998)
+texture = ExtResource("9_ose5c")
+region_enabled = true
+region_rect = Rect2(0, 0, 17.898651, 18)
+
+[node name="defDownLab" type="Label" parent="frogLayer/enemyHandler/enemy2/arrowHandler/badArrows/defDownInd" unique_id=52472392]
+z_index = 1
+offset_left = 0.8430456
+offset_top = -1.6992964
+offset_right = 28.843046
+offset_bottom = 21.300703
+rotation = 3.1415927
+scale = Vector2(0.25, 0.25)
+text = "10"
+label_settings = SubResource("LabelSettings_ose5c")
+horizontal_alignment = 2
+
+[node name="spdDownInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler/badArrows" unique_id=1079320473]
+self_modulate = Color(0.07313458, 0.4593476, 0.26684052, 1)
+position = Vector2(-26.509037, -82.25737)
+rotation = -3.1415925
+scale = Vector2(2.9999998, 2.9999998)
+texture = ExtResource("9_ose5c")
+region_enabled = true
+region_rect = Rect2(0, 0, 17.898651, 18)
+
+[node name="spdDownLab" type="Label" parent="frogLayer/enemyHandler/enemy2/arrowHandler/badArrows/spdDownInd" unique_id=1119894458]
+z_index = 1
+offset_left = 0.5392622
+offset_top = -2.3651183
+offset_right = 28.539263
+offset_bottom = 20.634882
+rotation = 3.1415927
+scale = Vector2(0.25, 0.25)
+text = "10"
+label_settings = SubResource("LabelSettings_ose5c")
+horizontal_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="frogLayer/enemyHandler/enemy2" unique_id=826898074]
+libraries/ = SubResource("AnimationLibrary_31ke3")
+autoplay = &"arrowBob"
+
+[node name="hitBox" type="Area2D" parent="frogLayer/enemyHandler/enemy2" unique_id=584800138]
+z_index = 10
+collision_layer = 16
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frogLayer/enemyHandler/enemy2/hitBox" unique_id=1543942432]
+position = Vector2(10.869385, 30.41455)
+shape = SubResource("RectangleShape2D_3a61k")
+debug_color = Color(0.9126272, 0, 0.27480933, 0.41960785)
+
+[node name="enemySpr1" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2" unique_id=1203962810]
+position = Vector2(-2.0000007, -3.0000052)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_ugcq3")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.30031458
+
+[node name="attackAnimator" type="AnimationPlayer" parent="frogLayer/enemyHandler/enemy2" unique_id=460132868]
+libraries/ = SubResource("AnimationLibrary_lq4w6")
+
+[node name="hitSprite" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2" unique_id=1174354758]
+z_index = 1
+position = Vector2(7.999998, 12.914549)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_rmn6k")
+frame = 5
+frame_progress = 1.0
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=334568632]
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=675429401]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -2837,7 +3124,7 @@ texture = SubResource("CanvasTexture_h5oe8")
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_top = 337.0
-offset_right = 2032.9805
+offset_right = 2032.9814
 offset_bottom = 700.0
 texture = SubResource("CanvasTexture_h5oe8")
 
@@ -2847,7 +3134,7 @@ layout_mode = 0
 offset_left = -100.0
 offset_top = -40.0
 offset_right = 2401.8389
-offset_bottom = 939.0249
+offset_bottom = 939.0242
 rotation = 0.4674777
 texture = SubResource("CanvasTexture_h5oe8")
 
@@ -2866,9 +3153,17 @@ libraries/ = SubResource("AnimationLibrary_scmio")
 autoplay = &"loadIn"
 
 [connection signal="moveUsed" from="frogLayer/partyHandler/party1/moveHandler" to="frogLayer/partyHandler/party1" method="_on_move_handler_move_used"]
+[connection signal="mouse_entered" from="frogLayer/partyHandler/party1/moveHandler/move1" to="frogLayer/partyHandler/party1/moveHandler" method="_on_move_mouse_entered"]
+[connection signal="mouse_exited" from="frogLayer/partyHandler/party1/moveHandler/move1" to="frogLayer/partyHandler/party1/moveHandler" method="_on_move_mouse_exited"]
 [connection signal="pressed" from="frogLayer/partyHandler/party1/moveHandler/move1" to="frogLayer/partyHandler/party1/moveHandler" method="_on_move_1_pressed"]
+[connection signal="mouse_entered" from="frogLayer/partyHandler/party1/moveHandler/move2" to="frogLayer/partyHandler/party1/moveHandler" method="_on_move_2_mouse_entered"]
+[connection signal="mouse_exited" from="frogLayer/partyHandler/party1/moveHandler/move2" to="frogLayer/partyHandler/party1/moveHandler" method="_on_move_mouse_exited"]
 [connection signal="pressed" from="frogLayer/partyHandler/party1/moveHandler/move2" to="frogLayer/partyHandler/party1/moveHandler" method="_on_move_2_pressed"]
+[connection signal="mouse_entered" from="frogLayer/partyHandler/party1/moveHandler/move3" to="frogLayer/partyHandler/party1/moveHandler" method="_on_move_3_mouse_entered"]
+[connection signal="mouse_exited" from="frogLayer/partyHandler/party1/moveHandler/move3" to="frogLayer/partyHandler/party1/moveHandler" method="_on_move_mouse_exited"]
 [connection signal="pressed" from="frogLayer/partyHandler/party1/moveHandler/move3" to="frogLayer/partyHandler/party1/moveHandler" method="_on_move_3_pressed"]
+[connection signal="mouse_entered" from="frogLayer/partyHandler/party1/moveHandler/move4" to="frogLayer/partyHandler/party1/moveHandler" method="_on_move_4_mouse_entered"]
+[connection signal="mouse_exited" from="frogLayer/partyHandler/party1/moveHandler/move4" to="frogLayer/partyHandler/party1/moveHandler" method="_on_move_mouse_exited"]
 [connection signal="pressed" from="frogLayer/partyHandler/party1/moveHandler/move4" to="frogLayer/partyHandler/party1/moveHandler" method="_on_move_4_pressed"]
 [connection signal="animation_finished" from="frogLayer/partyHandler/party1/moveHandler/AnimationPlayer" to="frogLayer/partyHandler/party1/moveHandler" method="_on_animation_player_animation_finished"]
 [connection signal="area_entered" from="frogLayer/partyHandler/party1/hitBox" to="frogLayer/partyHandler/party1" method="_on_hit_box_area_entered"]
@@ -2878,3 +3173,5 @@ autoplay = &"loadIn"
 [connection signal="animation_finished" from="frogLayer/partyHandler/pink" to="frogLayer/partyHandler" method="_on_pink_animation_finished"]
 [connection signal="area_entered" from="frogLayer/enemyHandler/enemy1/hitBox" to="frogLayer/enemyHandler/enemy1" method="_on_hit_box_area_entered"]
 [connection signal="animation_finished" from="frogLayer/enemyHandler/enemy1/attackAnimator" to="frogLayer/enemyHandler/enemy1" method="_on_attack_animator_animation_finished"]
+[connection signal="area_entered" from="frogLayer/enemyHandler/enemy2/hitBox" to="frogLayer/enemyHandler/enemy2" method="_on_hit_box_area_entered"]
+[connection signal="animation_finished" from="frogLayer/enemyHandler/enemy2/attackAnimator" to="frogLayer/enemyHandler/enemy2" method="_on_attack_animator_animation_finished"]

@@ -33,7 +33,7 @@ var basicHit=preload("res://battles/battle_projectile.tscn")
 @export var spdUp:=15.0
 @export var stun:=0
 @onready var enemy_spr_1: AnimatedSprite2D = $enemySpr1
-var turnTime:=randi_range(120,450)
+var turnTime:=randi_range(470,700)
 @onready var frog_layer: CanvasLayer = $"../.."
 @onready var def_up_ind: Sprite2D = $arrowHandler/goodArrows/defUpInd
 @onready var spd_up_ind: Sprite2D = $arrowHandler/goodArrows/spdUpInd
@@ -112,7 +112,7 @@ func _process(delta: float) -> void:
 		else:
 			attack_animator.play("attack")
 			moveProgress=0
-			turnTime=randi_range(320,550)
+			turnTime=randi_range(470,700)
 			await get_tree().create_timer(0.36).timeout
 			var hit=basicHit.instantiate()
 			hit.damage=30
