@@ -10,13 +10,24 @@ class_name partyMember
 @onready var mask: AnimatedSprite2D = $"../mask"
 @onready var pink: AnimatedSprite2D = $"../pink"
 
+
 @export var character:=""
+
+#buff animations
+@onready var def_buff_anim: AnimatedSprite2D = $"../defBuffAnim"
+@onready var str_buff_anim: AnimatedSprite2D = $"../strBuffAnim"
+@onready var spd_buff_anim: AnimatedSprite2D = $"../spdBuffAnim"
 
 #move preloads
 var strikeMove=preload("res://moves/strike_move.tscn")
 var blockMove=preload("res://moves/block_move.tscn")
 var arrowMove=preload("res://moves/arrow_barrage.tscn")
 var frogMove=preload("res://moves/frogsicle.tscn")
+var overclockMove=preload("res://moves/overclock.tscn")
+var zipMove=preload("res://moves/zipbomb.tscn")
+var altMove=preload("res://moves/altf4.tscn")
+
+
 var damageIcon=preload("res://damageIndicator.tscn")
 
 @export var health:=140.0:
@@ -24,9 +35,10 @@ var damageIcon=preload("res://damageIndicator.tscn")
 		if health<maxHealth:
 			if newHP<health-1:
 				hit_sprite.play("default")
+		if newHP<health:
+			if newHP<health-1:
 				if curChar.animation=="idle":
 					curChar.play("hurt")
-		if newHP<health:
 			if defUp>0:
 				newHP+=(health-newHP)/2
 			if defDown>0:
@@ -59,14 +71,16 @@ var turnTime:=randi_range(120,450)
 @onready var atk_down_lab: Label = $arrowHandler/badArrows/atkDownInd/atkDownLab
 @onready var def_down_lab: Label = $arrowHandler/badArrows/defDownInd/defDownLab
 @onready var spd_down_lab: Label = $arrowHandler/badArrows/spdDownInd/spdDownLab
-@onready var curChar = frog
+@onready var curChar : AnimatedSprite2D
 @onready var frog_layer: CanvasLayer = $"../.."
 
 func _ready() -> void:
+	await get_tree().create_timer(0.01).timeout
 	if character=="frog":
-		var curChar=frog
+		curChar=frog
 	if character=="steve":
 		curChar=steve
+		curChar.play("idle")
 	if character=="mask":
 		curChar=mask
 	if character=="pink":
@@ -173,6 +187,16 @@ func _on_move_handler_move_used(move: String) -> void:
 			arrowed.spawnLoca=global_position
 			arrowed.spawnLoca.y=global_position.y-150
 			frog_layer.add_child(arrowed)
+	
+	if move=="Overclock":
+		var clocked=overclockMove.instantiate()
+		frog_layer.add_child(clocked)
+	if move=="Zip Bomb":
+		var ziped=zipMove.instantiate()
+		frog_layer.add_child(ziped)
+	if move=="Alt F4":
+		var alted=altMove.instantiate()
+		frog_layer.add_child(alted)
 func getChar()->String:
 	return character
 
@@ -207,7 +231,14 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 			defUp=area.defBuf
 		else:
 			defUp+=(area.defBuf/2)
-			
+		#plays buff animations
+		if area.defBuf>0:
+			def_buff_anim.play()
+		if area.strBuf>0:
+			str_buff_anim.play()
+		if area.spdBuf>0:
+			spd_buff_anim.play()
+		
 		#applies debuffs
 		if spdDown<area.spdRev:
 			spdDown=area.spdRev

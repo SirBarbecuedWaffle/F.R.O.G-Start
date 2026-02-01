@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b01pgab17g6jm"
-path="res://.godot/imported/defenseSpell.png-a509e12cecf04e02e2881c17eb1e4255.ctex"
+uid="uid://nh1uuim4j7d7"
+path="res://.godot/imported/defenseBuff.png-6bb14afb9325b3c899a1086135d2cb9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2DAssets/defenseSpell.png"
-dest_files=["res://.godot/imported/defenseSpell.png-a509e12cecf04e02e2881c17eb1e4255.ctex"]
+source_file="res://2DAssets/defenseBuff.png"
+dest_files=["res://.godot/imported/defenseBuff.png-6bb14afb9325b3c899a1086135d2cb9e.ctex"]
 
 [params]
 

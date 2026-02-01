@@ -29,6 +29,14 @@ func _process(delta: float) -> void:
 		move_explainer.text="Temporarily raises the defense of your entire party"
 	if moveHovered=="Frogsicle":
 		move_explainer.text="Applies medium heals to your entire party"
+	if moveHovered=="Overclock":
+		move_explainer.text="Temporarily raises the speed of your entire party"
+	if moveHovered=="Zip Bomb":
+		move_explainer.text="Deals medium damage to every enemy"
+	if moveHovered=="Infect":
+		move_explainer.text="Deals low damage and poisons a single enemy"
+	if moveHovered=="Alt F4":
+		move_explainer.text="Has a 1/5 chance to instakill a random non-boss enemy"
 		
 	
 	if get_parent().getChar()=="frog":
@@ -36,6 +44,11 @@ func _process(delta: float) -> void:
 		move_2_lab.text="Block"
 		move_3_lab.text="Strike"
 		move_4_lab.text="Frogsicle"
+	if get_parent().getChar()=="steve":
+		move_1_lab.text="Overclock"
+		move_2_lab.text="Zip Bomb"
+		move_3_lab.text="Infect"
+		move_4_lab.text="Alt F4"
 
 func fadeIn()->void:
 	moveHovered=""

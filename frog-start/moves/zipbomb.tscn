@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://d2ut8jsq0l341"]
+
+[ext_resource type="Script" uid="uid://c8ac4kspvafjj" path="res://moves/zipbomb.gd" id="1_7byio"]
+[ext_resource type="Texture2D" uid="uid://b0lj5db3stnq0" path="res://2DAssets/pxArt (1).png" id="2_1yqlu"]
+[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="2_s6exj"]
+[ext_resource type="Texture2D" uid="uid://gqnqlwk8p5xl" path="res://2DAssets/New Piskel (9).png" id="3_74p8y"]
+[ext_resource type="Texture2D" uid="uid://beyr0s25b3yyi" path="res://2DAssets/New Piskel (10).png" id="4_s6exj"]
+
+[sub_resource type="Animation" id="Animation_74p8y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1504, 605)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_s6exj"]
+resource_name = "explode"
+length = 2.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.29000002, 0.8),
+"transitions": PackedFloat32Array(3.3635848, 0.5547846),
+"update": 0,
+"values": [Vector2(1504, 405), Vector2(1504, 605)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.06666666, 0.3, 1.0053625, 1.1047045, 1.2004036, 1.2997456, 1.4021788, 1.5015208, 1.6039541, 1.7032961, 1.8011173, 1.9004593, 1.9994335, 2.0987754, 2.2036648),
+"transitions": PackedFloat32Array(1, 1, 1, 0.00048828125, 1, 0.00048828125, 1, 0.00048828125, 1, 0.00048828125, 1, 0.00048828125, 1, 0.00048828125, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(18.892157, 18.892157, 18.892157, 1), Color(1, 1, 1, 1), Color(18.892157, 18.892157, 18.892157, 1), Color(1, 1, 1, 1), Color(18.892157, 18.892157, 18.892157, 1), Color(1, 1, 1, 1), Color(18.892157, 18.892157, 18.892157, 1), Color(1, 1, 1, 1), Color(18.892157, 18.892157, 18.892157, 1), Color(1, 1, 1, 1), Color(18.892157, 18.892157, 18.892157, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nqnng"]
+_data = {
+&"RESET": SubResource("Animation_74p8y"),
+&"explode": SubResource("Animation_s6exj")
+}
+
+[sub_resource type="Gradient" id="Gradient_74p8y"]
+offsets = PackedFloat32Array(0.56658596)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_s6exj"]
+gradient = SubResource("Gradient_74p8y")
+
+[sub_resource type="Gradient" id="Gradient_nqnng"]
+offsets = PackedFloat32Array(0.055690072, 0.16949153, 0.20338982, 0.23970944, 0.28329298, 0.40193704, 0.42372882, 0.4479419, 0.47457626, 0.5084746, 0.6246973, 0.83777237, 1)
+colors = PackedColorArray(0, 1, 0, 1, 1, 1, 1, 1, 0.6982759, 1, 0.6982759, 1, 0.37499994, 1, 0.37499994, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0.3617022, 1, 0.3617022, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tfkdh"]
+gradient = SubResource("Gradient_nqnng")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s6exj"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_min = 138.09
+initial_velocity_max = 138.09
+gravity = Vector3(0, 0, 0)
+scale_min = 4.0
+scale_max = 4.0
+color_ramp = SubResource("GradientTexture1D_tfkdh")
+color_initial_ramp = SubResource("GradientTexture1D_s6exj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nqnng"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_min = 138.09
+initial_velocity_max = 138.09
+gravity = Vector3(0, 0, 0)
+scale_min = 4.0
+scale_max = 4.0
+color_ramp = SubResource("GradientTexture1D_tfkdh")
+color_initial_ramp = SubResource("GradientTexture1D_s6exj")
+
+[node name="arrowBarrage" type="Node2D" unique_id=278365401]
+z_index = 1
+script = ExtResource("1_7byio")
+
+[node name="spawnLocation" type="Marker2D" parent="." unique_id=674989445]
+position = Vector2(1394, 374)
+
+[node name="bomb" type="Node2D" parent="." unique_id=853504226]
+position = Vector2(1504, 605)
+
+[node name="Sprite2D" type="Sprite2D" parent="bomb" unique_id=280346243]
+position = Vector2(-1094, -151)
+texture = ExtResource("2_1yqlu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bomb" unique_id=1640240216]
+libraries/ = SubResource("AnimationLibrary_nqnng")
+autoplay = &"explode"
+
+[node name="targets" type="Node2D" parent="." unique_id=1186052481]
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="." unique_id=1428129465]
+position = Vector2(408, 459)
+scale = Vector2(3, 3)
+emitting = false
+amount = 80
+texture = ExtResource("4_s6exj")
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.76
+randomness = 1.0
+trail_lifetime = 10.0
+trail_sections = 2
+trail_section_subdivisions = 1
+process_material = SubResource("ParticleProcessMaterial_s6exj")
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="." unique_id=73660407]
+position = Vector2(408, 459)
+scale = Vector2(3, 3)
+emitting = false
+amount = 80
+texture = ExtResource("3_74p8y")
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.76
+trail_lifetime = 10.0
+trail_sections = 2
+trail_section_subdivisions = 1
+process_material = SubResource("ParticleProcessMaterial_nqnng")
+
+[node name="damage" type="Node2D" parent="." unique_id=1157350384]
+position = Vector2(0, -1872)
+
+[node name="strikeProjectile" parent="damage" unique_id=1142312808 instance=ExtResource("2_s6exj")]
+position = Vector2(397, 511)
+scale = Vector2(15, 15)
+collision_layer = 8
+damage = 25
+oneHit = false
+randomNumbers = true
+
+[connection signal="animation_finished" from="bomb/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
