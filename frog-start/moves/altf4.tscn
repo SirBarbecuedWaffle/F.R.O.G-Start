@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://gqnqlwk8p5xl" path="res://2DAssets/New Piskel (9).png" id="3_srhbc"]
 [ext_resource type="Texture2D" uid="uid://beyr0s25b3yyi" path="res://2DAssets/New Piskel (10).png" id="4_6ny30"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83tgv"]
+size = Vector2(109, 138)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ny30"]
 size = Vector2(47, 61)
 
@@ -24,14 +27,14 @@ gradient = SubResource("Gradient_fmfu8")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6ny30"]
 particle_flag_disable_z = true
 spread = 180.0
-initial_velocity_min = 76.09
-initial_velocity_max = 76.09
+initial_velocity_min = 95.0
+initial_velocity_max = 130.0
 gravity = Vector3(0, 0, 0)
 linear_accel_min = -59.23
 linear_accel_max = -59.23
-scale_min = 2.0
-scale_max = 2.0
-color = Color(0, 1, 0, 1)
+scale_min = 3.0
+scale_max = 3.0
+color = Color(1, 0, 0, 1)
 color_ramp = SubResource("GradientTexture1D_fr7aw")
 color_initial_ramp = SubResource("GradientTexture1D_68jta")
 
@@ -43,20 +46,44 @@ position = Vector2(-498, 0)
 collision_layer = 8
 damage = 99999
 
-[node name="places" type="Node2D" parent="." unique_id=881540487]
+[node name="places" type="Node2D" parent="." unique_id=1084884889]
 position = Vector2(-952, 0)
 
-[node name="place1" type="Node2D" parent="places" unique_id=1620240567]
-position = Vector2(1589, 438)
+[node name="place1" type="Area2D" parent="places" unique_id=1592274079]
+position = Vector2(1397, 148)
+collision_layer = 8
+collision_mask = 16
 
-[node name="place2" type="Node2D" parent="places" unique_id=2034117173]
-position = Vector2(1153, 491)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place1" unique_id=1286684457]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_83tgv")
 
-[node name="place3" type="Node2D" parent="places" unique_id=1275259744]
-position = Vector2(1368, 819)
+[node name="place2" type="Area2D" parent="places" unique_id=25328147]
+position = Vector2(1598, 432)
+collision_layer = 8
+collision_mask = 16
 
-[node name="place4" type="Node2D" parent="places" unique_id=728835411]
-position = Vector2(1370, 157)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place2" unique_id=1403003730]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_83tgv")
+
+[node name="place3" type="Area2D" parent="places" unique_id=626129728]
+position = Vector2(1371, 820)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place3" unique_id=1805332353]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_83tgv")
+
+[node name="place4" type="Area2D" parent="places" unique_id=2062831752]
+position = Vector2(1160, 482)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place4" unique_id=1618466697]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_83tgv")
 
 [node name="targe" type="Area2D" parent="." unique_id=745083498]
 collision_layer = 134217728
@@ -66,19 +93,27 @@ collision_mask = 16
 position = Vector2(1.5, -1.5)
 shape = SubResource("RectangleShape2D_6ny30")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="targe" unique_id=1147784155]
-emitting = false
-amount = 32
-texture = ExtResource("3_srhbc")
-one_shot = true
-process_material = SubResource("ParticleProcessMaterial_6ny30")
-
 [node name="GPUParticles2D2" type="GPUParticles2D" parent="targe" unique_id=1398870927]
+position = Vector2(-15, -3)
 emitting = false
 amount = 32
 texture = ExtResource("4_6ny30")
 one_shot = true
 process_material = SubResource("ParticleProcessMaterial_6ny30")
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="targe" unique_id=1147784155]
+position = Vector2(-15, -3)
+emitting = false
+amount = 32
+texture = ExtResource("3_srhbc")
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_6ny30")
+
+[node name="targets" type="Node2D" parent="." unique_id=1658361463]
+
 [connection signal="area_entered" from="strikeProjectile" to="." method="_on_strike_projectile_area_entered"]
+[connection signal="area_entered" from="places/place1" to="." method="_on_place_1_area_entered"]
+[connection signal="area_entered" from="places/place2" to="." method="_on_place_2_area_entered"]
+[connection signal="area_entered" from="places/place3" to="." method="_on_place_3_area_entered"]
+[connection signal="area_entered" from="places/place4" to="." method="_on_place_4_area_entered"]
 [connection signal="area_entered" from="targe" to="." method="_on_targe_area_entered"]

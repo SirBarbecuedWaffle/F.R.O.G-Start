@@ -156,6 +156,8 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 			var movie=damageIcon.instantiate()
 			movie.damageAmount=area.damage
 			movie.global_position=global_position
+			if area.damage>3000:
+				movie.damageType="cleaving"
 			frog_layer.add_child(movie)
 		poison+=area.poison
 		stun+=area.stun

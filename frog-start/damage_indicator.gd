@@ -15,5 +15,7 @@ func _process(delta: float) -> void:
 		node_2d.modulate=Color.DARK_GREEN
 	if damageType=="fire":
 		node_2d.modulate=Color.ORANGE_RED
+	if damageType=="cleaving":
+		node_2d.modulate=Color.RED
 	
 	

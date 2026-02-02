@@ -56,27 +56,31 @@ func fadeIn()->void:
 	explan_animator.play("showText")
 
 func _on_move_1_pressed() -> void:
-	animation_player.play("press1")
-	moveUsed.emit(move_1_lab.text)
-	explan_animator.play("hideText")
+	if explan_animator.current_animation!="hideText":
+		animation_player.play("press1")
+		moveUsed.emit(move_1_lab.text)
+		explan_animator.play("hideText")
 
 
 func _on_move_2_pressed() -> void:
-	animation_player.play("press2")
-	moveUsed.emit(move_2_lab.text)
-	explan_animator.play("hideText")
+	if explan_animator.current_animation!="hideText":
+		animation_player.play("press2")
+		moveUsed.emit(move_2_lab.text)
+		explan_animator.play("hideText")
 
 
 func _on_move_3_pressed() -> void:
-	animation_player.play("press3")
-	moveUsed.emit(move_3_lab.text)
-	explan_animator.play("hideText")
+	if explan_animator.current_animation!="hideText":
+		animation_player.play("press3")
+		moveUsed.emit(move_3_lab.text)
+		explan_animator.play("hideText")
 
 
 func _on_move_4_pressed() -> void:
-	animation_player.play("press4")
-	moveUsed.emit(move_4_lab.text)
-	explan_animator.play("hideText")
+	if explan_animator.current_animation!="hideText":
+		animation_player.play("press4")
+		moveUsed.emit(move_4_lab.text)
+		explan_animator.play("hideText")
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

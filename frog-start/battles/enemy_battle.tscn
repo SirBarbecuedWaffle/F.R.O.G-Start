@@ -786,7 +786,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_vnxuq"]
 resource_name = "hideText"
-length = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
