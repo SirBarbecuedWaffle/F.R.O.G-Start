@@ -949,50 +949,50 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dj0x7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kyjx"]
 atlas = ExtResource("25_w42gv")
-region = Rect2(0, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8qxun"]
-atlas = ExtResource("25_w42gv")
-region = Rect2(64, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3spkb"]
-atlas = ExtResource("25_w42gv")
-region = Rect2(128, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n8uxa"]
-atlas = ExtResource("25_w42gv")
-region = Rect2(192, 64, 64, 64)
+region = Rect2(320, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8qidd"]
 atlas = ExtResource("25_w42gv")
 region = Rect2(256, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6kyjx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8uxa"]
 atlas = ExtResource("25_w42gv")
-region = Rect2(320, 64, 64, 64)
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3spkb"]
+atlas = ExtResource("25_w42gv")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qxun"]
+atlas = ExtResource("25_w42gv")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj0x7"]
+atlas = ExtResource("25_w42gv")
+region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yerlx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dj0x7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8qxun")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3spkb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n8uxa")
+"texture": SubResource("AtlasTexture_6kyjx")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8qidd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6kyjx")
+"texture": SubResource("AtlasTexture_n8uxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3spkb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qxun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dj0x7")
 }],
 "loop": true,
 "name": &"default",
@@ -1975,7 +1975,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 6.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2019,9 +2019,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ex1q5")
 }],
-"loop": true,
+"loop": false,
 "name": &"useMove",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5kqfc"]
@@ -3186,7 +3186,7 @@ position = Vector2(3.3693848, 0.9145508)
 scale = Vector2(3.9999995, 3.9999995)
 sprite_frames = SubResource("SpriteFrames_yerlx")
 autoplay = "default"
-frame_progress = 0.3762533
+frame_progress = 0.3582031
 
 [node name="defBuffAnim" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party1" unique_id=1022592153]
 modulate = Color(0, 0.5254902, 1, 1)
@@ -3472,7 +3472,7 @@ position = Vector2(0.33333385, 1.0000005)
 scale = Vector2(1.3333333, 1.3333333)
 sprite_frames = SubResource("SpriteFrames_yerlx")
 autoplay = "default"
-frame_progress = 0.64540595
+frame_progress = 0.14791442
 
 [node name="attackAnimator" type="AnimationPlayer" parent="frogLayer/enemyHandler/enemy1" unique_id=2044035102]
 libraries/ = SubResource("AnimationLibrary_lq4w6")

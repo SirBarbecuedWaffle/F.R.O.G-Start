@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://ctwf8g5jiyrbi"]
+
+[ext_resource type="Script" uid="uid://ywsfqfqdrnlp" path="res://moves/poison_curse.gd" id="1_aru05"]
+[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="2_7088e"]
+[ext_resource type="Texture2D" uid="uid://w32aordnwhih" path="res://2DAssets/Retro Impact Effect Pack 5 D.png" id="3_acmao"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgboc"]
+atlas = ExtResource("3_acmao")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7obfb"]
+atlas = ExtResource("3_acmao")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbrha"]
+atlas = ExtResource("3_acmao")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hi305"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgboc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7obfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbrha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7obfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgboc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="poisonCurse" type="Node2D" unique_id=298654084]
+script = ExtResource("1_aru05")
+
+[node name="strikeProjectile" parent="." unique_id=1142312808 instance=ExtResource("2_7088e")]
+position = Vector2(2505, 526.00006)
+scale = Vector2(20, 20)
+collision_layer = 8
+strRev = 20
+oneHit = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="strikeProjectile" unique_id=313428956]
+modulate = Color(0.7462361, 0.35585845, 9.62615e-07, 0.6627451)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_hi305")
+frame_progress = 0.92652917

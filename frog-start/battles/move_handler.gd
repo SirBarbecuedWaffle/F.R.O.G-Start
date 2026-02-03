@@ -37,6 +37,12 @@ func _process(delta: float) -> void:
 		move_explainer.text="Deals low damage and poisons a single enemy"
 	if moveHovered=="Alt F4":
 		move_explainer.text="Has a 1/5 chance to instakill a random non-boss enemy"
+	if moveHovered=="All Skill Baby":
+		move_explainer.text="Repeatedly flips a coin, if heads, deals 100 damage, if tails, stops flipping"
+	if moveHovered=="Curse: Weaken":
+		move_explainer.text="Lowers the attack of every enemy"
+	if moveHovered=="Curse: Poison":
+		move_explainer.text="Applies mild poison to every enemy"
 		
 	
 	if get_parent().getChar()=="frog":
@@ -49,6 +55,11 @@ func _process(delta: float) -> void:
 		move_2_lab.text="Zip Bomb"
 		move_3_lab.text="Infect"
 		move_4_lab.text="Alt F4"
+	if get_parent().getChar()=="mask":
+		move_1_lab.text="All Skill Baby"
+		move_2_lab.text="Strike"
+		move_3_lab.text="Curse: Weaken"
+		move_4_lab.text="Curse: Poison"
 
 func fadeIn()->void:
 	moveHovered=""

@@ -31,6 +31,8 @@ var overclockMove=preload("res://moves/overclock.tscn")
 var zipMove=preload("res://moves/zipbomb.tscn")
 var altMove=preload("res://moves/altf4.tscn")
 var infectMove=preload("res://moves/infect_move.tscn")
+var curPoiMove=preload("res://moves/poison_curse.tscn")
+var curWeakMove=preload("res://moves/weak_curse.tscn")
 
 
 var damageIcon=preload("res://damageIndicator.tscn")
@@ -89,6 +91,7 @@ func _ready() -> void:
 		curChar.play("idle")
 	if character=="mask":
 		curChar=mask
+		curChar.play("idle")
 	if character=="pink":
 		curChar=pink
 
@@ -208,6 +211,12 @@ func _on_move_handler_move_used(move: String) -> void:
 	if move=="Infect":
 		var infed=infectMove.instantiate()
 		frog_layer.add_child(infed)
+	if move=="Curse: Poison":
+		var cursed=curPoiMove.instantiate()
+		frog_layer.add_child(cursed)
+	if move=="Curse: Weaken":
+		var cursed=curWeakMove.instantiate()
+		frog_layer.add_child(cursed)
 func getChar()->String:
 	return character
 

@@ -123,6 +123,8 @@ func _process(delta: float) -> void:
 			await get_tree().create_timer(0.36).timeout
 			var hit=basicHit.instantiate()
 			hit.damage=30
+			if atkDown>0:
+				hit.damage/=2
 			hit.collision_layer=4
 			hit.collision_mask=5
 			hit.randomNumbers=true
