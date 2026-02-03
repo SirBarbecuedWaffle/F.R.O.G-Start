@@ -2867,7 +2867,7 @@ spdUp = 0.0
 
 [node name="TextureRect" type="TextureRect" parent="frogLayer/partyHandler/party1" unique_id=2133704799]
 modulate = Color(0.20511743, 0.20511743, 0.20511743, 1)
-z_index = 2
+z_index = 1
 offset_left = -65.16259
 offset_top = 105.7426
 offset_right = 71.83741
@@ -2875,7 +2875,7 @@ offset_bottom = 158.74257
 texture = SubResource("CanvasTexture_ugcq3")
 
 [node name="healthBar" type="Sprite2D" parent="frogLayer/partyHandler/party1" unique_id=986995797]
-z_index = 2
+z_index = 1
 position = Vector2(67.83742, 108.89929)
 scale = Vector2(-0.37718385, 0.10028164)
 texture = ExtResource("4_doav6")
@@ -2883,20 +2883,20 @@ centered = false
 
 [node name="turnBar" type="Sprite2D" parent="frogLayer/partyHandler/party1" unique_id=1043414620]
 modulate = Color(1.7602391, 1.7602391, 1.7602391, 1)
-z_index = 2
+z_index = 1
 position = Vector2(-62.162605, 145.74258)
 scale = Vector2(0.35422355, 0.033333346)
 texture = ExtResource("5_p3ynn")
 centered = false
 
 [node name="front" type="Sprite2D" parent="frogLayer/partyHandler/party1" unique_id=489029883]
-z_index = 2
+z_index = 1
 position = Vector2(0, 147.74258)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_78c3t")
 
 [node name="healthLabel" type="Label" parent="frogLayer/partyHandler/party1" unique_id=560314642]
-z_index = 2
+z_index = 1
 offset_left = -52.162598
 offset_top = 107.742584
 offset_right = 64.8374
@@ -3171,7 +3171,6 @@ autostart = true
 
 [node name="poisonDam" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party1" unique_id=479466932]
 modulate = Color(0, 0.60120547, 0, 1)
-z_index = 1
 position = Vector2(3.3693848, 0.9145508)
 scale = Vector2(3.9999995, 3.9999995)
 sprite_frames = SubResource("SpriteFrames_dj0x7")
@@ -3181,16 +3180,14 @@ frame_progress = 1.0
 [node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party1" unique_id=234935440]
 visible = false
 modulate = Color(0, 0.60120547, 0, 1)
-z_index = 1
 position = Vector2(3.3693848, 0.9145508)
 scale = Vector2(3.9999995, 3.9999995)
 sprite_frames = SubResource("SpriteFrames_yerlx")
 autoplay = "default"
-frame_progress = 0.3762533
+frame_progress = 0.3789002
 
 [node name="defBuffAnim" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party1" unique_id=1022592153]
 modulate = Color(0, 0.5254902, 1, 1)
-z_index = 1
 position = Vector2(-4.630615, 6.914551)
 scale = Vector2(3.9999995, 3.9999995)
 sprite_frames = SubResource("SpriteFrames_sw7l1")
@@ -3199,7 +3196,6 @@ frame_progress = 1.0
 
 [node name="strBuffAnim" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party1" unique_id=41032111]
 modulate = Color(1, 0, 0.016666412, 0.7529412)
-z_index = 1
 position = Vector2(-1.6306152, -24.08545)
 scale = Vector2(2.9999995, 2.9999995)
 sprite_frames = SubResource("SpriteFrames_oaxno")
@@ -3208,7 +3204,6 @@ frame_progress = 1.0
 
 [node name="spdBuffAnim" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party1" unique_id=2114583238]
 modulate = Color(0.100000024, 1, 0, 0.76862746)
-z_index = 1
 position = Vector2(-8.630615, 1.9145508)
 scale = Vector2(2.9999995, 2.9999995)
 sprite_frames = SubResource("SpriteFrames_3ob00")
@@ -3456,24 +3451,6 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.30031458
 
-[node name="poisonDam" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy1/enemySpr1" unique_id=1436903173]
-modulate = Color(0, 0.60120547, 0, 1)
-z_index = 1
-position = Vector2(0.66667175, 2)
-scale = Vector2(1.3333333, 1.3333333)
-sprite_frames = SubResource("SpriteFrames_dj0x7")
-frame = 10
-frame_progress = 1.0
-
-[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy1/enemySpr1" unique_id=977795196]
-visible = false
-modulate = Color(0, 0.60120547, 0, 1)
-position = Vector2(0.33333385, 1.0000005)
-scale = Vector2(1.3333333, 1.3333333)
-sprite_frames = SubResource("SpriteFrames_yerlx")
-autoplay = "default"
-frame_progress = 0.64540595
-
 [node name="attackAnimator" type="AnimationPlayer" parent="frogLayer/enemyHandler/enemy1" unique_id=2044035102]
 libraries/ = SubResource("AnimationLibrary_lq4w6")
 
@@ -3485,11 +3462,28 @@ sprite_frames = SubResource("SpriteFrames_rmn6k")
 frame = 5
 frame_progress = 1.0
 
+[node name="poisonDam" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy1" unique_id=1436903173]
+modulate = Color(0, 0.60120547, 0, 1)
+position = Vector2(9.536743e-07, 2.9999857)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_dj0x7")
+frame = 10
+frame_progress = 1.0
+
+[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy1" unique_id=977795196]
+visible = false
+modulate = Color(0, 0.60120547, 0, 1)
+position = Vector2(10, 11.000008)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_yerlx")
+autoplay = "default"
+frame_progress = 0.64803565
+
 [node name="poisonDamage" type="Timer" parent="frogLayer/enemyHandler/enemy1" unique_id=116328848]
 autostart = true
 
-[node name="enemy2" type="Node2D" parent="frogLayer/enemyHandler" unique_id=1093491223]
-position = Vector2(1371, 774)
+[node name="enemy2" type="Node2D" parent="frogLayer/enemyHandler" unique_id=2035067760]
+position = Vector2(1371, 773)
 scale = Vector2(1.0000001, 1.0000001)
 script = ExtResource("18_uf5a6")
 atkDown = 0.0
@@ -3498,7 +3492,7 @@ atkUp = 0.0
 defUp = 0.0
 spdUp = 0.0
 
-[node name="TextureRect" type="TextureRect" parent="frogLayer/enemyHandler/enemy2" unique_id=480615446]
+[node name="TextureRect" type="TextureRect" parent="frogLayer/enemyHandler/enemy2" unique_id=243781875]
 modulate = Color(0.20511743, 0.20511743, 0.20511743, 1)
 offset_left = -65.16259
 offset_top = 105.7426
@@ -3506,20 +3500,20 @@ offset_right = 71.83741
 offset_bottom = 146.99998
 texture = SubResource("CanvasTexture_ugcq3")
 
-[node name="healthBar" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2" unique_id=726525268]
+[node name="healthBar" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2" unique_id=1731256221]
 position = Vector2(67.83742, 108.89929)
 scale = Vector2(-0.37718385, 0.10028164)
 texture = ExtResource("4_doav6")
 centered = false
 
-[node name="front" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2" unique_id=2122640295]
+[node name="front" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2" unique_id=1958669226]
 position = Vector2(0, 100.99997)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_78c3t")
 region_enabled = true
 region_rect = Rect2(0, 0, 128, 63.99984)
 
-[node name="healthLabel" type="Label" parent="frogLayer/enemyHandler/enemy2" unique_id=892337967]
+[node name="healthLabel" type="Label" parent="frogLayer/enemyHandler/enemy2" unique_id=91464546]
 offset_left = -52.162598
 offset_top = 109.99997
 offset_right = 64.8374
@@ -3528,13 +3522,13 @@ text = "140"
 label_settings = SubResource("LabelSettings_p3ynn")
 horizontal_alignment = 2
 
-[node name="arrowHandler" type="Node2D" parent="frogLayer/enemyHandler/enemy2" unique_id=26832192]
+[node name="arrowHandler" type="Node2D" parent="frogLayer/enemyHandler/enemy2" unique_id=1423405545]
 scale = Vector2(1.0012685, 1.0012685)
 
-[node name="goodArrows" type="Node2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler" unique_id=786723841]
+[node name="goodArrows" type="Node2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler" unique_id=1932155909]
 scale = Vector2(0.99999994, 0.99999994)
 
-[node name="defUpInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler/goodArrows" unique_id=1282745494]
+[node name="defUpInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler/goodArrows" unique_id=703101931]
 self_modulate = Color(0, 0.2627451, 1, 1)
 position = Vector2(30.331226, -82.257416)
 scale = Vector2(3.0000005, 3.0000005)
@@ -3542,7 +3536,7 @@ texture = ExtResource("9_ose5c")
 region_enabled = true
 region_rect = Rect2(0, 0, 17.898651, 18)
 
-[node name="defTimeLab" type="Label" parent="frogLayer/enemyHandler/enemy2/arrowHandler/goodArrows/defUpInd" unique_id=1774943237]
+[node name="defTimeLab" type="Label" parent="frogLayer/enemyHandler/enemy2/arrowHandler/goodArrows/defUpInd" unique_id=426328770]
 z_index = 1
 offset_left = -1.3333515
 offset_top = 3.333331
@@ -3553,7 +3547,7 @@ text = "10"
 label_settings = SubResource("LabelSettings_ose5c")
 horizontal_alignment = 2
 
-[node name="spdUpInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler/goodArrows" unique_id=1364402197]
+[node name="spdUpInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler/goodArrows" unique_id=481167813]
 self_modulate = Color(0, 1, 0, 1)
 position = Vector2(99.33122, -82.257416)
 scale = Vector2(3.0000005, 3.0000005)
@@ -3561,7 +3555,7 @@ texture = ExtResource("9_ose5c")
 region_enabled = true
 region_rect = Rect2(0, 0, 17.898651, 18)
 
-[node name="spdTimeLab" type="Label" parent="frogLayer/enemyHandler/enemy2/arrowHandler/goodArrows/spdUpInd" unique_id=1990284636]
+[node name="spdTimeLab" type="Label" parent="frogLayer/enemyHandler/enemy2/arrowHandler/goodArrows/spdUpInd" unique_id=1577746171]
 z_index = 1
 offset_left = -1.0000038
 offset_top = 3.3333359
@@ -3572,7 +3566,7 @@ text = "10"
 label_settings = SubResource("LabelSettings_ose5c")
 horizontal_alignment = 2
 
-[node name="atkUpInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler/goodArrows" unique_id=398592264]
+[node name="atkUpInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler/goodArrows" unique_id=1220731613]
 self_modulate = Color(1, 0, 0, 1)
 position = Vector2(64.33122, -102.257385)
 scale = Vector2(3.0000005, 3.0000005)
@@ -3580,7 +3574,7 @@ texture = ExtResource("9_ose5c")
 region_enabled = true
 region_rect = Rect2(0, 0, 17.898651, 18)
 
-[node name="atkTimeLab" type="Label" parent="frogLayer/enemyHandler/enemy2/arrowHandler/goodArrows/atkUpInd" unique_id=1777217946]
+[node name="atkTimeLab" type="Label" parent="frogLayer/enemyHandler/enemy2/arrowHandler/goodArrows/atkUpInd" unique_id=187926829]
 z_index = 1
 offset_left = -0.9999998
 offset_top = 2.6666613
@@ -3591,9 +3585,9 @@ text = "10"
 label_settings = SubResource("LabelSettings_ose5c")
 horizontal_alignment = 2
 
-[node name="badArrows" type="Node2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler" unique_id=2136941696]
+[node name="badArrows" type="Node2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler" unique_id=1744724633]
 
-[node name="atkDownInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler/badArrows" unique_id=969855258]
+[node name="atkDownInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler/badArrows" unique_id=1652006204]
 self_modulate = Color(0.75743943, 0.37918973, 0, 1)
 position = Vector2(-61.509037, -102.25734)
 rotation = -3.1415925
@@ -3602,7 +3596,7 @@ texture = ExtResource("9_ose5c")
 region_enabled = true
 region_rect = Rect2(0, 0, 17.898651, 18)
 
-[node name="atkDownLab" type="Label" parent="frogLayer/enemyHandler/enemy2/arrowHandler/badArrows/atkDownInd" unique_id=1611192481]
+[node name="atkDownLab" type="Label" parent="frogLayer/enemyHandler/enemy2/arrowHandler/badArrows/atkDownInd" unique_id=2009663637]
 z_index = 1
 offset_left = 1.1903365
 offset_top = -2.3735554
@@ -3614,7 +3608,7 @@ text = "10"
 label_settings = SubResource("LabelSettings_ose5c")
 horizontal_alignment = 2
 
-[node name="defDownInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler/badArrows" unique_id=1411325774]
+[node name="defDownInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler/badArrows" unique_id=713700138]
 self_modulate = Color(0.24179506, 0.2000911, 0.606258, 1)
 position = Vector2(-95.50904, -82.25737)
 rotation = -3.1415925
@@ -3623,7 +3617,7 @@ texture = ExtResource("9_ose5c")
 region_enabled = true
 region_rect = Rect2(0, 0, 17.898651, 18)
 
-[node name="defDownLab" type="Label" parent="frogLayer/enemyHandler/enemy2/arrowHandler/badArrows/defDownInd" unique_id=697929263]
+[node name="defDownLab" type="Label" parent="frogLayer/enemyHandler/enemy2/arrowHandler/badArrows/defDownInd" unique_id=546815837]
 z_index = 1
 offset_left = 0.8430456
 offset_top = -1.6992964
@@ -3635,7 +3629,7 @@ text = "10"
 label_settings = SubResource("LabelSettings_ose5c")
 horizontal_alignment = 2
 
-[node name="spdDownInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler/badArrows" unique_id=1694454417]
+[node name="spdDownInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2/arrowHandler/badArrows" unique_id=1365711540]
 self_modulate = Color(0.07313458, 0.4593476, 0.26684052, 1)
 position = Vector2(-26.509037, -82.25737)
 rotation = -3.1415925
@@ -3644,7 +3638,7 @@ texture = ExtResource("9_ose5c")
 region_enabled = true
 region_rect = Rect2(0, 0, 17.898651, 18)
 
-[node name="spdDownLab" type="Label" parent="frogLayer/enemyHandler/enemy2/arrowHandler/badArrows/spdDownInd" unique_id=1543072616]
+[node name="spdDownLab" type="Label" parent="frogLayer/enemyHandler/enemy2/arrowHandler/badArrows/spdDownInd" unique_id=543579486]
 z_index = 1
 offset_left = 0.5392622
 offset_top = -2.3651183
@@ -3656,21 +3650,21 @@ text = "10"
 label_settings = SubResource("LabelSettings_ose5c")
 horizontal_alignment = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="frogLayer/enemyHandler/enemy2" unique_id=2120920618]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="frogLayer/enemyHandler/enemy2" unique_id=603562036]
 libraries/ = SubResource("AnimationLibrary_31ke3")
 autoplay = &"arrowBob"
 
-[node name="hitBox" type="Area2D" parent="frogLayer/enemyHandler/enemy2" unique_id=1588245743]
+[node name="hitBox" type="Area2D" parent="frogLayer/enemyHandler/enemy2" unique_id=1703180835]
 z_index = 10
 collision_layer = 16
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="frogLayer/enemyHandler/enemy2/hitBox" unique_id=970992627]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frogLayer/enemyHandler/enemy2/hitBox" unique_id=1831158615]
 position = Vector2(10.869385, 30.41455)
 shape = SubResource("RectangleShape2D_3a61k")
 debug_color = Color(0.9126272, 0, 0.27480933, 0.41960785)
 
-[node name="enemySpr1" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2" unique_id=2042616805]
+[node name="enemySpr1" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2" unique_id=3088180]
 position = Vector2(-2.0000007, -3.0000052)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ugcq3")
@@ -3678,28 +3672,10 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.30031458
 
-[node name="poisonDam" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2/enemySpr1" unique_id=129156134]
-modulate = Color(0, 0.60120547, 0, 1)
-z_index = 1
-position = Vector2(0.66667175, 2)
-scale = Vector2(1.3333333, 1.3333333)
-sprite_frames = SubResource("SpriteFrames_dj0x7")
-frame = 10
-frame_progress = 1.0
-
-[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2/enemySpr1" unique_id=820615709]
-visible = false
-modulate = Color(0, 0.60120547, 0, 1)
-position = Vector2(0.33333385, 1.0000005)
-scale = Vector2(1.3333333, 1.3333333)
-sprite_frames = SubResource("SpriteFrames_yerlx")
-autoplay = "default"
-frame_progress = 0.56288695
-
-[node name="attackAnimator" type="AnimationPlayer" parent="frogLayer/enemyHandler/enemy2" unique_id=349454802]
+[node name="attackAnimator" type="AnimationPlayer" parent="frogLayer/enemyHandler/enemy2" unique_id=955045625]
 libraries/ = SubResource("AnimationLibrary_lq4w6")
 
-[node name="hitSprite" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2" unique_id=719182832]
+[node name="hitSprite" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2" unique_id=1654611663]
 z_index = 1
 position = Vector2(7.999998, 12.914549)
 scale = Vector2(4, 4)
@@ -3707,7 +3683,24 @@ sprite_frames = SubResource("SpriteFrames_rmn6k")
 frame = 5
 frame_progress = 1.0
 
-[node name="poisonDamage" type="Timer" parent="frogLayer/enemyHandler/enemy2" unique_id=990421524]
+[node name="poisonDam" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2" unique_id=829002180]
+modulate = Color(0, 0.60120547, 0, 1)
+position = Vector2(8, 24.91449)
+scale = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_dj0x7")
+frame = 10
+frame_progress = 1.0
+
+[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2" unique_id=171773263]
+visible = false
+modulate = Color(0, 0.60120547, 0, 1)
+position = Vector2(48, 56.91461)
+scale = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_yerlx")
+autoplay = "default"
+frame_progress = 0.19697967
+
+[node name="poisonDamage" type="Timer" parent="frogLayer/enemyHandler/enemy2" unique_id=1859320599]
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=334568632]

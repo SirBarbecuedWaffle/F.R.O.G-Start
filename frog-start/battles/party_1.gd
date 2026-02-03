@@ -14,9 +14,13 @@ class_name partyMember
 @export var character:=""
 
 #buff animations
-@onready var def_buff_anim: AnimatedSprite2D = $"../defBuffAnim"
-@onready var str_buff_anim: AnimatedSprite2D = $"../strBuffAnim"
-@onready var spd_buff_anim: AnimatedSprite2D = $"../spdBuffAnim"
+
+@onready var poison_dam: AnimatedSprite2D = $poisonDam
+@onready var poison_on: AnimatedSprite2D = $poisonOn
+@onready var def_buff_anim: AnimatedSprite2D = $defBuffAnim
+@onready var str_buff_anim: AnimatedSprite2D = $strBuffAnim
+@onready var spd_buff_anim: AnimatedSprite2D = $spdBuffAnim
+@onready var animation_player_2: AnimationPlayer = $AnimationPlayer2
 
 #move preloads
 var strikeMove=preload("res://moves/strike_move.tscn")
@@ -26,6 +30,7 @@ var frogMove=preload("res://moves/frogsicle.tscn")
 var overclockMove=preload("res://moves/overclock.tscn")
 var zipMove=preload("res://moves/zipbomb.tscn")
 var altMove=preload("res://moves/altf4.tscn")
+var infectMove=preload("res://moves/infect_move.tscn")
 
 
 var damageIcon=preload("res://damageIndicator.tscn")
@@ -48,7 +53,7 @@ var damageIcon=preload("res://damageIndicator.tscn")
 			
 @export var maxHealth:=140.0
 @export var moveProgress:=0.0
-@export var poison:=0
+@export var poison:=0.0
 @export var fire:=0
 @export var atkDown:=00.0
 @export var defDown:=00.0
@@ -73,6 +78,7 @@ var turnTime:=randi_range(120,450)
 @onready var spd_down_lab: Label = $arrowHandler/badArrows/spdDownInd/spdDownLab
 @onready var curChar : AnimatedSprite2D
 @onready var frog_layer: CanvasLayer = $"../.."
+@onready var poison_damage: Timer = $poisonDamage
 
 func _ready() -> void:
 	await get_tree().create_timer(0.01).timeout
@@ -87,6 +93,8 @@ func _ready() -> void:
 		curChar=pink
 
 func _process(delta: float) -> void:
+	poison_on.visible=poison>0
+	poison_damage.paused=!poison>0
 	if health<1:
 		if curChar.animation!="die":
 			curChar.play("die")
@@ -197,6 +205,9 @@ func _on_move_handler_move_used(move: String) -> void:
 	if move=="Alt F4":
 		var alted=altMove.instantiate()
 		frog_layer.add_child(alted)
+	if move=="Infect":
+		var infed=infectMove.instantiate()
+		frog_layer.add_child(infed)
 func getChar()->String:
 	return character
 
@@ -255,3 +266,16 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 		
 		if area.oneHit:
 			area.queue_free()
+
+
+func _on_poison_damage_timeout() -> void:
+	var am=randi_range(1,10)
+	var movie=damageIcon.instantiate()
+	movie.damageAmount=am
+	movie.global_position=global_position
+	movie.damageType="poison"
+	poison_dam.play("default")
+	frog_layer.add_child(movie)
+	health-=am
+	poison-=am
+	poison_damage.start(randi_range(1,5))

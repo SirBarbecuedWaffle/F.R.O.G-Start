@@ -5,6 +5,9 @@ extends Node2D
 @onready var move_handler: Node2D = $moveHandler
 @export var character:=""
 @onready var hit_sprite: AnimatedSprite2D = $hitSprite
+@onready var poison_dam: AnimatedSprite2D = $enemySpr1/poisonDam
+@onready var poison_on: AnimatedSprite2D = $enemySpr1/poisonOn
+
 
 var deathAnim=preload("res://2DAssets/deathAnimation.tscn")
 
@@ -49,10 +52,13 @@ var turnTime:=randi_range(470,700)
 @onready var atk_down_lab: Label = $arrowHandler/badArrows/atkDownInd/atkDownLab
 @onready var def_down_lab: Label = $arrowHandler/badArrows/defDownInd/defDownLab
 @onready var spd_down_lab: Label = $arrowHandler/badArrows/spdDownInd/spdDownLab
+@onready var poison_damage: Timer = $poisonDamage
 
 @onready var attack_animator: AnimationPlayer = $attackAnimator
 
 func _process(delta: float) -> void:
+	poison_on.visible=poison>0
+	poison_damage.paused=!poison>0
 	atk_up_ind.visible=atkUp>1
 	if atkUp>0:
 		atkUp-=1*delta
@@ -202,3 +208,16 @@ func _on_death_anim_animation_finished() -> void:
 func _on_attack_animator_animation_finished(anim_name: StringName) -> void:
 	if anim_name=="die":
 		queue_free()
+
+
+func _on_poison_damage_timeout() -> void:
+	var am=randi_range(6,10)
+	var movie=damageIcon.instantiate()
+	movie.damageAmount=am
+	movie.global_position=global_position
+	movie.damageType="poison"
+	poison_dam.play("default")
+	frog_layer.add_child(movie)
+	health-=am
+	poison-=am
+	poison_damage.start(randi_range(1,5))
