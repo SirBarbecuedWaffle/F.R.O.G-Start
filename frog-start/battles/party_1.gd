@@ -33,9 +33,14 @@ var altMove=preload("res://moves/altf4.tscn")
 var infectMove=preload("res://moves/infect_move.tscn")
 var curPoiMove=preload("res://moves/poison_curse.tscn")
 var curWeakMove=preload("res://moves/weak_curse.tscn")
+var coinMove=preload("res://moves/coinMove.tscn")
+var strengthMove=preload("res://moves/strength_move.tscn")
+var swordMove=preload("res://moves/swordbarrage.tscn")
 
 
 var damageIcon=preload("res://damageIndicator.tscn")
+var flash=preload("res://screenFlash.tscn")
+
 
 @export var health:=140.0:
 	set(newHP):
@@ -211,18 +216,32 @@ func _on_move_handler_move_used(move: String) -> void:
 	if move=="Infect":
 		var infed=infectMove.instantiate()
 		frog_layer.add_child(infed)
+		
 	if move=="Curse: Poison":
 		var cursed=curPoiMove.instantiate()
 		frog_layer.add_child(cursed)
 	if move=="Curse: Weaken":
 		var cursed=curWeakMove.instantiate()
 		frog_layer.add_child(cursed)
+	if move=="All Skill Baby":
+		var coined=coinMove.instantiate()
+		frog_layer.add_child(coined)
+		
+	if move=="Strength Spell":
+		var powered=strengthMove.instantiate()
+		frog_layer.add_child(powered)
+	if move=="Sword Barrage":
+		var sworded=swordMove.instantiate()
+		frog_layer.add_child(sworded)
 func getChar()->String:
 	return character
 
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area is damager:
+		if !area.damage<0:
+			var flashe=flash.instantiate()
+			frog_layer.add_child(flashe)
 		if area.damage!=0:
 			health-=area.damage
 			if area.damage>0:

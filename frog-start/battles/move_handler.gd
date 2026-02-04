@@ -40,9 +40,17 @@ func _process(delta: float) -> void:
 	if moveHovered=="All Skill Baby":
 		move_explainer.text="Repeatedly flips a coin, if heads, deals 100 damage, if tails, stops flipping"
 	if moveHovered=="Curse: Weaken":
-		move_explainer.text="Lowers the attack of every enemy"
+		move_explainer.text="Temporarily lowers the attack of every enemy"
 	if moveHovered=="Curse: Poison":
-		move_explainer.text="Applies mild poison to every enemy"
+		move_explainer.text="Temporarily applies mild poison to every enemy"
+	if moveHovered=="Fireball":
+		move_explainer.text="Deals low damage to an enemy and applies temporary burn to every enemy"
+	if moveHovered=="Strength Spell":
+		move_explainer.text="Temporarily raises the attack power of your entire party"
+	if moveHovered=="Sword Barrage":
+		move_explainer.text="Fires a barrage of low damage swords"
+	if moveHovered=="Health Potion":
+		move_explainer.text="Applies low healing and temporary regen to your entire party"
 		
 	
 	if get_parent().getChar()=="frog":
@@ -60,6 +68,12 @@ func _process(delta: float) -> void:
 		move_2_lab.text="Strike"
 		move_3_lab.text="Curse: Weaken"
 		move_4_lab.text="Curse: Poison"
+	if get_parent().getChar()=="pink":
+		move_1_lab.text="Sword Barrage"
+		move_2_lab.text="Strength Spell"
+		move_3_lab.text="Health Potion"
+		move_4_lab.text="Fireball"
+
 
 func fadeIn()->void:
 	moveHovered=""

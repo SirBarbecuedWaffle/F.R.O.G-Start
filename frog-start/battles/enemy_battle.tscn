@@ -28,8 +28,10 @@
 [ext_resource type="Texture2D" uid="uid://bpekstfox5k64" path="res://overworldPlayer/playerAssets/Virtual Guy/Hit (32x32).png" id="20_vnxuq"]
 [ext_resource type="Texture2D" uid="uid://nh1uuim4j7d7" path="res://2DAssets/defenseBuff.png" id="24_t55pq"]
 [ext_resource type="Texture2D" uid="uid://dhux0t8a8ru0e" path="res://2DAssets/strengthBuff.png" id="25_lq4w6"]
+[ext_resource type="Texture2D" uid="uid://bnorpbjohn3s7" path="res://overworldPlayer/playerAssets/Mask Dude/Hit (32x32).png" id="25_sw7l1"]
 [ext_resource type="Texture2D" uid="uid://w32aordnwhih" path="res://2DAssets/Retro Impact Effect Pack 5 D.png" id="25_w42gv"]
 [ext_resource type="Texture2D" uid="uid://41m42smednan" path="res://2DAssets/speedBuff.png" id="26_mo84x"]
+[ext_resource type="Texture2D" uid="uid://cssodyr1k48cv" path="res://overworldPlayer/playerAssets/Pink Man/Hit (32x32).png" id="28_i66a8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t80mw"]
 sky_top_color = Color(0.10863412, 0.38311404, 0.97564214, 1)
@@ -824,7 +826,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3a61k"]
-size = Vector2(95, 122.999954)
+size = Vector2(95, 240.99994)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_waqrk"]
 atlas = ExtResource("12_055im")
@@ -1860,6 +1862,34 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yerlx"]
+atlas = ExtResource("25_sw7l1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxquc"]
+atlas = ExtResource("25_sw7l1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adujs"]
+atlas = ExtResource("25_sw7l1")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yyg7"]
+atlas = ExtResource("25_sw7l1")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqv2h"]
+atlas = ExtResource("25_sw7l1")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yob23"]
+atlas = ExtResource("25_sw7l1")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krfhu"]
+atlas = ExtResource("25_sw7l1")
+region = Rect2(192, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_mo84x"]
 atlas = ExtResource("6_v6yk5")
 region = Rect2(0, 0, 32, 32)
@@ -1937,6 +1967,32 @@ animations = [{
 }],
 "loop": false,
 "name": &"die",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yerlx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxquc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adujs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yyg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqv2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yob23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krfhu")
+}],
+"loop": false,
+"name": &"hurt",
 "speed": 15.0
 }, {
 "frames": [{
@@ -2024,6 +2080,34 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7v3xj"]
+atlas = ExtResource("28_i66a8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fx1oc"]
+atlas = ExtResource("28_i66a8")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dr6he"]
+atlas = ExtResource("28_i66a8")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwe0j"]
+atlas = ExtResource("28_i66a8")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r74u2"]
+atlas = ExtResource("28_i66a8")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gr2no"]
+atlas = ExtResource("28_i66a8")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs388"]
+atlas = ExtResource("28_i66a8")
+region = Rect2(192, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_5kqfc"]
 atlas = ExtResource("7_jyg6p")
 region = Rect2(0, 0, 32, 32)
@@ -2101,6 +2185,32 @@ animations = [{
 }],
 "loop": false,
 "name": &"die",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7v3xj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fx1oc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dr6he")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwe0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r74u2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gr2no")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs388")
+}],
+"loop": false,
+"name": &"hurt",
 "speed": 15.0
 }, {
 "frames": [{
@@ -2183,9 +2293,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tq6jf")
 }],
-"loop": true,
+"loop": false,
 "name": &"useMove",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s18qu"]
@@ -3039,6 +3149,7 @@ autoplay = &"arrowBob"
 
 [node name="moveHandler" type="Node2D" parent="frogLayer/partyHandler/party1" unique_id=482675059]
 modulate = Color(1, 1, 1, 0)
+z_index = 1
 script = ExtResource("10_3a61k")
 
 [node name="move1" type="TextureButton" parent="frogLayer/partyHandler/party1/moveHandler" unique_id=1103873239]
@@ -3243,7 +3354,7 @@ flip_h = true
 position = Vector2(-557, 401.2)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_mo84x")
-animation = &"idle"
+animation = &"hurt"
 autoplay = "idle"
 flip_h = true
 
@@ -3251,15 +3362,17 @@ flip_h = true
 position = Vector2(-547, 612.2001)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_vnxuq")
-animation = &"idle"
+animation = &"hurt"
 autoplay = "idle"
+frame = 6
+frame_progress = 1.0
 flip_h = true
 
 [node name="pink" type="AnimatedSprite2D" parent="frogLayer/partyHandler" unique_id=791342834]
 position = Vector2(-557, 802.2001)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_w42gv")
-animation = &"idle"
+animation = &"hurt"
 autoplay = "idle"
 flip_h = true
 
@@ -3444,7 +3557,7 @@ collision_layer = 16
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="frogLayer/enemyHandler/enemy1/hitBox" unique_id=841504729]
-position = Vector2(10.869385, 30.41455)
+position = Vector2(10.869385, 30.5)
 shape = SubResource("RectangleShape2D_3a61k")
 debug_color = Color(0.9126272, 0, 0.27480933, 0.41960785)
 

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bkn3de80meh5e"]
+
+[ext_resource type="Texture2D" uid="uid://dqbnukev4cip1" path="res://2DAssets/slasher.webp" id="1_e1q58"]
+[ext_resource type="Script" uid="uid://dsk2iybq1wcyf" path="res://moves/sword.gd" id="2_0pn8q"]
+[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="2_4g3ir"]
+
+[node name="sword" type="Sprite2D" unique_id=344447335]
+modulate = Color(0.33333302, 0, 1, 1)
+z_index = 2
+position = Vector2(2663, 456)
+texture = ExtResource("1_e1q58")
+script = ExtResource("2_0pn8q")
+
+[node name="strikeProjectile" parent="." unique_id=1142312808 instance=ExtResource("2_4g3ir")]
+visible = false
+position = Vector2(-60, 0)
+collision_layer = 8
+damage = 3
+oneHit = false
+randomNumbers = true
+
+[node name="strikeProjectile2" parent="." unique_id=1447791171 instance=ExtResource("2_4g3ir")]
+visible = false
+position = Vector2(4, 0)
+collision_layer = 8
+damage = 1
+oneHit = false
+randomNumbers = true
+
+[node name="strikeProjectile3" parent="." unique_id=686724173 instance=ExtResource("2_4g3ir")]
+visible = false
+position = Vector2(63, 0)
+collision_layer = 8
+damage = 1
+oneHit = false
+randomNumbers = true
+
+[node name="Timer" type="Timer" parent="." unique_id=1193532032]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
