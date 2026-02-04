@@ -3186,7 +3186,7 @@ position = Vector2(3.3693848, 0.9145508)
 scale = Vector2(3.9999995, 3.9999995)
 sprite_frames = SubResource("SpriteFrames_yerlx")
 autoplay = "default"
-frame_progress = 0.3582031
+frame_progress = 0.2837064
 
 [node name="defBuffAnim" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party1" unique_id=1022592153]
 modulate = Color(0, 0.5254902, 1, 1)
@@ -3472,7 +3472,7 @@ position = Vector2(0.33333385, 1.0000005)
 scale = Vector2(1.3333333, 1.3333333)
 sprite_frames = SubResource("SpriteFrames_yerlx")
 autoplay = "default"
-frame_progress = 0.14791442
+frame_progress = 0.07341846
 
 [node name="attackAnimator" type="AnimationPlayer" parent="frogLayer/enemyHandler/enemy1" unique_id=2044035102]
 libraries/ = SubResource("AnimationLibrary_lq4w6")
