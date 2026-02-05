@@ -4680,7 +4680,7 @@ scale = Vector2(5.9999995, 5.9999995)
 sprite_frames = SubResource("SpriteFrames_waqrk")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.25088808
+frame_progress = 0.590397
 flip_h = true
 
 [node name="gorf" type="AnimatedSprite2D" parent="frogLayer/partyHandler" unique_id=1365371848]
@@ -4691,7 +4691,7 @@ scale = Vector2(5.9999995, 5.9999995)
 sprite_frames = SubResource("SpriteFrames_8i2aq")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.6657417
+frame_progress = 0.005260038
 
 [node name="robot" type="AnimatedSprite2D" parent="frogLayer/partyHandler" unique_id=1290769458]
 position = Vector2(-894.63074, 227.91455)
@@ -4699,7 +4699,7 @@ scale = Vector2(5.9999995, 5.9999995)
 sprite_frames = SubResource("SpriteFrames_rel46")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.31216845
+frame_progress = 0.3203025
 flip_h = true
 
 [node name="lizard" type="AnimatedSprite2D" parent="frogLayer/partyHandler" unique_id=1964343822]
@@ -4708,7 +4708,7 @@ scale = Vector2(5.9999995, 5.9999995)
 sprite_frames = SubResource("SpriteFrames_xrohy")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.9768284
+frame_progress = 0.31634918
 
 [node name="joe" type="AnimatedSprite2D" parent="frogLayer/partyHandler" unique_id=458876728]
 position = Vector2(-894.63074, 404.91455)
@@ -4716,7 +4716,7 @@ scale = Vector2(5.9999995, 5.9999995)
 sprite_frames = SubResource("SpriteFrames_qlevt")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.075146176
+frame_progress = 0.19137162
 flip_h = true
 
 [node name="steve" type="AnimatedSprite2D" parent="frogLayer/partyHandler" unique_id=108767143]
@@ -4725,7 +4725,7 @@ scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_mo84x")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.82213026
+frame_progress = 0.9771123
 flip_h = true
 
 [node name="mask" type="AnimatedSprite2D" parent="frogLayer/partyHandler" unique_id=284093842]
@@ -4734,7 +4734,7 @@ scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_vnxuq")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.15262234
+frame_progress = 0.045613717
 flip_h = true
 
 [node name="pink" type="AnimatedSprite2D" parent="frogLayer/partyHandler" unique_id=791342834]
@@ -4743,7 +4743,7 @@ scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_w42gv")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.2479974
+frame_progress = 0.9952171
 flip_h = true
 
 [node name="barrel" type="AnimatedSprite2D" parent="frogLayer/partyHandler" unique_id=1706612635]
@@ -4752,7 +4752,7 @@ scale = Vector2(5.9999995, 5.9999995)
 sprite_frames = SubResource("SpriteFrames_e5lwx")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.417142
+frame_progress = 0.7566616
 
 [node name="enemyHandler" type="Node2D" parent="frogLayer" unique_id=257024737]
 position = Vector2(-978, 0)
@@ -4962,7 +4962,7 @@ modulate = Color(0.91, 0.91, 0.91, 1)
 position = Vector2(0.33332825, 6)
 sprite_frames = SubResource("SpriteFrames_6w4hd")
 autoplay = "default"
-frame_progress = 0.7423086
+frame_progress = 0.9747902
 
 [node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy1/enemySpr1" unique_id=977795196]
 visible = false
