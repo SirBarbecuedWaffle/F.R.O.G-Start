@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c040m3hsbfwk0"]
 
 [ext_resource type="ArrayMesh" uid="uid://dd4gkgsvrvawm" path="res://3DAssets/WinterScene.obj" id="1_2yqge"]
-[ext_resource type="Script" uid="uid://d2p8mt64uh3lm" path="res://battles/enemy_battle.gd" id="1_wnhfk"]
 [ext_resource type="Texture2D" uid="uid://dfpvcs3pn71af" path="res://overworldPlayer/playerAssets/Ninja Frog/Idle (32x32).png" id="2_t80mw"]
 [ext_resource type="Texture2D" uid="uid://fxnts68unggl" path="res://overworldPlayer/playerAssets/Ninja Frog/Double Jump (32x32).png" id="3_h3dkd"]
 [ext_resource type="Script" uid="uid://c41ta871pljox" path="res://battles/party_handler.gd" id="3_uk303"]
@@ -4272,7 +4271,6 @@ _data = {
 
 [node name="enemyBattle" type="Node3D" unique_id=837671535]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
-script = ExtResource("1_wnhfk")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=902784629]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, -3.432232, 0, 1.5002762e-07)
@@ -4305,7 +4303,6 @@ position = Vector2(1465, 540)
 scale = Vector2(1.0000001, 1.0000001)
 script = ExtResource("4_oikim")
 defUp = 0.0
-spdUp = 0.0
 
 [node name="TextureRect" type="TextureRect" parent="frogLayer/partyHandler/party1" unique_id=2133704799]
 modulate = Color(0.20511743, 0.20511743, 0.20511743, 1)
@@ -4689,26 +4686,27 @@ material = SubResource("ShaderMaterial_aslj1")
 position = Vector2(-1265.6306, 615.91455)
 scale = Vector2(5.9999995, 5.9999995)
 sprite_frames = SubResource("SpriteFrames_8i2aq")
-animation = &"idle"
+animation = &"useMove"
 autoplay = "idle"
-frame_progress = 0.005260038
 
 [node name="robot" type="AnimatedSprite2D" parent="frogLayer/partyHandler" unique_id=1290769458]
 position = Vector2(-894.63074, 227.91455)
 scale = Vector2(5.9999995, 5.9999995)
 sprite_frames = SubResource("SpriteFrames_rel46")
-animation = &"idle"
+animation = &"useMove"
 autoplay = "idle"
-frame_progress = 0.3203025
+frame = 4
+frame_progress = 1.0
 flip_h = true
 
 [node name="lizard" type="AnimatedSprite2D" parent="frogLayer/partyHandler" unique_id=1964343822]
 position = Vector2(-957.63074, 796.9146)
 scale = Vector2(5.9999995, 5.9999995)
 sprite_frames = SubResource("SpriteFrames_xrohy")
-animation = &"idle"
+animation = &"unDie"
 autoplay = "idle"
-frame_progress = 0.31634918
+frame = 6
+frame_progress = 1.0
 
 [node name="joe" type="AnimatedSprite2D" parent="frogLayer/partyHandler" unique_id=458876728]
 position = Vector2(-894.63074, 404.91455)
@@ -5291,14 +5289,14 @@ autoplay = &"loadIn"
 [connection signal="area_entered" from="frogLayer/partyHandler/party1/hitBox" to="frogLayer/partyHandler/party1" method="_on_hit_box_area_entered"]
 [connection signal="timeout" from="frogLayer/partyHandler/party1/poisonDamage" to="frogLayer/partyHandler/party1" method="_on_poison_damage_timeout"]
 [connection signal="animation_finished" from="frogLayer/partyHandler/frog" to="frogLayer/partyHandler" method="_on_frog_animation_finished"]
-[connection signal="animation_finished" from="frogLayer/partyHandler/gorf" to="frogLayer/partyHandler" method="_on_frog_animation_finished"]
-[connection signal="animation_finished" from="frogLayer/partyHandler/robot" to="frogLayer/partyHandler" method="_on_frog_animation_finished"]
-[connection signal="animation_finished" from="frogLayer/partyHandler/lizard" to="frogLayer/partyHandler" method="_on_frog_animation_finished"]
-[connection signal="animation_finished" from="frogLayer/partyHandler/joe" to="frogLayer/partyHandler" method="_on_frog_animation_finished"]
+[connection signal="animation_finished" from="frogLayer/partyHandler/gorf" to="frogLayer/partyHandler" method="_on_gorf_animation_finished"]
+[connection signal="animation_finished" from="frogLayer/partyHandler/robot" to="frogLayer/partyHandler" method="_on_robot_animation_finished"]
+[connection signal="animation_finished" from="frogLayer/partyHandler/lizard" to="frogLayer/partyHandler" method="_on_lizard_animation_finished"]
+[connection signal="animation_finished" from="frogLayer/partyHandler/joe" to="frogLayer/partyHandler" method="_on_joe_animation_finished"]
 [connection signal="animation_finished" from="frogLayer/partyHandler/steve" to="frogLayer/partyHandler" method="_on_steve_animation_finished"]
 [connection signal="animation_finished" from="frogLayer/partyHandler/mask" to="frogLayer/partyHandler" method="_on_mask_animation_finished"]
 [connection signal="animation_finished" from="frogLayer/partyHandler/pink" to="frogLayer/partyHandler" method="_on_pink_animation_finished"]
-[connection signal="animation_finished" from="frogLayer/partyHandler/barrel" to="frogLayer/partyHandler" method="_on_frog_animation_finished"]
+[connection signal="animation_finished" from="frogLayer/partyHandler/barrel" to="frogLayer/partyHandler" method="_on_barrel_animation_finished"]
 [connection signal="area_entered" from="frogLayer/enemyHandler/enemy1/hitBox" to="frogLayer/enemyHandler/enemy1" method="_on_hit_box_area_entered"]
 [connection signal="animation_finished" from="frogLayer/enemyHandler/enemy1/attackAnimator" to="frogLayer/enemyHandler/enemy1" method="_on_attack_animator_animation_finished"]
 [connection signal="timeout" from="frogLayer/enemyHandler/enemy1/poisonDamage" to="frogLayer/enemyHandler/enemy1" method="_on_poison_damage_timeout"]

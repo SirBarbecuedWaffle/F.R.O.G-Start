@@ -9,6 +9,11 @@ class_name partyMember
 @onready var steve: AnimatedSprite2D = $"../steve"
 @onready var mask: AnimatedSprite2D = $"../mask"
 @onready var pink: AnimatedSprite2D = $"../pink"
+@onready var gorf: AnimatedSprite2D = $"../gorf"
+@onready var robot: AnimatedSprite2D = $"../robot"
+@onready var lizard: AnimatedSprite2D = $"../lizard"
+@onready var joe: AnimatedSprite2D = $"../joe"
+@onready var barrel: AnimatedSprite2D = $"../barrel"
 
 
 @export var character:=""
@@ -69,7 +74,7 @@ var flash=preload("res://screenFlash.tscn")
 @export var spdDown:=00.0
 @export var atkUp:=00.0
 @export var defUp:=10.0
-@export var spdUp:=10.0
+@export var spdUp:=0.0
 @export var stun:=0
 @export var regen:=0
 var turnTime:=randi_range(120,450)
@@ -91,6 +96,7 @@ var turnTime:=randi_range(120,450)
 
 func _ready() -> void:
 	await get_tree().create_timer(0.01).timeout
+	spdUp=300.0
 	if character=="frog":
 		curChar=frog
 	if character=="steve":
@@ -101,6 +107,21 @@ func _ready() -> void:
 		curChar.play("idle")
 	if character=="pink":
 		curChar=pink
+	if character=="robot":
+		curChar=robot
+		curChar.play("idle")
+	if character=="joe":
+		curChar=joe
+		curChar.play("idle")
+	if character=="lizard":
+		curChar=lizard
+		curChar.play("idle")
+	if character=="gorf":
+		curChar=gorf
+		curChar.play("idle")
+	if character=="barrel":
+		curChar=barrel
+		curChar.play("idle")
 
 func _process(delta: float) -> void:
 	if regen>0:
@@ -198,7 +219,8 @@ func _on_move_handler_move_used(move: String) -> void:
 	print(move)
 	moveProgress=0
 	turnTime=randi_range(420,650)
-	curChar.play("useMove")
+	if curChar!=null:
+		curChar.play("useMove")
 	if move=="Strike":
 		var striked=strikeMove.instantiate()
 		frog_layer.add_child(striked)

@@ -9,6 +9,11 @@ extends Node2D
 @onready var mask: AnimatedSprite2D = $mask
 @onready var pink: AnimatedSprite2D = $pink
 @onready var frog: AnimatedSprite2D = $frog
+@onready var gorf: AnimatedSprite2D = $gorf
+@onready var robot: AnimatedSprite2D = $robot
+@onready var lizard: AnimatedSprite2D = $lizard
+@onready var joe: AnimatedSprite2D = $joe
+@onready var barrel: AnimatedSprite2D = $barrel
 
 
 
@@ -33,6 +38,14 @@ func _process(delta: float) -> void:
 		mask.rotation_degrees=-90*(mask.frame%4)
 	if pink.animation=="useMove":
 		pink.rotation_degrees=-90*(pink.frame%4)
+	if robot.animation=="useMove":
+		robot.rotation_degrees=-90*(robot.frame%4)
+	if joe.animation=="useMove":
+		joe.rotation_degrees=-90*(joe.frame%4)
+	#if fox.animation=="useMove":
+		#fox.rotation_degrees=-90*(fox.frame%4)
+	if gorf.animation=="useMove":
+		gorf.rotation_degrees=-90*(gorf.frame%4)
 	
 	
 func _ready() -> void:
@@ -52,6 +65,32 @@ func _ready() -> void:
 		pink.global_position=party_1.global_position
 		pink.visible=true
 		party_1.character="pink"
+	if CManager.party[0]==5:
+		robot.global_position=party_1.global_position
+		robot.visible=true
+		party_1.character="robot"
+	if CManager.party[0]==6:
+		joe.global_position=party_1.global_position
+		joe.visible=true
+		party_1.character="joe"
+	if CManager.party[0]==7:
+		pink.global_position=party_1.global_position
+		pink.visible=true
+		party_1.character="fox"
+	if CManager.party[0]==8:
+		lizard.global_position.y=party_1.global_position.y-50
+		lizard.global_position.x=party_1.global_position.x-70
+		lizard.visible=true
+		party_1.character="lizard"
+	if CManager.party[0]==9:
+		barrel.global_position.x=party_1.global_position.x+5
+		barrel.global_position.y=party_1.global_position.y-45
+		barrel.visible=true
+		party_1.character="barrel"
+	if CManager.party[0]==10:
+		gorf.global_position=party_1.global_position
+		gorf.visible=true
+		party_1.character="gorf"
 
 
 func _on_frog_animation_finished() -> void:
@@ -72,3 +111,23 @@ func _on_mask_animation_finished() -> void:
 func _on_pink_animation_finished() -> void:
 	if pink.animation!="die":
 		pink.play("idle")
+
+
+func _on_gorf_animation_finished() -> void:
+	gorf.play("idle")
+
+
+func _on_robot_animation_finished() -> void:
+	robot.play("idle")
+
+
+func _on_lizard_animation_finished() -> void:
+	lizard.play("idle")
+
+
+func _on_joe_animation_finished() -> void:
+	joe.play("idle")
+
+
+func _on_barrel_animation_finished() -> void:
+	barrel.play("idle")
