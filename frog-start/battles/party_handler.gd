@@ -10,7 +10,6 @@ extends Node2D
 @onready var pink: AnimatedSprite2D = $pink
 @onready var frog: AnimatedSprite2D = $frog
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func getAlivePlayers()->Array:

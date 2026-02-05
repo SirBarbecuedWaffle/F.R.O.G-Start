@@ -44,7 +44,7 @@ func _process(delta: float) -> void:
 	if moveHovered=="Curse: Poison":
 		move_explainer.text="Temporarily applies mild poison to every enemy"
 	if moveHovered=="Fireball":
-		move_explainer.text="Deals low damage to an enemy and applies temporary burn to every enemy"
+		move_explainer.text="Deals medium damage to an enemy and applies temporary burn to nearby enemies"
 	if moveHovered=="Strength Spell":
 		move_explainer.text="Temporarily raises the attack power of your entire party"
 	if moveHovered=="Sword Barrage":

@@ -15,7 +15,7 @@ script = ExtResource("2_0pn8q")
 visible = false
 position = Vector2(-60, 0)
 collision_layer = 8
-damage = 3
+damage = 2
 oneHit = false
 randomNumbers = true
 
