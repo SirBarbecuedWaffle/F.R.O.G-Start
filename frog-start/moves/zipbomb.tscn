@@ -163,7 +163,7 @@ position = Vector2(0, -1872)
 position = Vector2(397, 511)
 scale = Vector2(15, 15)
 collision_layer = 8
-damage = 25
+damage = 40
 oneHit = false
 randomNumbers = true
 

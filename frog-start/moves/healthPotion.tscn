@@ -1,0 +1,219 @@
+[gd_scene format=3 uid="uid://dwrk4w5iybk8a"]
+
+[ext_resource type="Script" uid="uid://l07b2rdbc16q" path="res://moves/frogsicle.gd" id="1_hout0"]
+[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="2_pwwyp"]
+[ext_resource type="Texture2D" uid="uid://cvdv7kmw6cvay" path="res://2DAssets/Big Vial - RED - Spritesheet.png" id="3_pwwyp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvt6q"]
+size = Vector2(109, 138)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6uyv"]
+atlas = ExtResource("3_pwwyp")
+region = Rect2(0, 0, 22, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3agdt"]
+atlas = ExtResource("3_pwwyp")
+region = Rect2(22, 0, 22, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0qbf"]
+atlas = ExtResource("3_pwwyp")
+region = Rect2(44, 0, 22, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtg45"]
+atlas = ExtResource("3_pwwyp")
+region = Rect2(66, 0, 22, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muse6"]
+atlas = ExtResource("3_pwwyp")
+region = Rect2(88, 0, 22, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7c1bi"]
+atlas = ExtResource("3_pwwyp")
+region = Rect2(110, 0, 22, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6ysu"]
+atlas = ExtResource("3_pwwyp")
+region = Rect2(132, 0, 22, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6chce"]
+atlas = ExtResource("3_pwwyp")
+region = Rect2(154, 0, 22, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mdo5e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6uyv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3agdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0qbf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtg45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muse6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7c1bi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6ysu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6chce")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="Animation" id="Animation_8ikig"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4toh0"]
+resource_name = "arrowsSpawn"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l6svt"]
+_data = {
+&"RESET": SubResource("Animation_8ikig"),
+&"arrowsSpawn": SubResource("Animation_4toh0")
+}
+
+[node name="healthPotion" type="Node2D" unique_id=278365401]
+z_index = 1
+script = ExtResource("1_hout0")
+
+[node name="places" type="Node2D" parent="." unique_id=1573095243]
+position = Vector2(307, 73)
+
+[node name="place1" type="Area2D" parent="places" unique_id=1595523340]
+position = Vector2(1397, 148)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place1" unique_id=1649506526]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_uvt6q")
+
+[node name="place2" type="Area2D" parent="places" unique_id=1653346876]
+position = Vector2(1598, 432)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place2" unique_id=31848612]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_uvt6q")
+
+[node name="place3" type="Area2D" parent="places" unique_id=1366140814]
+position = Vector2(1371, 820)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place3" unique_id=757552924]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_uvt6q")
+
+[node name="place4" type="Area2D" parent="places" unique_id=781389499]
+position = Vector2(1160, 482)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place4" unique_id=691870363]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_uvt6q")
+
+[node name="spawnLocation" type="Marker2D" parent="." unique_id=674989445]
+position = Vector2(1394, 374)
+
+[node name="Arrows" type="Node2D" parent="." unique_id=853504226]
+position = Vector2(1504, 605)
+
+[node name="arrow1" parent="Arrows" unique_id=1142312808 instance=ExtResource("2_pwwyp")]
+visible = false
+position = Vector2(175, -538)
+damage = -20
+regen = 80
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Arrows/arrow1" unique_id=44766468]
+position = Vector2(0, 13)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_mdo5e")
+frame_progress = 0.4446428
+
+[node name="arrow2" parent="Arrows" unique_id=1842772094 instance=ExtResource("2_pwwyp")]
+visible = false
+position = Vector2(-61, -204)
+damage = -20
+regen = 80
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Arrows/arrow2" unique_id=262408969]
+position = Vector2(0, 13)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_mdo5e")
+frame_progress = 0.7291263
+
+[node name="arrow3" parent="Arrows" unique_id=346935710 instance=ExtResource("2_pwwyp")]
+visible = false
+position = Vector2(-646, -64)
+damage = -20
+regen = 80
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Arrows/arrow3" unique_id=325374290]
+position = Vector2(0, 13)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_mdo5e")
+frame_progress = 0.7291263
+
+[node name="arrow4" parent="Arrows" unique_id=1232609900 instance=ExtResource("2_pwwyp")]
+visible = false
+position = Vector2(-410, -365)
+damage = -20
+regen = 80
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Arrows/arrow4" unique_id=1081785532]
+position = Vector2(0, 13)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_mdo5e")
+autoplay = "default"
+frame_progress = 0.6690957
+
+[node name="targets" type="Node2D" parent="." unique_id=1186052481]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=4047694]
+root_node = NodePath("../Arrows")
+libraries/ = SubResource("AnimationLibrary_l6svt")
+autoplay = &"arrowsSpawn"
+
+[connection signal="area_entered" from="places/place1" to="." method="_on_place_1_area_entered"]
+[connection signal="area_entered" from="places/place2" to="." method="_on_place_2_area_entered"]
+[connection signal="area_entered" from="places/place3" to="." method="_on_place_3_area_entered"]
+[connection signal="area_entered" from="places/place4" to="." method="_on_place_4_area_entered"]

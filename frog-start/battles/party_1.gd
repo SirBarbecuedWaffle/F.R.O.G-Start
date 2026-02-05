@@ -33,9 +33,15 @@ var altMove=preload("res://moves/altf4.tscn")
 var infectMove=preload("res://moves/infect_move.tscn")
 var curPoiMove=preload("res://moves/poison_curse.tscn")
 var curWeakMove=preload("res://moves/weak_curse.tscn")
-
+var coinMove=preload("res://moves/coinMove.tscn")
+var strengthMove=preload("res://moves/strength_move.tscn")
+var swordMove=preload("res://moves/swordbarrage.tscn")
+var healthPotion=preload("res://moves/healthPotion.tscn")
+var fireball=preload("res://moves/fireball.tscn")
 
 var damageIcon=preload("res://damageIndicator.tscn")
+var flash=preload("res://screenFlash.tscn")
+@onready var curChar : AnimatedSprite2D
 
 @export var health:=140.0:
 	set(newHP):
@@ -43,9 +49,10 @@ var damageIcon=preload("res://damageIndicator.tscn")
 			if newHP<health-1:
 				hit_sprite.play("default")
 		if newHP<health:
-			if newHP<health-1:
-				if curChar.animation=="idle":
-					curChar.play("hurt")
+			if newHP<health-5:
+				if curChar!=null:
+					if curChar.animation=="idle":
+						curChar.play("hurt")
 			if defUp>0:
 				newHP+=(health-newHP)/2
 			if defDown>0:
@@ -64,6 +71,7 @@ var damageIcon=preload("res://damageIndicator.tscn")
 @export var defUp:=10.0
 @export var spdUp:=10.0
 @export var stun:=0
+@export var regen:=0
 var turnTime:=randi_range(120,450)
 @onready var def_up_ind: Sprite2D = $arrowHandler/goodArrows/defUpInd
 @onready var spd_up_ind: Sprite2D = $arrowHandler/goodArrows/spdUpInd
@@ -78,7 +86,6 @@ var turnTime:=randi_range(120,450)
 @onready var atk_down_lab: Label = $arrowHandler/badArrows/atkDownInd/atkDownLab
 @onready var def_down_lab: Label = $arrowHandler/badArrows/defDownInd/defDownLab
 @onready var spd_down_lab: Label = $arrowHandler/badArrows/spdDownInd/spdDownLab
-@onready var curChar : AnimatedSprite2D
 @onready var frog_layer: CanvasLayer = $"../.."
 @onready var poison_damage: Timer = $poisonDamage
 
@@ -96,6 +103,14 @@ func _ready() -> void:
 		curChar=pink
 
 func _process(delta: float) -> void:
+	if regen>0:
+		regen-=1*delta
+		if regen%125==0:
+			health+=5
+			var movie=damageIcon.instantiate()
+			movie.damageAmount=-5
+			movie.global_position=global_position
+			frog_layer.add_child(movie)
 	poison_on.visible=poison>0
 	poison_damage.paused=!poison>0
 	if health<1:
@@ -211,18 +226,39 @@ func _on_move_handler_move_used(move: String) -> void:
 	if move=="Infect":
 		var infed=infectMove.instantiate()
 		frog_layer.add_child(infed)
+		
 	if move=="Curse: Poison":
 		var cursed=curPoiMove.instantiate()
 		frog_layer.add_child(cursed)
 	if move=="Curse: Weaken":
 		var cursed=curWeakMove.instantiate()
 		frog_layer.add_child(cursed)
+	if move=="All Skill Baby":
+		var coined=coinMove.instantiate()
+		frog_layer.add_child(coined)
+		
+	if move=="Strength Spell":
+		var powered=strengthMove.instantiate()
+		frog_layer.add_child(powered)
+	if move=="Sword Barrage":
+		var sworded=swordMove.instantiate()
+		frog_layer.add_child(sworded)
+	if move=="Health Potion":
+		var healed=healthPotion.instantiate()
+		frog_layer.add_child(healed)
+	if move=="Fireball":
+		var fired=fireball.instantiate()
+		frog_layer.add_child(fired)
 func getChar()->String:
 	return character
 
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area is damager:
+		regen+=area.regen*20
+		if !area.damage<0:
+			var flashe=flash.instantiate()
+			frog_layer.add_child(flashe)
 		if area.damage!=0:
 			health-=area.damage
 			if area.damage>0:

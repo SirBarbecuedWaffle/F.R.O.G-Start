@@ -1,12 +1,11 @@
 extends Node2D
 @onready var health_bar: Sprite2D = $healthBar
-@onready var turn_bar: Sprite2D = $turnBar
 @onready var health_label: Label = $healthLabel
-@onready var move_handler: Node2D = $moveHandler
 @export var character:=""
 @onready var hit_sprite: AnimatedSprite2D = $hitSprite
 @onready var poison_dam: AnimatedSprite2D = $enemySpr1/poisonDam
 @onready var poison_on: AnimatedSprite2D = $enemySpr1/poisonOn
+@onready var fire_on: AnimatedSprite2D = $enemySpr1/fireOn
 
 
 var deathAnim=preload("res://2DAssets/deathAnimation.tscn")
@@ -17,8 +16,6 @@ var damageIcon=preload("res://damageIndicator.tscn")
 
 @export var health:=140.0:
 	set(newHP):
-		if newHP<health-1:
-			hit_sprite.play("default")
 		if defUp>0:
 			newHP+=(health-newHP)/2
 		if defDown>0:
@@ -57,6 +54,16 @@ var turnTime:=randi_range(470,700)
 @onready var attack_animator: AnimationPlayer = $attackAnimator
 
 func _process(delta: float) -> void:
+	fire_on.visible=fire>0
+	if fire>0:
+		fire-=1
+		if fire%50==0:
+			var movie=damageIcon.instantiate()
+			movie.damageAmount=5
+			health-=5
+			movie.global_position=global_position
+			movie.damageType="fire"
+			frog_layer.add_child(movie)
 	poison_on.visible=poison>0
 	poison_damage.paused=!poison>0
 	atk_up_ind.visible=atkUp>1
@@ -157,6 +164,8 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 		health-=area.damage
 		if area.damage!=0:
 			if area.damage>0:
+				if area.damage>5:
+					hit_sprite.play("default")
 				if defUp>0:
 					area.damage-=(area.damage)/2
 				if defDown>0:
@@ -169,7 +178,7 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 			frog_layer.add_child(movie)
 		poison+=area.poison
 		stun+=area.stun
-		fire+=area.burn
+		fire+=area.burn*7
 		
 		#applies buffs
 		if spdUp<area.spdBuf:

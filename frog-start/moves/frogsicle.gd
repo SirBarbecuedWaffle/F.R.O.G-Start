@@ -18,13 +18,13 @@ extends Node2D
 func _ready() -> void:
 	spawn_location.global_position=spawnLoca
 	arrow_1.global_position=place_1.global_position
-	arrow_1.global_position.y=place_1.global_position.y-150
+	arrow_1.global_position.y=place_1.global_position.y-200
 	arrow_2.global_position=place_2.global_position
-	arrow_2.global_position.y=place_2.global_position.y-150
+	arrow_2.global_position.y=place_2.global_position.y-200
 	arrow_3.global_position=place_3.global_position
-	arrow_3.global_position.y=place_3.global_position.y-150
+	arrow_3.global_position.y=place_3.global_position.y-200
 	arrow_4.global_position=place_4.global_position
-	arrow_4.global_position.y=place_4.global_position.y-150
+	arrow_4.global_position.y=place_4.global_position.y-200
 	await get_tree().create_timer(1.6).timeout
 	for a in arrows.get_children():
 		if a.visible:

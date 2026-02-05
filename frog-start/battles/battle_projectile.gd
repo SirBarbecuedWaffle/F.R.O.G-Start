@@ -10,6 +10,7 @@ class_name damager
 @export var spdBuf:=0
 @export var defBuf:=0
 @export var stun:=0
+@export var regen:=0
 @export var oneHit:=true
 @export var randomNumbers:=false
 
