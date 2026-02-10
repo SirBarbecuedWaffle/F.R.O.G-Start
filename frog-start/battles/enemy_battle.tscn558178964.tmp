@@ -4829,8 +4829,9 @@ scale = Vector2(1.0000001, 1.0000001)
 position = Vector2(-554.6306, 227.91455)
 scale = Vector2(5.9999995, 5.9999995)
 sprite_frames = SubResource("SpriteFrames_waqrk")
-animation = &"die"
+animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.590397
 flip_h = true
 
 [node name="gorf" type="AnimatedSprite2D" parent="frogLayer/partyHandler" unique_id=1365371848]
@@ -4846,8 +4847,10 @@ autoplay = "idle"
 position = Vector2(-894.63074, 227.91455)
 scale = Vector2(5.9999995, 5.9999995)
 sprite_frames = SubResource("SpriteFrames_rel46")
-animation = &"die"
+animation = &"useMove"
 autoplay = "idle"
+frame = 4
+frame_progress = 1.0
 flip_h = true
 
 [node name="lizard" type="AnimatedSprite2D" parent="frogLayer/partyHandler" unique_id=1964343822]

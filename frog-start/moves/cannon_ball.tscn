@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bnt232j2kaq5e"]
+
+[ext_resource type="Script" uid="uid://dvdkwnov203j5" path="res://moves/cannon_ball.gd" id="1_54822"]
+[ext_resource type="Texture2D" uid="uid://bwwg5t2ttayxr" path="res://overworldPlayer/playerAssets/cannon/Cannonball2.png" id="1_kegx5"]
+[ext_resource type="Texture2D" uid="uid://cjep73e6fl34j" path="res://overworldPlayer/playerAssets/cannon/Cannonball1.png" id="2_54822"]
+[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="3_4safq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_77tlg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_54822")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_kegx5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="cannonBall" type="Node2D" unique_id=1295767348]
+z_index = -1
+script = ExtResource("1_54822")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=846051469]
+sprite_frames = SubResource("SpriteFrames_77tlg")
+autoplay = "default"
+frame_progress = 1.0
+
+[node name="strikeProjectile" parent="." unique_id=1142312808 instance=ExtResource("3_4safq")]
+position = Vector2(3, 0)
+scale = Vector2(0.3, 0.3)
+collision_layer = 8
+damage = 15
+stun = 1
+
+[connection signal="area_entered" from="strikeProjectile" to="." method="_on_strike_projectile_area_entered"]

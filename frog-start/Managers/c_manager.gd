@@ -1,4 +1,4 @@
 extends Node
-@export var party:=[10,0,0,0]
+@export var party:=[5,0,0,0]
 @export var charUnlocked1=[1,0,0,0,0]
 @export var charUnlocked2=[0,0,0,0,0]

@@ -114,20 +114,25 @@ func _on_pink_animation_finished() -> void:
 
 
 func _on_gorf_animation_finished() -> void:
-	gorf.play("idle")
+	if gorf.animation!="die":
+		gorf.play("idle")
 
 
 func _on_robot_animation_finished() -> void:
-	robot.play("idle")
+	if robot.animation!="die":
+		robot.play("idle")
 
 
 func _on_lizard_animation_finished() -> void:
-	lizard.play("idle")
+	if lizard.animation!="die":
+		lizard.play("idle")
 
 
 func _on_joe_animation_finished() -> void:
-	joe.play("idle")
+	if joe.animation!="die":
+		joe.play("idle")
 
 
 func _on_barrel_animation_finished() -> void:
-	barrel.play("idle")
+	if barrel.animation!="die":
+		barrel.play("idle")

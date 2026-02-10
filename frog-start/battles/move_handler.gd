@@ -1,16 +1,37 @@
 extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 signal moveUsed(move : String)
+
+@onready var singleTarIcon=preload("res://moves/moveAssets/singleMoveIcon.png")
+@onready var singleTarHover=preload("res://moves/moveAssets/singleMoveHover.png")
+@onready var HealMoveIcon=preload("res://moves/moveAssets/healMoveIcon.png")
+@onready var HealMoveHover=preload("res://moves/moveAssets/healMoveHover.png")
+@onready var MultiMoveIcon=preload("res://moves/moveAssets/multiMoveIcon.png")
+@onready var MultiMoveHover=preload("res://moves/moveAssets/multiMoveHover.png")
+@onready var BuffMoveIcon=preload("res://moves/moveAssets/buffMoveIcon.png")
+@onready var BuffMoveHover=preload("res://moves/moveAssets/buffMoveHover.png")
+@onready var deBuffMoveIcon=preload("res://moves/moveAssets/dbuffMoveIcon.png")
+@onready var deBuffMoveHover=preload("res://moves/moveAssets/dbuffMoveHover.png")
+@onready var poisMoveIcon=preload("res://moves/moveAssets/poisonMoveIcon.png")
+@onready var poisMoveHover=preload("res://moves/moveAssets/poisonMoveHover.png")
+@onready var fireMoveIcon=preload("res://moves/moveAssets/fireMoveIcon.png")
+@onready var fireMoveHover=preload("res://moves/moveAssets/fireMoveHover.png")
+@onready var stunMoveIcon=preload("res://moves/moveAssets/stunMoveIcon.png")
+@onready var stunMoveHover=preload("res://moves/moveAssets/stunMoveHover.png")
+
+
+
 @onready var move_handler: Node2D = $"."
 
-@onready var move_1: TextureButton = $move1
-@onready var move_1_lab: Label = $move1/move1Lab
-@onready var move_2: TextureButton = $move2
-@onready var move_2_lab: Label = $move2/move2Lab
-@onready var move_3: TextureButton = $move3
-@onready var move_3_lab: Label = $move3/move3Lab
-@onready var move_4: TextureButton = $move4
-@onready var move_4_lab: Label = $move4/move4Lab
+@onready var move_1: TextureButton = $move1Control/move1
+@onready var move_1_lab: Label = $move1Control/move1/move1Lab
+@onready var move_2: TextureButton = $move2Control/move2
+@onready var move_2_lab: Label = $move2Control/move2/move2Lab
+@onready var move_3: TextureButton = $move3Control/move3
+@onready var move_3_lab: Label = $move3Control/move3/move3Lab
+@onready var move_4: TextureButton = $move4Control/move4
+@onready var move_4_lab: Label = $move4Control/move4/move4Lab
+
 @onready var move_explainer: Label = $CanvasLayer/moveExplainer
 @onready var explan_animator: AnimationPlayer = $CanvasLayer/explanAnimator
 var moveHovered :=""
@@ -34,7 +55,7 @@ func _process(delta: float) -> void:
 	if moveHovered=="Zip Bomb":
 		move_explainer.text="Deals medium damage to every enemy"
 	if moveHovered=="Infect":
-		move_explainer.text="Deals low damage and poisons a single enemy"
+		move_explainer.text="Deals medium damage and poisons a single enemy"
 	if moveHovered=="Alt F4":
 		move_explainer.text="Has a 1/5 chance to instakill a random non-boss enemy"
 	if moveHovered=="All Skill Baby":
@@ -44,13 +65,15 @@ func _process(delta: float) -> void:
 	if moveHovered=="Curse: Poison":
 		move_explainer.text="Temporarily applies mild poison to every enemy"
 	if moveHovered=="Fireball":
-		move_explainer.text="Deals medium damage to an enemy and applies temporary burn to nearby enemies"
+		move_explainer.text="Deals medium damage to a single enemy while applying temporary burn to nearby enemies"
 	if moveHovered=="Strength Spell":
 		move_explainer.text="Temporarily raises the attack power of your entire party"
 	if moveHovered=="Sword Barrage":
 		move_explainer.text="Fires a barrage of low damage swords"
 	if moveHovered=="Health Potion":
 		move_explainer.text="Applies low healing and temporary regen to your entire party"
+	if moveHovered=="Cannon Barrage":
+		move_explainer.text="Spawns 3 cannons that occasionally deal low damage to enemies"
 		
 	
 	if get_parent().getChar()=="frog":
@@ -73,6 +96,60 @@ func _process(delta: float) -> void:
 		move_2_lab.text="Strength Spell"
 		move_3_lab.text="Health Potion"
 		move_4_lab.text="Fireball"
+	if get_parent().getChar()=="robot":
+		move_1_lab.text="Overclock"
+		move_2_lab.text="Cannon Barrage"
+		move_3_lab.text="Smite"
+		move_4_lab.text="Electrocute"
+		
+		
+	if move_1_lab.text=="All Skill Baby" || move_1_lab.text=="Sword Barrage":
+		move_1.texture_hover=MultiMoveHover
+		move_1.texture_normal=MultiMoveIcon
+	if move_1_lab.text=="Arrow Barrage":
+		move_1.texture_hover=deBuffMoveHover
+		move_1.texture_normal=deBuffMoveIcon
+	if move_1_lab.text=="Overclock":
+		move_1.texture_hover=BuffMoveHover
+		move_1.texture_normal=BuffMoveIcon
+		
+	if move_2_lab.text=="Zip Bomb" || move_2_lab.text=="Cannon Barrage":
+		move_2.texture_hover=MultiMoveHover
+		move_2.texture_normal=MultiMoveIcon
+	if move_2_lab.text=="Block" || move_2_lab.text=="Strength Spell":
+		move_2.texture_hover=BuffMoveHover
+		move_2.texture_normal=BuffMoveIcon
+	if move_2_lab.text=="Strike":
+		move_2.texture_hover=singleTarHover
+		move_2.texture_normal=singleTarIcon
+		
+	if move_3_lab.text=="Strike":
+		move_3.texture_hover=singleTarHover
+		move_3.texture_normal=singleTarIcon
+	if move_3_lab.text=="Curse: Weaken" || move_3_lab.text=="Smite":
+		move_3.texture_hover=deBuffMoveHover
+		move_3.texture_normal=deBuffMoveIcon
+	if move_3_lab.text=="Health Potion":
+		move_3.texture_hover=HealMoveHover
+		move_3.texture_normal=HealMoveIcon
+	if move_3_lab.text=="Infect":
+		move_3.texture_hover=poisMoveHover
+		move_3.texture_normal=poisMoveIcon
+		
+	if move_4_lab.text=="Frogsicle":
+		move_4.texture_hover=HealMoveHover
+		move_4.texture_normal=HealMoveIcon
+	if move_4_lab.text=="Curse: Poison":
+		move_4.texture_hover=poisMoveHover
+		move_4.texture_normal=poisMoveIcon
+	if move_4_lab.text=="Fireball":
+		move_4.texture_hover=fireMoveHover
+		move_4.texture_normal=fireMoveIcon	
+	if move_4_lab.text=="Alt F4":
+		pass
+	if move_4_lab.text=="Electrocute":
+		move_4.texture_hover=stunMoveHover
+		move_4.texture_normal=stunMoveIcon	
 
 
 func fadeIn()->void:
