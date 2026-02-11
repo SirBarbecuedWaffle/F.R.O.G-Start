@@ -2,14 +2,69 @@
 
 [ext_resource type="Script" uid="uid://b2iwt5xymqmip" path="res://moves/strike_move.gd" id="1_wpmsa"]
 [ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="2_q66t0"]
+[ext_resource type="Texture2D" uid="uid://w8a353hpv4pm" path="res://2DAssets/image (2).png" id="3_q66t0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gr8ey"]
+size = Vector2(49, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_280qd"]
+atlas = ExtResource("3_q66t0")
+region = Rect2(320, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtgv4"]
+atlas = ExtResource("3_q66t0")
+region = Rect2(384, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4c1q"]
+atlas = ExtResource("3_q66t0")
+region = Rect2(448, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_463e3"]
+atlas = ExtResource("3_q66t0")
+region = Rect2(512, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipqml"]
+atlas = ExtResource("3_q66t0")
+region = Rect2(576, 768, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ntn8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_280qd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtgv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4c1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_463e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipqml")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
 
 [node name="StrikeMove" type="Node2D" unique_id=1384217156]
 script = ExtResource("1_wpmsa")
 
 [node name="strikeProjectile" parent="." unique_id=1142312808 instance=ExtResource("2_q66t0")]
+position = Vector2(0, -130)
 collision_layer = 8
-damage = 40
-poison = 50
+damage = 60
+burn = 20
+defRev = 15
 randomNumbers = true
 
 [node name="places" type="Node2D" parent="." unique_id=881540487]
@@ -27,4 +82,19 @@ position = Vector2(1368, 819)
 [node name="place4" type="Node2D" parent="places" unique_id=728835411]
 position = Vector2(1370, 157)
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1082586477]
+position = Vector2(0, -134)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=854157012]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_gr8ey")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=422119715]
+modulate = Color(1, 0.85, 0, 1)
+sprite_frames = SubResource("SpriteFrames_8ntn8")
+frame = 6
+frame_progress = 1.0
+
 [connection signal="area_entered" from="strikeProjectile" to="." method="_on_strike_projectile_area_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="animation_finished" from="Area2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
