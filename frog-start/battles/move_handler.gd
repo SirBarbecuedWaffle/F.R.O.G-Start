@@ -74,7 +74,10 @@ func _process(delta: float) -> void:
 		move_explainer.text="Applies low healing and temporary regen to your entire party"
 	if moveHovered=="Cannon Barrage":
 		move_explainer.text="Spawns 3 cannons that occasionally deal low damage to enemies"
-		
+	if moveHovered=="Smite":
+		move_explainer.text="Deals medium damage to a single enemy and temporarily lowers their defense"
+	if moveHovered=="Electrocute":
+		move_explainer.text="Burns and temporarily stuns a single enemy"
 	
 	if get_parent().getChar()=="frog":
 		move_1_lab.text="Arrow Barrage"

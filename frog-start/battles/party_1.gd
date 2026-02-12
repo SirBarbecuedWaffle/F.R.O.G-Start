@@ -44,7 +44,7 @@ var swordMove=preload("res://moves/swordbarrage.tscn")
 var healthPotion=preload("res://moves/healthPotion.tscn")
 var fireball=preload("res://moves/fireball.tscn")
 var cannon=preload("res://moves/cannon_barrage.tscn")
-
+var smite=preload("res://moves/smite_move.tscn")
 
 var damageIcon=preload("res://damageIndicator.tscn")
 var flash=preload("res://screenFlash.tscn")
@@ -277,6 +277,9 @@ func _on_move_handler_move_used(move: String) -> void:
 	if move=="Cannon Barrage":
 		var caned=cannon.instantiate()
 		frog_layer.add_child(caned)
+	if move=="Smite":
+		var smied=smite.instantiate()
+		frog_layer.add_child(smied)
 func getChar()->String:
 	return character
 

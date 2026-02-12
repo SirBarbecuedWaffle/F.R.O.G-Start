@@ -37,7 +37,7 @@ func _on_targe_area_entered(area: Area2D) -> void:
 	gpu_particles_2d_2.emitting=true
 	await get_tree().create_timer(1.0).timeout
 	if randi_range(1,5)==1:
-		await get_tree().create_timer(0.3).timeout
+		await get_tree().create_timer(0.26).timeout
 		strike_projectile.global_position=targe.global_position
 		await get_tree().create_timer(2.0).timeout
 		queue_free()

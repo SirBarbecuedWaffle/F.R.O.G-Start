@@ -57,7 +57,7 @@ func _process(delta: float) -> void:
 	fire_on.visible=fire>0
 	if fire>0:
 		fire-=1
-		if fire%50==0:
+		if fire%50==25:
 			var movie=damageIcon.instantiate()
 			movie.damageAmount=5
 			health-=5
