@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	animated_sprite_2d.play("shoot")
-	timer.start(randi_range(3,5))
+	timer.start(randi_range(1,2))
 	await get_tree().create_timer(0.4).timeout
 	if cannon_barrage.modulate==Color.WHITE:
 		var balle=ball.instantiate()

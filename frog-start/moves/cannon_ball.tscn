@@ -32,7 +32,6 @@ frame_progress = 1.0
 position = Vector2(3, 0)
 scale = Vector2(0.3, 0.3)
 collision_layer = 8
-damage = 30
-stun = 1.0
+damage = 20
 
 [connection signal="area_entered" from="strikeProjectile" to="." method="_on_strike_projectile_area_entered"]
