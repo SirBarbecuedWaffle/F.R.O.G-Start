@@ -8,7 +8,7 @@ var cooldown:=0
 @onready var end_timer: Timer = $"../endTimer"
 
 func _ready() -> void:
-	timer.start(randi_range(1,2))
+	timer.start(randi_range(2,3))
 
 func _process(delta: float) -> void:
 	pass
@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	animated_sprite_2d.play("shoot")
-	timer.start(randi_range(1,3))
+	timer.start(randi_range(3,5))
 	await get_tree().create_timer(0.4).timeout
 	if cannon_barrage.modulate==Color.WHITE:
 		var balle=ball.instantiate()

@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://dr1sox7475jqe"]
+
+[ext_resource type="Script" uid="uid://bmn50ptwen81g" path="res://moves/electrocute.gd" id="1_76rob"]
+[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="2_adobs"]
+[ext_resource type="Texture2D" uid="uid://csirol42nqvjh" path="res://2DAssets/3 Lightning/3.png" id="3_wf556"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gr8ey"]
+size = Vector2(49, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adobs"]
+atlas = ExtResource("3_wf556")
+region = Rect2(0, 0, 64, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eocp3"]
+atlas = ExtResource("3_wf556")
+region = Rect2(64, 0, 64, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjvp4"]
+atlas = ExtResource("3_wf556")
+region = Rect2(192, 0, 64, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfeae"]
+atlas = ExtResource("3_wf556")
+region = Rect2(256, 0, 64, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pocb6"]
+atlas = ExtResource("3_wf556")
+region = Rect2(320, 0, 64, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky3ce"]
+atlas = ExtResource("3_wf556")
+region = Rect2(384, 0, 64, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esdhw"]
+atlas = ExtResource("3_wf556")
+region = Rect2(448, 0, 64, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00aky"]
+atlas = ExtResource("3_wf556")
+region = Rect2(512, 0, 64, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5ya6"]
+atlas = ExtResource("3_wf556")
+region = Rect2(576, 0, 64, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ntn8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adobs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eocp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjvp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfeae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pocb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky3ce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esdhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00aky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5ya6")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 14.0
+}]
+
+[node name="electrocute" type="Node2D" unique_id=1384217156]
+script = ExtResource("1_76rob")
+
+[node name="strikeProjectile" parent="." unique_id=1142312808 instance=ExtResource("2_adobs")]
+position = Vector2(0, -323)
+collision_layer = 8
+burn = 15
+stun = 10
+randomNumbers = true
+
+[node name="places" type="Node2D" parent="." unique_id=881540487]
+position = Vector2(-952, 0)
+
+[node name="place1" type="Node2D" parent="places" unique_id=1620240567]
+position = Vector2(1589, 438)
+
+[node name="place2" type="Node2D" parent="places" unique_id=2034117173]
+position = Vector2(1153, 491)
+
+[node name="place3" type="Node2D" parent="places" unique_id=1275259744]
+position = Vector2(1368, 819)
+
+[node name="place4" type="Node2D" parent="places" unique_id=728835411]
+position = Vector2(1370, 157)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1082586477]
+position = Vector2(0, -134)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=854157012]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_gr8ey")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=422119715]
+modulate = Color(2.4061394, 2.4061394, 1.0796262, 1)
+position = Vector2(0, -134)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_8ntn8")
+frame = 10
+frame_progress = 1.0
+
+[connection signal="area_entered" from="strikeProjectile" to="." method="_on_strike_projectile_area_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

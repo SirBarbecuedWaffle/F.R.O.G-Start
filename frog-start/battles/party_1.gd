@@ -45,9 +45,12 @@ var healthPotion=preload("res://moves/healthPotion.tscn")
 var fireball=preload("res://moves/fireball.tscn")
 var cannon=preload("res://moves/cannon_barrage.tscn")
 var smite=preload("res://moves/smite_move.tscn")
+var elect=preload("res://moves/electrocute.tscn")
+
 
 var damageIcon=preload("res://damageIndicator.tscn")
 var flash=preload("res://screenFlash.tscn")
+
 @onready var curChar : AnimatedSprite2D
 
 @export var health:=140.0:
@@ -77,7 +80,7 @@ var flash=preload("res://screenFlash.tscn")
 @export var atkUp:=00.0
 @export var defUp:=10.0
 @export var spdUp:=0.0
-@export var stun:=0
+@export var stun:=0.0
 @export var regen:=0
 var turnTime:=randi_range(120,450)
 @onready var def_up_ind: Sprite2D = $arrowHandler/goodArrows/defUpInd
@@ -95,6 +98,7 @@ var turnTime:=randi_range(120,450)
 @onready var spd_down_lab: Label = $arrowHandler/badArrows/spdDownInd/spdDownLab
 @onready var frog_layer: CanvasLayer = $"../.."
 @onready var poison_damage: Timer = $poisonDamage
+@onready var stun_anim: AnimatedSprite2D = $stunAnim
 
 func _ready() -> void:
 	await get_tree().create_timer(0.01).timeout
@@ -126,6 +130,10 @@ func _ready() -> void:
 		curChar.play("idle")
 
 func _process(delta: float) -> void:
+	stun_anim.visible=stun>0
+	if stun>0:
+		stun-=1*delta
+		moveProgress=randi_range(0,turnTime-50)
 	if regen>0:
 		regen-=1*delta
 		if regen%125==0:
@@ -280,6 +288,9 @@ func _on_move_handler_move_used(move: String) -> void:
 	if move=="Smite":
 		var smied=smite.instantiate()
 		frog_layer.add_child(smied)
+	if move=="Electrocute":
+		var eled=elect.instantiate()
+		frog_layer.add_child(eled)
 func getChar()->String:
 	return character
 

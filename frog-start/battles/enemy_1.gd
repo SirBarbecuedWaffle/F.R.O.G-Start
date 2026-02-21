@@ -32,7 +32,7 @@ var damageIcon=preload("res://damageIndicator.tscn")
 @export var atkUp:=20.0
 @export var defUp:=20.0
 @export var spdUp:=15.0
-@export var stun:=0
+@export var stun:=0.0
 @onready var enemy_spr_1: AnimatedSprite2D = $enemySpr1
 var turnTime:=randi_range(470,700)
 @onready var frog_layer: CanvasLayer = $"../.."
@@ -50,10 +50,16 @@ var turnTime:=randi_range(470,700)
 @onready var def_down_lab: Label = $arrowHandler/badArrows/defDownInd/defDownLab
 @onready var spd_down_lab: Label = $arrowHandler/badArrows/spdDownInd/spdDownLab
 @onready var poison_damage: Timer = $poisonDamage
+@onready var stun_anim: AnimatedSprite2D = $enemySpr1/stunAnim
 
 @onready var attack_animator: AnimationPlayer = $attackAnimator
 
 func _process(delta: float) -> void:
+	if stun_anim!=null:
+		stun_anim.visible=stun>0
+	if stun>0:
+		stun-=1*delta
+		moveProgress=randi_range(0,turnTime-50)
 	fire_on.visible=fire>0
 	if fire>0:
 		fire-=1
