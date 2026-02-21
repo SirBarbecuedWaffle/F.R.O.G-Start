@@ -46,6 +46,9 @@ var fireball=preload("res://moves/fireball.tscn")
 var cannon=preload("res://moves/cannon_barrage.tscn")
 var smite=preload("res://moves/smite_move.tscn")
 var elect=preload("res://moves/electrocute.tscn")
+var coff=preload("res://moves/coffee break.tscn")
+var scald=preload("res://moves/scald.tscn")
+var fired=preload("res://moves/Fired.tscn")
 
 
 var damageIcon=preload("res://damageIndicator.tscn")
@@ -291,6 +294,18 @@ func _on_move_handler_move_used(move: String) -> void:
 	if move=="Electrocute":
 		var eled=elect.instantiate()
 		frog_layer.add_child(eled)
+		
+	if move=="Coffee Break":
+		var cofed=coff.instantiate()
+		frog_layer.add_child(cofed)
+	if move=="Scald":
+		var scaed=scald.instantiate()
+		scaed.spawnLoca=global_position
+		scaed.spawnLoca.y=global_position.y
+		frog_layer.add_child(scaed)
+	if move=="You're Fired":
+		var fred=fired.instantiate()
+		frog_layer.add_child(fred)
 func getChar()->String:
 	return character
 

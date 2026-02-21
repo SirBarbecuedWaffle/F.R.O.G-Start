@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://cd6sicpa8twxj"]
+[gd_scene format=3 uid="uid://yfpieyqohx07"]
 
-[ext_resource type="Script" uid="uid://l07b2rdbc16q" path="res://moves/frogsicle.gd" id="1_uvt6q"]
-[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="2_b1mdy"]
-[ext_resource type="Texture2D" uid="uid://brn8n2nw2ukfa" path="res://2DAssets/Frogsicle.png" id="3_b1mdy"]
+[ext_resource type="Script" uid="uid://l07b2rdbc16q" path="res://moves/frogsicle.gd" id="1_bl08b"]
+[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="2_7qmgm"]
+[ext_resource type="Texture2D" uid="uid://0mdpbo6ttc1g" path="res://2DAssets/AssetPack_V01_FREE.png" id="3_bl08b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvt6q"]
 size = Vector2(109, 138)
@@ -44,9 +44,9 @@ _data = {
 &"arrowsSpawn": SubResource("Animation_4toh0")
 }
 
-[node name="frogsicle2" type="Node2D" unique_id=278365401]
+[node name="coffeeBreak" type="Node2D" unique_id=278365401]
 z_index = 1
-script = ExtResource("1_uvt6q")
+script = ExtResource("1_bl08b")
 
 [node name="places" type="Node2D" parent="." unique_id=1573095243]
 position = Vector2(307, 73)
@@ -93,53 +93,57 @@ position = Vector2(1394, 374)
 [node name="Arrows" type="Node2D" parent="." unique_id=853504226]
 position = Vector2(1504, 605)
 
-[node name="arrow1" parent="Arrows" unique_id=1142312808 instance=ExtResource("2_b1mdy")]
+[node name="arrow1" parent="Arrows" unique_id=1142312808 instance=ExtResource("2_7qmgm")]
 visible = false
 position = Vector2(175, -538)
-damage = -75
+damage = -45
+spdBuf = 15
 
-[node name="Sprite2D" type="Sprite2D" parent="Arrows/arrow1" unique_id=1995694293]
+[node name="Sprite2D" type="Sprite2D" parent="Arrows/arrow1" unique_id=1909176716]
 position = Vector2(-2.0000002, 4.000002)
-scale = Vector2(3, 3)
-texture = ExtResource("3_b1mdy")
+scale = Vector2(6, 6)
+texture = ExtResource("3_bl08b")
 region_enabled = true
-region_rect = Rect2(177.45627, 0, 37.050903, 34.612755)
+region_rect = Rect2(48.35092, 16.104969, 15.533623, 15.915485)
 
-[node name="arrow2" parent="Arrows" unique_id=1842772094 instance=ExtResource("2_b1mdy")]
+[node name="arrow2" parent="Arrows" unique_id=1842772094 instance=ExtResource("2_7qmgm")]
 visible = false
 position = Vector2(-61, -204)
-damage = -75
+damage = -45
+spdBuf = 15
 
-[node name="Sprite2D" type="Sprite2D" parent="Arrows/arrow2" unique_id=98306161]
+[node name="Sprite2D" type="Sprite2D" parent="Arrows/arrow2" unique_id=62712553]
 position = Vector2(-2.0000002, 4.000002)
-scale = Vector2(3, 3)
-texture = ExtResource("3_b1mdy")
+scale = Vector2(6, 6)
+texture = ExtResource("3_bl08b")
 region_enabled = true
-region_rect = Rect2(177.45627, 0, 37.050903, 34.612755)
+region_rect = Rect2(48.35092, 16.104969, 15.533623, 15.915485)
 
-[node name="arrow3" parent="Arrows" unique_id=346935710 instance=ExtResource("2_b1mdy")]
+[node name="arrow3" parent="Arrows" unique_id=346935710 instance=ExtResource("2_7qmgm")]
 visible = false
 position = Vector2(-646, -64)
-damage = -75
+damage = -45
+spdBuf = 15
 
-[node name="Sprite2D" type="Sprite2D" parent="Arrows/arrow3" unique_id=1357784557]
+[node name="Sprite2D" type="Sprite2D" parent="Arrows/arrow3" unique_id=285536592]
 position = Vector2(-2.0000002, 4.000002)
-scale = Vector2(3, 3)
-texture = ExtResource("3_b1mdy")
+scale = Vector2(6, 6)
+texture = ExtResource("3_bl08b")
 region_enabled = true
-region_rect = Rect2(177.45627, 0, 37.050903, 34.612755)
+region_rect = Rect2(48.35092, 16.104969, 15.533623, 15.915485)
 
-[node name="arrow4" parent="Arrows" unique_id=1232609900 instance=ExtResource("2_b1mdy")]
+[node name="arrow4" parent="Arrows" unique_id=1232609900 instance=ExtResource("2_7qmgm")]
 visible = false
 position = Vector2(-410, -365)
-damage = -75
+damage = -45
+spdBuf = 15
 
 [node name="Sprite2D" type="Sprite2D" parent="Arrows/arrow4" unique_id=709892211]
 position = Vector2(-2.0000002, 4.000002)
-scale = Vector2(3, 3)
-texture = ExtResource("3_b1mdy")
+scale = Vector2(6, 6)
+texture = ExtResource("3_bl08b")
 region_enabled = true
-region_rect = Rect2(177.45627, 0, 37.050903, 34.612755)
+region_rect = Rect2(48.35092, 16.104969, 15.533623, 15.915485)
 
 [node name="targets" type="Node2D" parent="." unique_id=1186052481]
 

@@ -78,6 +78,14 @@ func _process(delta: float) -> void:
 		move_explainer.text="Deals medium damage to a single enemy and temporarily lowers their defense"
 	if moveHovered=="Electrocute":
 		move_explainer.text="Burns and temporarily stuns a single enemy"
+	if moveHovered=="Scald":
+		move_explainer.text="Afflicts heavy burn to a single target"
+	if moveHovered=="Paper Jam":
+		move_explainer.text="Deals low damage to random enemies"
+	if moveHovered=="You're Fired":
+		move_explainer.text="Has a 1/8 chance to kill every enemy, burns them regardless"
+	if moveHovered=="Coffee Break":
+		move_explainer.text="Heals and speeds up the entire party"
 	
 	if get_parent().getChar()=="frog":
 		move_1_lab.text="Arrow Barrage"
@@ -104,6 +112,11 @@ func _process(delta: float) -> void:
 		move_2_lab.text="Cannon Barrage"
 		move_3_lab.text="Smite"
 		move_4_lab.text="Electrocute"
+	if get_parent().getChar()=="joe":
+		move_1_lab.text="Coffee Break"
+		move_2_lab.text="You're Fired"
+		move_3_lab.text="Paper Jam"
+		move_4_lab.text="Scald"
 		
 		
 	if move_1_lab.text=="All Skill Baby" || move_1_lab.text=="Sword Barrage":
@@ -115,7 +128,9 @@ func _process(delta: float) -> void:
 	if move_1_lab.text=="Overclock":
 		move_1.texture_hover=BuffMoveHover
 		move_1.texture_normal=BuffMoveIcon
-		
+	if move_1_lab.text=="Coffee Break":
+		move_1.texture_hover=HealMoveHover
+		move_1.texture_normal=HealMoveIcon
 	if move_2_lab.text=="Zip Bomb" || move_2_lab.text=="Cannon Barrage":
 		move_2.texture_hover=MultiMoveHover
 		move_2.texture_normal=MultiMoveIcon
@@ -125,6 +140,8 @@ func _process(delta: float) -> void:
 	if move_2_lab.text=="Strike":
 		move_2.texture_hover=singleTarHover
 		move_2.texture_normal=singleTarIcon
+	if move_4_lab.text=="You're Fired":
+		pass
 		
 	if move_3_lab.text=="Strike":
 		move_3.texture_hover=singleTarHover
@@ -138,21 +155,24 @@ func _process(delta: float) -> void:
 	if move_3_lab.text=="Infect":
 		move_3.texture_hover=poisMoveHover
 		move_3.texture_normal=poisMoveIcon
+	if move_3_lab.text=="Paper Jam":
+		move_3.texture_hover=MultiMoveHover
+		move_3.texture_normal=MultiMoveIcon
 		
-	if move_4_lab.text=="Frogsicle":
-		move_4.texture_hover=HealMoveHover
-		move_4.texture_normal=HealMoveIcon
 	if move_4_lab.text=="Curse: Poison":
 		move_4.texture_hover=poisMoveHover
 		move_4.texture_normal=poisMoveIcon
-	if move_4_lab.text=="Fireball":
+	if move_4_lab.text=="Fireball" || move_4_lab.text=="Scald":
 		move_4.texture_hover=fireMoveHover
 		move_4.texture_normal=fireMoveIcon	
 	if move_4_lab.text=="Alt F4":
 		pass
 	if move_4_lab.text=="Electrocute":
 		move_4.texture_hover=stunMoveHover
-		move_4.texture_normal=stunMoveIcon	
+		move_4.texture_normal=stunMoveIcon
+	if move_4_lab.text=="Frogsicle":
+		move_4.texture_hover=HealMoveHover
+		move_4.texture_normal=HealMoveIcon
 
 
 func fadeIn()->void:
