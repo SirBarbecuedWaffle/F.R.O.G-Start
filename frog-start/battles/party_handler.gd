@@ -14,6 +14,7 @@ extends Node2D
 @onready var lizard: AnimatedSprite2D = $lizard
 @onready var joe: AnimatedSprite2D = $joe
 @onready var barrel: AnimatedSprite2D = $barrel
+@onready var fox: AnimatedSprite2D = $fox
 
 
 
@@ -42,8 +43,8 @@ func _process(delta: float) -> void:
 		robot.rotation_degrees=-90*(robot.frame%4)
 	if joe.animation=="useMove":
 		joe.rotation_degrees=-90*(joe.frame%4)
-	#if fox.animation=="useMove":
-		#fox.rotation_degrees=-90*(fox.frame%4)
+	if fox.animation=="useMove":
+		fox.rotation_degrees=-90*(fox.frame%4)
 	if gorf.animation=="useMove":
 		gorf.rotation_degrees=-90*(gorf.frame%4)
 	
@@ -74,8 +75,8 @@ func _ready() -> void:
 		joe.visible=true
 		party_1.character="joe"
 	if CManager.party[0]==7:
-		pink.global_position=party_1.global_position
-		pink.visible=true
+		fox.global_position=party_1.global_position
+		fox.visible=true
 		party_1.character="fox"
 	if CManager.party[0]==8:
 		lizard.global_position.y=party_1.global_position.y-50
@@ -136,3 +137,8 @@ func _on_joe_animation_finished() -> void:
 func _on_barrel_animation_finished() -> void:
 	if barrel.animation!="die":
 		barrel.play("idle")
+
+
+func _on_fox_animation_finished() -> void:
+	if fox.animation!="die":
+		fox.play("idle")

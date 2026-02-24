@@ -13,6 +13,7 @@ class_name partyMember
 @onready var robot: AnimatedSprite2D = $"../robot"
 @onready var lizard: AnimatedSprite2D = $"../lizard"
 @onready var joe: AnimatedSprite2D = $"../joe"
+@onready var fox: AnimatedSprite2D = $"../fox"
 @onready var barrel: AnimatedSprite2D = $"../barrel"
 
 
@@ -121,6 +122,9 @@ func _ready() -> void:
 		curChar.play("idle")
 	if character=="joe":
 		curChar=joe
+		curChar.play("idle")
+	if character=="fox":
+		curChar=fox
 		curChar.play("idle")
 	if character=="lizard":
 		curChar=lizard
