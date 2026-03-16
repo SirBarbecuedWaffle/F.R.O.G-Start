@@ -754,7 +754,8 @@ oneHit = false
 position = Vector2(83, -84)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_wiynw")
-frame_progress = 0.8918632
+autoplay = "default"
+frame_progress = 0.5712466
 
 [node name="targets" type="Node2D" parent="." unique_id=1186052481]
 

@@ -236,6 +236,8 @@ func _on_move_handler_move_used(move: String) -> void:
 	print(move)
 	moveProgress=0
 	turnTime=randi_range(420,650)
+	#if character=="barrel":
+		#stun=1
 	if curChar!=null:
 		curChar.play("useMove")
 	if move=="Strike":
