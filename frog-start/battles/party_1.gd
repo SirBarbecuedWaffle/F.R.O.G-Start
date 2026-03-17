@@ -50,7 +50,8 @@ var elect=preload("res://moves/electrocute.tscn")
 var coff=preload("res://moves/coffee break.tscn")
 var scald=preload("res://moves/scald.tscn")
 var fired=preload("res://moves/Fired.tscn")
-
+var DDoSed=preload("res://moves/d_do_s_move.tscn")
+var barraged=preload("res://moves/arrow_barrage_2.tscn")
 
 var damageIcon=preload("res://damageIndicator.tscn")
 var flash=preload("res://screenFlash.tscn")
@@ -312,6 +313,17 @@ func _on_move_handler_move_used(move: String) -> void:
 	if move=="You're Fired":
 		var fred=fired.instantiate()
 		frog_layer.add_child(fred)
+		
+	if move=="DDoS":
+		var dded=DDoSed.instantiate()
+		frog_layer.add_child(dded)
+	if move=="Arrow Barrage 2":
+		for i in range(10):
+			var bared=barraged.instantiate()
+			bared.spawnLoca=global_position
+			bared.spawnLoca.y=global_position.y-150
+			frog_layer.add_child(bared)
+			await get_tree().create_timer(0.2).timeout
 func getChar()->String:
 	return character
 

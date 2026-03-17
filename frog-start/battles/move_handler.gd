@@ -18,9 +18,14 @@ signal moveUsed(move : String)
 @onready var fireMoveHover=preload("res://moves/moveAssets/fireMoveHover.png")
 @onready var stunMoveIcon=preload("res://moves/moveAssets/stunMoveIcon.png")
 @onready var stunMoveHover=preload("res://moves/moveAssets/stunMoveHover.png")
+@onready var instaKillHover=preload("res://moves/moveAssets/instakillHoverAIcon.png")
+@onready var instaKillIcon=preload("res://moves/moveAssets/instakillMoveIcon.png")
+@onready var gorf_timer: Timer = $gorfTimer
 
-
-
+var moves1=["Arrow Barrage","Overclock","All Skill Baby","Sword Barrage","Coffee Break","Fireball","Arrow Barrage 2","",""]
+var moves2=["Block","Zip Bomb","Strike","Strength Spell","Cannon Barrage","You're Fired","Alt F4","Curse: Corrupt","",""]
+var moves3=["Strike","Infect","Curse: Weaken","Health Potion","Smite","Fireball","Bite","Bluescreen","",""]
+var moves4=["Frogsicle","Alt F4","Curse: Poison","Fireball","Electrocute","Scald","Flashbang","Toxic Sludge","Bottoms Up","DDoS","",""]
 @onready var move_handler: Node2D = $"."
 
 @onready var move_1: TextureButton = $move1Control/move1
@@ -138,6 +143,11 @@ func _process(delta: float) -> void:
 		move_2_lab.text="Block"
 		move_3_lab.text="Health Potion"
 		move_4_lab.text="Bottoms Up"
+	#if get_parent().getChar()=="gorf":
+		#move_1_lab.text="Arrow Barrage 2"
+		#move_2_lab.text="Curse: Corrupt"
+		#move_3_lab.text="Bluescreen"
+		#move_4_lab.text="DDoS"
 		
 		
 	if move_1_lab.text=="All Skill Baby" || move_1_lab.text=="Sword Barrage":
@@ -165,7 +175,8 @@ func _process(delta: float) -> void:
 		move_2.texture_hover=singleTarHover
 		move_2.texture_normal=singleTarIcon
 	if move_4_lab.text=="You're Fired":
-		pass
+		move_4.texture_normal=instaKillIcon
+		move_4.texture_hover=instaKillHover
 		
 	if move_3_lab.text=="Strike":
 		move_3.texture_hover=singleTarHover
@@ -196,7 +207,11 @@ func _process(delta: float) -> void:
 		move_4.texture_hover=fireMoveHover
 		move_4.texture_normal=fireMoveIcon	
 	if move_4_lab.text=="Alt F4":
-		pass
+		move_4.texture_normal=instaKillIcon
+		move_4.texture_hover=instaKillHover
+	if move_2_lab.text=="Alt F4":
+		move_2.texture_normal=instaKillIcon
+		move_2.texture_hover=instaKillHover
 	if move_4_lab.text=="Electrocute" || move_4_lab.text=="Flashbang":
 		move_4.texture_hover=stunMoveHover
 		move_4.texture_normal=stunMoveIcon
@@ -262,3 +277,12 @@ func _on_move_3_mouse_entered() -> void:
 
 func _on_move_4_mouse_entered() -> void:
 	moveHovered=move_4_lab.text
+
+
+func _on_gorf_timer_timeout() -> void:
+	gorf_timer.start(randf_range(0.2,1.0))
+	if get_parent().getChar()=="gorf":
+		move_1_lab.text=moves1[randi_range(0,moves1.size()-1)]
+		move_2_lab.text=moves2[randi_range(0,moves2.size()-1)]
+		move_3_lab.text=moves3[randi_range(0,moves3.size()-1)]
+		move_4_lab.text=moves4[randi_range(0,moves4.size()-1)]

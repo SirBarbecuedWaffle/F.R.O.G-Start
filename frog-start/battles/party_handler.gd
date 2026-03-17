@@ -142,3 +142,7 @@ func _on_barrel_animation_finished() -> void:
 func _on_fox_animation_finished() -> void:
 	if fox.animation!="die":
 		fox.play("idle")
+
+
+func _on_gorf_timer_timeout() -> void:
+	pass # Replace with function body.

@@ -108,6 +108,7 @@ color_ramp = SubResource("GradientTexture1D_tfkdh")
 color_initial_ramp = SubResource("GradientTexture1D_s6exj")
 
 [node name="arrowBarrage" type="Node2D" unique_id=278365401]
+visible = false
 z_index = 1
 script = ExtResource("1_7byio")
 
@@ -115,6 +116,7 @@ script = ExtResource("1_7byio")
 position = Vector2(1394, 374)
 
 [node name="bomb" type="Node2D" parent="." unique_id=853504226]
+visible = false
 position = Vector2(1504, 605)
 
 [node name="Sprite2D" type="Sprite2D" parent="bomb" unique_id=280346243]
@@ -123,7 +125,6 @@ texture = ExtResource("2_1yqlu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="bomb" unique_id=1640240216]
 libraries/ = SubResource("AnimationLibrary_nqnng")
-autoplay = &"explode"
 
 [node name="targets" type="Node2D" parent="." unique_id=1186052481]
 

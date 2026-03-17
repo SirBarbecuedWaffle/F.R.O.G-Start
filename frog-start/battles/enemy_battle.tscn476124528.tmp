@@ -5036,7 +5036,6 @@ visible_characters_behavior = 1
 libraries/ = SubResource("AnimationLibrary_w42gv")
 
 [node name="gorfTimer" type="Timer" parent="frogLayer/partyHandler/party1/moveHandler" unique_id=1578188307]
-autostart = true
 
 [node name="hitBox" type="Area2D" parent="frogLayer/partyHandler/party1" unique_id=1099899184]
 z_index = 10

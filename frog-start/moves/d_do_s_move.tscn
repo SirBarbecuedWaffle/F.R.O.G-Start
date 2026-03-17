@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dxtow65inycmv"]
+
+[ext_resource type="PackedScene" uid="uid://d2ut8jsq0l341" path="res://moves/zipbomb.tscn" id="1_dxl4l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqwt6"]
+size = Vector2(109, 138)
+
+[node name="DDoSMove" type="Node2D" unique_id=1791416008]
+
+[node name="arrowBarrage" parent="." unique_id=278365401 instance=ExtResource("1_dxl4l")]
+visible = true
+position = Vector2(-74, 67)
+
+[node name="arrowBarrage2" parent="." unique_id=89763900 instance=ExtResource("1_dxl4l")]
+visible = true
+position = Vector2(5, -10)
+
+[node name="arrowBarrage3" parent="." unique_id=1248024396 instance=ExtResource("1_dxl4l")]
+visible = true
+position = Vector2(92, 66)
+
+[node name="arrowBarrage4" parent="." unique_id=1494202426 instance=ExtResource("1_dxl4l")]
+visible = true
+position = Vector2(24, 169)
+
+[node name="places" type="Node2D" parent="." unique_id=2004923387]
+position = Vector2(-952, 0)
+
+[node name="place1" type="Area2D" parent="places" unique_id=454832703]
+position = Vector2(1397, 148)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place1" unique_id=254894505]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_lqwt6")
+
+[node name="place2" type="Area2D" parent="places" unique_id=611113437]
+position = Vector2(1598, 432)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place2" unique_id=109914506]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_lqwt6")
+
+[node name="place3" type="Area2D" parent="places" unique_id=965963604]
+position = Vector2(1371, 820)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place3" unique_id=603024991]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_lqwt6")
+
+[node name="place4" type="Area2D" parent="places" unique_id=851520975]
+position = Vector2(1160, 482)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place4" unique_id=1713903753]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_lqwt6")
