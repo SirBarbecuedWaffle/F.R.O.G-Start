@@ -14,7 +14,7 @@ var basicHit=preload("res://battles/battle_projectile.tscn")
 var damageIcon=preload("res://damageIndicator.tscn")
 @onready var party_handler: Node2D = $"../../partyHandler"
 
-@export var health:=140.0:
+@export var health:=999.0:
 	set(newHP):
 		if defUp>0:
 			newHP+=(health-newHP)/2
@@ -22,7 +22,7 @@ var damageIcon=preload("res://damageIndicator.tscn")
 			newHP-=(health-newHP)/2
 		health=newHP
 		
-@export var maxHealth:=140.0
+@export var maxHealth:=999.0
 @export var moveProgress:=0.0
 @export var poison:=0
 @export var fire:=0

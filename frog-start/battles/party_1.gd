@@ -52,9 +52,12 @@ var scald=preload("res://moves/scald.tscn")
 var fired=preload("res://moves/Fired.tscn")
 var DDoSed=preload("res://moves/d_do_s_move.tscn")
 var barraged=preload("res://moves/arrow_barrage_2.tscn")
-
+var blued=preload("res://moves/bluescreen_move.tscn")
+var corupted=preload("res://moves/corrupt_move.tscn")
 var damageIcon=preload("res://damageIndicator.tscn")
 var flash=preload("res://screenFlash.tscn")
+var flashed=preload("res://moves/flashbang.tscn")
+var pummeld=preload("res://moves/pummel.tscn")
 
 @onready var curChar : AnimatedSprite2D
 
@@ -229,6 +232,9 @@ func _process(delta: float) -> void:
 		atkUp=0
 		defDown=0
 		defUp=0
+		stun=0
+		fire=0
+		poison=0
 		moveProgress=0
 		turn_bar.scale.x=(moveProgress/turnTime)*0.354
 
@@ -314,9 +320,22 @@ func _on_move_handler_move_used(move: String) -> void:
 		var fred=fired.instantiate()
 		frog_layer.add_child(fred)
 		
+	if move=="Flashbang":
+		var fled=flashed.instantiate()
+		frog_layer.add_child(fled)
+	if move=="Pummel":
+		var pued=pummeld.instantiate()
+		frog_layer.add_child(pued)
+		
 	if move=="DDoS":
 		var dded=DDoSed.instantiate()
 		frog_layer.add_child(dded)
+	if move=="Bluescreen":
+		var bled=blued.instantiate()
+		frog_layer.add_child(bled)
+	if move=="Curse: Corrupt":
+		var corped=corupted.instantiate()
+		frog_layer.add_child(corped)
 	if move=="Arrow Barrage 2":
 		for i in range(10):
 			var bared=barraged.instantiate()

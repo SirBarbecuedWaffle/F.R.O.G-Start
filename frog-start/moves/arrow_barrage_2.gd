@@ -20,13 +20,13 @@ func _ready() -> void:
 	spawn_location.global_position.x=spawnLoca.x+randi_range(-30,30)
 	spawn_location.global_position.y=spawnLoca.y+randi_range(-30,30)
 	arrow_1.global_position=spawn_location.global_position
-	arrow_1.global_position.x=spawn_location.global_position.x-randi_range(40,60)
+	arrow_1.global_position.x=spawn_location.global_position.x-randi_range(-40,60)
 	arrow_2.global_position=spawn_location.global_position
-	arrow_2.global_position.y=spawn_location.global_position.y-randi_range(40,60)
+	arrow_2.global_position.y=spawn_location.global_position.y-randi_range(-40,60)
 	arrow_3.global_position=spawn_location.global_position
-	arrow_3.global_position.x=spawn_location.global_position.x+randi_range(40,60)
+	arrow_3.global_position.x=spawn_location.global_position.x+randi_range(-40,60)
 	arrow_4.global_position=spawn_location.global_position
-	arrow_4.global_position.y=spawn_location.global_position.y+randi_range(40,60)
+	arrow_4.global_position.y=spawn_location.global_position.y+randi_range(-40,60)
 	await get_tree().create_timer(0.1).timeout
 	for i in places.get_children():
 		if i.audio_bus_override:

@@ -24,7 +24,7 @@ signal moveUsed(move : String)
 
 var moves1=["Arrow Barrage","Overclock","All Skill Baby","Sword Barrage","Coffee Break","Fireball","Arrow Barrage 2","",""]
 var moves2=["Block","Zip Bomb","Strike","Strength Spell","Cannon Barrage","You're Fired","Alt F4","Curse: Corrupt","",""]
-var moves3=["Strike","Infect","Curse: Weaken","Health Potion","Smite","Fireball","Bite","Bluescreen","",""]
+var moves3=["Strike","Infect","Curse: Weaken","Health Potion","Smite","Fireball","Pummel","Bluescreen","",""]
 var moves4=["Frogsicle","Alt F4","Curse: Poison","Fireball","Electrocute","Scald","Flashbang","Toxic Sludge","Bottoms Up","DDoS","",""]
 @onready var move_handler: Node2D = $"."
 
@@ -91,8 +91,8 @@ func _process(delta: float) -> void:
 		move_explainer.text="Has a 1/8 chance to kill every enemy, burns them regardless"
 	if moveHovered=="Coffee Break":
 		move_explainer.text="Heals and speeds up the entire party"
-	if moveHovered=="Bite":
-		move_explainer.text="Damages and lowers the defense of a single enemy"
+	if moveHovered=="Pummel":
+		move_explainer.text="Hits a random enemy three times, lowering the attack of the last enemy hit"
 	if moveHovered=="Flashbang":
 		move_explainer.text="Briefly stuns every enemy and party member"
 	if moveHovered=="Toxic Sludge":
@@ -131,12 +131,12 @@ func _process(delta: float) -> void:
 	if get_parent().getChar()=="fox":
 		move_1_lab.text="All Skill Baby"
 		move_2_lab.text="Alt F4"
-		move_3_lab.text="Bite"
+		move_3_lab.text="Pummel"
 		move_4_lab.text="Flashbang"
 	if get_parent().getChar()=="lizard":
 		move_1_lab.text="Fireball"
 		move_2_lab.text="Cannon Barrage"
-		move_3_lab.text="Bite"
+		move_3_lab.text="Pummel"
 		move_4_lab.text="Toxic Sludge"
 	if get_parent().getChar()=="barrel":
 		move_1_lab.text="Coffee Break"
@@ -181,7 +181,7 @@ func _process(delta: float) -> void:
 	if move_3_lab.text=="Strike":
 		move_3.texture_hover=singleTarHover
 		move_3.texture_normal=singleTarIcon
-	if move_3_lab.text=="Curse: Weaken" || move_3_lab.text=="Smite" || move_3_lab.text=="Bite":
+	if move_3_lab.text=="Curse: Weaken" || move_3_lab.text=="Smite" || move_3_lab.text=="Pummel":
 		move_3.texture_hover=deBuffMoveHover
 		move_3.texture_normal=deBuffMoveIcon
 	if move_3_lab.text=="Health Potion":
