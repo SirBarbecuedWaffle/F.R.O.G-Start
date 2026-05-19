@@ -64,7 +64,7 @@ func _process(delta: float) -> void:
 	if moveHovered=="Alt F4":
 		move_explainer.text="Has a 1/5 chance to instakill a random non-boss enemy"
 	if moveHovered=="All Skill Baby":
-		move_explainer.text="Repeatedly flips a coin, if heads, deals 100 damage, if tails, stops flipping"
+		move_explainer.text="Repeatedly flips a coin, if heads, deals high damage, if tails, stops flipping"
 	if moveHovered=="Curse: Weaken":
 		move_explainer.text="Temporarily lowers the attack of every enemy"
 	if moveHovered=="Curse: Poison":

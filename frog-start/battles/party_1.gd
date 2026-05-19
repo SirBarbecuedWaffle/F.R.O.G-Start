@@ -85,7 +85,7 @@ var pummeld=preload("res://moves/pummel.tscn")
 @export var atkDown:=00.0
 @export var defDown:=00.0
 @export var spdDown:=00.0
-@export var atkUp:=00.0
+@export var atkUp:=20.0
 @export var defUp:=10.0
 @export var spdUp:=0.0
 @export var stun:=0.0
@@ -249,6 +249,10 @@ func _on_move_handler_move_used(move: String) -> void:
 		curChar.play("useMove")
 	if move=="Strike":
 		var striked=strikeMove.instantiate()
+		if atkUp>0:
+			striked.multiplier+=0.5
+		if atkDown>0:
+			striked.multiplier-=0.5
 		frog_layer.add_child(striked)
 	if move=="Block":
 		var blocked=blockMove.instantiate()
@@ -260,6 +264,10 @@ func _on_move_handler_move_used(move: String) -> void:
 			var arrowed=arrowMove.instantiate()
 			arrowed.spawnLoca=global_position
 			arrowed.spawnLoca.y=global_position.y-150
+			if atkUp>0:
+				arrowed.multiplier+=0.5
+			if atkDown>0:
+				arrowed.multiplier-=0.5
 			frog_layer.add_child(arrowed)
 	
 	if move=="Overclock":
@@ -267,12 +275,20 @@ func _on_move_handler_move_used(move: String) -> void:
 		frog_layer.add_child(clocked)
 	if move=="Zip Bomb":
 		var ziped=zipMove.instantiate()
+		if atkUp>0:
+			ziped.multiplier+=0.5
+		if atkDown>0:
+			ziped.multiplier-=0.5
 		frog_layer.add_child(ziped)
 	if move=="Alt F4":
 		var alted=altMove.instantiate()
 		frog_layer.add_child(alted)
 	if move=="Infect":
 		var infed=infectMove.instantiate()
+		if atkUp>0:
+			infed.multiplier+=0.5
+		if atkDown>0:
+			infed.multiplier-=0.5
 		frog_layer.add_child(infed)
 		
 	if move=="Curse: Poison":
@@ -283,6 +299,10 @@ func _on_move_handler_move_used(move: String) -> void:
 		frog_layer.add_child(cursed)
 	if move=="All Skill Baby":
 		var coined=coinMove.instantiate()
+		if atkUp>0:
+			coined.multiplier+=0.5
+		if atkDown>0:
+			coined.multiplier-=0.5
 		frog_layer.add_child(coined)
 		
 	if move=="Strength Spell":
@@ -290,16 +310,28 @@ func _on_move_handler_move_used(move: String) -> void:
 		frog_layer.add_child(powered)
 	if move=="Sword Barrage":
 		var sworded=swordMove.instantiate()
+		if atkUp>0:
+			sworded.multiplier+=0.5
+		if atkDown>0:
+			sworded.multiplier-=0.5
 		frog_layer.add_child(sworded)
 	if move=="Health Potion":
 		var healed=healthPotion.instantiate()
 		frog_layer.add_child(healed)
 	if move=="Fireball":
 		var fired=fireball.instantiate()
+		if atkUp>0:
+			fired.multiplier+=0.5
+		if atkDown>0:
+			fired.multiplier-=0.5
 		frog_layer.add_child(fired)
 	
 	if move=="Cannon Barrage":
 		var caned=cannon.instantiate()
+		if atkUp>0:
+			caned.multiplier+=0.5
+		if atkDown>0:
+			caned.multiplier-=0.5
 		frog_layer.add_child(caned)
 	if move=="Smite":
 		var smied=smite.instantiate()

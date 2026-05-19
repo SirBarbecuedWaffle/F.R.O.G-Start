@@ -4,11 +4,13 @@ extends Node2D
 var swordCount:=50
 var sword=preload("res://moves/sword.tscn")
 var lastY:=0.0
+@export var multiplier :=1.0
 
 func _on_timer_timeout() -> void:
 	swordCount-=1
 	if swordCount>0:
 		var newSwo=sword.instantiate()
+		newSwo.damage*=multiplier
 		timer.start()
 		newSwo.global_position.y=randi_range(1,10)*85
 		while lastY==newSwo.global_position.y:

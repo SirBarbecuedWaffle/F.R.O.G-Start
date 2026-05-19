@@ -1,7 +1,7 @@
 extends AnimatedSprite2D
 @onready var animated_sprite_2d_2: AnimatedSprite2D = $"."
 @onready var guy_2: Node2D = $"../places/guy2"
-
+@export var damageMulti:=1.0
 @onready var timer: Timer = $Timer
 var ball=preload("res://moves/cannon_ball.tscn")
 var cooldown:=0
@@ -9,7 +9,7 @@ var cooldown:=0
 @onready var end_timer: Timer = $"../endTimer"
 
 func _ready() -> void:
-	timer.start(randi_range(1,2))
+	timer.start(randi_range(2-damageMulti,3-damageMulti))
 
 func _process(delta: float) -> void:
 	pass

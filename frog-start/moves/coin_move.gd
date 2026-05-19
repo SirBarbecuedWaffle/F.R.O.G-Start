@@ -3,9 +3,10 @@ var cycles:=2
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var strike_projectile: damager = $strikeProjectile
-
+@export var multiplier:=1.0
 
 func _ready() -> void:
+	strike_projectile.damage*=multiplier
 	await get_tree().create_timer(2.0).timeout
 	animated_sprite_2d.play("default")
 	animation_player.play("flip")

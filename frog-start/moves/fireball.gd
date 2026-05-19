@@ -15,12 +15,13 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var fireball: AnimatedSprite2D = $Arrows/arrow4/fireball
 @onready var explosion: AnimatedSprite2D = $explosion
-
+@export var multiplier:=1.0
 @onready var burn_effect: damager = $burnEffect
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	arrow_4.damage*=multiplier
 	await get_tree().create_timer(0.1).timeout
 	for i in places.get_children():
 		if i.audio_bus_override:
