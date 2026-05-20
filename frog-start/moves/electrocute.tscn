@@ -90,6 +90,7 @@ script = ExtResource("1_76rob")
 [node name="strikeProjectile" parent="." unique_id=1142312808 instance=ExtResource("2_adobs")]
 position = Vector2(0, -323)
 collision_layer = 8
+damage = 5
 burn = 15
 stun = 10
 randomNumbers = true

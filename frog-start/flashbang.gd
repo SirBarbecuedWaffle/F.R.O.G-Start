@@ -3,9 +3,11 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var strike_projectile: damager = $strikeProjectile
 @onready var strike_projectile_2: damager = $strikeProjectile2
-
+@export var multiplier:=1.0
 
 func _ready() -> void:
+	strike_projectile.damage*=multiplier
+	strike_projectile_2.damage*=multiplier
 	await get_tree().create_timer(0.75).timeout
 	strike_projectile.global_position.y+=2000
 	strike_projectile_2.global_position.y+=2000

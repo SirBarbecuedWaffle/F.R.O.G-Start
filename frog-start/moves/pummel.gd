@@ -8,10 +8,12 @@ extends Node2D
 @onready var area_2d: Area2D = $Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $Area2D/AnimatedSprite2D
 var curStrike=0
-
+@export var multiplier:=1.0
 
 func _ready() -> void:
-	pass
+	strike_projectile.damage*=multiplier
+	strike_projectile_2.damage*=multiplier
+	strike_projectile_3.damage*=multiplier
 
 func _process(delta: float) -> void:
 	if curStrike==0:

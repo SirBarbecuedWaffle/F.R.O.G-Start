@@ -11,13 +11,14 @@ extends Node2D
 
 @onready var arrows: Node2D = $Arrows
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
+@export var multiplier:=1.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	spawn_location.global_position=spawnLoca
 	arrow_1.global_position=spawn_location.global_position
 	arrow_1.global_position.x=spawn_location.global_position.x-100
+	arrow_1.damage*=multiplier
 
 	await get_tree().create_timer(0.1).timeout
 	for i in places.get_children():

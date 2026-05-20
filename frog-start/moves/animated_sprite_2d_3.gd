@@ -22,7 +22,6 @@ func _on_timer_timeout() -> void:
 	await get_tree().create_timer(0.4).timeout
 	if cannon_barrage.modulate==Color.WHITE:
 		var balle=ball.instantiate()
-		balle.damage*=damageMulti
 		add_child(balle)
 		balle.global_position=guy_3.global_position
 	

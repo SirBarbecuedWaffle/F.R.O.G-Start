@@ -85,7 +85,7 @@ var pummeld=preload("res://moves/pummel.tscn")
 @export var atkDown:=00.0
 @export var defDown:=00.0
 @export var spdDown:=00.0
-@export var atkUp:=20.0
+@export var atkUp:=5.0
 @export var defUp:=10.0
 @export var spdUp:=0.0
 @export var stun:=0.0
@@ -328,16 +328,21 @@ func _on_move_handler_move_used(move: String) -> void:
 	
 	if move=="Cannon Barrage":
 		var caned=cannon.instantiate()
-		if atkUp>0:
-			caned.multiplier+=0.5
-		if atkDown>0:
-			caned.multiplier-=0.5
+		
 		frog_layer.add_child(caned)
 	if move=="Smite":
 		var smied=smite.instantiate()
+		if atkUp>0:
+			smied.multiplier+=0.5
+		if atkDown>0:
+			smied.multiplier-=0.5
 		frog_layer.add_child(smied)
 	if move=="Electrocute":
 		var eled=elect.instantiate()
+		if atkUp>0:
+			eled.multiplier+=0.5
+		if atkDown>0:
+			eled.multiplier-=0.5
 		frog_layer.add_child(eled)
 		
 	if move=="Coffee Break":
@@ -345,6 +350,10 @@ func _on_move_handler_move_used(move: String) -> void:
 		frog_layer.add_child(cofed)
 	if move=="Scald":
 		var scaed=scald.instantiate()
+		if atkUp>0:
+			scaed.multiplier+=0.5
+		if atkDown>0:
+			scaed.multiplier-=0.5
 		scaed.spawnLoca=global_position
 		scaed.spawnLoca.y=global_position.y
 		frog_layer.add_child(scaed)
@@ -354,9 +363,17 @@ func _on_move_handler_move_used(move: String) -> void:
 		
 	if move=="Flashbang":
 		var fled=flashed.instantiate()
+		if atkUp>0:
+			fled.multiplier+=0.5
+		if atkDown>0:
+			fled.multiplier-=0.5
 		frog_layer.add_child(fled)
 	if move=="Pummel":
 		var pued=pummeld.instantiate()
+		if atkUp>0:
+			pued.multiplier+=0.5
+		if atkDown>0:
+			pued.multiplier-=0.5
 		frog_layer.add_child(pued)
 		
 	if move=="DDoS":
