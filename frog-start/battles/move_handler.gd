@@ -76,7 +76,7 @@ func _process(delta: float) -> void:
 	if moveHovered=="Sword Barrage":
 		move_explainer.text="Fires a barrage of low damage swords"
 	if moveHovered=="Health Potion":
-		move_explainer.text="Applies low healing and temporary regen to your entire party"
+		move_explainer.text="Heals and temporarily regens your entire party"
 	if moveHovered=="Cannon Barrage":
 		move_explainer.text="Spawns 3 cannons that occasionally deal low damage to enemies"
 	if moveHovered=="Smite":
@@ -90,13 +90,15 @@ func _process(delta: float) -> void:
 	if moveHovered=="You're Fired":
 		move_explainer.text="Has a 1/8 chance to kill every enemy, burns them regardless"
 	if moveHovered=="Coffee Break":
-		move_explainer.text="Heals and speeds up the entire party"
+		move_explainer.text="Heals and temporarily speeds up the entire party"
 	if moveHovered=="Pummel":
 		move_explainer.text="Hits a random enemy three times, lowering the attack of the last enemy hit"
 	if moveHovered=="Flashbang":
 		move_explainer.text="Briefly stuns every enemy and party member"
 	if moveHovered=="Toxic Sludge":
 		move_explainer.text="Temporarily poisons and slows every enemy"
+	if moveHovered=="Bottoms Up":
+		move_explainer.text="Heals and temporarily raises the attack of the entire party"
 	
 	if get_parent().getChar()=="frog":
 		move_1_lab.text="Arrow Barrage"
