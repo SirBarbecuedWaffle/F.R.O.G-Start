@@ -25,7 +25,7 @@ signal moveUsed(move : String)
 var moves1=["Arrow Barrage","Overclock","All Skill Baby","Sword Barrage","Coffee Break","Fireball","Arrow Barrage 2","",""]
 var moves2=["Block","Zip Bomb","Strike","Strength Spell","Cannon Barrage","You're Fired","Alt F4","Curse: Corrupt","",""]
 var moves3=["Strike","Infect","Curse: Weaken","Health Potion","Smite","Fireball","Pummel","Bluescreen","",""]
-var moves4=["Frogsicle","Alt F4","Curse: Poison","Fireball","Electrocute","Scald","Flashbang","Toxic Sludge","Bottoms Up","DDoS","",""]
+var moves4=["Frogsicle","Alt F4","Curse: Poison","Fireball","Electrocute","Scald","Flashbang","Toxic Fumes","Bottoms Up","DDoS","",""]
 @onready var move_handler: Node2D = $"."
 
 @onready var move_1: TextureButton = $move1Control/move1
@@ -95,7 +95,7 @@ func _process(delta: float) -> void:
 		move_explainer.text="Hits a random enemy three times, lowering the attack of the last enemy hit"
 	if moveHovered=="Flashbang":
 		move_explainer.text="Briefly stuns every enemy and party member"
-	if moveHovered=="Toxic Sludge":
+	if moveHovered=="Toxic Fumes":
 		move_explainer.text="Temporarily poisons and slows every enemy"
 	if moveHovered=="Bottoms Up":
 		move_explainer.text="Heals and temporarily raises the attack of the entire party"
@@ -139,7 +139,7 @@ func _process(delta: float) -> void:
 		move_1_lab.text="Fireball"
 		move_2_lab.text="Cannon Barrage"
 		move_3_lab.text="Pummel"
-		move_4_lab.text="Toxic Sludge"
+		move_4_lab.text="Toxic Fumes"
 	if get_parent().getChar()=="barrel":
 		move_1_lab.text="Coffee Break"
 		move_2_lab.text="Block"
@@ -202,7 +202,7 @@ func _process(delta: float) -> void:
 	if move_4_lab.text=="Bottoms Up":
 		move_4.texture_hover=BuffMoveHover
 		move_4.texture_normal=BuffMoveIcon
-	if move_4_lab.text=="Curse: Poison" || move_4_lab.text=="Toxic Sludge":
+	if move_4_lab.text=="Curse: Poison" || move_4_lab.text=="Toxic Fumes":
 		move_4.texture_hover=poisMoveHover
 		move_4.texture_normal=poisMoveIcon
 	if move_4_lab.text=="Fireball" || move_4_lab.text=="Scald":

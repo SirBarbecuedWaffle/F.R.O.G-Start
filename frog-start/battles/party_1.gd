@@ -58,6 +58,7 @@ var damageIcon=preload("res://damageIndicator.tscn")
 var flash=preload("res://screenFlash.tscn")
 var flashed=preload("res://moves/flashbang.tscn")
 var pummeld=preload("res://moves/pummel.tscn")
+var toxiced=preload("res://moves/toxicsludge.tscn")
 
 @onready var curChar : AnimatedSprite2D
 
@@ -375,6 +376,9 @@ func _on_move_handler_move_used(move: String) -> void:
 		if atkDown>0:
 			pued.multiplier-=0.5
 		frog_layer.add_child(pued)
+	if move=="Toxic Fumes":
+		var toxed=toxiced.instantiate()
+		frog_layer.add_child(toxed)
 		
 	if move=="DDoS":
 		var dded=DDoSed.instantiate()
