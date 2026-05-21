@@ -1,5 +1,5 @@
 extends Node2D
-@export var velocityY:=randf_range(1,5)
+@export var velocityY:=randf_range(100,500)
 @export var velocityX:=randf_range(-250,300)
 var bounce:=randi_range(0,1)==1
 @onready var strike_projectile_2: damager = $strikeProjectile2
@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 		#if velocityX<-1*velocityY:
 			#bounce=true
 	
-	global_position.y-=velocityY
+	global_position.y-=velocityY*delta
 	if sprite_2d.frame==89:
 		if strike_projectile_2!=null:
 			strike_projectile_2.global_position.y=sprite_2d.global_position.y

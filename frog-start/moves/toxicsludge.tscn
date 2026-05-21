@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c38cusor1iyas" path="res://moves/toxicsludge.gd" id="1_b5idn"]
 [ext_resource type="Texture2D" uid="uid://beyr0s25b3yyi" path="res://2DAssets/New Piskel (10).png" id="3_06685"]
 [ext_resource type="Texture2D" uid="uid://gqnqlwk8p5xl" path="res://2DAssets/New Piskel (9).png" id="4_qo2w3"]
+[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="4_uk61h"]
 
 [sub_resource type="Gradient" id="Gradient_74p8y"]
 offsets = PackedFloat32Array(0.56658596)
@@ -129,3 +130,10 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="places/place4" unique_id=1416877264]
 position = Vector2(-20.5, 5)
 shape = SubResource("RectangleShape2D_ts12a")
+
+[node name="strikeProjectile2" parent="." unique_id=1142312808 instance=ExtResource("4_uk61h")]
+position = Vector2(404, 2508)
+scale = Vector2(18.51, 18.51)
+collision_layer = 8
+spdRev = 30
+randomNumbers = true
