@@ -5048,6 +5048,16 @@ position = Vector2(10.869385, 30.41455)
 shape = SubResource("RectangleShape2D_3a61k")
 debug_color = Color(0, 0.6, 0, 0.41960785)
 
+[node name="cleanseBox" type="Area2D" parent="frogLayer/partyHandler/party1" unique_id=1754796793]
+z_index = 10
+collision_layer = 16
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frogLayer/partyHandler/party1/cleanseBox" unique_id=422443976]
+position = Vector2(10.869385, 30.41455)
+shape = SubResource("RectangleShape2D_3a61k")
+debug_color = Color(0.69824743, 1, 0.67160314, 0.41960785)
+
 [node name="hitSprite" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party1" unique_id=1425761082]
 z_index = 1
 position = Vector2(-4.630615, 12.914549)
@@ -5768,6 +5778,7 @@ autoplay = &"loadIn"
 [connection signal="animation_finished" from="frogLayer/partyHandler/party1/moveHandler/AnimationPlayer" to="frogLayer/partyHandler/party1/moveHandler" method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="frogLayer/partyHandler/party1/moveHandler/gorfTimer" to="frogLayer/partyHandler/party1/moveHandler" method="_on_gorf_timer_timeout"]
 [connection signal="area_entered" from="frogLayer/partyHandler/party1/hitBox" to="frogLayer/partyHandler/party1" method="_on_hit_box_area_entered"]
+[connection signal="area_entered" from="frogLayer/partyHandler/party1/cleanseBox" to="frogLayer/partyHandler/party1" method="_on_cleanse_box_area_entered"]
 [connection signal="timeout" from="frogLayer/partyHandler/party1/poisonDamage" to="frogLayer/partyHandler/party1" method="_on_poison_damage_timeout"]
 [connection signal="animation_finished" from="frogLayer/partyHandler/frog" to="frogLayer/partyHandler" method="_on_frog_animation_finished"]
 [connection signal="animation_finished" from="frogLayer/partyHandler/gorf" to="frogLayer/partyHandler" method="_on_gorf_animation_finished"]

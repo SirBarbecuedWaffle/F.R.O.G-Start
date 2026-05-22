@@ -59,6 +59,7 @@ var flash=preload("res://screenFlash.tscn")
 var flashed=preload("res://moves/flashbang.tscn")
 var pummeld=preload("res://moves/pummel.tscn")
 var toxiced=preload("res://moves/toxicsludge.tscn")
+var cleanse=preload("res://moves/pressure_wash.tscn")
 
 @onready var curChar : AnimatedSprite2D
 
@@ -83,7 +84,7 @@ var toxiced=preload("res://moves/toxicsludge.tscn")
 @export var moveProgress:=0.0
 @export var poison:=0.0
 @export var fire:=0
-@export var atkDown:=0.0
+@export var atkDown:=00.0
 @export var defDown:=00.0
 @export var spdDown:=00.0
 @export var atkUp:=0.0
@@ -379,6 +380,9 @@ func _on_move_handler_move_used(move: String) -> void:
 	if move=="Toxic Fumes":
 		var toxed=toxiced.instantiate()
 		frog_layer.add_child(toxed)
+	if move=="Pressure Wash":
+		var cleaned=cleanse.instantiate()
+		frog_layer.add_child(cleaned)
 		
 	if move=="DDoS":
 		var dded=DDoSed.instantiate()
@@ -471,3 +475,9 @@ func _on_poison_damage_timeout() -> void:
 	health-=am
 	poison-=am
 	poison_damage.start(randi_range(1,5))
+
+
+func _on_cleanse_box_area_entered(area: Area2D) -> void:
+	defDown=0
+	spdDown=0
+	atkDown=0

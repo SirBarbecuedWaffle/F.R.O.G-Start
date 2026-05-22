@@ -99,6 +99,8 @@ func _process(delta: float) -> void:
 		move_explainer.text="Temporarily poisons and slows every enemy"
 	if moveHovered=="Bottoms Up":
 		move_explainer.text="Heals and temporarily raises the attack of the entire party"
+	if moveHovered=="Pressure Wash":
+		move_explainer.text="Cleanses the entire party of negative effects and damages all enemies"
 	
 	if get_parent().getChar()=="frog":
 		move_1_lab.text="Arrow Barrage"
@@ -143,7 +145,7 @@ func _process(delta: float) -> void:
 	if get_parent().getChar()=="barrel":
 		move_1_lab.text="Coffee Break"
 		move_2_lab.text="Block"
-		move_3_lab.text="Health Potion"
+		move_3_lab.text="Pressure Wash"
 		move_4_lab.text="Bottoms Up"
 	#if get_parent().getChar()=="gorf":
 		#move_1_lab.text="Arrow Barrage 2"
@@ -198,6 +200,9 @@ func _process(delta: float) -> void:
 	if move_3_lab.text=="Fireball":
 		move_3.texture_hover=fireMoveHover
 		move_3.texture_normal=fireMoveIcon
+	if move_3_lab.text=="Pressure Wash":
+		move_3.texture_hover=BuffMoveHover
+		move_3.texture_normal=BuffMoveIcon
 		
 	if move_4_lab.text=="Bottoms Up":
 		move_4.texture_hover=BuffMoveHover

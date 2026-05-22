@@ -146,3 +146,7 @@ func _on_fox_animation_finished() -> void:
 
 func _on_gorf_timer_timeout() -> void:
 	pass # Replace with function body.
+
+
+func _on_cleanse_box_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.
