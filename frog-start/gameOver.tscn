@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://ffq358q1dhk1"]
+
+[ext_resource type="Script" uid="uid://dnl6hsdl2ic7s" path="res://game_over.gd" id="1_ky4b6"]
+[ext_resource type="FontFile" uid="uid://db116eca6q2cp" path="res://fonts/PixeloidSansBold-1jpBg.ttf" id="1_xlotp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f0bnf"]
+font = ExtResource("1_xlotp")
+font_size = 157
+
+[sub_resource type="Animation" id="Animation_xlotp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ky4b6"]
+resource_name = "oof"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.26666668, 0.46666667, 0.6666667, 0.8666667, 1.0666667, 1.2666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_knsyn"]
+_data = {
+&"RESET": SubResource("Animation_xlotp"),
+&"oof": SubResource("Animation_ky4b6")
+}
+
+[node name="Node2D" type="Node2D" unique_id=750492034]
+script = ExtResource("1_ky4b6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1385691220]
+offset_left = -28.0
+offset_top = -17.0
+offset_right = 2057.0
+offset_bottom = 1060.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=1453544817]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_f0bnf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=874905776]
+libraries/ = SubResource("AnimationLibrary_knsyn")
+autoplay = &"oof"
+speed_scale = 3.0

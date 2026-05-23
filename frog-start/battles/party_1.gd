@@ -15,6 +15,9 @@ class_name partyMember
 @onready var joe: AnimatedSprite2D = $"../joe"
 @onready var fox: AnimatedSprite2D = $"../fox"
 @onready var barrel: AnimatedSprite2D = $"../barrel"
+@onready var party_handler: Node2D = $".."
+@onready var turnbar_animator: AnimationPlayer = $turnBar/turnbarAnimator
+
 
 
 @export var character:=""
@@ -60,23 +63,32 @@ var flashed=preload("res://moves/flashbang.tscn")
 var pummeld=preload("res://moves/pummel.tscn")
 var toxiced=preload("res://moves/toxicsludge.tscn")
 var cleanse=preload("res://moves/pressure_wash.tscn")
-
+var bottoms=preload("res://moves/BottomsUp.tscn")
 @onready var curChar : AnimatedSprite2D
 
-@export var health:=140.0:
+@export var health:=10.0:
 	set(newHP):
 		if health<maxHealth:
 			if newHP<health-1:
 				hit_sprite.play("default")
 		if newHP<health:
 			if newHP<health-5:
-				if curChar!=null:
-					if curChar.animation=="idle":
-						curChar.play("hurt")
+				if newHP<maxHealth:
+					if curChar!=null:
+						if curChar.animation=="idle":
+							curChar.play("hurt")
+							hit_sprite.play("default")
 			if defUp>0:
 				newHP+=(health-newHP)/2
 			if defDown>0:
 				newHP-=(health-newHP)/2
+		else:
+			if newHP!=maxHealth:
+				var tweent := create_tween()
+				tweent.tween_property(curChar, "self_modulate", Color(0.0, 4.416, 0.0, 1.0), 0.2)
+				await tweent.finished
+				var tweent2 := create_tween()
+				tweent2.tween_property(curChar, "self_modulate", Color(1.0, 1.0, 1.0, 1.0), 0.2)
 		health=newHP
 		
 			
@@ -88,7 +100,7 @@ var cleanse=preload("res://moves/pressure_wash.tscn")
 @export var defDown:=00.0
 @export var spdDown:=00.0
 @export var atkUp:=0.0
-@export var defUp:=10.0
+@export var defUp:=0.0
 @export var spdUp:=0.0
 @export var stun:=0.0
 @export var regen:=0
@@ -112,41 +124,56 @@ var turnTime:=randi_range(120,450)
 
 func _ready() -> void:
 	await get_tree().create_timer(0.01).timeout
-	spdUp=300.0
+	if character=="":
+		maxHealth=-999
+		visible=false
+		global_position.y=-2000
 	if character=="frog":
 		curChar=frog
+		maxHealth=200.0
 	if character=="steve":
 		curChar=steve
 		curChar.play("idle")
+		maxHealth=150.0
 	if character=="mask":
 		curChar=mask
 		curChar.play("idle")
+		maxHealth=175.0
 	if character=="pink":
 		curChar=pink
+		maxHealth=150.0
 	if character=="robot":
 		curChar=robot
 		curChar.play("idle")
+		maxHealth=180.0
 	if character=="joe":
 		curChar=joe
 		curChar.play("idle")
+		maxHealth=130.0
 	if character=="fox":
 		curChar=fox
 		curChar.play("idle")
+		maxHealth=120.0
 	if character=="lizard":
 		curChar=lizard
 		curChar.play("idle")
+		maxHealth=300.0
 	if character=="gorf":
 		curChar=gorf
 		curChar.play("idle")
+		maxHealth=999.0
 	if character=="barrel":
 		curChar=barrel
 		curChar.play("idle")
+		maxHealth=100.0
+	health=maxHealth
 
 func _process(delta: float) -> void:
 	stun_anim.visible=stun>0
 	if stun>0:
-		stun-=1*delta
-		moveProgress=randi_range(0,turnTime-50)
+		if turnbar_animator.current_animation!="flash":
+			stun-=1*delta
+			moveProgress=randi_range(0,turnTime-50)
 	if regen>0:
 		regen-=1*delta
 		if regen%125==0:
@@ -158,8 +185,10 @@ func _process(delta: float) -> void:
 	poison_on.visible=poison>0
 	poison_damage.paused=!poison>0
 	if health<1:
-		if curChar.animation!="die":
-			curChar.play("die")
+		if curChar!=null:
+			if curChar.animation!="die":
+				curChar.play("die")
+				health-=randi_range(30,90)
 	atk_up_ind.visible=atkUp>1
 	if atkUp>0:
 		atkUp-=1*delta
@@ -217,17 +246,23 @@ func _process(delta: float) -> void:
 		if moveProgress<turnTime:
 			moveProgress+=70*delta
 			if spdUp>0:
-				moveProgress+=70*delta
+				moveProgress+=40*delta
 			if spdDown>0:
 				moveProgress-=20*delta
 		else:
-			if !move_handler.visible:
-				move_handler.visible=true
-				move_handler.fadeIn()
+			turnbar_animator.play("flash")
+			if !party_handler.moveMenuOpen:
+				if !move_handler.visible:
+					move_handler.visible=true
+					party_handler.moveMenuOpen=true
+					move_handler.fadeIn()
 	else:
 		health_bar.scale.x=0
 		health_label.modulate=Color(1.0, 0.0, 0.0, 1.0)
-		move_handler.visible=false
+		if move_handler.visible:
+			move_handler.visible=false
+			party_handler.moveMenuOpen=false
+			curChar.rotation_degrees=0
 		spdUp=0
 		spdDown=0
 		atkDown=0
@@ -243,6 +278,8 @@ func _process(delta: float) -> void:
 
 func _on_move_handler_move_used(move: String) -> void:
 	print(move)
+	party_handler.moveMenuOpen=false
+	turnbar_animator.play("RESET")
 	moveProgress=0
 	turnTime=randi_range(420,650)
 	#if character=="barrel":
@@ -383,6 +420,9 @@ func _on_move_handler_move_used(move: String) -> void:
 	if move=="Pressure Wash":
 		var cleaned=cleanse.instantiate()
 		frog_layer.add_child(cleaned)
+	if move=="Bottoms Up":
+		var botted=bottoms.instantiate()
+		frog_layer.add_child(botted)
 		
 	if move=="DDoS":
 		var dded=DDoSed.instantiate()

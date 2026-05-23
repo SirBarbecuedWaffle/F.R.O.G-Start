@@ -1,9 +1,9 @@
-[gd_scene load_steps=73 format=3 uid="uid://f7j7cgji16eu"]
+[gd_scene format=3 uid="uid://f7j7cgji16eu"]
 
 [ext_resource type="Script" uid="uid://dukhknp72aias" path="res://overworldPlayer/player.gd" id="1_v5wy0"]
 [ext_resource type="Texture2D" uid="uid://dmll6efl2bm1i" path="res://overworldPlayer/playerAssets/idle (1).png" id="2_ve36c"]
 [ext_resource type="Texture2D" uid="uid://bmypu0vufq11f" path="res://overworldPlayer/playerAssets/scaredFrogAnim.png" id="3_4m420"]
-[ext_resource type="Texture2D" uid="uid://7sfdpgxmu021" path="res://overworldPlayer/playerAssets/walk.png" id="3_y31q3"]
+[ext_resource type="Texture2D" uid="uid://dss6cuvlj8j2u" path="res://overworldPlayer/playerAssets/walk.png" id="3_y31q3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4m420"]
 atlas = ExtResource("2_ve36c")
@@ -567,12 +567,12 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" unique_id=834400749]
 collision_layer = 3
 motion_mode = 1
 script = ExtResource("1_v5wy0")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=45399138]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_75u2t")
 animation = &"scared"
@@ -580,16 +580,14 @@ autoplay = "idleFront"
 frame = 10
 frame_progress = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1667708885]
 position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_44cfe")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_tuyoq")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1369158417]
+libraries/ = SubResource("AnimationLibrary_tuyoq")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1272720112]
 position = Vector2(11, -20)
 sprite_frames = SubResource("SpriteFrames_dqkch")
 frame_progress = 0.66758674

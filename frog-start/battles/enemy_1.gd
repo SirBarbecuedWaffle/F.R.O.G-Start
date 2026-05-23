@@ -34,7 +34,8 @@ var damageIcon=preload("res://damageIndicator.tscn")
 @export var spdUp:=15.0
 @export var stun:=0.0
 @onready var enemy_spr_1: AnimatedSprite2D = $enemySpr1
-var turnTime:=randi_range(470,700)
+@export var attackSpeed:=625
+var turnTime:=randi_range(attackSpeed-120,attackSpeed+75)
 @onready var frog_layer: CanvasLayer = $"../.."
 @onready var def_up_ind: Sprite2D = $arrowHandler/goodArrows/defUpInd
 @onready var spd_up_ind: Sprite2D = $arrowHandler/goodArrows/spdUpInd
@@ -53,6 +54,8 @@ var turnTime:=randi_range(470,700)
 @onready var stun_anim: AnimatedSprite2D = $enemySpr1/stunAnim
 
 @onready var attack_animator: AnimationPlayer = $attackAnimator
+func _ready() -> void:
+	health=maxHealth
 
 func _process(delta: float) -> void:
 	if stun_anim!=null:
@@ -132,7 +135,7 @@ func _process(delta: float) -> void:
 		else:
 			attack_animator.play("attack")
 			moveProgress=0
-			turnTime=randi_range(470,700)
+			turnTime=randi_range(attackSpeed-120,attackSpeed+75)
 			await get_tree().create_timer(0.36).timeout
 			var hit=basicHit.instantiate()
 			hit.damage=30
@@ -142,19 +145,18 @@ func _process(delta: float) -> void:
 			hit.collision_mask=5
 			hit.randomNumbers=true
 			var alivePeople=party_handler.getAlivePlayers()
-			if alivePeople==[0,0,0,0]:
-				get_tree().quit()
-			var numTargets=0
-			for i in range(4):
-				if alivePeople[i] is partyMember:
-					numTargets+=1
-			var target=randi_range(0,numTargets)
-			while target==0:
-				target=randi_range(0,numTargets)
-			
-			hit.global_position=party_handler.getAlivePlayers()[target-1].global_position
-			print(hit.global_position)
-			frog_layer.add_child(hit)
+			if alivePeople!=[null,null,null,null]:
+				var numTargets=0
+				var target=randi_range(0,3)
+				while party_handler.getAlivePlayers()[target]==null:
+					target=randi_range(0,3)
+				if party_handler.getAlivePlayers()[target]!=null:
+					var targese=party_handler.getAlivePlayers()[target]
+					hit.global_position=targese.global_position
+				print(hit.global_position)
+				frog_layer.add_child(hit)
+			else:
+				get_tree().change_scene_to_file("res://gameOver.tscn")
 	else:
 		if attack_animator.current_animation!="die":
 			health_label.modulate=Color(1.0, 1.0, 1.0, 0.0)

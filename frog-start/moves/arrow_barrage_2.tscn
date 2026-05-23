@@ -221,7 +221,6 @@ position = Vector2(1504, 605)
 [node name="arrow1" parent="Arrows" unique_id=1142312808 instance=ExtResource("2_xcamt")]
 collision_layer = 8
 damage = 5
-stun = 8.0
 randomNumbers = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Arrows/arrow1" unique_id=1995694293]

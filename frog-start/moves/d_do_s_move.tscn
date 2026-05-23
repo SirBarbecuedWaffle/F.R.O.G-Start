@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://dxtow65inycmv"]
 
 [ext_resource type="PackedScene" uid="uid://d2ut8jsq0l341" path="res://moves/zipbomb.tscn" id="1_dxl4l"]
+[ext_resource type="Script" uid="uid://d0xc0063y5qed" path="res://moves/d_do_s_move.gd" id="1_tw1dp"]
+[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="2_lqwt6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lqwt6"]
 size = Vector2(109, 138)
 
 [node name="DDoSMove" type="Node2D" unique_id=1791416008]
+script = ExtResource("1_tw1dp")
 
 [node name="arrowBarrage" parent="." unique_id=278365401 instance=ExtResource("1_dxl4l")]
 visible = true
@@ -61,3 +64,11 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="places/place4" unique_id=1713903753]
 position = Vector2(-20.5, 5)
 shape = SubResource("RectangleShape2D_lqwt6")
+
+[node name="massStun" parent="." unique_id=1142312808 instance=ExtResource("2_lqwt6")]
+position = Vector2(405, 2499)
+scale = Vector2(14.45, 14.45)
+collision_layer = 8
+stun = 10.0
+oneHit = false
+randomNumbers = true

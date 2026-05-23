@@ -22,10 +22,10 @@ signal moveUsed(move : String)
 @onready var instaKillIcon=preload("res://moves/moveAssets/instakillMoveIcon.png")
 @onready var gorf_timer: Timer = $gorfTimer
 
-var moves1=["Arrow Barrage","Overclock","All Skill Baby","Sword Barrage","Coffee Break","Fireball","Arrow Barrage 2","",""]
-var moves2=["Block","Zip Bomb","Strike","Strength Spell","Cannon Barrage","You're Fired","Alt F4","Curse: Corrupt","",""]
-var moves3=["Strike","Infect","Curse: Weaken","Health Potion","Smite","Fireball","Pummel","Bluescreen","",""]
-var moves4=["Frogsicle","Alt F4","Curse: Poison","Fireball","Electrocute","Scald","Flashbang","Toxic Fumes","Bottoms Up","DDoS","",""]
+var moves1=["Arrow Barrage","Overclock","All Skill Baby","Sword Barrage","Coffee Break","Fireball","Arrow Barrage 2"]
+var moves2=["Block","Zip Bomb","Strike","Strength Spell","Cannon Barrage","You're Fired","Alt F4","Curse: Corrupt"]
+var moves3=["Strike","Infect","Curse: Weaken","Health Potion","Smite","Fireball","Pummel","Bluescreen"]
+var moves4=["Frogsicle","Alt F4","Curse: Poison","Fireball","Electrocute","Scald","Flashbang","Toxic Fumes","Bottoms Up","DDoS"]
 @onready var move_handler: Node2D = $"."
 
 @onready var move_1: TextureButton = $move1Control/move1
