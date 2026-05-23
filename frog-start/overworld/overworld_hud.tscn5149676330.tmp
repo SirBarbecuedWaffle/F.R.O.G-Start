@@ -9,14 +9,10 @@
 [ext_resource type="FontFile" uid="uid://db116eca6q2cp" path="res://fonts/PixeloidSansBold-1jpBg.ttf" id="3_p5nna"]
 [ext_resource type="Texture2D" uid="uid://cxb3oeoe3wy6" path="res://2DAssets/menus/party2.png" id="4_2yhly"]
 [ext_resource type="Texture2D" uid="uid://dmv12ti68u82t" path="res://overworldPlayer/playerAssets/Virtual Guy/Idle (32x32).png" id="4_i81t4"]
-[ext_resource type="Script" uid="uid://kba2xu1epbpx" path="res://overworld/move_displayer.gd" id="4_iwmkv"]
 [ext_resource type="Texture2D" uid="uid://db85ocfjjy7lv" path="res://2DAssets/menus/party3.png" id="5_82awa"]
 [ext_resource type="Texture2D" uid="uid://cjtq82gyqprfy" path="res://overworldPlayer/playerAssets/Mask Dude/Idle (32x32).png" id="5_l5p7k"]
-[ext_resource type="Texture2D" uid="uid://cy03lk7x1jclw" path="res://moves/moveAssets/instakillMoveIcon.png" id="5_rtfl0"]
 [ext_resource type="Texture2D" uid="uid://uqx5ps6o8duc" path="res://overworldPlayer/playerAssets/Pink Man/Idle (32x32).png" id="6_1l1ks"]
 [ext_resource type="Texture2D" uid="uid://bbgnok62o0edv" path="res://2DAssets/menus/party4.png" id="6_ndlcs"]
-[ext_resource type="Texture2D" uid="uid://cislail14vla6" path="res://moves/moveAssets/pressedIcon.png" id="6_wok1x"]
-[ext_resource type="Texture2D" uid="uid://ciykyc00kn11t" path="res://moves/moveAssets/instakillHoverAIcon.png" id="7_qnqxd"]
 [ext_resource type="Texture2D" uid="uid://frsit0qthd2c" path="res://overworldPlayer/playerAssets/joe, fox, robot/robit/Idle.png" id="7_tuu3x"]
 [ext_resource type="Texture2D" uid="uid://bbtnbrlfstrpn" path="res://overworldPlayer/playerAssets/gorF Assets/idle.png" id="8_jm74w"]
 [ext_resource type="Texture2D" uid="uid://sfsm0xs51g7w" path="res://overworldPlayer/playerAssets/barrel/Idle.png" id="9_d3ca0"]
@@ -28,20 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://ejwp5n6npaso" path="res://overworldPlayer/playerAssets/Appearing (96x96).png" id="12_7dned"]
 [ext_resource type="Texture2D" uid="uid://go1422sc70tc" path="res://overworldPlayer/playerAssets/joe, fox, robot/joe/Idle.png" id="12_wi733"]
 [ext_resource type="Texture2D" uid="uid://csa45o3yq2jdc" path="res://overworldPlayer/playerAssets/gorF Assets/double Jump.png" id="13_2yhly"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_q3a7b"]
-font = ExtResource("3_p5nna")
-font_size = 288
-
-[sub_resource type="LabelSettings" id="LabelSettings_p8gpp"]
-font = ExtResource("3_p5nna")
-font_size = 34
-outline_size = 10
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_rtfl0"]
-font = ExtResource("3_p5nna")
-font_size = 53
 
 [sub_resource type="LabelSettings" id="LabelSettings_2wefy"]
 font = ExtResource("3_p5nna")
@@ -1231,189 +1213,6 @@ position = Vector2(1637, 729)
 scale = Vector2(13.965, 13.965)
 texture = ExtResource("2_3oasr")
 
-[node name="moveDisplayer" type="Node2D" parent="CanvasLayer2/partyMenu/MenuBox" unique_id=962510332]
-visible = false
-z_index = 100
-position = Vector2(-200, 0)
-script = ExtResource("4_iwmkv")
-
-[node name="move1Control" type="Node2D" parent="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" unique_id=812364]
-position = Vector2(201, 11)
-scale = Vector2(0.075, 0.075)
-
-[node name="move1" type="TextureButton" parent="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move1Control" unique_id=1475972109]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.14886
-offset_top = -29.08545
-offset_right = 58.851013
-offset_bottom = 6.304901
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.5, 1.5)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("5_rtfl0")
-texture_pressed = ExtResource("6_wok1x")
-texture_hover = ExtResource("7_qnqxd")
-stretch_mode = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="move1Lab" type="Label" parent="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move1Control" unique_id=1970308752]
-offset_left = -119.3126
-offset_top = -17.06373
-offset_right = 2651.8374
-offset_bottom = 334.93628
-scale = Vector2(0.085, 0.085)
-text = "Move 1"
-label_settings = SubResource("LabelSettings_q3a7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="move2Control" type="Node2D" parent="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" unique_id=1402224462]
-position = Vector2(201, 4)
-scale = Vector2(0.075, 0.075)
-
-[node name="move2" type="TextureButton" parent="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move2Control" unique_id=2049367487]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.14886
-offset_top = -29.08545
-offset_right = 58.851013
-offset_bottom = 6.304901
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.5, 1.5)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("5_rtfl0")
-texture_pressed = ExtResource("6_wok1x")
-texture_hover = ExtResource("7_qnqxd")
-stretch_mode = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="move2Lab" type="Label" parent="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move2Control" unique_id=368388283]
-offset_left = -119.3126
-offset_top = -17.519958
-offset_right = 2651.8374
-offset_bottom = 334.48004
-scale = Vector2(0.085, 0.085)
-text = "Move 2"
-label_settings = SubResource("LabelSettings_q3a7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="move3Control" type="Node2D" parent="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" unique_id=1511959209]
-position = Vector2(201, -3)
-scale = Vector2(0.075, 0.075)
-
-[node name="move3" type="TextureButton" parent="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move3Control" unique_id=278272783]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.14886
-offset_top = -29.08545
-offset_right = 58.851013
-offset_bottom = 6.304901
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.5, 1.5)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("5_rtfl0")
-texture_pressed = ExtResource("6_wok1x")
-texture_hover = ExtResource("7_qnqxd")
-stretch_mode = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="move3Lab" type="Label" parent="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move3Control" unique_id=198835480]
-offset_left = -119.3126
-offset_top = -17.519958
-offset_right = 2651.8374
-offset_bottom = 334.48004
-scale = Vector2(0.085, 0.085)
-text = "Move 3"
-label_settings = SubResource("LabelSettings_q3a7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="move4Control" type="Node2D" parent="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" unique_id=182365466]
-position = Vector2(201, -10)
-scale = Vector2(0.075, 0.075)
-
-[node name="move4" type="TextureButton" parent="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move4Control" unique_id=1238369724]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.14886
-offset_top = -29.08545
-offset_right = 58.851013
-offset_bottom = 6.304901
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.5, 1.5)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("5_rtfl0")
-texture_pressed = ExtResource("6_wok1x")
-texture_hover = ExtResource("7_qnqxd")
-stretch_mode = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="move4Lab" type="Label" parent="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move4Control" unique_id=172494906]
-offset_left = -119.3126
-offset_top = -17.519958
-offset_right = 2651.8374
-offset_bottom = 334.48004
-scale = Vector2(0.085, 0.085)
-text = "Move 4"
-label_settings = SubResource("LabelSettings_q3a7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="moveExplainer" type="Label" parent="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" unique_id=1191657378]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 89.50949
-offset_top = 4.2964554
-offset_right = 941.5095
-offset_bottom = 120.296455
-grow_horizontal = 2
-grow_vertical = 0
-text = "Hover over a move to see what it does"
-label_settings = SubResource("LabelSettings_p8gpp")
-horizontal_alignment = 1
-autowrap_mode = 3
-visible_characters_behavior = 1
-
-[node name="movetutLab" type="Label" parent="CanvasLayer2/partyMenu/MenuBox" unique_id=1285637729]
-offset_left = -12.101681
-offset_top = -12.960974
-offset_right = 373.47778
-offset_bottom = 374.03903
-scale = Vector2(0.065, 0.065)
-text = "Hover over a character to see their moves"
-label_settings = SubResource("LabelSettings_rtfl0")
-horizontal_alignment = 1
-autowrap_mode = 3
-
 [node name="MenuBox2" type="Sprite2D" parent="CanvasLayer2/partyMenu" unique_id=586498268]
 position = Vector2(1637, 295)
 scale = Vector2(13.965, 13.965)
@@ -1442,9 +1241,9 @@ label_settings = SubResource("LabelSettings_2wefy")
 autowrap_mode = 3
 
 [node name="tutdescLab" type="Label" parent="CanvasLayer2/partyMenu/MenuBox2" unique_id=995552513]
-offset_left = -12.101681
+offset_left = -12.746158
 offset_top = -12.960974
-offset_right = 373.47778
+offset_right = 372.8333
 offset_bottom = 374.03903
 scale = Vector2(0.065, 0.065)
 text = "Hover over a character to see their description"
@@ -2044,18 +1843,6 @@ texture = ExtResource("1_qsaam")
 libraries/ = SubResource("AnimationLibrary_p5nna")
 autoplay = &"RESET"
 
-[connection signal="mouse_entered" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move1Control/move1" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move1Control/move1" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move1Control/move1" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_1_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move2Control/move2" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move2Control/move2" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move2Control/move2" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_1_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move3Control/move3" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move3Control/move3" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move3Control/move3" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_1_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move4Control/move4" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move4Control/move4" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move4Control/move4" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_1_pressed"]
 [connection signal="timeout" from="CanvasLayer2/partyMenu/MenuBox2/glitchTimer" to="CanvasLayer2/partyMenu" method="_on_glitch_timer_timeout"]
 [connection signal="mouse_entered" from="CanvasLayer2/partyMenu/frogBox/frogButton" to="CanvasLayer2/partyMenu" method="_on_frog_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer2/partyMenu/frogBox/frogButton" to="CanvasLayer2/partyMenu" method="_on_frog_button_mouse_exited"]

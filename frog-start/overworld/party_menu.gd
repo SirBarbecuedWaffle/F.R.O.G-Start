@@ -34,9 +34,66 @@ extends ColorRect
 @onready var joe_anim: AnimatedSprite2D = $joeBox/joeAnim
 @onready var name_label: Label = $MenuBox2/nameLabel
 @onready var descript_label: Label = $MenuBox2/descriptLabel
+@onready var tutdesc_lab: Label = $MenuBox2/tutdescLab
+@onready var movetut_lab: Label = $MenuBox/movetutLab
+@onready var move_displayer: Node2D = $MenuBox/moveDisplayer
+var glitchedChars=["$","#",":D","%","1","ERROR","*","!"]
+var focusedChar:=""
 
 func _ready() -> void:
 	updateParty()
+
+func _process(delta: float) -> void:
+	pass
+
+func getChar()->String:
+	return focusedChar
+
+func updateLabel()->void:
+	if focusedChar=="":
+		await get_tree().create_timer(0.2).timeout
+		if focusedChar=="":
+			name_label.visible=false
+			descript_label.visible=false
+			tutdesc_lab.visible=true
+			movetut_lab.visible=true
+			move_displayer.visible=false
+	else:		
+		name_label.visible=true
+		descript_label.visible=true
+		tutdesc_lab.visible=false
+		movetut_lab.visible=false
+		move_displayer.visible=true
+	if focusedChar=="frog":
+		name_label.text="Name: Edward Von Frog"
+		descript_label.text="Description: A frog with anger issues that knows martial arts and hates Christmas."
+	if focusedChar=="steve":
+		name_label.text="Name: Spaceman Steve"
+		descript_label.text="Description: A hacker from space. On the run from the space cops after hacking a space millionare."
+	if focusedChar=="mask":
+		name_label.text="Name: Mask Dude"
+		descript_label.text="Description: Nobody knows if he is wearing a mask or is the mask. Regardless, he knows voodoo."
+	if focusedChar=="hood":
+		name_label.text="Name: Flipper the Human"
+		descript_label.text="Description: Likes to have fun with his brother, Jacob the Canine, and is in love with Princess Candy."
+	if focusedChar=="robot":
+		name_label.text="Name: IDFK, Hes a robot"
+		descript_label.text="Description: A defective robot from a mega corporation. It's learning what its like to live."
+	if focusedChar=="joe":
+		name_label.text="Name: Average Joe"
+		descript_label.text="Description: He doesn't want to be here any more than you do.      Mondays, am I right?"
+	if focusedChar=="fox":
+		name_label.text="Name: The Quick Brown Fox"
+		descript_label.text="Description: It jumped over the lazy dog.            Loves sleeping and gambling."
+	if focusedChar=="lizard":
+		name_label.text="Name: Lizard?"
+		descript_label.text="Description: Its probably a lizard? Scientists aren't really sure, but it can shoot fireballs."
+	if focusedChar=="barrel":
+		name_label.text="Name: Literally Just A Barrel"
+		descript_label.text="Description: A barrel with a surprising amount of empathy. It loves healing, but hates fights."
+	if focusedChar=="locked":
+		name_label.text="Name: LOCKED"
+		descript_label.text="Description: LOCKED"
 
 func updateParty()->void:
 	if CManager.charUnlocked[1]==1:
@@ -393,3 +450,97 @@ func _on_joe_button_pressed() -> void:
 					break
 		
 		updateParty()
+
+
+func _on_frog_button_mouse_entered() -> void:
+	focusedChar="frog"
+	updateLabel()
+
+
+func _on_frog_button_mouse_exited() -> void:
+	#focusedChar=""
+	#updateLabel()
+	pass
+
+
+func _on_steve_button_mouse_entered() -> void:
+	if CManager.charUnlocked[1]==1:
+		focusedChar="steve"
+		updateLabel()
+	else:
+		focusedChar="locked"
+		updateLabel()
+
+func _on_mask_button_mouse_entered() -> void:
+	if CManager.charUnlocked[2]==1:
+		focusedChar="mask"
+		updateLabel()
+	else:
+		focusedChar="locked"
+		updateLabel()
+
+func _on_hood_button_mouse_entered() -> void:
+	if CManager.charUnlocked[3]==1:
+		focusedChar="hood"
+		updateLabel()
+	else:
+		focusedChar="locked"
+		updateLabel()
+
+func _on_robot_button_mouse_entered() -> void:
+	if CManager.charUnlocked[4]==1:
+		focusedChar="robot"
+		updateLabel()
+	else:
+		focusedChar="locked"
+		updateLabel()
+
+func _on_gorf_button_mouse_entered() -> void:
+	if CManager.charUnlocked[9]==1:
+		focusedChar="gorF"
+		updateLabel()
+	else:
+		focusedChar="locked"
+		updateLabel()
+
+func _on_barrel_button_mouse_entered() -> void:
+	if CManager.charUnlocked[8]==1:
+		focusedChar="barrel"
+		updateLabel()
+	else:
+		focusedChar="locked"
+		updateLabel()
+func _on_lizard_button_mouse_entered() -> void:
+	if CManager.charUnlocked[7]==1:
+		focusedChar="lizard"
+		updateLabel()
+	else:
+		focusedChar="locked"
+		updateLabel()
+func _on_fox_button_mouse_entered() -> void:
+	if CManager.charUnlocked[6]==1:
+		focusedChar="fox"
+		updateLabel()
+	else:
+		focusedChar="locked"
+		updateLabel()
+
+func _on_joe_button_mouse_entered() -> void:
+	if CManager.charUnlocked[5]==1:
+		focusedChar="joe"
+		updateLabel()
+	else:
+		focusedChar="locked"
+		updateLabel()
+
+
+func _on_glitch_timer_timeout() -> void:
+	if focusedChar=="gorF":
+		name_label.text="Name: gorF noV drawdE"
+		descript_label.text="Description: samtsirhC setah dna stra laitram swonk taht seussi regna htiw grof A"		
+		for i in range(10):
+			var scramble=randi_range(0,descript_label.text.length()-1)
+			descript_label.text[scramble]=glitchedChars[randi_range(0,glitchedChars.size()-1)]
+			var scramble2=randi_range(0,name_label.text.length()-1)
+			name_label.text[scramble2]=glitchedChars[randi_range(0,glitchedChars.size()-1)]
+	
