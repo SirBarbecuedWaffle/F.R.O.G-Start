@@ -20,7 +20,12 @@ signal moveUsed(move : String)
 @onready var stunMoveHover=preload("res://moves/moveAssets/stunMoveHover.png")
 @onready var instaKillHover=preload("res://moves/moveAssets/instakillHoverAIcon.png")
 @onready var instaKillIcon=preload("res://moves/moveAssets/instakillMoveIcon.png")
+@onready var glitchHover=preload("res://moves/moveAssets/glitchHoverAIcon.png")
+@onready var glitchIcon=preload("res://moves/moveAssets/glitchIcon.png")
 @onready var gorf_timer: Timer = $gorfTimer
+@onready var name_label: Label = $"../../MenuBox2/nameLabel"
+@onready var descript_label: Label = $"../../MenuBox2/descriptLabel"
+@onready var move_type: Label = $moveType
 
 var moves1=["Arrow Barrage","Overclock","All Skill Baby","Sword Barrage","Coffee Break","Fireball","Arrow Barrage 2"]
 var moves2=["Block","Zip Bomb","Strike","Strength Spell","Cannon Barrage","You're Fired","Alt F4","Curse: Corrupt"]
@@ -41,9 +46,11 @@ var moves4=["Frogsicle","Alt F4","Curse: Poison","Fireball","Electrocute","Scald
 @onready var move_4_control: Node2D = $move4Control
 @onready var move_4: TextureButton = $move4Control/move4
 @onready var move_4_lab: Label = $move4Control/move4Lab
-
-
 @onready var move_explainer: Label = $moveExplainer
+@onready var tutdesc_lab: Label = $"../../MenuBox2/tutdescLab"
+
+
+@onready var move_box: Sprite2D = $moveBox
 @onready var explan_animator: AnimationPlayer = $CanvasLayer/explanAnimator
 var moveHovered :=""
 
@@ -51,61 +58,112 @@ var moveHovered :=""
 func _process(delta: float) -> void:
 	print(move_1_control.global_position)
 	if moveHovered=="":
-		move_explainer.text="Hover over a move to see what it does"
+		move_explainer.visible=false
+		move_type.visible=false
+		if tutdesc_lab.visible==false:
+			name_label.visible=true
+			descript_label.visible=true
+	else:
+		move_explainer.visible=true
+		move_type.visible=true
+		name_label.visible=false
+		descript_label.visible=false
 	if moveHovered=="Strike":
 		move_explainer.text="Deals medium damage to a single random enemy"
+		move_type.text="Type: Monotarget"
 	if moveHovered=="Arrow Barrage":
 		move_explainer.text="Deals low damage and applies three random debuffs to random enemies"
+		move_type.text="Type: Debuff"
 	if moveHovered=="Block":
 		move_explainer.text="Temporarily raises the defense of your entire party"
+		move_type.text="Type: Buff"
 	if moveHovered=="Frogsicle":
 		move_explainer.text="Applies medium heals to your entire party"
+		move_type.text="Type: Support"
 	if moveHovered=="Overclock":
 		move_explainer.text="Temporarily raises the speed of your entire party"
+		move_type.text="Type: Buff"
 	if moveHovered=="Zip Bomb":
 		move_explainer.text="Deals medium damage to every enemy"
+		move_type.text="Type: Multitarget"
 	if moveHovered=="Infect":
 		move_explainer.text="Deals medium damage and poisons a single enemy"
+		move_type.text="Type: Poison"
 	if moveHovered=="Alt F4":
 		move_explainer.text="Has a 1/5 chance to instakill a random non-boss enemy"
+		move_type.text="Type: Cleaving"
 	if moveHovered=="All Skill Baby":
 		move_explainer.text="Repeatedly flips a coin, if heads, deals high damage, if tails, stops flipping"
+		move_type.text="Type: Multitarget"
 	if moveHovered=="Curse: Weaken":
 		move_explainer.text="Temporarily lowers the attack of every enemy"
+		move_type.text="Type: Debuff"
 	if moveHovered=="Curse: Poison":
 		move_explainer.text="Temporarily applies mild poison to every enemy"
+		move_type.text="Type: Poison"
 	if moveHovered=="Fireball":
-		move_explainer.text="Deals medium damage to a single enemy while applying temporary burn to nearby enemies"
+		move_explainer.text="Deals medium damage to a single enemy and applies temporary burn to nearby enemies"
+		move_type.text="Type: Fire"
 	if moveHovered=="Strength Spell":
 		move_explainer.text="Temporarily raises the attack power of your entire party"
+		move_type.text="Type: Buff"
 	if moveHovered=="Sword Barrage":
 		move_explainer.text="Fires a barrage of low damage swords"
+		move_type.text="Type: Multitarget"
 	if moveHovered=="Health Potion":
 		move_explainer.text="Heals and temporarily regens your entire party"
+		move_type.text="Type: Support"
 	if moveHovered=="Cannon Barrage":
 		move_explainer.text="Spawns 3 cannons that occasionally deal low damage to enemies"
+		move_type.text="Type: Multitarget"
 	if moveHovered=="Smite":
 		move_explainer.text="Deals medium damage to a single enemy and temporarily lowers their defense"
+		move_type.text="Type: Debuff"
 	if moveHovered=="Electrocute":
 		move_explainer.text="Burns and temporarily stuns a single enemy"
+		move_type.text="Type: Stun"
 	if moveHovered=="Scald":
 		move_explainer.text="Afflicts heavy burn to a single target"
+		move_type.text="Type: Fire"
 	if moveHovered=="Paper Jam":
 		move_explainer.text="Deals low damage to random enemies"
+		move_type.text="Type: ?????"
 	if moveHovered=="You're Fired":
 		move_explainer.text="Has a 1/8 chance to kill every enemy, burns them regardless"
+		move_type.text="Type: Cleaving"
 	if moveHovered=="Coffee Break":
 		move_explainer.text="Heals and temporarily speeds up the entire party"
+		move_type.text="Type: Buff"
 	if moveHovered=="Pummel":
 		move_explainer.text="Hits a random enemy three times, lowering the attack of the last enemy hit"
+		move_type.text="Type: Debuff"
 	if moveHovered=="Flashbang":
 		move_explainer.text="Briefly stuns every enemy and party member"
+		move_type.text="Type: Stun"
 	if moveHovered=="Toxic Fumes":
 		move_explainer.text="Temporarily poisons and slows every enemy"
+		move_type.text="Type: Poison"
 	if moveHovered=="Bottoms Up":
 		move_explainer.text="Heals and temporarily raises the attack of the entire party"
+		move_type.text="Type: Buff"
 	if moveHovered=="Pressure Wash":
 		move_explainer.text="Cleanses the entire party of negative effects and damages all enemies"
+		move_type.text="Type: Buff"
+	if moveHovered=="DDoS":
+		move_explainer.text="Spawns 4 Zip Bombs that damage and severely stun every enemy"
+		move_type.text="Type: %!^#&!"
+	if moveHovered=="Bluescreen":
+		move_explainer.text="Has a 1/2 chance to kill each non-boss enemy in the fight"
+		move_type.text="Type: &!@*!#"
+	if moveHovered=="Curse: Corrupt":
+		move_explainer.text="Deals massive constant damage to every enemy and lowers their defense"
+		move_type.text="Type: *!&@&@"
+	if moveHovered=="Arrow Barrage 2":
+		move_explainer.text="Deals heavy damage and applies every debuff to all enemies"
+		move_type.text="Type: ^!@$#%"
+	
+	
+	
 	
 	if party_menu.getChar()=="frog":
 		move_1_lab.text="Arrow Barrage"
@@ -171,6 +229,9 @@ func _process(delta: float) -> void:
 	if move_1_lab.text=="Fireball":
 		move_1.texture_hover=fireMoveHover
 		move_1.texture_normal=fireMoveIcon
+	if move_1_lab.text=="Arrow Barrage 2":
+		move_1.texture_hover=glitchHover
+		move_1.texture_normal=glitchIcon
 	if move_1_lab.text=="Coffee Break":
 		move_1.texture_hover=HealMoveHover
 		move_1.texture_normal=HealMoveIcon
@@ -183,9 +244,12 @@ func _process(delta: float) -> void:
 	if move_2_lab.text=="Strike":
 		move_2.texture_hover=singleTarHover
 		move_2.texture_normal=singleTarIcon
-	if move_4_lab.text=="You're Fired":
-		move_4.texture_normal=instaKillIcon
-		move_4.texture_hover=instaKillHover
+	if move_2_lab.text=="You're Fired":
+		move_2.texture_normal=instaKillIcon
+		move_2.texture_hover=instaKillHover
+	if move_2_lab.text=="Curse: Corrupt":
+		move_2.texture_hover=glitchHover
+		move_2.texture_normal=glitchIcon
 		
 	if move_3_lab.text=="Strike":
 		move_3.texture_hover=singleTarHover
@@ -208,6 +272,9 @@ func _process(delta: float) -> void:
 	if move_3_lab.text=="Pressure Wash":
 		move_3.texture_hover=BuffMoveHover
 		move_3.texture_normal=BuffMoveIcon
+	if move_3_lab.text=="Bluescreen":
+		move_3.texture_hover=glitchHover
+		move_3.texture_normal=glitchIcon
 		
 	if move_4_lab.text=="Bottoms Up":
 		move_4.texture_hover=BuffMoveHover
@@ -230,6 +297,9 @@ func _process(delta: float) -> void:
 	if move_4_lab.text=="Frogsicle" || move_4_lab.text=="Coffee Break":
 		move_4.texture_hover=HealMoveHover
 		move_4.texture_normal=HealMoveIcon
+	if move_4_lab.text=="DDoS":
+		move_4.texture_hover=glitchHover
+		move_4.texture_normal=glitchIcon
 
 func fadeIn()->void:
 	moveHovered=""
@@ -237,10 +307,11 @@ func fadeIn()->void:
 	explan_animator.play("showText")
 
 func _on_move_1_pressed() -> void:
-	if explan_animator.current_animation!="hideText":
-		animation_player.play("press1")
-		moveUsed.emit(move_1_lab.text)
-		explan_animator.play("hideText")
+	#if explan_animator.current_animation!="hideText":
+		#animation_player.play("press1")
+		#moveUsed.emit(move_1_lab.text)
+		#explan_animator.play("hideText")
+	pass
 
 
 func _on_move_2_pressed() -> void:
@@ -251,7 +322,7 @@ func _on_move_2_pressed() -> void:
 
 
 func _on_move_3_pressed() -> void:
-	if explan_animator.current_animation!="hideText":
+	if explan_animator.current_animation!="hideText":	
 		animation_player.play("press3")
 		moveUsed.emit(move_3_lab.text)
 		explan_animator.play("hideText")

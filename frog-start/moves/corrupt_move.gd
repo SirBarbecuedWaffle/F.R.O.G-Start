@@ -4,7 +4,7 @@ extends Node2D
 @onready var area_2d: Area2D = $Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $Area2D/AnimatedSprite2D
 @onready var timer: Timer = $Timer
-var hits=250
+var hits=400
 
 func _ready() -> void:
 	pass

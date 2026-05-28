@@ -35,7 +35,7 @@ font_size = 288
 
 [sub_resource type="LabelSettings" id="LabelSettings_p8gpp"]
 font = ExtResource("3_p5nna")
-font_size = 34
+font_size = 110
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
@@ -1232,7 +1232,6 @@ scale = Vector2(13.965, 13.965)
 texture = ExtResource("2_3oasr")
 
 [node name="moveDisplayer" type="Node2D" parent="CanvasLayer2/partyMenu/MenuBox" unique_id=962510332]
-visible = false
 z_index = 100
 position = Vector2(-200, 0)
 script = ExtResource("4_iwmkv")
@@ -1385,23 +1384,44 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="moveType" type="Label" parent="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" unique_id=834796205]
+anchors_preset = -1
+anchor_left = 0.49494022
+anchor_top = 0.8556603
+anchor_right = 0.49494028
+anchor_bottom = -0.0069949357
+offset_left = 186.39456
+offset_top = -45.399204
+offset_right = 1546.0815
+offset_bottom = 966.6528
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.02, 0.02)
+text = "Type: "
+label_settings = SubResource("LabelSettings_p8gpp")
+horizontal_alignment = 1
+autowrap_mode = 3
+visible_characters_behavior = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="moveExplainer" type="Label" parent="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" unique_id=1191657378]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 89.50949
-offset_top = 4.2964554
-offset_right = 941.5095
-offset_bottom = 120.296455
+offset_left = 185.75009
+offset_top = -41.174362
+offset_right = 1317.9321
+offset_bottom = 970.8776
 grow_horizontal = 2
 grow_vertical = 0
-text = "Hover over a move to see what it does"
+scale = Vector2(0.025, 0.025)
 label_settings = SubResource("LabelSettings_p8gpp")
 horizontal_alignment = 1
 autowrap_mode = 3
 visible_characters_behavior = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="movetutLab" type="Label" parent="CanvasLayer2/partyMenu/MenuBox" unique_id=1285637729]
 offset_left = -12.101681
@@ -2047,13 +2067,13 @@ autoplay = &"RESET"
 [connection signal="mouse_entered" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move1Control/move1" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move1Control/move1" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move1Control/move1" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_1_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move2Control/move2" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move2Control/move2" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_2_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move2Control/move2" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move2Control/move2" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_1_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move3Control/move3" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move3Control/move3" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_3_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move3Control/move3" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move3Control/move3" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_1_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move4Control/move4" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move4Control/move4" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_4_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move4Control/move4" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer2/partyMenu/MenuBox/moveDisplayer/move4Control/move4" to="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" method="_on_move_1_pressed"]
 [connection signal="timeout" from="CanvasLayer2/partyMenu/MenuBox2/glitchTimer" to="CanvasLayer2/partyMenu" method="_on_glitch_timer_timeout"]

@@ -9,7 +9,7 @@ script = ExtResource("1_lebka")
 [node name="strikeProjectile" parent="." unique_id=1142312808 instance=ExtResource("2_vv6c5")]
 collision_layer = 8
 damage = 2
-strRev = 2
+defRev = 2
 oneHit = false
 randomNumbers = true
 
