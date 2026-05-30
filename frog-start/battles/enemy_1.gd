@@ -214,7 +214,8 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 		if defDown<area.defRev:
 			defDown=area.defRev
 		else:
-			defDown+=(area.defRev/2)
+			if area.defRev>2:
+				defDown+=(area.defRev/2)
 		
 		if area.oneHit:
 			area.queue_free()

@@ -10,7 +10,7 @@ script = ExtResource("1_wpmsa")
 position = Vector2(0, -130)
 collision_layer = 8
 damage = 40
-poison = 80
+poison = 140
 randomNumbers = true
 
 [node name="places" type="Node2D" parent="." unique_id=881540487]

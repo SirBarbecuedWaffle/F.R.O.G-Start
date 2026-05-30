@@ -48,6 +48,7 @@ var moves4=["Frogsicle","Alt F4","Curse: Poison","Fireball","Electrocute","Scald
 @onready var move_4_lab: Label = $move4Control/move4Lab
 @onready var move_explainer: Label = $moveExplainer
 @onready var tutdesc_lab: Label = $"../../MenuBox2/tutdescLab"
+@onready var desc_label: Label = $"../../MenuBox2/descLabel"
 
 
 @onready var move_box: Sprite2D = $moveBox
@@ -58,16 +59,18 @@ var moveHovered :=""
 func _process(delta: float) -> void:
 	print(move_1_control.global_position)
 	if moveHovered=="":
-		move_explainer.visible=false
-		move_type.visible=false
-		if tutdesc_lab.visible==false:
-			name_label.visible=true
-			descript_label.visible=true
+		await get_tree().create_timer(0.5).timeout
+		if moveHovered=="":
+			move_explainer.visible=false
+			move_type.visible=false
+			if tutdesc_lab.visible==false:
+				name_label.visible=true
+				desc_label.visible=true
 	else:
 		move_explainer.visible=true
 		move_type.visible=true
 		name_label.visible=false
-		descript_label.visible=false
+		desc_label.visible=false
 	if moveHovered=="Strike":
 		move_explainer.text="Deals medium damage to a single random enemy"
 		move_type.text="Type: Monotarget"
@@ -150,10 +153,10 @@ func _process(delta: float) -> void:
 		move_explainer.text="Cleanses the entire party of negative effects and damages all enemies"
 		move_type.text="Type: Buff"
 	if moveHovered=="DDoS":
-		move_explainer.text="Spawns 4 Zip Bombs that damage and severely stun every enemy"
+		move_explainer.text="Spawns multiple Zip Bombs that deal massive damage and severely stun every enemy"
 		move_type.text="Type: %!^#&!"
 	if moveHovered=="Bluescreen":
-		move_explainer.text="Has a 1/2 chance to kill each non-boss enemy in the fight"
+		move_explainer.text="Has a 1/4 chance to kill each non-boss enemy"
 		move_type.text="Type: &!@*!#"
 	if moveHovered=="Curse: Corrupt":
 		move_explainer.text="Deals massive constant damage to every enemy and lowers their defense"
@@ -201,7 +204,7 @@ func _process(delta: float) -> void:
 		move_3_lab.text="Pummel"
 		move_4_lab.text="Flashbang"
 	if party_menu.getChar()=="lizard":
-		move_1_lab.text="Fireball"
+		move_1_lab.text="Infect"
 		move_2_lab.text="Cannon Barrage"
 		move_3_lab.text="Pummel"
 		move_4_lab.text="Toxic Fumes"
@@ -229,9 +232,10 @@ func _process(delta: float) -> void:
 	if move_1_lab.text=="Fireball":
 		move_1.texture_hover=fireMoveHover
 		move_1.texture_normal=fireMoveIcon
-	if move_1_lab.text=="Arrow Barrage 2":
-		move_1.texture_hover=glitchHover
-		move_1.texture_normal=glitchIcon
+	if move_1_lab.text=="Infect":
+		move_1.texture_hover=poisMoveHover
+		move_1.texture_normal=poisMoveIcon
+	
 	if move_1_lab.text=="Coffee Break":
 		move_1.texture_hover=HealMoveHover
 		move_1.texture_normal=HealMoveIcon
@@ -247,9 +251,7 @@ func _process(delta: float) -> void:
 	if move_2_lab.text=="You're Fired":
 		move_2.texture_normal=instaKillIcon
 		move_2.texture_hover=instaKillHover
-	if move_2_lab.text=="Curse: Corrupt":
-		move_2.texture_hover=glitchHover
-		move_2.texture_normal=glitchIcon
+	
 		
 	if move_3_lab.text=="Strike":
 		move_3.texture_hover=singleTarHover
@@ -272,9 +274,7 @@ func _process(delta: float) -> void:
 	if move_3_lab.text=="Pressure Wash":
 		move_3.texture_hover=BuffMoveHover
 		move_3.texture_normal=BuffMoveIcon
-	if move_3_lab.text=="Bluescreen":
-		move_3.texture_hover=glitchHover
-		move_3.texture_normal=glitchIcon
+	
 		
 	if move_4_lab.text=="Bottoms Up":
 		move_4.texture_hover=BuffMoveHover
@@ -297,9 +297,20 @@ func _process(delta: float) -> void:
 	if move_4_lab.text=="Frogsicle" || move_4_lab.text=="Coffee Break":
 		move_4.texture_hover=HealMoveHover
 		move_4.texture_normal=HealMoveIcon
+	
+	if move_1_lab.text=="Arrow Barrage 2":
+		move_1.texture_hover=glitchHover
+		move_1.texture_normal=glitchIcon
+	if move_2_lab.text=="Curse: Corrupt":
+		move_2.texture_hover=glitchHover
+		move_2.texture_normal=glitchIcon
+	if move_3_lab.text=="Bluescreen":
+		move_3.texture_hover=glitchHover
+		move_3.texture_normal=glitchIcon
 	if move_4_lab.text=="DDoS":
 		move_4.texture_hover=glitchHover
 		move_4.texture_normal=glitchIcon
+	
 
 func fadeIn()->void:
 	moveHovered=""

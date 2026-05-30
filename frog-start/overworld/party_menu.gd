@@ -33,12 +33,12 @@ extends ColorRect
 @onready var joe_lock: Sprite2D = $joeBox/joeLock
 @onready var joe_anim: AnimatedSprite2D = $joeBox/joeAnim
 @onready var name_label: Label = $MenuBox2/nameLabel
-@onready var descript_label: Label = $MenuBox2/descriptLabel
 @onready var tutdesc_lab: Label = $MenuBox2/tutdescLab
 @onready var movetut_lab: Label = $MenuBox/movetutLab
 @onready var move_displayer: Node2D = $MenuBox/moveDisplayer
 var glitchedChars=["$","#",":D","%","1","ERROR","*","!"]
 var focusedChar:=""
+@onready var desc_label: Label = $MenuBox2/descLabel
 
 func _ready() -> void:
 	updateParty()
@@ -54,47 +54,82 @@ func updateLabel()->void:
 		await get_tree().create_timer(0.2).timeout
 		if focusedChar=="":
 			name_label.visible=false
-			descript_label.visible=false
 			tutdesc_lab.visible=true
 			movetut_lab.visible=true
 			move_displayer.visible=false
 	else:		
 		name_label.visible=true
-		descript_label.visible=true
 		tutdesc_lab.visible=false
 		movetut_lab.visible=false
 		move_displayer.visible=true
+	desc_label.visible=name_label.visible
 	if focusedChar=="frog":
 		name_label.text="Name: Edward Von Frog"
-		descript_label.text="Description: A frog with anger issues that knows martial arts and hates Christmas."
+		if CManager.charLVL[0]<20:
+			desc_label.text="Class: Brawler \nElement: Water \n\nLevel: "+str(CManager.charLVL[0])+"\nXP:"+str(CManager.charXP[0])+"/"+str(100*CManager.charLVL[0])+"\nHealth: "+str(CManager.charHP[0]+20*CManager.charLVL[0])
+		else:
+			desc_label.text="Class: Brawler \nElement: Water \n\nLevel: MAX\nXP:2000/2000\nHealth: "+str(CManager.charHP[0]+20*CManager.charLVL[0])
 	if focusedChar=="steve":
 		name_label.text="Name: Spaceman Steve"
-		descript_label.text="Description: A hacker from space. On the run from the space cops after hacking a space millionare."
+		if CManager.charLVL[1]<20:
+			desc_label.text="Class: Tactician \nElement: Cyber \n\nLevel: "+str(CManager.charLVL[1])+"\nXP:"+str(CManager.charXP[1])+"/"+str(100*CManager.charLVL[1])+"\nHealth: "+str(CManager.charHP[1]+10*CManager.charLVL[1])
+		else:
+			desc_label.text="Class: Tactician \nElement: Cyber \n\nLevel: MAX\nXP:2000/2000\nHealth: "+str(CManager.charHP[1]+10*CManager.charLVL[1])
+
 	if focusedChar=="mask":
 		name_label.text="Name: Mask Dude"
-		descript_label.text="Description: Nobody knows if he is wearing a mask or is the mask. Regardless, he knows voodoo."
+		if CManager.charLVL[2]<20:
+			desc_label.text="Class: Trickster \nElement: Voodoo \n\nLevel: "+str(CManager.charLVL[2])+"\nXP:"+str(CManager.charXP[2])+"/"+str(100*CManager.charLVL[2])+"\nHealth: "+str(CManager.charHP[2]+15*CManager.charLVL[2])
+		else:
+			desc_label.text="Class: Trickster \nElement: Voodoo \n\nLevel: MAX\nXP:2000/2000\nHealth: "+str(CManager.charHP[2]+15*CManager.charLVL[2])
+
 	if focusedChar=="hood":
 		name_label.text="Name: Flipper the Human"
-		descript_label.text="Description: Likes to have fun with his brother, Jacob the Canine, and is in love with Princess Candy."
+		if CManager.charLVL[3]<20:
+			desc_label.text="Class: Brawler \nElement: Fire \n\nLevel: "+str(CManager.charLVL[3])+"\nXP:"+str(CManager.charXP[3])+"/"+str(100*CManager.charLVL[3])+"\nHealth: "+str(CManager.charHP[3]+20*CManager.charLVL[3])
+		else:
+			desc_label.text="Class: Brawler \nElement: Fire \n\nLevel: MAX\nXP:2000/2000\nHealth: "+str(CManager.charHP[3]+20*CManager.charLVL[3])
+
 	if focusedChar=="robot":
 		name_label.text="Name: IDFK, Hes a robot"
-		descript_label.text="Description: A defective robot from a mega corporation. It's learning what its like to live."
+		if CManager.charLVL[4]<20:
+			desc_label.text="Class: Sentinel \nElement: Cyber \n\nLevel: "+str(CManager.charLVL[4])+"\nXP:"+str(CManager.charXP[4])+"/"+str(100*CManager.charLVL[4])+"\nHealth: "+str(CManager.charHP[4]+30*CManager.charLVL[4])
+		else:
+			desc_label.text="Class: Sentinel \nElement: Cyber \n\nLevel: MAX\nXP:2000/2000\nHealth: "+str(CManager.charHP[4]+30*CManager.charLVL[4])
+
 	if focusedChar=="joe":
 		name_label.text="Name: Average Joe"
-		descript_label.text="Description: He doesn't want to be here any more than you do.      Mondays, am I right?"
+		if CManager.charLVL[5]<20:
+			desc_label.text="Class: Trickster \nElement: Fire \n\nLevel: "+str(CManager.charLVL[5])+"\nXP:"+str(CManager.charXP[5])+"/"+str(100*CManager.charLVL[5])+"\nHealth: "+str(CManager.charHP[5]+20*CManager.charLVL[5])
+		else:
+			desc_label.text="Class: Trickster \nElement: Fire \n\nLevel: MAX\nXP:2000/2000\nHealth: "+str(CManager.charHP[5]+20*CManager.charLVL[5])
+
 	if focusedChar=="fox":
 		name_label.text="Name: The Quick Brown Fox"
-		descript_label.text="Description: It jumped over the lazy dog.            Loves sleeping and gambling."
+		if CManager.charLVL[6]<20:
+			desc_label.text="Class: Tactician \nElement: Voodoo \n\nLevel: "+str(CManager.charLVL[6])+"\nXP:"+str(CManager.charXP[6])+"/"+str(100*CManager.charLVL[6])+"\nHealth: "+str(CManager.charHP[6]+10*CManager.charLVL[6])
+		else:
+			desc_label.text="Class: Tactician \nElement: Voodoo \n\nLevel: MAX\nXP:2000/2000\nHealth: "+str(CManager.charHP[6]+10*CManager.charLVL[6])
+
 	if focusedChar=="lizard":
 		name_label.text="Name: Lizard?"
-		descript_label.text="Description: Its probably a lizard? Scientists aren't really sure, but it can shoot fireballs."
+		if CManager.charLVL[7]<20:
+			desc_label.text="Class: Sentinel \nElement: Toxic \n\nLevel: "+str(CManager.charLVL[7])+"\nXP:"+str(CManager.charXP[7])+"/"+str(100*CManager.charLVL[7])+"\nHealth: "+str(CManager.charHP[7]+30*CManager.charLVL[7])
+		else:
+			desc_label.text="Class: Sentinel \nElement: Toxic \n\nLevel: MAX\nXP:2000/2000\nHealth: "+str(CManager.charHP[7]+30*CManager.charLVL[7])
+
 	if focusedChar=="barrel":
 		name_label.text="Name: Literally Just A Barrel"
-		descript_label.text="Description: A barrel with a surprising amount of empathy. It loves healing, but hates fights."
+		if CManager.charLVL[8]<20:
+			desc_label.text="Class: Caregiver \nElement: Water \n\nLevel: "+str(CManager.charLVL[8])+"\nXP:"+str(CManager.charXP[8])+"/"+str(100*CManager.charLVL[8])+"\nHealth: "+str(CManager.charHP[8]+30*CManager.charLVL[8])
+		else:
+			desc_label.text="Class: Caregiver \nElement: Water \n\nLevel: MAX\nXP:2000/2000\nHealth: "+str(CManager.charHP[8]+30*CManager.charLVL[8])
+
 	if focusedChar=="locked":
 		name_label.text="Name: LOCKED"
-		descript_label.text="Description: LOCKED"
-
+		desc_label.text="Class: LOCKED \nElement: LOCKED \n\nLevel: LOCKED\nHealth: LOCKED"
+		movetut_lab.visible=true
+		move_displayer.visible=false
 func updateParty()->void:
 	if CManager.charUnlocked[1]==1:
 		steve_lock.visible=false
@@ -537,10 +572,11 @@ func _on_joe_button_mouse_entered() -> void:
 func _on_glitch_timer_timeout() -> void:
 	if focusedChar=="gorF":
 		name_label.text="Name: gorF noV drawdE"
-		descript_label.text="Description: samtsirhC setah dna stra laitram swonk taht seussi regna htiw grof A"		
+		desc_label.text="Class: Glitch \nElement: None \n\nLevel: MAX\nXP:9999/9999\nHealth: 999"
 		for i in range(10):
-			var scramble=randi_range(0,descript_label.text.length()-1)
-			descript_label.text[scramble]=glitchedChars[randi_range(0,glitchedChars.size()-1)]
+			var scramble1=randi_range(0,desc_label.text.length()-1)
+			if desc_label.text[scramble1]!="\n":
+				desc_label.text[scramble1]=glitchedChars[randi_range(0,glitchedChars.size()-1)]
 			var scramble2=randi_range(0,name_label.text.length()-1)
 			name_label.text[scramble2]=glitchedChars[randi_range(0,glitchedChars.size()-1)]
 	

@@ -126,7 +126,7 @@ position = Vector2(1504, 605)
 rotation = -0.7853982
 collision_layer = 8
 damage = 10
-burn = 160
+burn = 190
 
 [node name="Sprite2D" type="Sprite2D" parent="Arrows/arrow1" unique_id=1995694293]
 scale = Vector2(5, 5)

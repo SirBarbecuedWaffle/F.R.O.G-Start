@@ -16,7 +16,7 @@ position = Vector2(-74, 67)
 
 [node name="arrowBarrage2" parent="." unique_id=89763900 instance=ExtResource("1_dxl4l")]
 visible = true
-position = Vector2(5, -10)
+position = Vector2(-30, -2)
 
 [node name="arrowBarrage3" parent="." unique_id=1248024396 instance=ExtResource("1_dxl4l")]
 visible = true
@@ -25,6 +25,22 @@ position = Vector2(92, 66)
 [node name="arrowBarrage4" parent="." unique_id=1494202426 instance=ExtResource("1_dxl4l")]
 visible = true
 position = Vector2(24, 169)
+
+[node name="arrowBarrage5" parent="." unique_id=1165233754 instance=ExtResource("1_dxl4l")]
+visible = true
+position = Vector2(-28, 122)
+
+[node name="arrowBarrage6" parent="." unique_id=1299055500 instance=ExtResource("1_dxl4l")]
+visible = true
+position = Vector2(62, 103)
+
+[node name="arrowBarrage7" parent="." unique_id=846627750 instance=ExtResource("1_dxl4l")]
+visible = true
+position = Vector2(6, 56)
+
+[node name="arrowBarrage8" parent="." unique_id=732119725 instance=ExtResource("1_dxl4l")]
+visible = true
+position = Vector2(67, -1)
 
 [node name="places" type="Node2D" parent="." unique_id=2004923387]
 position = Vector2(-952, 0)
@@ -69,6 +85,6 @@ shape = SubResource("RectangleShape2D_lqwt6")
 position = Vector2(405, 2499)
 scale = Vector2(14.45, 14.45)
 collision_layer = 8
-stun = 10.0
+stun = 5.0
 oneHit = false
 randomNumbers = true

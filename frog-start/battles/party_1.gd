@@ -130,34 +130,34 @@ func _ready() -> void:
 		global_position.y=-2000
 	if character=="frog":
 		curChar=frog
-		maxHealth=200.0
+		maxHealth=CManager.charHP[0]+CManager.charLVL[0]*20
 	if character=="steve":
 		curChar=steve
 		curChar.play("idle")
-		maxHealth=150.0
+		maxHealth=CManager.charHP[1]+CManager.charLVL[1]*10
 	if character=="mask":
 		curChar=mask
 		curChar.play("idle")
-		maxHealth=175.0
+		maxHealth=CManager.charHP[2]+CManager.charLVL[2]*15
 	if character=="pink":
 		curChar=pink
-		maxHealth=150.0
+		maxHealth=CManager.charHP[3]+CManager.charLVL[3]*20
 	if character=="robot":
 		curChar=robot
 		curChar.play("idle")
-		maxHealth=180.0
+		maxHealth=CManager.charHP[4]+CManager.charLVL[4]*30
 	if character=="joe":
 		curChar=joe
 		curChar.play("idle")
-		maxHealth=130.0
+		maxHealth=CManager.charHP[5]+CManager.charLVL[5]*20
 	if character=="fox":
 		curChar=fox
 		curChar.play("idle")
-		maxHealth=120.0
+		maxHealth=CManager.charHP[6]+CManager.charLVL[6]*10
 	if character=="lizard":
 		curChar=lizard
 		curChar.play("idle")
-		maxHealth=300.0
+		maxHealth=CManager.charHP[7]+CManager.charLVL[7]*30
 	if character=="gorf":
 		curChar=gorf
 		curChar.play("idle")
@@ -165,7 +165,7 @@ func _ready() -> void:
 	if character=="barrel":
 		curChar=barrel
 		curChar.play("idle")
-		maxHealth=100.0
+		maxHealth=CManager.charHP[8]+CManager.charLVL[8]*30
 	health=maxHealth
 
 func _process(delta: float) -> void:

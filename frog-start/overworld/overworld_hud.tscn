@@ -1387,7 +1387,7 @@ metadata/_edit_use_anchors_ = true
 [node name="moveType" type="Label" parent="CanvasLayer2/partyMenu/MenuBox/moveDisplayer" unique_id=834796205]
 anchors_preset = -1
 anchor_left = 0.49494022
-anchor_top = 0.8556603
+anchor_top = -0.0069949357
 anchor_right = 0.49494028
 anchor_bottom = -0.0069949357
 offset_left = 186.39456
@@ -1440,7 +1440,6 @@ scale = Vector2(13.965, 13.965)
 texture = ExtResource("2_3oasr")
 
 [node name="nameLabel" type="Label" parent="CanvasLayer2/partyMenu/MenuBox2" unique_id=554967847]
-visible = false
 offset_left = -12.746158
 offset_top = -14.178303
 offset_right = 372.8333
@@ -1450,14 +1449,13 @@ text = "Name:"
 label_settings = SubResource("LabelSettings_2wefy")
 autowrap_mode = 3
 
-[node name="descriptLabel" type="Label" parent="CanvasLayer2/partyMenu/MenuBox2" unique_id=1492559969]
-visible = false
+[node name="descLabel" type="Label" parent="CanvasLayer2/partyMenu/MenuBox2" unique_id=1578029936]
 offset_left = -12.746158
-offset_top = -8.091658
+offset_top = -5.227354
 offset_right = 372.8333
-offset_bottom = 49.194412
+offset_bottom = 369.33545
 scale = Vector2(0.065, 0.065)
-text = "Description: "
+text = "Name:"
 label_settings = SubResource("LabelSettings_2wefy")
 autowrap_mode = 3
 

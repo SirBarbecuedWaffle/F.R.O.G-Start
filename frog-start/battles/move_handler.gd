@@ -20,6 +20,8 @@ signal moveUsed(move : String)
 @onready var stunMoveHover=preload("res://moves/moveAssets/stunMoveHover.png")
 @onready var instaKillHover=preload("res://moves/moveAssets/instakillHoverAIcon.png")
 @onready var instaKillIcon=preload("res://moves/moveAssets/instakillMoveIcon.png")
+@onready var glitchHover=preload("res://moves/moveAssets/glitchHoverAIcon.png")
+@onready var glitchIcon=preload("res://moves/moveAssets/glitchIcon.png")
 @onready var gorf_timer: Timer = $gorfTimer
 
 var moves1=["Arrow Barrage","Overclock","All Skill Baby","Sword Barrage","Coffee Break","Fireball","Arrow Barrage 2"]
@@ -138,7 +140,7 @@ func _process(delta: float) -> void:
 		move_3_lab.text="Pummel"
 		move_4_lab.text="Flashbang"
 	if get_parent().getChar()=="lizard":
-		move_1_lab.text="Fireball"
+		move_1_lab.text="Infect"
 		move_2_lab.text="Cannon Barrage"
 		move_3_lab.text="Pummel"
 		move_4_lab.text="Toxic Fumes"
@@ -169,6 +171,10 @@ func _process(delta: float) -> void:
 	if move_1_lab.text=="Coffee Break":
 		move_1.texture_hover=HealMoveHover
 		move_1.texture_normal=HealMoveIcon
+	if move_1_lab.text=="Infect":
+		move_1.texture_hover=poisMoveHover
+		move_1.texture_normal=poisMoveIcon
+		
 	if move_2_lab.text=="Zip Bomb" || move_2_lab.text=="Cannon Barrage":
 		move_2.texture_hover=MultiMoveHover
 		move_2.texture_normal=MultiMoveIcon
@@ -225,6 +231,20 @@ func _process(delta: float) -> void:
 	if move_4_lab.text=="Frogsicle" || move_4_lab.text=="Coffee Break":
 		move_4.texture_hover=HealMoveHover
 		move_4.texture_normal=HealMoveIcon
+	
+	
+	if move_1_lab.text=="Arrow Barrage 2":
+		move_1.texture_hover=glitchHover
+		move_1.texture_normal=glitchIcon
+	if move_2_lab.text=="Curse: Corrupt":
+		move_2.texture_hover=glitchHover
+		move_2.texture_normal=glitchIcon
+	if move_3_lab.text=="Bluescreen":
+		move_3.texture_hover=glitchHover
+		move_3.texture_normal=glitchIcon
+	if move_4_lab.text=="DDoS":
+		move_4.texture_hover=glitchHover
+		move_4.texture_normal=glitchIcon
 
 func fadeIn()->void:
 	moveHovered=""
