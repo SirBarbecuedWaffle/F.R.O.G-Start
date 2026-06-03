@@ -68,6 +68,7 @@
 [ext_resource type="Texture2D" uid="uid://bqkwcq0utjueb" path="res://2DAssets/burningeffect/Group 4 - 1_12.png" id="44_1m850"]
 [ext_resource type="Texture2D" uid="uid://cujgcrq5j0uuw" path="res://2DAssets/burningeffect/Group 4 - 1_13.png" id="45_6do5l"]
 [ext_resource type="Texture2D" uid="uid://ct3nw5ev3t40f" path="res://2DAssets/burningeffect/Group 4 - 1_14.png" id="46_hnn0u"]
+[ext_resource type="Script" uid="uid://5pnofkiualph" path="res://battles/enemy_handler.gd" id="53_gw2wo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t80mw"]
 sky_top_color = Color(0.10863412, 0.38311404, 0.97564214, 1)
@@ -6601,6 +6602,7 @@ frame_progress = 0.52835107
 
 [node name="enemyHandler" type="Node2D" parent="frogLayer" unique_id=257024737]
 position = Vector2(-978, 0)
+script = ExtResource("53_gw2wo")
 
 [node name="enemy1" type="Node2D" parent="frogLayer/enemyHandler" unique_id=144081222]
 position = Vector2(1589, 438)
