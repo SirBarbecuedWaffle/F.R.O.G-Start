@@ -65,18 +65,22 @@ shape = SubResource("RectangleShape2D_1nndg")
 position = Vector2(196, 491)
 collision_layer = 8
 damage = 99999
+glitch = true
 
 [node name="strikeProjectile2" parent="bomps" unique_id=371225847 instance=ExtResource("3_xp4hq")]
 position = Vector2(432, 154)
 collision_layer = 8
 damage = 99999
+glitch = true
 
 [node name="strikeProjectile3" parent="bomps" unique_id=910439901 instance=ExtResource("3_xp4hq")]
 position = Vector2(623, 431)
 collision_layer = 8
 damage = 99999
+glitch = true
 
 [node name="strikeProjectile4" parent="bomps" unique_id=1882345334 instance=ExtResource("3_xp4hq")]
 position = Vector2(404, 832)
 collision_layer = 8
 damage = 99999
+glitch = true

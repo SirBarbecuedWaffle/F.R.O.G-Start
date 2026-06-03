@@ -35,6 +35,7 @@ var damageIcon=preload("res://damageIndicator.tscn")
 @export var stun:=0.0
 @onready var enemy_spr_1: AnimatedSprite2D = $enemySpr1
 @export var attackSpeed:=625
+@export var attackDamage:=30
 var turnTime:=randi_range(attackSpeed-120,attackSpeed+75)
 @onready var frog_layer: CanvasLayer = $"../.."
 @onready var def_up_ind: Sprite2D = $arrowHandler/goodArrows/defUpInd
@@ -138,7 +139,7 @@ func _process(delta: float) -> void:
 			turnTime=randi_range(attackSpeed-120,attackSpeed+75)
 			await get_tree().create_timer(0.36).timeout
 			var hit=basicHit.instantiate()
-			hit.damage=30
+			hit.damage=attackDamage
 			if atkDown>0:
 				hit.damage/=2
 			hit.collision_layer=4
@@ -183,6 +184,8 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 			movie.global_position=global_position
 			if area.damage>3000:
 				movie.damageType="cleaving"
+			if area.glitch:
+				movie.damageType="glitch"
 			frog_layer.add_child(movie)
 		poison+=area.poison
 		stun+=area.stun

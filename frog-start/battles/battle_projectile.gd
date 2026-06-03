@@ -13,6 +13,7 @@ class_name damager
 @export var regen:=0
 @export var oneHit:=true
 @export var randomNumbers:=false
+@export var glitch:=false
 
 func _ready() -> void:
 	if randomNumbers:

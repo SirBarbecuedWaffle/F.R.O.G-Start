@@ -12,6 +12,7 @@ damage = 2
 defRev = 2
 oneHit = false
 randomNumbers = true
+glitch = true
 
 [node name="places" type="Node2D" parent="." unique_id=881540487]
 position = Vector2(-952, 0)
