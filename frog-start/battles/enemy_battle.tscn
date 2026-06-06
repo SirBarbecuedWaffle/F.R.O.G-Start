@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://dfqqoai5qi4ey" path="res://overworldPlayer/playerAssets/Pink Man/Double Jump (32x32).png" id="11_scmio"]
 [ext_resource type="Texture2D" uid="uid://c5w5gt3wc1wxt" path="res://2DAssets/hitEffect.png" id="12_055im"]
 [ext_resource type="Texture2D" uid="uid://ciykyc00kn11t" path="res://moves/moveAssets/instakillHoverAIcon.png" id="12_n2aaj"]
-[ext_resource type="Texture2D" uid="uid://dghk1qn6ajv35" path="res://2DAssets/14_phantom_spritesheet.png" id="12_uf5a6"]
 [ext_resource type="Texture2D" uid="uid://c82r3hhgwavk1" path="res://overworldPlayer/playerAssets/Desappearing (96x96).png" id="13_p8gpp"]
 [ext_resource type="Texture2D" uid="uid://csoynefetwsuk" path="res://overworldPlayer/playerAssets/Ninja Frog/Hit (32x32).png" id="13_qc7af"]
 [ext_resource type="Texture2D" uid="uid://ejwp5n6npaso" path="res://overworldPlayer/playerAssets/Appearing (96x96).png" id="16_p8gpp"]
@@ -69,6 +68,7 @@
 [ext_resource type="Texture2D" uid="uid://cujgcrq5j0uuw" path="res://2DAssets/burningeffect/Group 4 - 1_13.png" id="45_6do5l"]
 [ext_resource type="Texture2D" uid="uid://ct3nw5ev3t40f" path="res://2DAssets/burningeffect/Group 4 - 1_14.png" id="46_hnn0u"]
 [ext_resource type="Script" uid="uid://5pnofkiualph" path="res://battles/enemy_handler.gd" id="53_gw2wo"]
+[ext_resource type="SpriteFrames" uid="uid://dwydqm72xm68l" path="res://battles/enemyFrames/snowmanEnemy.tres" id="55_hmhrg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t80mw"]
 sky_top_color = Color(0.10863412, 0.38311404, 0.97564214, 1)
@@ -4004,446 +4004,6 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s18qu"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(0, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ouv8q"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(100, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_35680"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(200, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2080d"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(300, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kj124"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(400, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1m850"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(500, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6do5l"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(600, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hnn0u"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(700, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6w4hd"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(0, 100, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pq50b"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(100, 100, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i25qq"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(200, 100, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aslj1"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(300, 100, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qkx8p"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(400, 100, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6s7rt"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(500, 100, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pvi2v"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(600, 100, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n2aaj"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(700, 100, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h2une"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(0, 200, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gw2wo"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(100, 200, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hmhrg"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(200, 200, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f2k4p"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(300, 200, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sh8qo"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(400, 200, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0ncsw"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(500, 200, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ujcmb"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(600, 200, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w1l7k"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(700, 200, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pbmit"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(0, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0kh12"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(100, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s7elh"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(200, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nno7t"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(300, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h5b3y"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(400, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_owr1c"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(500, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oh0sq"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(600, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tl3dk"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(700, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oqxd2"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(0, 400, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_op2qv"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(100, 400, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0e3mo"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(200, 400, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k650y"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(300, 400, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sc2f5"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(400, 400, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qrpjo"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(500, 400, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1l4tk"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(600, 400, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ejs3g"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(700, 400, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6jfhp"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(0, 500, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_polab"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(100, 500, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xfsow"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(200, 500, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_at463"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(300, 500, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jp7xn"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(400, 500, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3p6ou"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(500, 500, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cvil0"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(600, 500, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_324ru"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(700, 500, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vggg0"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(0, 600, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r03qq"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(100, 600, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h7nr3"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(200, 600, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6gj3i"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(300, 600, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6eju8"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(400, 600, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gthrc"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(500, 600, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_31j04"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(600, 600, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vfqm1"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(700, 600, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dteqr"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(0, 700, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kf4n4"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(100, 700, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ei26g"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(200, 700, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_orh5g"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(300, 700, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f24pw"]
-atlas = ExtResource("12_uf5a6")
-region = Rect2(400, 700, 100, 100)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ugcq3"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s18qu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ouv8q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_35680")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2080d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kj124")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1m850")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6do5l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hnn0u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6w4hd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pq50b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i25qq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aslj1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qkx8p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6s7rt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pvi2v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n2aaj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h2une")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gw2wo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hmhrg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f2k4p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sh8qo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0ncsw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ujcmb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w1l7k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pbmit")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0kh12")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s7elh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nno7t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h5b3y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_owr1c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oh0sq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tl3dk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oqxd2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_op2qv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0e3mo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k650y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sc2f5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qrpjo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1l4tk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ejs3g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6jfhp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_polab")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xfsow")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_at463")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jp7xn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3p6ou")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cvil0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_324ru")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vggg0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r03qq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h7nr3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6gj3i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6eju8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gthrc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_31j04")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vfqm1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dteqr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kf4n4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ei26g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_orh5g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f24pw")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 18.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"useMove",
-"speed": 5.0
-}]
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_6w4hd"]
 animations = [{
 "frames": [{
@@ -4504,26 +4064,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("enemySpr1:position")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-2.0000007, -3.0000052)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
+tracks/1/path = NodePath("enemySpr1:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Vector2(0.9999988, 29.999989)]
 }
 
 [sub_resource type="Animation" id="Animation_t55pq"]
@@ -4535,10 +4095,10 @@ tracks/0/path = NodePath("enemySpr1:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.36666667, 0.6333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0.033333335, 0.26666668, 0.46666667, 0.56666666, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-2.0000007, -3.0000052), Vector2(100, -100), Vector2(200, -14.622), Vector2(-2.0000007, -3.0000052)]
+"values": [Vector2(0.9999988, 29.999989), Vector2(204.539, -65.37), Vector2(300, 30), Vector2(267.849, 30), Vector2(0.9999988, 29.999989)]
 }
 
 [sub_resource type="Animation" id="Animation_lq4w6"]
@@ -6651,6 +6211,7 @@ horizontal_alignment = 2
 scale = Vector2(1.0012685, 1.0012685)
 
 [node name="goodArrows" type="Node2D" parent="frogLayer/enemyHandler/enemy1/arrowHandler" unique_id=1381429463]
+position = Vector2(0, 0.40147206)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="defUpInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy1/arrowHandler/goodArrows" unique_id=1799021251]
@@ -6711,6 +6272,7 @@ label_settings = SubResource("LabelSettings_ose5c")
 horizontal_alignment = 2
 
 [node name="badArrows" type="Node2D" parent="frogLayer/enemyHandler/enemy1/arrowHandler" unique_id=1451582571]
+position = Vector2(0, 9.598528)
 
 [node name="atkDownInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy1/arrowHandler/badArrows" unique_id=1848873033]
 self_modulate = Color(0.75743943, 0.37918973, 0, 1)
@@ -6790,12 +6352,12 @@ shape = SubResource("RectangleShape2D_3a61k")
 debug_color = Color(0.9126272, 0, 0.27480933, 0.41960785)
 
 [node name="enemySpr1" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy1" unique_id=1830287991]
-position = Vector2(-2.0000007, -3.0000052)
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_ugcq3")
+position = Vector2(0.9999988, 29.999989)
+scale = Vector2(-9.37, 9.37)
+sprite_frames = ExtResource("55_hmhrg")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.30031458
+frame_progress = 0.015430099
 
 [node name="poisonDam" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy1/enemySpr1" unique_id=1436903173]
 modulate = Color(0, 0.60120547, 0, 1)
@@ -7031,15 +6593,19 @@ position = Vector2(10.869385, 30.5)
 shape = SubResource("RectangleShape2D_3a61k")
 debug_color = Color(0.9126272, 0, 0.27480933, 0.41960785)
 
-[node name="enemySpr1" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy4" unique_id=1046050239]
-position = Vector2(-2.0000007, -3.0000052)
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_ugcq3")
+[node name="attackAnimator" type="AnimationPlayer" parent="frogLayer/enemyHandler/enemy4" unique_id=138276150]
+libraries/ = SubResource("AnimationLibrary_lq4w6")
+
+[node name="enemySpr1" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy4" unique_id=926611287]
+position = Vector2(0.9999988, 29.999989)
+rotation = 3.1415927
+scale = Vector2(9.37, -9.37)
+sprite_frames = ExtResource("55_hmhrg")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.30031458
+frame_progress = 0.23764247
 
-[node name="poisonDam" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy4/enemySpr1" unique_id=2116701534]
+[node name="poisonDam" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy4/enemySpr1" unique_id=1625184893]
 modulate = Color(0, 0.60120547, 0, 1)
 z_index = 1
 position = Vector2(0.66667175, 2)
@@ -7048,7 +6614,7 @@ sprite_frames = SubResource("SpriteFrames_dj0x7")
 frame = 10
 frame_progress = 1.0
 
-[node name="fireOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy4/enemySpr1" unique_id=1281862689]
+[node name="fireOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy4/enemySpr1" unique_id=691960733]
 visible = false
 modulate = Color(0.91, 0.91, 0.91, 1)
 position = Vector2(0.33332825, 6)
@@ -7056,7 +6622,7 @@ sprite_frames = SubResource("SpriteFrames_6w4hd")
 autoplay = "default"
 frame_progress = 0.9747902
 
-[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy4/enemySpr1" unique_id=1354593967]
+[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy4/enemySpr1" unique_id=368223667]
 visible = false
 modulate = Color(0, 0.60120547, 0, 1)
 position = Vector2(0.33333385, 1.0000005)
@@ -7065,7 +6631,7 @@ sprite_frames = SubResource("SpriteFrames_yerlx")
 autoplay = "default"
 frame_progress = 0.07341846
 
-[node name="stunAnim" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy4/enemySpr1" unique_id=232034402]
+[node name="stunAnim" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy4/enemySpr1" unique_id=574708362]
 visible = false
 z_index = 1
 position = Vector2(6.999997, -44.666653)
@@ -7073,9 +6639,6 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_vwjs8")
 autoplay = "default"
 frame_progress = 0.56647885
-
-[node name="attackAnimator" type="AnimationPlayer" parent="frogLayer/enemyHandler/enemy4" unique_id=138276150]
-libraries/ = SubResource("AnimationLibrary_lq4w6")
 
 [node name="hitSprite" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy4" unique_id=2008145244]
 z_index = 1
@@ -7273,15 +6836,16 @@ position = Vector2(10.869385, 30.5)
 shape = SubResource("RectangleShape2D_3a61k")
 debug_color = Color(0.9126272, 0, 0.27480933, 0.41960785)
 
-[node name="enemySpr1" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy3" unique_id=106239963]
-position = Vector2(-2.0000007, -3.0000052)
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_ugcq3")
+[node name="enemySpr1" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy3" unique_id=676620897]
+position = Vector2(0.9999988, 29.999989)
+rotation = 3.1415927
+scale = Vector2(9.37, -9.37)
+sprite_frames = ExtResource("55_hmhrg")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.30031458
+frame_progress = 0.027639695
 
-[node name="poisonDam" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy3/enemySpr1" unique_id=1582084410]
+[node name="poisonDam" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy3/enemySpr1" unique_id=594346337]
 modulate = Color(0, 0.60120547, 0, 1)
 z_index = 1
 position = Vector2(0.66667175, 2)
@@ -7290,7 +6854,7 @@ sprite_frames = SubResource("SpriteFrames_dj0x7")
 frame = 10
 frame_progress = 1.0
 
-[node name="fireOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy3/enemySpr1" unique_id=1216982871]
+[node name="fireOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy3/enemySpr1" unique_id=1220325684]
 visible = false
 modulate = Color(0.91, 0.91, 0.91, 1)
 position = Vector2(0.33332825, 6)
@@ -7298,7 +6862,7 @@ sprite_frames = SubResource("SpriteFrames_6w4hd")
 autoplay = "default"
 frame_progress = 0.9747902
 
-[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy3/enemySpr1" unique_id=918565516]
+[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy3/enemySpr1" unique_id=113111663]
 visible = false
 modulate = Color(0, 0.60120547, 0, 1)
 position = Vector2(0.33333385, 1.0000005)
@@ -7307,7 +6871,7 @@ sprite_frames = SubResource("SpriteFrames_yerlx")
 autoplay = "default"
 frame_progress = 0.07341846
 
-[node name="stunAnim" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy3/enemySpr1" unique_id=1177270020]
+[node name="stunAnim" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy3/enemySpr1" unique_id=126217921]
 visible = false
 z_index = 1
 position = Vector2(6.999997, -44.666653)
@@ -7350,6 +6914,7 @@ offset_top = 105.7426
 offset_right = 71.83741
 offset_bottom = 146.99998
 texture = SubResource("CanvasTexture_ugcq3")
+metadata/_edit_use_anchors_ = true
 
 [node name="healthBar" type="Sprite2D" parent="frogLayer/enemyHandler/enemy2" unique_id=1167811294]
 position = Vector2(67.83742, 108.89929)
@@ -7372,6 +6937,7 @@ offset_bottom = 151.99997
 text = "140"
 label_settings = SubResource("LabelSettings_p3ynn")
 horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="arrowHandler" type="Node2D" parent="frogLayer/enemyHandler/enemy2" unique_id=1134465236]
 scale = Vector2(1.0012685, 1.0012685)
@@ -7515,15 +7081,16 @@ position = Vector2(10.869385, 30.5)
 shape = SubResource("RectangleShape2D_3a61k")
 debug_color = Color(0.9126272, 0, 0.27480933, 0.41960785)
 
-[node name="enemySpr1" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2" unique_id=269410319]
-position = Vector2(-2.0000007, -3.0000052)
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_ugcq3")
+[node name="enemySpr1" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2" unique_id=1761037137]
+position = Vector2(0.9999988, 29.999989)
+rotation = 3.1415927
+scale = Vector2(9.37, -9.37)
+sprite_frames = ExtResource("55_hmhrg")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.30031458
+frame_progress = 0.24509428
 
-[node name="poisonDam" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2/enemySpr1" unique_id=1605776232]
+[node name="poisonDam" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2/enemySpr1" unique_id=1887259029]
 modulate = Color(0, 0.60120547, 0, 1)
 z_index = 1
 position = Vector2(0.66667175, 2)
@@ -7532,7 +7099,7 @@ sprite_frames = SubResource("SpriteFrames_dj0x7")
 frame = 10
 frame_progress = 1.0
 
-[node name="fireOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2/enemySpr1" unique_id=1474644051]
+[node name="fireOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2/enemySpr1" unique_id=628980650]
 visible = false
 modulate = Color(0.91, 0.91, 0.91, 1)
 position = Vector2(0.33332825, 6)
@@ -7540,7 +7107,7 @@ sprite_frames = SubResource("SpriteFrames_6w4hd")
 autoplay = "default"
 frame_progress = 0.9747902
 
-[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2/enemySpr1" unique_id=178256794]
+[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2/enemySpr1" unique_id=1016780658]
 visible = false
 modulate = Color(0, 0.60120547, 0, 1)
 position = Vector2(0.33333385, 1.0000005)
@@ -7549,7 +7116,7 @@ sprite_frames = SubResource("SpriteFrames_yerlx")
 autoplay = "default"
 frame_progress = 0.07341846
 
-[node name="stunAnim" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2/enemySpr1" unique_id=411341346]
+[node name="stunAnim" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2/enemySpr1" unique_id=768664777]
 visible = false
 z_index = 1
 position = Vector2(6.999997, -44.666653)
@@ -7575,6 +7142,7 @@ autostart = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=334568632]
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=675429401]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

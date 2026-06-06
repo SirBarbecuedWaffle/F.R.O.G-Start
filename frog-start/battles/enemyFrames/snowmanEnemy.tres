@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dwydqm72xm68l"]
+
+[ext_resource type="Texture2D" uid="uid://brsswppe5qers" path="res://2DAssets/area1enemies/SnowMan/SnowManIdle.png" id="1_fbbux"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2k4p"]
+atlas = ExtResource("1_fbbux")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sh8qo"]
+atlas = ExtResource("1_fbbux")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ncsw"]
+atlas = ExtResource("1_fbbux")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujcmb"]
+atlas = ExtResource("1_fbbux")
+region = Rect2(48, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2k4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sh8qo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ncsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujcmb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]

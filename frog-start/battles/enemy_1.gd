@@ -36,6 +36,7 @@ var damageIcon=preload("res://damageIndicator.tscn")
 @onready var enemy_spr_1: AnimatedSprite2D = $enemySpr1
 @export var attackSpeed:=625
 @export var attackDamage:=30
+@export var enemyAnim : SpriteFrames
 var turnTime:=randi_range(attackSpeed-120,attackSpeed+75)
 @onready var frog_layer: CanvasLayer = $"../.."
 @onready var def_up_ind: Sprite2D = $arrowHandler/goodArrows/defUpInd
@@ -57,6 +58,8 @@ var turnTime:=randi_range(attackSpeed-120,attackSpeed+75)
 @onready var attack_animator: AnimationPlayer = $attackAnimator
 func _ready() -> void:
 	health=maxHealth
+	enemy_spr_1.sprite_frames=enemyAnim
+	enemy_spr_1.play("idle")
 
 func _process(delta: float) -> void:
 	if stun_anim!=null:

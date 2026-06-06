@@ -2,6 +2,7 @@ extends Node2D
 
 var aliveEnemies:=0
 var curEnems=[0,0,0,0]
+var snowmanAnim=preload("res://battles/enemyFrames/snowmanEnemy.tres")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,6 +26,7 @@ func _ready() -> void:
 				self.get_children()[e].maxHealth=30.0
 				self.get_children()[e].attackSpeed=600.0
 				self.get_children()[e].attackDamage=10.0
+				self.get_children()[e].enemyAnim=snowmanAnim
 			if curEnems[e]==2:
 				self.get_children()[e].maxHealth=60.0
 				self.get_children()[e].attackSpeed=400.0
