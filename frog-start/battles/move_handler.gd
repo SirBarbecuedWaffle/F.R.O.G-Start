@@ -252,28 +252,28 @@ func fadeIn()->void:
 	explan_animator.play("showText")
 
 func _on_move_1_pressed() -> void:
-	if explan_animator.current_animation!="hideText":
+	if explan_animator.current_animation!="hideText" && move_handler.modulate!=Color(1.0, 1.0, 1.0, 0.0):
 		animation_player.play("press1")
 		moveUsed.emit(move_1_lab.text)
 		explan_animator.play("hideText")
 
 
 func _on_move_2_pressed() -> void:
-	if explan_animator.current_animation!="hideText":
+	if explan_animator.current_animation!="hideText" && move_handler.modulate!=Color(1.0, 1.0, 1.0, 0.0):
 		animation_player.play("press2")
 		moveUsed.emit(move_2_lab.text)
 		explan_animator.play("hideText")
 
 
 func _on_move_3_pressed() -> void:
-	if explan_animator.current_animation!="hideText":
+	if explan_animator.current_animation!="hideText" && move_handler.modulate!=Color(1.0, 1.0, 1.0, 0.0):
 		animation_player.play("press3")
 		moveUsed.emit(move_3_lab.text)
 		explan_animator.play("hideText")
 
 
 func _on_move_4_pressed() -> void:
-	if explan_animator.current_animation!="hideText":
+	if explan_animator.current_animation!="hideText" && move_handler.modulate!=Color(1.0, 1.0, 1.0, 0.0):
 		animation_player.play("press4")
 		moveUsed.emit(move_4_lab.text)
 		explan_animator.play("hideText")

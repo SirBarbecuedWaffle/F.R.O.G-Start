@@ -17,6 +17,7 @@ class_name partyMember
 @onready var barrel: AnimatedSprite2D = $"../barrel"
 @onready var party_handler: Node2D = $".."
 @onready var turnbar_animator: AnimationPlayer = $turnBar/turnbarAnimator
+@onready var node_2d: Node2D = $"../../Node2D"
 
 
 
@@ -187,6 +188,7 @@ func _process(delta: float) -> void:
 	if health<1:
 		if curChar!=null:
 			if curChar.animation!="die":
+				node_2d.playerDowned()
 				curChar.play("die")
 				health-=randi_range(30,90)
 	atk_up_ind.visible=atkUp>1

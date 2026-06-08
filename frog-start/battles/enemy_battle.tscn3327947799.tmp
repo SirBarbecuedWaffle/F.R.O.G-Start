@@ -71,9 +71,6 @@
 [ext_resource type="SpriteFrames" uid="uid://dwydqm72xm68l" path="res://battles/enemyFrames/snowmanEnemy.tres" id="55_hmhrg"]
 [ext_resource type="Texture2D" uid="uid://cxbkre6sffun6" path="res://2DAssets/area1enemies/Penguin/PenguinIdleAnim.png" id="56_f2k4p"]
 [ext_resource type="Texture2D" uid="uid://bjyxgoqmsesmy" path="res://2DAssets/area1enemies/Walrus/WalrusIdle.png" id="57_sh8qo"]
-[ext_resource type="Texture2D" uid="uid://dun3im21ni8h3" path="res://2DAssets/menus/New Piskel (13).png" id="72_0ncsw"]
-[ext_resource type="Script" uid="uid://ei0k6dtuee34" path="res://battles/node_2d.gd" id="72_ujcmb"]
-[ext_resource type="Texture2D" uid="uid://c6n6al26631cb" path="res://2DAssets/menus/menuBox.png" id="73_ujcmb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t80mw"]
 sky_top_color = Color(0.10863412, 0.38311404, 0.97564214, 1)
@@ -4201,79 +4198,6 @@ _data = {
 &"die": SubResource("Animation_lq4w6")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_w1l7k"]
-font = ExtResource("7_ugcq3")
-font_size = 105
-
-[sub_resource type="LabelSettings" id="LabelSettings_pbmit"]
-font = ExtResource("7_ugcq3")
-font_size = 105
-
-[sub_resource type="LabelSettings" id="LabelSettings_0kh12"]
-font = ExtResource("7_ugcq3")
-font_size = 77
-
-[sub_resource type="Animation" id="Animation_ujcmb"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-165, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_w1l7k"]
-resource_name = "loadIn"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-165, 0), Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.36666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pbmit"]
-_data = {
-&"RESET": SubResource("Animation_ujcmb"),
-&"loadIn": SubResource("Animation_w1l7k")
-}
-
 [sub_resource type="CanvasTexture" id="CanvasTexture_h5oe8"]
 
 [sub_resource type="Animation" id="Animation_scmio"]
@@ -6313,7 +6237,6 @@ frame_progress = 0.52835107
 [node name="enemyHandler" type="Node2D" parent="frogLayer" unique_id=257024737]
 position = Vector2(-978, 0)
 script = ExtResource("53_gw2wo")
-xpMultiplier = 10
 
 [node name="enemy1" type="Node2D" parent="frogLayer/enemyHandler" unique_id=144081222]
 position = Vector2(1589, 438)
@@ -6326,8 +6249,7 @@ defDown = 0.0
 atkUp = 0.0
 defUp = 0.0
 spdUp = 0.0
-attackSpeed = 1200
-attackDamage = 300
+attackSpeed = 200
 
 [node name="enemyBody" type="Node2D" parent="frogLayer/enemyHandler/enemy1" unique_id=1032293022]
 position = Vector2(0.9999988, 29.999989)
@@ -6339,7 +6261,7 @@ scale = Vector2(9.37, -9.37)
 sprite_frames = ExtResource("55_hmhrg")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.81459695
+frame_progress = 0.3992486
 
 [node name="enemySpr2" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy1/enemyBody" unique_id=2069498881]
 visible = false
@@ -6349,7 +6271,7 @@ scale = Vector2(9.37, -9.37)
 sprite_frames = SubResource("SpriteFrames_0kh12")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.89562386
+frame_progress = 0.4802232
 
 [node name="enemySpr3" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy1/enemyBody" unique_id=280755812]
 visible = false
@@ -6359,7 +6281,7 @@ scale = Vector2(9.37, -9.37)
 sprite_frames = SubResource("SpriteFrames_oh0sq")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.81098926
+frame_progress = 0.39563364
 
 [node name="poisonDam" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy1/enemyBody" unique_id=1436903173]
 modulate = Color(0, 0.60120547, 0, 1)
@@ -6379,7 +6301,7 @@ rotation = 3.1415927
 scale = Vector2(3.533, -3.533)
 sprite_frames = SubResource("SpriteFrames_6w4hd")
 autoplay = "default"
-frame_progress = 0.8763258
+frame_progress = 0.9132742
 
 [node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy1/enemyBody" unique_id=977795196]
 visible = false
@@ -6389,7 +6311,7 @@ rotation = 3.1415927
 scale = Vector2(3.003, -3.003)
 sprite_frames = SubResource("SpriteFrames_yerlx")
 autoplay = "default"
-frame_progress = 0.05430242
+frame_progress = 0.08278428
 
 [node name="stunAnim" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy1/enemyBody" unique_id=1079838306]
 visible = false
@@ -6399,7 +6321,7 @@ rotation = 3.1415927
 scale = Vector2(8.603, -8.603)
 sprite_frames = SubResource("SpriteFrames_vwjs8")
 autoplay = "default"
-frame_progress = 0.6836103
+frame_progress = 0.18071562
 
 [node name="TextureRect" type="TextureRect" parent="frogLayer/enemyHandler/enemy1" unique_id=1818215185]
 modulate = Color(0.20511743, 0.20511743, 0.20511743, 1)
@@ -6873,7 +6795,7 @@ defDown = 0.0
 atkUp = 0.0
 defUp = 0.0
 spdUp = 0.0
-attackSpeed = 40
+attackSpeed = 200
 
 [node name="enemyBody" type="Node2D" parent="frogLayer/enemyHandler/enemy3" unique_id=2002669818]
 position = Vector2(0.9999988, 29.999989)
@@ -7408,74 +7330,10 @@ frame_progress = 1.0
 [node name="poisonDamage" type="Timer" parent="frogLayer/enemyHandler/enemy2" unique_id=1767481278]
 autostart = true
 
-[node name="Node2D" type="Node2D" parent="frogLayer" unique_id=958398695]
-modulate = Color(1, 1, 1, 0)
-z_index = 243
-position = Vector2(-165, 0)
-script = ExtResource("72_ujcmb")
-
-[node name="boxBack" type="Sprite2D" parent="frogLayer/Node2D" unique_id=1849411079]
-modulate = Color(1, 1, 1, 0.54901963)
-position = Vector2(520, 520)
-scale = Vector2(22.06, 22.06)
-texture = ExtResource("72_0ncsw")
-
-[node name="boxTop" type="Sprite2D" parent="frogLayer/Node2D" unique_id=1570483044]
-position = Vector2(520, 520)
-scale = Vector2(22.06, 22.06)
-texture = ExtResource("73_ujcmb")
-
-[node name="Label" type="Label" parent="frogLayer/Node2D" unique_id=753308697]
-offset_left = 189.0
-offset_top = 232.0
-offset_right = 851.0
-offset_bottom = 372.0
-text = "VICTORY"
-label_settings = SubResource("LabelSettings_w1l7k")
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="frogLayer/Node2D" unique_id=1253891198]
-offset_left = 189.0
-offset_top = 245.0
-offset_right = 851.0
-offset_bottom = 385.0
-text = "__________"
-label_settings = SubResource("LabelSettings_pbmit")
-horizontal_alignment = 1
-
-[node name="xpLabel" type="Label" parent="frogLayer/Node2D" unique_id=1297728026]
-offset_left = 189.0
-offset_top = 411.0
-offset_right = 851.0
-offset_bottom = 551.0
-text = "XP: 1000000"
-label_settings = SubResource("LabelSettings_0kh12")
-horizontal_alignment = 1
-
-[node name="timeLabel" type="Label" parent="frogLayer/Node2D" unique_id=1875078796]
-offset_left = 189.0
-offset_top = 555.0
-offset_right = 851.0
-offset_bottom = 695.0
-text = "TIME:   1:56"
-label_settings = SubResource("LabelSettings_0kh12")
-horizontal_alignment = 1
-
-[node name="downLabel" type="Label" parent="frogLayer/Node2D" unique_id=2064449075]
-offset_left = 189.0
-offset_top = 702.0
-offset_right = 851.0
-offset_bottom = 842.0
-text = "DEATHS: 0"
-label_settings = SubResource("LabelSettings_0kh12")
-horizontal_alignment = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="frogLayer/Node2D" unique_id=1780909116]
-libraries/ = SubResource("AnimationLibrary_pbmit")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=334568632]
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=675429401]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -7611,7 +7469,6 @@ autoplay = &"loadIn"
 [connection signal="animation_finished" from="frogLayer/partyHandler/pink" to="frogLayer/partyHandler" method="_on_pink_animation_finished"]
 [connection signal="animation_finished" from="frogLayer/partyHandler/barrel" to="frogLayer/partyHandler" method="_on_barrel_animation_finished"]
 [connection signal="victory" from="frogLayer/enemyHandler" to="frogLayer/partyHandler" method="_on_enemy_handler_victory"]
-[connection signal="victory" from="frogLayer/enemyHandler" to="frogLayer/Node2D" method="_on_enemy_handler_victory"]
 [connection signal="perished" from="frogLayer/enemyHandler/enemy1" to="frogLayer/enemyHandler" method="_on_enemy_perished"]
 [connection signal="area_entered" from="frogLayer/enemyHandler/enemy1/hitBox" to="frogLayer/enemyHandler/enemy1" method="_on_hit_box_area_entered"]
 [connection signal="animation_finished" from="frogLayer/enemyHandler/enemy1/attackAnimator" to="frogLayer/enemyHandler/enemy1" method="_on_attack_animator_animation_finished"]
@@ -7628,4 +7485,3 @@ autoplay = &"loadIn"
 [connection signal="area_entered" from="frogLayer/enemyHandler/enemy2/hitBox" to="frogLayer/enemyHandler/enemy2" method="_on_hit_box_area_entered"]
 [connection signal="animation_finished" from="frogLayer/enemyHandler/enemy2/attackAnimator" to="frogLayer/enemyHandler/enemy2" method="_on_attack_animator_animation_finished"]
 [connection signal="timeout" from="frogLayer/enemyHandler/enemy2/poisonDamage" to="frogLayer/enemyHandler/enemy2" method="_on_poison_damage_timeout"]
-[connection signal="animation_finished" from="CanvasLayer/Control/AnimationPlayer" to="frogLayer/Node2D" method="_on_animation_player_animation_finished"]

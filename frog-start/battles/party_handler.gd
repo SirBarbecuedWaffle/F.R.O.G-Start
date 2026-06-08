@@ -17,6 +17,15 @@ extends Node2D
 @onready var barrel: AnimatedSprite2D = $barrel
 @onready var fox: AnimatedSprite2D = $fox
 @export var moveMenuOpen:=false
+@onready var move_animation_player: AnimationPlayer = $party1/moveHandler/AnimationPlayer
+@onready var move_animation_player2: AnimationPlayer = $party2/moveHandler/AnimationPlayer
+@onready var move_animation_player3: AnimationPlayer = $party3/moveHandler/AnimationPlayer
+@onready var move_animation_player4: AnimationPlayer = $party4/moveHandler/AnimationPlayer
+@onready var move_handler: Node2D = $party1/moveHandler
+@onready var move_handler2: Node2D = $party2/moveHandler
+@onready var move_handler3: Node2D = $party3/moveHandler
+@onready var move_handler4: Node2D = $party4/moveHandler
+
 
 
 func getAlivePlayers()->Array:
@@ -281,3 +290,27 @@ func _on_gorf_timer_timeout() -> void:
 
 func _on_cleanse_box_area_entered(area: Area2D) -> void:
 	pass # Replace with function body.
+
+
+func _on_enemy_handler_victory() -> void:
+	moveMenuOpen=true
+	if move_handler.modulate!=Color(1.0, 1.0, 1.0, 0.0):
+		var tweenc = create_tween()
+		tweenc.tween_property(move_handler,"modulate",Color(1.0, 1.0, 1.0, 0.0),0.5).set_trans(Tween.TRANS_SINE)
+		await tweenc.finished
+		move_handler.visible=false
+	if move_handler2.modulate!=Color(1.0, 1.0, 1.0, 0.0):
+		var tweenc = create_tween()
+		tweenc.tween_property(move_handler2,"modulate",Color(1.0, 1.0, 1.0, 0.0),0.5).set_trans(Tween.TRANS_SINE)
+		await tweenc.finished
+		move_handler2.visible=false
+	if move_handler3.modulate!=Color(1.0, 1.0, 1.0, 0.0):
+		var tweenc = create_tween()
+		tweenc.tween_property(move_handler3,"modulate",Color(1.0, 1.0, 1.0, 0.0),0.5).set_trans(Tween.TRANS_SINE)
+		await tweenc.finished
+		move_handler3.visible=false
+	if move_handler4.modulate!=Color(1.0, 1.0, 1.0, 0.0):
+		var tweenc = create_tween()
+		tweenc.tween_property(move_handler4,"modulate",Color(1.0, 1.0, 1.0, 0.0),0.5).set_trans(Tween.TRANS_SINE)
+		await tweenc.finished
+		move_handler4.visible=false

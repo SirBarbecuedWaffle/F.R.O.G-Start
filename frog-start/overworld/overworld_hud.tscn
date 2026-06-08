@@ -1218,6 +1218,7 @@ script = ExtResource("1_na30w")
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1838753936]
 
 [node name="partyMenu" type="ColorRect" parent="CanvasLayer2" unique_id=1851722373]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -3,9 +3,16 @@ extends Node2D
 @onready var health_label: Label = $healthLabel
 @export var character:=""
 @onready var hit_sprite: AnimatedSprite2D = $hitSprite
-@onready var poison_dam: AnimatedSprite2D = $enemySpr1/poisonDam
-@onready var poison_on: AnimatedSprite2D = $enemySpr1/poisonOn
-@onready var fire_on: AnimatedSprite2D = $enemySpr1/fireOn
+
+@onready var enemy_body: Node2D = $enemyBody
+@onready var enemy_spr_1: AnimatedSprite2D = $enemyBody/enemySpr1
+@onready var enemy_spr_2: AnimatedSprite2D = $enemyBody/enemySpr2
+@onready var enemy_spr_3: AnimatedSprite2D = $enemyBody/enemySpr3
+@onready var poison_dam: AnimatedSprite2D = $enemyBody/poisonDam
+@onready var fire_on: AnimatedSprite2D = $enemyBody/fireOn
+@onready var poison_on: AnimatedSprite2D = $enemyBody/poisonOn
+@onready var stun_anim: AnimatedSprite2D = $enemyBody/stunAnim
+@onready var node_2d: Node2D = $"../../Node2D"
 
 
 var deathAnim=preload("res://2DAssets/deathAnimation.tscn")
@@ -13,6 +20,7 @@ var deathAnim=preload("res://2DAssets/deathAnimation.tscn")
 var basicHit=preload("res://battles/battle_projectile.tscn")
 var damageIcon=preload("res://damageIndicator.tscn")
 @onready var party_handler: Node2D = $"../../partyHandler"
+signal perished
 
 @export var health:=999.0:
 	set(newHP):
@@ -33,10 +41,9 @@ var damageIcon=preload("res://damageIndicator.tscn")
 @export var defUp:=20.0
 @export var spdUp:=15.0
 @export var stun:=0.0
-@onready var enemy_spr_1: AnimatedSprite2D = $enemySpr1
 @export var attackSpeed:=625
 @export var attackDamage:=30
-@export var enemyAnim : SpriteFrames
+@export var enemyType:=0
 var turnTime:=randi_range(attackSpeed-120,attackSpeed+75)
 @onready var frog_layer: CanvasLayer = $"../.."
 @onready var def_up_ind: Sprite2D = $arrowHandler/goodArrows/defUpInd
@@ -53,13 +60,17 @@ var turnTime:=randi_range(attackSpeed-120,attackSpeed+75)
 @onready var def_down_lab: Label = $arrowHandler/badArrows/defDownInd/defDownLab
 @onready var spd_down_lab: Label = $arrowHandler/badArrows/spdDownInd/spdDownLab
 @onready var poison_damage: Timer = $poisonDamage
-@onready var stun_anim: AnimatedSprite2D = $enemySpr1/stunAnim
-
 @onready var attack_animator: AnimationPlayer = $attackAnimator
 func _ready() -> void:
 	health=maxHealth
-	enemy_spr_1.sprite_frames=enemyAnim
-	enemy_spr_1.play("idle")
+	await get_tree().create_timer(0.1).timeout
+	if enemyType!=1:
+		enemy_spr_1.visible=false
+	if enemyType==2:
+		enemy_spr_2.visible=true
+	if enemyType==3:
+		enemy_spr_3.visible=true
+	
 
 func _process(delta: float) -> void:
 	if stun_anim!=null:
@@ -165,6 +176,7 @@ func _process(delta: float) -> void:
 		if attack_animator.current_animation!="die":
 			health_label.modulate=Color(1.0, 1.0, 1.0, 0.0)
 			attack_animator.play("die")
+			
 			await get_tree().create_timer(0.1).timeout
 			var deathThing=deathAnim.instantiate()
 			frog_layer.add_child(deathThing)
@@ -228,11 +240,13 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 
 
 func _on_death_anim_animation_finished() -> void:
+	perished.emit(self.enemyType)
 	queue_free()
 
 
 func _on_attack_animator_animation_finished(anim_name: StringName) -> void:
 	if anim_name=="die":
+		perished.emit(self.enemyType)
 		queue_free()
 
 

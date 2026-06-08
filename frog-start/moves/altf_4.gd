@@ -1,6 +1,5 @@
 extends Node2D
 @onready var places: Node2D = $places
-@onready var strike_projectile: damager = $strikeProjectile
 @onready var gpu_particles_2d: GPUParticles2D = $targe/GPUParticles2D
 @onready var gpu_particles_2d_2: GPUParticles2D = $targe/GPUParticles2D2
 @onready var place_1: Area2D = $places/place1
@@ -8,6 +7,7 @@ extends Node2D
 @onready var place_3: Area2D = $places/place3
 @onready var place_4: Area2D = $places/place4
 @onready var targets: Node2D = $targets
+@onready var strike_projectile: damager = $strikeProjectile
 
 @onready var targe: Area2D = $targe
 
@@ -38,7 +38,8 @@ func _on_targe_area_entered(area: Area2D) -> void:
 	await get_tree().create_timer(1.0).timeout
 	if randi_range(1,5)==1:
 		await get_tree().create_timer(0.26).timeout
-		strike_projectile.global_position=targe.global_position
+		if strike_projectile!=null:
+			strike_projectile.global_position=targe.global_position
 		await get_tree().create_timer(2.0).timeout
 		queue_free()
 	else:

@@ -4,6 +4,7 @@ extends Node2D
 @onready var overworld_hud: Control = $overworldHUD
 
 func _ready() -> void:
+	CManager.updateXP()
 	encounter_timer.start(randi_range(4,8))
 	player.global_position.x=PManager.playerX
 	player.global_position.y=PManager.playerY
