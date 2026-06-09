@@ -11,7 +11,6 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	encounter_timer.paused=!player.velocity!=Vector2.ZERO
-	print(encounter_timer.time_left)
 
 
 func _on_encounter_timer_timeout() -> void:

@@ -70,7 +70,7 @@ _data = {
 &"loadIn": SubResource("Animation_pbcps")
 }
 
-[node name="Node2D" type="Node2D" unique_id=247346278]
+[node name="Node2D2" type="Node2D" unique_id=247346278]
 z_index = 2
 script = ExtResource("1_ls7ce")
 

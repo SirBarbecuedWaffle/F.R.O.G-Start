@@ -11,6 +11,7 @@ var timeAT:=0
 var downs:=0
 var displaydowns:=0
 var collecting:=false
+var clicked:=false
 @onready var animation_playerClose: AnimationPlayer = $"../../CanvasLayer/Control/AnimationPlayer"
 
 func _process(delta: float) -> void:
@@ -24,7 +25,8 @@ func _process(delta: float) -> void:
 	else:
 		totalTime+=1*delta
 	if canClose:
-		if Input.is_action_just_pressed("lClick"):
+		if Input.is_action_just_pressed("lClick") && !clicked:
+			clicked=true
 			var tweenc = create_tween()
 			tweenc.tween_property(self,"timeAT",0,1.5)
 			var oldXP=xpGained

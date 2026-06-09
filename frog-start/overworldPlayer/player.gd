@@ -8,6 +8,37 @@ var lastPressed:=""
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @export var itemPicked:=0
 @export var curCut:=false
+@onready var level_storage: Node2D = $levelStorage
+@onready var levelUper=preload("res://levelIndicator.tscn")
+
+func _ready() -> void:
+	await get_tree().create_timer(0.5).timeout
+	for d in range(4):
+		while CManager.levelUpDisplays[d]>0:
+			CManager.levelUpDisplays[d]-=1
+			var levelInst=levelUper.instantiate()
+			if CManager.fauxParty[d]==1:
+				levelInst.char="frog"
+			if CManager.fauxParty[d]==2:
+				levelInst.char="steve"
+			if CManager.fauxParty[d]==3:
+				levelInst.char="mask"
+			if CManager.fauxParty[d]==4:
+				levelInst.char="hood"
+			if CManager.fauxParty[d]==5:
+				levelInst.char="robot"
+			if CManager.fauxParty[d]==6:
+				levelInst.char="joe"
+			if CManager.fauxParty[d]==7:
+				levelInst.char="fox"
+			if CManager.fauxParty[d]==8:
+				levelInst.char="lizard"
+			if CManager.fauxParty[d]==9:
+				levelInst.char="barrel"
+			level_storage.add_child(levelInst)
+			await get_tree().create_timer(1.0).timeout
+			
+
 
 func levelUp()->void:
 	animation_player.play("levelUp")

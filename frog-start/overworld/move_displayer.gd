@@ -57,7 +57,6 @@ var moveHovered :=""
 
 
 func _process(delta: float) -> void:
-	print(move_1_control.global_position)
 	if moveHovered=="":
 		await get_tree().create_timer(0.5).timeout
 		if moveHovered=="":

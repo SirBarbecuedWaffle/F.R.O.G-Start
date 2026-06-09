@@ -575,10 +575,9 @@ script = ExtResource("1_v5wy0")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=45399138]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_75u2t")
-animation = &"scared"
+animation = &"idleFront"
 autoplay = "idleFront"
-frame = 10
-frame_progress = 1.0
+frame_progress = 0.24200417
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1667708885]
 position = Vector2(0, -2.5)
@@ -591,5 +590,8 @@ libraries/ = SubResource("AnimationLibrary_tuyoq")
 position = Vector2(11, -20)
 sprite_frames = SubResource("SpriteFrames_dqkch")
 frame_progress = 0.66758674
+
+[node name="levelStorage" type="Node2D" parent="." unique_id=1309032042]
+position = Vector2(0, -20)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
