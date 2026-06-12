@@ -10,8 +10,7 @@ func _ready() -> void:
 	player.global_position.y=PManager.playerY
 
 func _physics_process(delta: float) -> void:
-	encounter_timer.paused=!player.velocity!=Vector2.ZERO
-
+	encounter_timer.paused=!(player.velocity!=Vector2.ZERO) || PManager.paused==true || player.itemPicked!=0
 
 func _on_encounter_timer_timeout() -> void:
 	PManager.playerX=player.global_position.x

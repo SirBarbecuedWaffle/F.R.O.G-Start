@@ -4,7 +4,10 @@ class_name Player
 @export var speed:=65
 var firstPressed:=""
 var lastPressed:=""
+signal pickedupItem(item : int)
+var canDropHands:=false
 @export var frozen:=false
+var shouldRepause:=false
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @export var itemPicked:=0
 @export var curCut:=false
@@ -43,15 +46,21 @@ func _ready() -> void:
 func levelUp()->void:
 	animation_player.play("levelUp")
 
-func itemCollect()->void:
+func itemCollect(patchID)->void:
+	pickedupItem.emit(patchID)
 	itemPicked=1
 	animated_sprite_2d.play("itemPickup")
+	await get_tree().create_timer(3.0).timeout
+
+	animated_sprite_2d.play("itemPut")
+	itemPicked=3
 
 func battleStart()->void:
 	animated_sprite_2d.play("scared")
 	itemPicked=1
 
 func _physics_process(delta: float) -> void:
+
 	if !PManager.paused:
 		if itemPicked==0:
 			speed=65
@@ -125,7 +134,9 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if animated_sprite_2d.animation=="itemPickup":
-		itemPicked=2
 	if animated_sprite_2d.animation=="itemPut":
+		
+		lastPressed="down"
+		animated_sprite_2d.play("idleFront")
+		await get_tree().create_timer(0.1).timeout
 		itemPicked=0

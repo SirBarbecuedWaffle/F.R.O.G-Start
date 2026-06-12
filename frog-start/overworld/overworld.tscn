@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://f7j7cgji16eu" path="res://overworldPlayer/player.tscn" id="1_jv32c"]
 [ext_resource type="PackedScene" uid="uid://c02stt7kf82md" path="res://overworld/section_1_tile_set.tscn" id="1_w0qnv"]
 [ext_resource type="PackedScene" uid="uid://bi7ojre4hcj76" path="res://overworld/overworld_hud.tscn" id="4_nnj58"]
+[ext_resource type="PackedScene" uid="uid://c6jwyu3bbtlgk" path="res://overworld/objects/chest.tscn" id="5_uniiq"]
 
 [node name="overworld" type="Node2D" unique_id=173470902]
 script = ExtResource("1_criu7")
@@ -14,6 +15,14 @@ tile_map_data = PackedByteArray("AAABAAEAAgAFAAEAAAABAAAAAgAEAAIAAAABAP//AgABAAE
 [node name="decoTileset" parent="." unique_id=1873601768 instance=ExtResource("1_w0qnv")]
 tile_map_data = PackedByteArray("AAD6/wEAAgAGAAYAAAD6/wIAAgAGAAcAAAD6/wMAAgAGAAgAAAD7/wEAAgAHAAYAAAD7/wIAAgAHAAcAAAD7/wMAAgAHAAgAAAD8/wEAAgAIAAYAAAD8/wIAAgAIAAcAAAD8/wMAAgAIAAgAAAAEAP7/AgAGAAYAAAAEAP//AgAGAAcAAAAEAAAAAgAGAAgAAAAFAP7/AgAHAAYAAAAFAP//AgAHAAcAAAAFAAAAAgAHAAgAAAAGAP7/AgAIAAYAAAAGAP//AgAIAAcAAAAGAAAAAgAIAAgAAAAGAPj/AgAGAAYAAAAGAPn/AgAGAAcAAAAGAPr/AgAGAAgAAAAHAPj/AgAHAAYAAAAHAPn/AgAHAAcAAAAHAPr/AgAHAAgAAAAIAPj/AgAIAAYAAAAIAPn/AgAIAAcAAAAIAPr/AgAIAAgAAAD1//v/AgAGAAYAAAD1//z/AgAGAAcAAAD1//3/AgAGAAgAAAD2//v/AgAHAAYAAAD2//z/AgAHAAcAAAD2//3/AgAHAAgAAAD3//v/AgAIAAYAAAD3//z/AgAIAAcAAAD3//3/AgAIAAgAAAD5//f/AgAGAAYAAAD5//j/AgAGAAcAAAD5//n/AgAGAAgAAAD6//f/AgAHAAYAAAD6//j/AgAHAAcAAAD6//n/AgAHAAgAAAD7//f/AgAIAAYAAAD7//j/AgAIAAcAAAD7//n/AgAIAAgAAAAEAAQAAgAKAAgAAAAJAPz/AgAKAAgAAAD0//r/AgAKAAgAAAD3/wEAAgAKAAgAAAD0/wUAAgAKAAgAAAAHAAMAAgALAAYAAAD3/wQAAgAKAAcAAAAGAPP/AgAGAAYAAAAGAPT/AgAGAAcAAAAGAPX/AgAGAAgAAAAHAPP/AgAHAAYAAAAHAPT/AgAHAAcAAAAHAPX/AgAHAAgAAAAIAPP/AgAIAAYAAAAIAPT/AgAIAAcAAAAIAPX/AgAIAAgAAAAOAPL/AgAGAAYAAAAOAPP/AgAGAAcAAAAOAPT/AgAGAAgAAAAPAPL/AgAHAAYAAAAPAPP/AgAHAAcAAAAPAPT/AgAHAAgAAAAQAPL/AgAIAAYAAAAQAPP/AgAIAAcAAAAQAPT/AgAIAAgAAAAVAPT/AgAGAAYAAAAVAPX/AgAGAAcAAAAVAPb/AgAGAAgAAAAWAPT/AgAHAAYAAAAWAPX/AgAHAAcAAAAWAPb/AgAHAAgAAAAXAPT/AgAIAAYAAAAXAPX/AgAIAAcAAAAXAPb/AgAIAAgAAAA=")
 occlusion_enabled = false
+
+[node name="chest" parent="." unique_id=294661463 instance=ExtResource("5_uniiq")]
+position = Vector2(-27, -30)
+patchHeld = 1
+
+[node name="chest2" parent="." unique_id=348419619 instance=ExtResource("5_uniiq")]
+position = Vector2(28, -30)
+patchHeld = 2
 
 [node name="player" parent="." unique_id=118365579 instance=ExtResource("1_jv32c")]
 
@@ -30,4 +39,5 @@ offset_top = -169.0
 offset_right = -185.0
 offset_bottom = -169.0
 
+[connection signal="pickedupItem" from="player" to="overworldHUD" method="_on_player_pickedup_item"]
 [connection signal="timeout" from="encounterTimer" to="." method="_on_encounter_timer_timeout"]

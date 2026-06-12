@@ -1,11 +1,13 @@
 extends Node
-@export var party:=[1,2,7,8]
+@export var party:=[0,0,1,0]
 @export var charUnlocked=[1,1,1,1,1,1,1,1,1,1]
-@export var charXP=[100,100,0,0,0,0,100,100,0,0]
+@export var charXP=[0,0,0,0,0,0,0,0,0,0]
 @export var charLVL=[1,1,1,1,1,1,1,1,1,1]
 @export var charHP=[200,175,225,275,320,360,400,600,225,999]
 @export var levelUpDisplays=[0,0,0,0]
 @export var fauxParty=[0,0,0,0]
+@export var patchesUnlocked=[0,0,0]
+@export var currentPatches=[0,0,0,0]
 
 func updateXP()->void:
 	for i in range(4):
@@ -20,4 +22,4 @@ func updateXP()->void:
 						levelUpDisplays[i]+=1
 
 func _process(delta: float) -> void:
-	print(levelUpDisplays)
+	pass

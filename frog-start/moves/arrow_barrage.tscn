@@ -7,6 +7,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ul3v"]
 size = Vector2(109, 138)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ikig"]
+size = Vector2(503, 180)
+
 [sub_resource type="Animation" id="Animation_8ikig"]
 length = 0.001
 tracks/0/type = "value"
@@ -186,15 +189,6 @@ collision_mask = 16
 position = Vector2(-20.5, 5)
 shape = SubResource("RectangleShape2D_0ul3v")
 
-[node name="place2" type="Area2D" parent="places" unique_id=1516056219]
-position = Vector2(1598, 432)
-collision_layer = 8
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place2" unique_id=1656460194]
-position = Vector2(-20.5, 5)
-shape = SubResource("RectangleShape2D_0ul3v")
-
 [node name="place3" type="Area2D" parent="places" unique_id=551631987]
 position = Vector2(1371, 820)
 collision_layer = 8
@@ -210,8 +204,8 @@ collision_layer = 8
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="places/place4" unique_id=1149187771]
-position = Vector2(-20.5, 5)
-shape = SubResource("RectangleShape2D_0ul3v")
+position = Vector2(176.5, -16)
+shape = SubResource("RectangleShape2D_8ikig")
 
 [node name="spawnLocation" type="Marker2D" parent="." unique_id=674989445]
 position = Vector2(1394, 374)
@@ -289,6 +283,5 @@ libraries/ = SubResource("AnimationLibrary_l6svt")
 autoplay = &"arrowsSpawn"
 
 [connection signal="area_entered" from="places/place1" to="." method="_on_place_1_area_entered"]
-[connection signal="area_entered" from="places/place2" to="." method="_on_place_2_area_entered"]
 [connection signal="area_entered" from="places/place3" to="." method="_on_place_3_area_entered"]
 [connection signal="area_entered" from="places/place4" to="." method="_on_place_4_area_entered"]

@@ -4,6 +4,7 @@ extends Node2D
 @onready var time_label: Label = $timeLabel
 @onready var down_label: Label = $downLabel
 @onready var enemy_handler: Node2D = $"../enemyHandler"
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 var totalTime:=0.0
 var canClose:=false
 var xpGained:=0
@@ -26,6 +27,7 @@ func _process(delta: float) -> void:
 		totalTime+=1*delta
 	if canClose:
 		if Input.is_action_just_pressed("lClick") && !clicked:
+			animated_sprite_2d.visible=false
 			clicked=true
 			var tweenc = create_tween()
 			tweenc.tween_property(self,"timeAT",0,1.5)
@@ -43,6 +45,7 @@ func _process(delta: float) -> void:
 			tweencre.tween_property(self,"xpGained",oldXP2*(1-(downs*0.05)),1.0)
 			
 			await tweencre.finished
+			await get_tree().create_timer(0.7).timeout
 			for i in range(4):
 				if CManager.party[i]!=0:
 					var curChar=CManager.party[i]
@@ -68,7 +71,7 @@ func updateLabels()->void:
 	tweencre.tween_property(self,"displaydowns",downs,1.0)
 	await tweencre.finished
 	canClose=true
-		
+	animated_sprite_2d.visible=true
 func playerDowned()->void:
 	downs+=1
 
