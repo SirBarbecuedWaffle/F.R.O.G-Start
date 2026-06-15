@@ -11,6 +11,7 @@ class_name damager
 @export var defBuf:=0
 @export var stun:=0.0
 @export var regen:=0
+@export var invincible:=0
 @export var oneHit:=true
 @export var randomNumbers:=false
 @export var glitch:=false

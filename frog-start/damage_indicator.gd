@@ -9,8 +9,10 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	
 func _process(delta: float) -> void:
 	label.text=str(abs(damageAmount))
-	if damageAmount<1:
+	if damageAmount<0:
 		node_2d.modulate=Color.GREEN
+	if damageAmount==0:
+		node_2d.modulate=Color(1.0, 0.831, 0.0, 1.0)
 	if damageType=="poison":
 		node_2d.modulate=Color.DARK_GREEN
 	if damageType=="fire":

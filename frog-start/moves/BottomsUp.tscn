@@ -96,8 +96,8 @@ position = Vector2(1504, 605)
 [node name="arrow1" parent="Arrows" unique_id=1142312808 instance=ExtResource("2_y1jf6")]
 visible = false
 position = Vector2(175, -538)
-damage = -20
 strBuf = 15
+regen = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="Arrows/arrow1" unique_id=1909176716]
 position = Vector2(3.9999993, 10.000002)
@@ -108,8 +108,8 @@ region_rect = Rect2(48.35092, 16.104969, 15.533623, 15.915485)
 [node name="arrow2" parent="Arrows" unique_id=1842772094 instance=ExtResource("2_y1jf6")]
 visible = false
 position = Vector2(-61, -204)
-damage = -20
 strBuf = 15
+regen = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="Arrows/arrow2" unique_id=62712553]
 position = Vector2(1.9999995, 10.000002)
@@ -120,8 +120,8 @@ region_rect = Rect2(48.35092, 16.104969, 15.533623, 15.915485)
 [node name="arrow3" parent="Arrows" unique_id=346935710 instance=ExtResource("2_y1jf6")]
 visible = false
 position = Vector2(-646, -64)
-damage = -20
 strBuf = 15
+regen = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="Arrows/arrow3" unique_id=285536592]
 position = Vector2(1.9999995, 11.000002)
@@ -132,8 +132,8 @@ region_rect = Rect2(48.35092, 16.104969, 15.533623, 15.915485)
 [node name="arrow4" parent="Arrows" unique_id=1232609900 instance=ExtResource("2_y1jf6")]
 visible = false
 position = Vector2(-410, -365)
-damage = -20
 strBuf = 15
+regen = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="Arrows/arrow4" unique_id=709892211]
 position = Vector2(1.9999995, 11.000002)

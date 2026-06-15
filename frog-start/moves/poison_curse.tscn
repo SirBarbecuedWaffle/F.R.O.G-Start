@@ -44,8 +44,8 @@ animations = [{
 script = ExtResource("1_dgboc")
 
 [node name="strikeProjectile" parent="." unique_id=1142312808 instance=ExtResource("1_jk85q")]
-modulate = Color(0, 0.57254905, 0, 0.6117647)
-position = Vector2(2505, 526.00006)
+modulate = Color(0, 0.57254905, 0, 0.44313726)
+position = Vector2(2528, 526.00006)
 scale = Vector2(20, 20)
 collision_layer = 8
 poison = 35

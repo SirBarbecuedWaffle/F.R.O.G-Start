@@ -33,7 +33,7 @@ signal perished
 @export var maxHealth:=999.0
 @export var moveProgress:=0.0
 @export var poison:=0
-@export var fire:=0
+@export var fire:=0.0
 @export var atkDown:=20.0
 @export var defDown:=10.0
 @export var spdDown:=0.0
@@ -80,9 +80,10 @@ func _process(delta: float) -> void:
 		moveProgress=randi_range(0,turnTime-50)
 	fire_on.visible=fire>0
 	if fire>0:
-		fire-=1
-		if fire%50==25:
+		fire-=10*delta
+		if int(fire)%5==0:
 			var movie=damageIcon.instantiate()
+			fire-=1
 			movie.damageAmount=5
 			health-=5
 			movie.global_position=global_position
@@ -204,7 +205,7 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 			frog_layer.add_child(movie)
 		poison+=area.poison
 		stun+=area.stun
-		fire+=area.burn*7
+		fire+=area.burn
 		
 		#applies buffs
 		if spdUp<area.spdBuf:
@@ -253,11 +254,11 @@ func _on_attack_animator_animation_finished(anim_name: StringName) -> void:
 func _on_poison_damage_timeout() -> void:
 	var am=randi_range(6,10)
 	var movie=damageIcon.instantiate()
-	movie.damageAmount=am
+	movie.damageAmount=am+(maxHealth*0.01)
 	movie.global_position=global_position
 	movie.damageType="poison"
 	poison_dam.play("default")
 	frog_layer.add_child(movie)
-	health-=am
+	health-=am+(maxHealth*0.01)
 	poison-=am
 	poison_damage.start(randi_range(1,5))

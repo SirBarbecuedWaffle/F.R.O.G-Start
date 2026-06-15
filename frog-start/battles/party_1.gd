@@ -18,6 +18,7 @@ class_name partyMember
 @onready var party_handler: Node2D = $".."
 @onready var turnbar_animator: AnimationPlayer = $turnBar/turnbarAnimator
 @onready var node_2d: Node2D = $"../../Node2D"
+@onready var invin_on: AnimatedSprite2D = $invinOn
 
 
 
@@ -105,6 +106,7 @@ var bottoms=preload("res://moves/BottomsUp.tscn")
 @export var spdUp:=0.0
 @export var stun:=0.0
 @export var regen:=0
+@export var invincible:=0.0
 var turnTime:=randi_range(120,450)
 @onready var def_up_ind: Sprite2D = $arrowHandler/goodArrows/defUpInd
 @onready var spd_up_ind: Sprite2D = $arrowHandler/goodArrows/spdUpInd
@@ -169,7 +171,32 @@ func _ready() -> void:
 		maxHealth=CManager.charHP[8]+CManager.charLVL[8]*30
 	health=maxHealth
 
+func invincAnim()->void:
+		var tweente := create_tween()
+		tweente.tween_property(invin_on, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.5)
+		var tweent := create_tween()
+		tweent.tween_property(curChar, "self_modulate", Color(1.825, 0.93, 0.0, 1.0), 0.5)
+		await tweent.finished
+		if !invincible>0:
+			var tweented := create_tween()
+			tweented.tween_property(invin_on, "modulate", Color(1.0, 1.0, 1.0, 0.0), 0.5)
+			var tweent3 := create_tween()
+			tweent3.tween_property(curChar, "self_modulate", Color(1.0, 1.0, 1.0, 1.0), 0.5)
+		var tweent2 := create_tween()
+		tweent2.tween_property(curChar, "self_modulate", Color(2.454, 2.454, 0.0, 1.0), 0.5)
+		await tweent2.finished
+		if invincible>0:
+			invincAnim()
+		else:
+			var tweenteE := create_tween()
+			tweenteE.tween_property(invin_on, "modulate", Color(1.0, 1.0, 1.0, 0.0), 0.5)
+			var tweent3 := create_tween()
+			tweent3.tween_property(curChar, "self_modulate", Color(1.0, 1.0, 1.0, 1.0), 0.5)
+
 func _process(delta: float) -> void:
+	if invincible>0:	
+		print(invincible)
+		invincible-=1*delta
 	stun_anim.visible=stun>0
 	if stun>0:
 		if turnbar_animator.current_animation!="flash":
@@ -178,7 +205,8 @@ func _process(delta: float) -> void:
 	if regen>0:
 		regen-=1*delta
 		if regen%125==0:
-			health+=5
+			if health!=maxHealth:
+				health+=5
 			var movie=damageIcon.instantiate()
 			movie.damageAmount=-5
 			movie.global_position=global_position
@@ -453,19 +481,26 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 			var flashe=flash.instantiate()
 			frog_layer.add_child(flashe)
 		if area.damage!=0:
-			health-=area.damage
-			if area.damage>0:
-				if defUp>0:
-					area.damage-=(area.damage)/2
-				if defDown>0:
-					area.damage+=(area.damage)/2
+			if invin_on.modulate==Color(1.0, 1.0, 1.0, 0.0):
+				health-=area.damage
+				if area.damage>0:
+					if defUp>0:
+						area.damage-=(area.damage)/2
+					if defDown>0:
+						area.damage+=(area.damage)/2
+			
 			var movie=damageIcon.instantiate()
-			movie.damageAmount=area.damage
+			if  invin_on.modulate==Color(1.0, 1.0, 1.0, 0.0):
+				if area.damage!=0:
+					movie.damageAmount=area.damage
+			else:
+				movie.damageAmount=0
 			movie.global_position=global_position
 			frog_layer.add_child(movie)
-		poison+=area.poison
-		stun+=area.stun
-		fire+=area.burn
+		if invin_on.modulate==Color(1.0, 1.0, 1.0, 0.0):
+			poison+=area.poison
+			stun+=area.stun
+			fire+=area.burn
 		
 		#applies buffs
 		if spdUp<area.spdBuf:
@@ -501,6 +536,9 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 			defDown=area.defRev
 		else:
 			defDown+=(area.defRev/2)
+		if area.invincible>invincible+1:
+			invincible=area.invincible
+			invincAnim()
 		
 		if area.oneHit:
 			area.queue_free()
