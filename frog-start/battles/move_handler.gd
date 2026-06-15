@@ -93,6 +93,8 @@ func _process(delta: float) -> void:
 		move_explainer.text="Has a 1/8 chance to kill every enemy, burns them regardless"
 	if moveHovered=="Coffee Break":
 		move_explainer.text="Heals and temporarily speeds up the entire party"
+	if moveHovered=="Even More Skill":
+		move_explainer.text="Rolls a dice, causing a different effect to happen based on the number rolled"
 	if moveHovered=="Pummel":
 		move_explainer.text="Hits a random enemy three times, lowering the attack of the last enemy hit"
 	if moveHovered=="Flashbang":
@@ -137,7 +139,7 @@ func _process(delta: float) -> void:
 	if get_parent().getChar()=="fox":
 		move_1_lab.text="All Skill Baby"
 		move_2_lab.text="Alt F4"
-		move_3_lab.text="Pummel"
+		move_3_lab.text="Even More Skill"
 		move_4_lab.text="Flashbang"
 	if get_parent().getChar()=="lizard":
 		move_1_lab.text="Infect"
@@ -188,7 +190,7 @@ func _process(delta: float) -> void:
 		move_4.texture_normal=instaKillIcon
 		move_4.texture_hover=instaKillHover
 		
-	if move_3_lab.text=="Strike":
+	if move_3_lab.text=="Strike" || move_3_lab.text=="Even More Skill":
 		move_3.texture_hover=singleTarHover
 		move_3.texture_normal=singleTarIcon
 	if move_3_lab.text=="Curse: Weaken" || move_3_lab.text=="Smite" || move_3_lab.text=="Pummel":

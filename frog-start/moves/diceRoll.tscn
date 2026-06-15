@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://dtqckdle8tblb"]
+
+[ext_resource type="Script" uid="uid://6pe8qw3abdd1" path="res://moves/dice_roll.gd" id="1_betis"]
+[ext_resource type="Texture2D" uid="uid://cpb2b4u7o374t" path="res://2DAssets/six sided die.png" id="2_nmmd8"]
+[ext_resource type="Texture2D" uid="uid://dpvp118q8myeo" path="res://2DAssets/Coin Flip/goldcoin-heads.png" id="7_rvnn1"]
+[ext_resource type="Texture2D" uid="uid://c7uejlcq7rvhg" path="res://2DAssets/Coin Flip/goldcoin-tails.png" id="8_g10de"]
+[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="9_nv14m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xeutv"]
+atlas = ExtResource("2_nmmd8")
+region = Rect2(0, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stxn2"]
+atlas = ExtResource("2_nmmd8")
+region = Rect2(16, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pm4h0"]
+atlas = ExtResource("2_nmmd8")
+region = Rect2(32, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_betis"]
+atlas = ExtResource("2_nmmd8")
+region = Rect2(48, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5csx"]
+atlas = ExtResource("2_nmmd8")
+region = Rect2(64, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mp0di"]
+atlas = ExtResource("2_nmmd8")
+region = Rect2(80, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvv6b"]
+atlas = ExtResource("7_rvnn1")
+region = Rect2(0, 0, 96, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mln88"]
+atlas = ExtResource("8_g10de")
+region = Rect2(0, 0, 96, 79)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bul75"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xeutv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stxn2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pm4h0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_betis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5csx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mp0di")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvv6b")
+}],
+"loop": true,
+"name": &"heads",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mln88")
+}],
+"loop": true,
+"name": &"tails",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_8iyv5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_td27l"]
+resource_name = "fadeOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mx76c"]
+resource_name = "flip"
+length = 1.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.5, 1.3333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -200), Vector2(0, -500), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ifuhx"]
+resource_name = "loadIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_td27l"]
+_data = {
+&"RESET": SubResource("Animation_8iyv5"),
+&"fadeOut": SubResource("Animation_td27l"),
+&"flip": SubResource("Animation_mx76c"),
+&"loadIn": SubResource("Animation_ifuhx")
+}
+
+[node name="diceRoll" type="Node2D" unique_id=667611672]
+modulate = Color(1, 1, 1, 0)
+script = ExtResource("1_betis")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=247545671]
+position = Vector2(997, 726)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_bul75")
+autoplay = "heads"
+frame_progress = 0.79999584
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1517160503]
+libraries/ = SubResource("AnimationLibrary_td27l")
+autoplay = &"loadIn"
+
+[node name="strikeProjectile" parent="." unique_id=1142312808 instance=ExtResource("9_nv14m")]
+position = Vector2(460, -665)
+scale = Vector2(15, 15)
+collision_layer = 8
+damage = 100
+oneHit = false
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
