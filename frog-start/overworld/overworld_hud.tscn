@@ -1908,6 +1908,7 @@ scale = Vector2(13.965, 13.965)
 texture = ExtResource("2_3oasr")
 
 [node name="moveDisplayer" type="Node2D" parent="CanvasLayer2/partyMenu/MenuBox" unique_id=962510332]
+visible = false
 z_index = 100
 position = Vector2(-200, 0)
 script = ExtResource("4_iwmkv")
@@ -2482,7 +2483,6 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="patchMenu" type="ColorRect" parent="CanvasLayer2" unique_id=438977713]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -2741,7 +2741,7 @@ offset_bottom = 74.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0.6156863)
 
-[node name="ColorRect2" type="ColorRect" parent="CanvasLayer2/patchesButton" unique_id=1953889713]
+[node name="colorect2" type="ColorRect" parent="CanvasLayer2/patchesButton" unique_id=1953889713]
 layout_mode = 0
 offset_left = -13.0
 offset_top = -1.0
@@ -2750,7 +2750,7 @@ offset_bottom = 71.0
 mouse_filter = 2
 color = Color(0.5254902, 0.5254902, 0.5254902, 0.6156863)
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2/patchesButton" unique_id=1811779151]
+[node name="patchBack" type="ColorRect" parent="CanvasLayer2/patchesButton" unique_id=1811779151]
 layout_mode = 0
 offset_left = -7.0000057
 offset_top = 3.9999757
@@ -2855,3 +2855,4 @@ autoplay = &"RESET"
 [connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
 [connection signal="pressed" from="CanvasLayer2/partyButton" to="." method="_on_party_button_pressed"]
+[connection signal="pressed" from="CanvasLayer2/patchesButton" to="." method="_on_patches_button_pressed"]
