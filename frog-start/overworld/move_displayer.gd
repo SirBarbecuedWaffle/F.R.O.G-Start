@@ -141,7 +141,11 @@ func _process(delta: float) -> void:
 		move_type.text="Type: Debuff"
 	if moveHovered=="Flashbang":
 		move_explainer.text="Briefly stuns every enemy and party member"
+		
 		move_type.text="Type: Stun"
+	if moveHovered=="Even More Skill":
+		move_explainer.text="Rolls 3 dice, causing a different effect to happen based on the numbers rolled"
+		move_type.text="Type: Monotarget"
 	if moveHovered=="Toxic Fumes":
 		move_explainer.text="Temporarily poisons and slows every enemy"
 		move_type.text="Type: Poison"
@@ -200,7 +204,7 @@ func _process(delta: float) -> void:
 	if party_menu.getChar()=="fox":
 		move_1_lab.text="All Skill Baby"
 		move_2_lab.text="Alt F4"
-		move_3_lab.text="Pummel"
+		move_3_lab.text="Even More Skill"
 		move_4_lab.text="Flashbang"
 	if party_menu.getChar()=="lizard":
 		move_1_lab.text="Infect"
@@ -252,7 +256,7 @@ func _process(delta: float) -> void:
 		move_2.texture_hover=instaKillHover
 	
 		
-	if move_3_lab.text=="Strike":
+	if move_3_lab.text=="Strike" || move_3_lab.text=="Even More Skill":
 		move_3.texture_hover=singleTarHover
 		move_3.texture_normal=singleTarIcon
 	if move_3_lab.text=="Curse: Weaken" || move_3_lab.text=="Smite" || move_3_lab.text=="Pummel":

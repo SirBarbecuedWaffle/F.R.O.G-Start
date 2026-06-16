@@ -94,7 +94,7 @@ func _process(delta: float) -> void:
 	if moveHovered=="Coffee Break":
 		move_explainer.text="Heals and temporarily speeds up the entire party"
 	if moveHovered=="Even More Skill":
-		move_explainer.text="Rolls a dice, causing a different effect to happen based on the number rolled"
+		move_explainer.text="Rolls 3 dice, causing a different effect to happen based on the numbers rolled"
 	if moveHovered=="Pummel":
 		move_explainer.text="Hits a random enemy three times, lowering the attack of the last enemy hit"
 	if moveHovered=="Flashbang":

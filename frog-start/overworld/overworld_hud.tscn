@@ -2481,6 +2481,70 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="patchMenu" type="ColorRect" parent="CanvasLayer2" unique_id=438977713]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.93333334)
+
+[node name="MenuBox" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=681095833]
+position = Vector2(1637, 729)
+scale = Vector2(13.965, 13.965)
+texture = ExtResource("2_3oasr")
+
+[node name="MenuBox2" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=1930189197]
+position = Vector2(1637, 295)
+scale = Vector2(13.965, 13.965)
+texture = ExtResource("2_3oasr")
+
+[node name="glitchTimer" type="Timer" parent="CanvasLayer2/patchMenu/MenuBox2" unique_id=1578574434]
+wait_time = 0.3
+autostart = true
+
+[node name="frogBox" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=972188840]
+position = Vector2(285, 285)
+scale = Vector2(6.035, 6.035)
+texture = ExtResource("2_3oasr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox" unique_id=1202701645]
+position = Vector2(-69.26264, -12.2618065)
+sprite_frames = SubResource("SpriteFrames_82awa")
+autoplay = "default"
+frame_progress = 0.4470451
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox" unique_id=135242873]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu" unique_id=354673880]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 26.0
+offset_right = 1129.0
+offset_bottom = 213.0
+text = "PATCHES"
+label_settings = SubResource("LabelSettings_82awa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer2/patchMenu" unique_id=932050013]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 644.0
+offset_right = 1129.0
+offset_bottom = 885.0
+text = "CLICK AND DRAG PATCHES TO APPLY THEM TO PARTY MEMBERS"
+label_settings = SubResource("LabelSettings_6xw8e")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
 [node name="partyButton" type="Button" parent="CanvasLayer2" unique_id=28289476]
 self_modulate = Color(1, 1, 0, 1)
 offset_left = 85.0
@@ -2786,4 +2850,8 @@ autoplay = &"RESET"
 [connection signal="mouse_entered" from="CanvasLayer2/partyMenu/joeBox/joeButton" to="CanvasLayer2/partyMenu" method="_on_joe_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer2/partyMenu/joeBox/joeButton" to="CanvasLayer2/partyMenu" method="_on_frog_button_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer2/partyMenu/joeBox/joeButton" to="CanvasLayer2/partyMenu" method="_on_joe_button_pressed"]
+[connection signal="timeout" from="CanvasLayer2/patchMenu/MenuBox2/glitchTimer" to="CanvasLayer2/patchMenu" method="_on_glitch_timer_timeout"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
 [connection signal="pressed" from="CanvasLayer2/partyButton" to="." method="_on_party_button_pressed"]

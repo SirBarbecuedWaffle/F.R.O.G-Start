@@ -66,6 +66,7 @@ var pummeld=preload("res://moves/pummel.tscn")
 var toxiced=preload("res://moves/toxicsludge.tscn")
 var cleanse=preload("res://moves/pressure_wash.tscn")
 var bottoms=preload("res://moves/BottomsUp.tscn")
+var dice=preload("res://moves/diceRoll.tscn")
 @onready var curChar : AnimatedSprite2D
 
 @export var health:=10.0:
@@ -275,6 +276,8 @@ func _process(delta: float) -> void:
 		health_bar.scale.x=(health/maxHealth)*-0.377
 		if moveProgress<turnTime:
 			moveProgress+=70*delta
+			if invincible>0:
+				moveProgress+=120*delta
 			if spdUp>0:
 				moveProgress+=40*delta
 			if spdDown>0:
@@ -429,6 +432,9 @@ func _on_move_handler_move_used(move: String) -> void:
 	if move=="You're Fired":
 		var fred=fired.instantiate()
 		frog_layer.add_child(fred)
+	if move=="Even More Skill":
+		var diced=dice.instantiate()
+		frog_layer.add_child(diced)
 		
 	if move=="Flashbang":
 		var fled=flashed.instantiate()

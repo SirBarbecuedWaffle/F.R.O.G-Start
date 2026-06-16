@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://6pe8qw3abdd1" path="res://moves/dice_roll.gd" id="1_betis"]
 [ext_resource type="Texture2D" uid="uid://cpb2b4u7o374t" path="res://2DAssets/six sided die.png" id="2_nmmd8"]
-[ext_resource type="FontFile" uid="uid://db116eca6q2cp" path="res://fonts/PixeloidSansBold-1jpBg.ttf" id="4_tsx2n"]
 [ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="9_nv14m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j1pay"]
@@ -132,7 +131,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("dice1:modulate")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -144,19 +143,19 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("dice3:modulate")
+tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Vector2(0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("dice2:modulate")
+tracks/2/path = NodePath("dice1:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -168,38 +167,26 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("labele:modulate")
+tracks/3/path = NodePath("dice3:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("labele:position")
+tracks/4/path = NodePath("dice2:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(912, 536)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("labele:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_td27l"]
@@ -293,42 +280,6 @@ tracks/5/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("labele:modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(3.0333333, 3.2666667, 3.9666667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("labele:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(3, 3.9666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(912, 536), Vector2(912, 300)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("labele:scale")
-tracks/8/interp = 2
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(3.1, 3.9666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(2, 2)]
-}
 
 [sub_resource type="Animation" id="Animation_ifuhx"]
 resource_name = "loadIn"
@@ -342,19 +293,8 @@ _data = {
 &"loadIn": SubResource("Animation_ifuhx")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_nmmd8"]
-font = ExtResource("4_tsx2n")
-font_size = 40
-outline_size = 7
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsx2n"]
-size = Vector2(109, 138)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmmd8"]
-size = Vector2(119, 180)
-
 [node name="diceRoll" type="Node2D" unique_id=667611672]
+modulate = Color(1, 1, 1, 0)
 script = ExtResource("1_betis")
 
 [node name="dice1" type="AnimatedSprite2D" parent="." unique_id=247545671]
@@ -365,164 +305,32 @@ sprite_frames = SubResource("SpriteFrames_bul75")
 animation = &"6"
 autoplay = "default"
 
-[node name="strikeProjectile" parent="dice1" unique_id=1142312808 instance=ExtResource("9_nv14m")]
-scale = Vector2(0.28, 0.28)
-collision_layer = 12
-
 [node name="dice2" type="AnimatedSprite2D" parent="." unique_id=1803747647]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(1013, 726)
 scale = Vector2(4.64, 4.64)
 sprite_frames = SubResource("SpriteFrames_bul75")
-animation = &"4"
-frame_progress = 0.27604088
-
-[node name="strikeProjectile2" parent="dice2" unique_id=1105830426 instance=ExtResource("9_nv14m")]
-scale = Vector2(0.28, 0.28)
-collision_layer = 12
+frame_progress = 0.30433658
 
 [node name="dice3" type="AnimatedSprite2D" parent="." unique_id=107186430]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(1213, 726)
 scale = Vector2(4.64, 4.64)
 sprite_frames = SubResource("SpriteFrames_bul75")
-animation = &"3"
 autoplay = "default"
-frame_progress = 0.29918775
-
-[node name="strikeProjectile3" parent="dice3" unique_id=1515233862 instance=ExtResource("9_nv14m")]
-scale = Vector2(0.28, 0.28)
-collision_layer = 12
+frame_progress = 0.82143563
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1517160503]
 libraries/ = SubResource("AnimationLibrary_td27l")
 autoplay = &"flip"
 
-[node name="strikeProjectile4" parent="." unique_id=2129092218 instance=ExtResource("9_nv14m")]
-position = Vector2(1646, -665)
-scale = Vector2(15, 15)
-damage = -9999
-spdBuf = 30
-invincible = 30
-oneHit = false
-
-[node name="strikeProjectile5" parent="." unique_id=1603597405 instance=ExtResource("9_nv14m")]
-position = Vector2(405, -665)
+[node name="strikeProjectile" parent="." unique_id=1142312808 instance=ExtResource("9_nv14m")]
+position = Vector2(460, -665)
 scale = Vector2(15, 15)
 collision_layer = 8
-damage = 1000
-strRev = 9999
-defRev = 9999
-spdRev = 9999
-invincible = 30
+damage = 100
 oneHit = false
-
-[node name="labele" type="Label" parent="." unique_id=167604032]
-offset_left = 912.0
-offset_top = 536.0
-offset_right = 1125.0
-offset_bottom = 599.99744
-pivot_offset_ratio = Vector2(0.5, 0.5)
-text = "HIT"
-label_settings = SubResource("LabelSettings_nmmd8")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="places" type="Node2D" parent="." unique_id=1318026930]
-position = Vector2(-952, 0)
-
-[node name="place1" type="Area2D" parent="places" unique_id=68448001]
-position = Vector2(1397, 148)
-collision_layer = 8
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place1" unique_id=1936586632]
-position = Vector2(-20.5, 5)
-shape = SubResource("RectangleShape2D_tsx2n")
-
-[node name="place2" type="Area2D" parent="places" unique_id=1193289985]
-position = Vector2(1563, 438)
-collision_layer = 8
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place2" unique_id=507043385]
-position = Vector2(-20.5, 5)
-shape = SubResource("RectangleShape2D_tsx2n")
-
-[node name="place3" type="Area2D" parent="places" unique_id=1993828025]
-position = Vector2(1371, 820)
-collision_layer = 8
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place3" unique_id=505519934]
-position = Vector2(-20.5, 5)
-shape = SubResource("RectangleShape2D_tsx2n")
-
-[node name="place4" type="Area2D" parent="places" unique_id=1717607973]
-position = Vector2(1160, 482)
-collision_layer = 8
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place4" unique_id=2058144457]
-position = Vector2(-15.5, -16)
-shape = SubResource("RectangleShape2D_nmmd8")
-
-[node name="places2" type="Node2D" parent="." unique_id=1904954054]
-position = Vector2(2963, 11)
-scale = Vector2(-1, 1)
-
-[node name="place12" type="Area2D" parent="places2" unique_id=1380688520]
-position = Vector2(1345, 183)
-collision_layer = 4
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="places2/place12" unique_id=1464501169]
-position = Vector2(-20.5, 5)
-shape = SubResource("RectangleShape2D_tsx2n")
-
-[node name="place22" type="Area2D" parent="places2" unique_id=377876774]
-position = Vector2(1560, 524)
-collision_layer = 4
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="places2/place22" unique_id=455309758]
-position = Vector2(-20.5, 5)
-shape = SubResource("RectangleShape2D_tsx2n")
-
-[node name="place32" type="Area2D" parent="places2" unique_id=749262768]
-position = Vector2(1337, 837)
-collision_layer = 4
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="places2/place32" unique_id=1363191569]
-position = Vector2(-20.5, 5)
-shape = SubResource("RectangleShape2D_tsx2n")
-
-[node name="place42" type="Area2D" parent="places2" unique_id=1380199548]
-position = Vector2(1160, 482)
-collision_layer = 4
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="places2/place42" unique_id=1786081972]
-position = Vector2(-15.5, -16)
-shape = SubResource("RectangleShape2D_nmmd8")
-
-[node name="targets" type="Node2D" parent="." unique_id=138514443]
-
-[node name="targets2" type="Node2D" parent="." unique_id=753459872]
-position = Vector2(0, -3)
 
 [connection signal="animation_finished" from="dice1" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="area_entered" from="dice1/strikeProjectile" to="." method="_on_strike_projectile_area_entered"]
 [connection signal="animation_finished" from="dice2" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="area_entered" from="dice2/strikeProjectile2" to="." method="_on_strike_projectile_2_area_entered"]
 [connection signal="animation_finished" from="dice3" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="area_entered" from="dice3/strikeProjectile3" to="." method="_on_strike_projectile_3_area_entered"]
-[connection signal="area_entered" from="places/place1" to="." method="_on_place_1_area_entered"]
-[connection signal="area_entered" from="places/place2" to="." method="_on_place_2_area_entered"]
-[connection signal="area_entered" from="places/place3" to="." method="_on_place_3_area_entered"]
-[connection signal="area_entered" from="places/place4" to="." method="_on_place_4_area_entered"]
-[connection signal="area_entered" from="places2/place12" to="." method="_on_place_12_area_entered"]
-[connection signal="area_entered" from="places2/place22" to="." method="_on_place_22_area_entered"]
-[connection signal="area_entered" from="places2/place32" to="." method="_on_place_32_area_entered"]
-[connection signal="area_entered" from="places2/place42" to="." method="_on_place_42_area_entered"]
