@@ -27,6 +27,7 @@ var dice3r:=0
 @onready var strike_projectile_2: damager = $dice2/strikeProjectile2
 @onready var strike_projectile_3: damager = $dice3/strikeProjectile3
 @onready var strike_projectile_5: damager = $strikeProjectile5
+@onready var coins: Node2D = $coins
 
 func diceAtEnem()->void:
 	await get_tree().create_timer(0.1).timeout
@@ -48,7 +49,7 @@ func diceAtEnem()->void:
 		tween3.tween_property(dice_3,"global_position",specTarg.global_position,0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 		await get_tree().create_timer(1.1).timeout
 		animation_player.play("fadeOut")
-		await get_tree().create_timer(0.3).timeout
+		await get_tree().create_timer(0.6).timeout
 		queue_free()
 	
 	
@@ -74,7 +75,7 @@ func diceAtParty()->void:
 		tween3.tween_property(dice_3,"global_position",specTarg.global_position,0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 		await get_tree().create_timer(1.1).timeout
 		animation_player.play("fadeOut")
-		await get_tree().create_timer(0.3).timeout
+		await get_tree().create_timer(0.6).timeout
 		queue_free()
 
 
@@ -98,8 +99,6 @@ func _ready() -> void:
 		dice_1.play("6")
 	await get_tree().create_timer(0.52).timeout
 	dice2r=randi_range(1,6)
-	if dice2r==dice1r:
-		dice2r=randi_range(1,6)
 	if dice2r==1:
 		dice_2.play("1")
 	if dice2r==2:
@@ -119,6 +118,8 @@ func _ready() -> void:
 	else:
 		if dice1r==dice3r:
 			dice3r=randi_range(1,6)
+		if dice1r==dice2r:
+			dice2r=randi_range(1,6)
 	if dice3r==1:
 		dice_3.play("1")
 	if dice3r==2:
@@ -137,11 +138,20 @@ func _ready() -> void:
 			labele.text="JACKPOT"
 			labele.self_modulate=Color(1.0, 0.769, 0.0, 1.0)
 			strike_projectile_4.global_position.y=535.0
+			await get_tree().create_timer(2.0).timeout
+			animation_player.play("fadeOut")
+			await get_tree().create_timer(2.0).timeout
+			queue_free()
+			
 		else:
-			labele.text="FORTUNE"
+			labele.text="MEGA JACKPOT"
 			labele.self_modulate=Color(1.0, 0.922, 0.0, 1.0)
 			strike_projectile_4.global_position.y=535.0
-			strike_projectile_5.global_position.y=535.0
+			await get_tree().create_timer(22.0).timeout
+			animation_player.play("fadeOut")
+			await get_tree().create_timer(2.0).timeout
+			queue_free()
+			
 	elif dice1r==dice2r:
 		labele.text="MATCH"
 		labele.self_modulate=Color(0.0, 0.769, 0.0, 1.0)
@@ -254,9 +264,9 @@ func _ready() -> void:
 	strike_projectile_4.damage*=multiplier
 	
 	
-func _process(delta: float) -> void:
-	pass
-
+func _physics_process(delta: float) -> void:
+	if labele.text=="MEGA JACKPOT":
+		coins.global_position.y+=500*delta
 
 
 

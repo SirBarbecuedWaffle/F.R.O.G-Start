@@ -3,7 +3,13 @@
 [ext_resource type="Script" uid="uid://6pe8qw3abdd1" path="res://moves/dice_roll.gd" id="1_betis"]
 [ext_resource type="Texture2D" uid="uid://cpb2b4u7o374t" path="res://2DAssets/six sided die.png" id="2_nmmd8"]
 [ext_resource type="FontFile" uid="uid://db116eca6q2cp" path="res://fonts/PixeloidSansBold-1jpBg.ttf" id="4_tsx2n"]
+[ext_resource type="Texture2D" uid="uid://kvrtegwuklyp" path="res://2DAssets/Coin Flip/goldcoin-1.png" id="4_y5csx"]
+[ext_resource type="Texture2D" uid="uid://du8w33n44glyx" path="res://2DAssets/Coin Flip/goldcoin-2.png" id="5_mp0di"]
+[ext_resource type="Texture2D" uid="uid://g2ra5n4utn3f" path="res://2DAssets/Coin Flip/goldcoin-3.png" id="6_mupuw"]
+[ext_resource type="Texture2D" uid="uid://bwbnyfdp01chy" path="res://2DAssets/Coin Flip/goldcoin-4.png" id="7_gdv6q"]
+[ext_resource type="Texture2D" uid="uid://cy0xoksh3lwa1" path="res://2DAssets/Coin Flip/goldcoin-5.png" id="8_ngash"]
 [ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="9_nv14m"]
+[ext_resource type="Texture2D" uid="uid://b2bwy3paav6mi" path="res://2DAssets/Coin Flip/goldcoin-6.png" id="9_rvnn1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j1pay"]
 atlas = ExtResource("2_nmmd8")
@@ -342,6 +348,56 @@ _data = {
 &"loadIn": SubResource("Animation_ifuhx")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_g10de"]
+atlas = ExtResource("4_y5csx")
+region = Rect2(0, 0, 96, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv14m"]
+atlas = ExtResource("5_mp0di")
+region = Rect2(0, 0, 96, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1urlq"]
+atlas = ExtResource("6_mupuw")
+region = Rect2(0, 0, 96, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_655jn"]
+atlas = ExtResource("7_gdv6q")
+region = Rect2(0, 0, 96, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trjf5"]
+atlas = ExtResource("8_ngash")
+region = Rect2(0, 0, 96, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0w31"]
+atlas = ExtResource("9_rvnn1")
+region = Rect2(0, 0, 96, 79)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m8dhw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g10de")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nv14m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1urlq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_655jn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trjf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0w31")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
 [sub_resource type="LabelSettings" id="LabelSettings_nmmd8"]
 font = ExtResource("4_tsx2n")
 font_size = 40
@@ -406,16 +462,126 @@ spdBuf = 30
 invincible = 30
 oneHit = false
 
-[node name="strikeProjectile5" parent="." unique_id=1603597405 instance=ExtResource("9_nv14m")]
+[node name="coins" type="Node2D" parent="." unique_id=1795004714]
+
+[node name="strikeProjectile5" parent="coins" unique_id=1603597405 instance=ExtResource("9_nv14m")]
 position = Vector2(405, -665)
-scale = Vector2(15, 15)
+scale = Vector2(3.785, 3.785)
 collision_layer = 8
-damage = 1000
+damage = 250
 strRev = 9999
 defRev = 9999
 spdRev = 9999
 invincible = 30
 oneHit = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="coins/strikeProjectile5" unique_id=1155174031]
+scale = Vector2(0.49, 0.49)
+sprite_frames = SubResource("SpriteFrames_m8dhw")
+autoplay = "default"
+frame_progress = 0.7471769
+
+[node name="strikeProjectile6" parent="coins" unique_id=291864788 instance=ExtResource("9_nv14m")]
+position = Vector2(613, -1998.0004)
+scale = Vector2(3.785, 3.785)
+collision_layer = 8
+damage = 250
+strRev = 9999
+defRev = 9999
+spdRev = 9999
+invincible = 30
+oneHit = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="coins/strikeProjectile6" unique_id=1914972991]
+scale = Vector2(0.49, 0.49)
+sprite_frames = SubResource("SpriteFrames_m8dhw")
+autoplay = "default"
+frame_progress = 0.55047715
+
+[node name="strikeProjectile7" parent="coins" unique_id=922908468 instance=ExtResource("9_nv14m")]
+position = Vector2(190.99998, -3423.0005)
+scale = Vector2(3.785, 3.785)
+collision_layer = 8
+damage = 250
+strRev = 9999
+defRev = 9999
+spdRev = 9999
+invincible = 30
+oneHit = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="coins/strikeProjectile7" unique_id=535722855]
+scale = Vector2(0.49, 0.49)
+sprite_frames = SubResource("SpriteFrames_m8dhw")
+autoplay = "default"
+frame_progress = 0.67496467
+
+[node name="strikeProjectile8" parent="coins" unique_id=436498176 instance=ExtResource("9_nv14m")]
+position = Vector2(610, -4664.0005)
+scale = Vector2(3.785, 3.785)
+collision_layer = 8
+damage = 250
+strRev = 9999
+defRev = 9999
+spdRev = 9999
+invincible = 30
+oneHit = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="coins/strikeProjectile8" unique_id=246158387]
+scale = Vector2(0.49, 0.49)
+sprite_frames = SubResource("SpriteFrames_m8dhw")
+autoplay = "default"
+frame_progress = 0.67496467
+
+[node name="strikeProjectile9" parent="coins" unique_id=1480670394 instance=ExtResource("9_nv14m")]
+position = Vector2(177, -6328.001)
+scale = Vector2(3.785, 3.785)
+collision_layer = 8
+damage = 250
+strRev = 9999
+defRev = 9999
+spdRev = 9999
+invincible = 30
+oneHit = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="coins/strikeProjectile9" unique_id=2090429439]
+scale = Vector2(0.49, 0.49)
+sprite_frames = SubResource("SpriteFrames_m8dhw")
+autoplay = "default"
+frame_progress = 0.67496467
+
+[node name="strikeProjectile10" parent="coins" unique_id=1393123720 instance=ExtResource("9_nv14m")]
+position = Vector2(408, -7831)
+scale = Vector2(3.785, 3.785)
+collision_layer = 8
+damage = 250
+strRev = 9999
+defRev = 9999
+spdRev = 9999
+invincible = 30
+oneHit = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="coins/strikeProjectile10" unique_id=831187203]
+scale = Vector2(0.49, 0.49)
+sprite_frames = SubResource("SpriteFrames_m8dhw")
+autoplay = "default"
+frame_progress = 0.67496467
+
+[node name="strikeProjectile11" parent="coins" unique_id=997237977 instance=ExtResource("9_nv14m")]
+position = Vector2(581.9999, -9322)
+scale = Vector2(3.785, 3.785)
+collision_layer = 8
+damage = 250
+strRev = 9999
+defRev = 9999
+spdRev = 9999
+invincible = 30
+oneHit = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="coins/strikeProjectile11" unique_id=1404490249]
+scale = Vector2(0.49, 0.49)
+sprite_frames = SubResource("SpriteFrames_m8dhw")
+autoplay = "default"
+frame_progress = 0.67496467
 
 [node name="labele" type="Label" parent="." unique_id=167604032]
 offset_left = 912.0
