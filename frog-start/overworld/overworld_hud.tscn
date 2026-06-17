@@ -662,89 +662,89 @@ font_size = 35
 font = ExtResource("3_p5nna")
 font_size = 50
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xcjht"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp0el"]
 atlas = ExtResource("3_5x315")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jm74w"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b6j7"]
 atlas = ExtResource("3_5x315")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d3ca0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hnop"]
 atlas = ExtResource("3_5x315")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gv5kq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_70mde"]
 atlas = ExtResource("3_5x315")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qso6b"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p76yu"]
 atlas = ExtResource("3_5x315")
 region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wi733"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwltf"]
 atlas = ExtResource("3_5x315")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uc4ce"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkk1l"]
 atlas = ExtResource("3_5x315")
 region = Rect2(192, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8hcax"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gh0xd"]
 atlas = ExtResource("3_5x315")
 region = Rect2(224, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jemur"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2kvt"]
 atlas = ExtResource("3_5x315")
 region = Rect2(256, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7dned"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_62x0l"]
 atlas = ExtResource("3_5x315")
 region = Rect2(288, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2yhly"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdmuu"]
 atlas = ExtResource("3_5x315")
 region = Rect2(320, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_82awa"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_4grux"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xcjht")
+"texture": SubResource("AtlasTexture_jp0el")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jm74w")
+"texture": SubResource("AtlasTexture_5b6j7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d3ca0")
+"texture": SubResource("AtlasTexture_3hnop")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gv5kq")
+"texture": SubResource("AtlasTexture_70mde")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qso6b")
+"texture": SubResource("AtlasTexture_p76yu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wi733")
+"texture": SubResource("AtlasTexture_uwltf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uc4ce")
+"texture": SubResource("AtlasTexture_qkk1l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8hcax")
+"texture": SubResource("AtlasTexture_gh0xd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jemur")
+"texture": SubResource("AtlasTexture_d2kvt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7dned")
+"texture": SubResource("AtlasTexture_62x0l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2yhly")
+"texture": SubResource("AtlasTexture_bdmuu")
 }],
 "loop": true,
 "name": &"default",
-"speed": 15.0
+"speed": 12.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_82awa"]
@@ -1731,6 +1731,587 @@ font_size = 38
 font = ExtResource("3_p5nna")
 font_size = 46
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4gtc"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aa6gs"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xoanw"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1velm"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqf5j"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejo8p"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8o1d"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rhkw"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14aa8"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kku37"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ki35r"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_armgj"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ec0eo"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3ff4"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxihi"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbju7"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghl7e"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ulnu"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8n3f"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhbiq"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n20ce"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1po7t"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0vnl"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s04tp"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bk7wj"]
+atlas = ExtResource("3_wok1x")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_82awa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4gtc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aa6gs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xoanw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1velm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqf5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejo8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8o1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rhkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14aa8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kku37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ki35r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_armgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ec0eo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3ff4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxihi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbju7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghl7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ulnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8n3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhbiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n20ce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1po7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0vnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s04tp")
+}, {
+"duration": 15.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lswqs"]
+font = ExtResource("3_p5nna")
+font_size = 17
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybhnk"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpjpk"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_du8qc"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_maasi"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwtgj"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efs8y"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3d8u"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fj243"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xoo58"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7truu"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8eb7p"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o7p7"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bv6jy"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnghi"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bb0ca"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovu4k"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_beesh"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty52n"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_172pg"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlwod"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lo8wg"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7sno"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itsgo"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47x3s"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aflbg"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3m81"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45xrr"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q3a7b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybhnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpjpk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du8qc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_maasi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwtgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efs8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3d8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fj243")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xoo58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7truu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8eb7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4o7p7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bv6jy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnghi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bb0ca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovu4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_beesh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty52n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_172pg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlwod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lo8wg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7sno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itsgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47x3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aflbg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3m81")
+}, {
+"duration": 15.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4grux"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vo24"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql355"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgbry"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mm630"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_508j8"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnhl2"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikw5j"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtw7c"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xu13u"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fk846"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63oas"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i63ff"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7r1u3"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8w88"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5skw"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fyk1"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6oca"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2el8"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qg703"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lond"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpybx"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnta4"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hji3m"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajtg0"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1wam"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgadg"]
+atlas = ExtResource("4_qnqxd")
+region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ybhnk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4grux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vo24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ql355")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgbry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mm630")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_508j8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnhl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikw5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtw7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xu13u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fk846")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63oas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i63ff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7r1u3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8w88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5skw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fyk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6oca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2el8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qg703")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lond")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpybx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnta4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hji3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajtg0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1wam")
+}, {
+"duration": 15.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
+
 [sub_resource type="Theme" id="Theme_w2y6w"]
 default_font = ExtResource("3_p5nna")
 default_font_size = 62
@@ -2193,9 +2774,8 @@ texture = ExtResource("2_3oasr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/partyMenu/frogBox" unique_id=1330650354]
 position = Vector2(0, -1.1599007)
-sprite_frames = SubResource("SpriteFrames_82awa")
+sprite_frames = SubResource("SpriteFrames_4grux")
 autoplay = "default"
-frame_progress = 0.4470451
 
 [node name="frogButton" type="Button" parent="CanvasLayer2/partyMenu/frogBox" unique_id=1507870707]
 modulate = Color(1, 1, 1, 0)
@@ -2490,43 +3070,312 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.93333334)
 
-[node name="MenuBox" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=681095833]
-position = Vector2(1637, 729)
-scale = Vector2(13.965, 13.965)
+[node name="frogBox2" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=112638736]
+position = Vector2(388, 273.52)
+scale = Vector2(4.47, 4.47)
 texture = ExtResource("2_3oasr")
 
-[node name="MenuBox2" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=1930189197]
-position = Vector2(1637, 295)
-scale = Vector2(13.965, 13.965)
-texture = ExtResource("2_3oasr")
-
-[node name="glitchTimer" type="Timer" parent="CanvasLayer2/patchMenu/MenuBox2" unique_id=1578574434]
-wait_time = 0.3
-autostart = true
-
-[node name="frogBox" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=972188840]
-position = Vector2(285, 285)
-scale = Vector2(6.035, 6.035)
-texture = ExtResource("2_3oasr")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox" unique_id=1202701645]
-position = Vector2(-69.26264, -12.2618065)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox2" unique_id=1376523973]
+position = Vector2(0.5592864, -4.026847)
 sprite_frames = SubResource("SpriteFrames_82awa")
 autoplay = "default"
-frame_progress = 0.4470451
+frame_progress = 0.37979317
 
-[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox" unique_id=135242873]
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox2" unique_id=545317182]
 modulate = Color(1, 1, 1, 0)
 offset_left = -14.913007
 offset_top = -14.913007
 offset_right = 14.913009
 offset_bottom = 14.74731
 
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/frogBox2" unique_id=2098056620]
+offset_left = -14.876958
+offset_top = 4.4742737
+offset_right = 123.51331
+offset_bottom = 49.474274
+scale = Vector2(0.215, 0.215)
+text = "Headstart:
+Defense"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="frogBox3" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=1893812850]
+position = Vector2(526.52, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox3" unique_id=1222043839]
+position = Vector2(0.5592864, -4.026847)
+sprite_frames = SubResource("SpriteFrames_82awa")
+autoplay = "default"
+frame_progress = 0.13633914
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox3" unique_id=1466472696]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/frogBox3" unique_id=1082610210]
+offset_left = -14.876958
+offset_top = 4.4742737
+offset_right = 123.51331
+offset_bottom = 49.474274
+scale = Vector2(0.215, 0.215)
+text = "Headstart:
+Strength"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="frogBox4" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=1895279668]
+position = Vector2(665.52, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox4" unique_id=1187919727]
+position = Vector2(0.5592864, -4.026847)
+sprite_frames = SubResource("SpriteFrames_82awa")
+autoplay = "default"
+frame_progress = 0.13633914
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox4" unique_id=1825506473]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/frogBox4" unique_id=878082064]
+offset_left = -14.876958
+offset_top = 4.4742737
+offset_right = 123.51331
+offset_bottom = 49.474274
+scale = Vector2(0.215, 0.215)
+text = "Headstart:
+Speed"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="frogBox5" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=1438170316]
+position = Vector2(803.5199, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox5" unique_id=449003344]
+position = Vector2(0.5592864, -4.026847)
+sprite_frames = SubResource("SpriteFrames_82awa")
+autoplay = "default"
+frame_progress = 0.13633914
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox5" unique_id=662161020]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/frogBox5" unique_id=1169570704]
+offset_left = -14.876958
+offset_top = 4.4742737
+offset_right = 123.51331
+offset_bottom = 49.474274
+scale = Vector2(0.215, 0.215)
+text = "Second:
+Nature"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="frogBox6" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=1553681104]
+position = Vector2(942.5199, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox6" unique_id=978001879]
+position = Vector2(0.5592864, -4.026847)
+sprite_frames = SubResource("SpriteFrames_82awa")
+autoplay = "default"
+frame_progress = 0.13633914
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox6" unique_id=1158759465]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/frogBox6" unique_id=1915672460]
+offset_left = -14.876958
+offset_top = 4.4742737
+offset_right = 123.51331
+offset_bottom = 49.474274
+scale = Vector2(0.215, 0.215)
+text = "Boost:
+Difficulty"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="frogBox7" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=1491506382]
+position = Vector2(1081.52, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox7" unique_id=1477023747]
+position = Vector2(0.5592864, -4.026847)
+sprite_frames = SubResource("SpriteFrames_82awa")
+autoplay = "default"
+frame_progress = 0.13633914
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox7" unique_id=2116608750]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/frogBox7" unique_id=27282316]
+offset_left = -14.876958
+offset_top = 4.4742737
+offset_right = 123.51331
+offset_bottom = 49.474274
+scale = Vector2(0.215, 0.215)
+text = "Protocol:
+Arrow"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="frogBox8" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=2100790677]
+position = Vector2(1220.52, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox8" unique_id=308676698]
+position = Vector2(0.5592864, -4.026847)
+sprite_frames = SubResource("SpriteFrames_82awa")
+autoplay = "default"
+frame_progress = 0.13633914
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox8" unique_id=1826046362]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/frogBox8" unique_id=2059444577]
+offset_left = -14.876958
+offset_top = 4.4742737
+offset_right = 123.51331
+offset_bottom = 49.474274
+scale = Vector2(0.215, 0.215)
+text = "Protocol:
+Alt F4"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="frogBox9" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=793355964]
+position = Vector2(1359.52, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox9" unique_id=2044351909]
+position = Vector2(0.5592864, -4.026847)
+sprite_frames = SubResource("SpriteFrames_82awa")
+autoplay = "default"
+frame_progress = 0.13633914
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox9" unique_id=962022533]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/frogBox9" unique_id=1378897140]
+offset_left = -14.876958
+offset_top = 4.4742737
+offset_right = 123.51331
+offset_bottom = 49.474274
+scale = Vector2(0.215, 0.215)
+text = "Protocol:
+Curse"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="frogBox10" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=705512435]
+position = Vector2(1498.5199, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox10" unique_id=1397622263]
+position = Vector2(0.5592864, -4.026847)
+sprite_frames = SubResource("SpriteFrames_q3a7b")
+autoplay = "default"
+frame_progress = 0.51239514
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox10" unique_id=1862239966]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/frogBox10" unique_id=100985929]
+offset_left = -14.876958
+offset_top = 4.4742737
+offset_right = 123.51331
+offset_bottom = 49.474274
+scale = Vector2(0.215, 0.215)
+text = "Boost:
+Health"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="frogBox11" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=69754612]
+position = Vector2(1637.52, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox11" unique_id=839339548]
+position = Vector2(0.5592864, -4.026847)
+sprite_frames = SubResource("SpriteFrames_ybhnk")
+autoplay = "default"
+frame_progress = 0.38232064
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox11" unique_id=690429251]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/frogBox11" unique_id=777264249]
+offset_left = -14.876958
+offset_top = 4.4742737
+offset_right = 123.51331
+offset_bottom = 49.474274
+scale = Vector2(0.215, 0.215)
+text = "Second:
+Chance"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Label" type="Label" parent="CanvasLayer2/patchMenu" unique_id=354673880]
 layout_mode = 0
-offset_left = 188.0
+offset_left = 2.0
 offset_top = 26.0
-offset_right = 1129.0
+offset_right = 2028.0
 offset_bottom = 213.0
 text = "PATCHES"
 label_settings = SubResource("LabelSettings_82awa")
@@ -2535,10 +3384,10 @@ vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="CanvasLayer2/patchMenu" unique_id=932050013]
 layout_mode = 0
-offset_left = 188.0
-offset_top = 644.0
-offset_right = 1129.0
-offset_bottom = 885.0
+offset_left = 2.0
+offset_top = 768.0
+offset_right = 2028.0
+offset_bottom = 1009.0
 text = "CLICK AND DRAG PATCHES TO APPLY THEM TO PARTY MEMBERS"
 label_settings = SubResource("LabelSettings_6xw8e")
 horizontal_alignment = 1
@@ -2850,9 +3699,35 @@ autoplay = &"RESET"
 [connection signal="mouse_entered" from="CanvasLayer2/partyMenu/joeBox/joeButton" to="CanvasLayer2/partyMenu" method="_on_joe_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer2/partyMenu/joeBox/joeButton" to="CanvasLayer2/partyMenu" method="_on_frog_button_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer2/partyMenu/joeBox/joeButton" to="CanvasLayer2/partyMenu" method="_on_joe_button_pressed"]
-[connection signal="timeout" from="CanvasLayer2/patchMenu/MenuBox2/glitchTimer" to="CanvasLayer2/patchMenu" method="_on_glitch_timer_timeout"]
-[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox2/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox2/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox2/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox3/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox3/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox3/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox4/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox4/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox4/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox5/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox5/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox5/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox6/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox6/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox6/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox7/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox7/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox7/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox8/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox8/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox8/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox9/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox9/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox9/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox10/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox10/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox10/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox11/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox11/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox11/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
 [connection signal="pressed" from="CanvasLayer2/partyButton" to="." method="_on_party_button_pressed"]
 [connection signal="pressed" from="CanvasLayer2/patchesButton" to="." method="_on_patches_button_pressed"]
