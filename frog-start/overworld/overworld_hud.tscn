@@ -1906,12 +1906,84 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s04tp")
 }, {
-"duration": 15.0,
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk7wj")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bk7wj")
 }],
 "loop": true,
 "name": &"default",
-"speed": 15.0
+"speed": 24.0
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lswqs"]
@@ -2107,12 +2179,90 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k3m81")
 }, {
-"duration": 15.0,
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45xrr")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_45xrr")
 }],
 "loop": true,
 "name": &"default",
-"speed": 16.0
+"speed": 26.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4grux"]
@@ -2304,12 +2454,405 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u1wam")
 }, {
-"duration": 15.0,
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgadg")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_hgadg")
 }],
 "loop": true,
 "name": &"default",
-"speed": 16.0
+"speed": 26.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmhnf"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fhy0"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kc8ro"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h507d"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0sel"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtwi4"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fidf3"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlmxh"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbeei"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_df61q"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hmp7"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpsus"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6kuv"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7c5yt"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2j2k1"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_daudf"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8oud"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30gna"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5vm0"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6677s"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdeei"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41pgj"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nu47"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oulmw"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fho4o"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n54h8"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqwn2"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nic5m"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrb4j"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ia0f6"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcqa7"]
+atlas = ExtResource("5_qnqxd")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_58jx4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmhnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fhy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kc8ro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h507d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0sel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtwi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fidf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlmxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbeei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_df61q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hmp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpsus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6kuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7c5yt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2j2k1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_daudf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8oud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30gna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5vm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6677s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdeei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41pgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nu47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oulmw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fho4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n54h8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqwn2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nic5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrb4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ia0f6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqa7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
 }]
 
 [sub_resource type="Theme" id="Theme_w2y6w"]
@@ -3070,28 +3613,25 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.93333334)
 
-[node name="frogBox2" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=112638736]
+[node name="row1" type="Node2D" parent="CanvasLayer2/patchMenu" unique_id=371175895]
+
+[node name="box1" type="Sprite2D" parent="CanvasLayer2/patchMenu/row1" unique_id=112638736]
 position = Vector2(388, 273.52)
 scale = Vector2(4.47, 4.47)
 texture = ExtResource("2_3oasr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox2" unique_id=1376523973]
-position = Vector2(0.5592864, -4.026847)
+[node name="box1Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row1/box1" unique_id=716361640]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row1/box1/box1Vis" unique_id=1376523973]
+position = Vector2(0.559288, -4.026844)
 sprite_frames = SubResource("SpriteFrames_82awa")
 autoplay = "default"
-frame_progress = 0.37979317
+frame_progress = 0.84685063
 
-[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox2" unique_id=545317182]
-modulate = Color(1, 1, 1, 0)
-offset_left = -14.913007
-offset_top = -14.913007
-offset_right = 14.913009
-offset_bottom = 14.74731
-
-[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/frogBox2" unique_id=2098056620]
-offset_left = -14.876958
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row1/box1/box1Vis" unique_id=2098056620]
+offset_left = -14.876953
 offset_top = 4.4742737
-offset_right = 123.51331
+offset_right = 123.51332
 offset_bottom = 49.474274
 scale = Vector2(0.215, 0.215)
 text = "Headstart:
@@ -3100,26 +3640,35 @@ label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="frogBox3" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=1893812850]
-position = Vector2(526.52, 273.52)
-scale = Vector2(4.47, 4.47)
-texture = ExtResource("2_3oasr")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox3" unique_id=1222043839]
-position = Vector2(0.5592864, -4.026847)
-sprite_frames = SubResource("SpriteFrames_82awa")
-autoplay = "default"
-frame_progress = 0.13633914
-
-[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox3" unique_id=1466472696]
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row1/box1" unique_id=545317182]
 modulate = Color(1, 1, 1, 0)
 offset_left = -14.913007
 offset_top = -14.913007
 offset_right = 14.913009
 offset_bottom = 14.74731
 
-[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/frogBox3" unique_id=1082610210]
-offset_left = -14.876958
+[node name="box2" type="Sprite2D" parent="CanvasLayer2/patchMenu/row1" unique_id=1893812850]
+position = Vector2(526.52, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row1/box2" unique_id=1466472696]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="box2Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row1/box2" unique_id=1318043408]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row1/box2/box2Vis" unique_id=1222043839]
+position = Vector2(0.5592804, -4.026844)
+sprite_frames = SubResource("SpriteFrames_82awa")
+autoplay = "default"
+frame_progress = 0.8636364
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row1/box2/box2Vis" unique_id=1082610210]
+offset_left = -14.876961
 offset_top = 4.4742737
 offset_right = 123.51331
 offset_bottom = 49.474274
@@ -3130,28 +3679,30 @@ label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="frogBox4" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=1895279668]
+[node name="box3" type="Sprite2D" parent="CanvasLayer2/patchMenu/row1" unique_id=1895279668]
 position = Vector2(665.52, 273.52)
 scale = Vector2(4.47, 4.47)
 texture = ExtResource("2_3oasr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox4" unique_id=1187919727]
-position = Vector2(0.5592864, -4.026847)
-sprite_frames = SubResource("SpriteFrames_82awa")
-autoplay = "default"
-frame_progress = 0.13633914
-
-[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox4" unique_id=1825506473]
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row1/box3" unique_id=1825506473]
 modulate = Color(1, 1, 1, 0)
 offset_left = -14.913007
 offset_top = -14.913007
 offset_right = 14.913009
 offset_bottom = 14.74731
 
-[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/frogBox4" unique_id=878082064]
-offset_left = -14.876958
+[node name="box3Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row1/box3" unique_id=1891880285]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row1/box3/box3Vis" unique_id=1187919727]
+position = Vector2(0.5592804, -4.026844)
+sprite_frames = SubResource("SpriteFrames_82awa")
+autoplay = "default"
+frame_progress = 0.13633914
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row1/box3/box3Vis" unique_id=878082064]
+offset_left = -14.876953
 offset_top = 4.4742737
-offset_right = 123.51331
+offset_right = 123.51332
 offset_bottom = 49.474274
 scale = Vector2(0.215, 0.215)
 text = "Headstart:
@@ -3161,28 +3712,30 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="frogBox5" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=1438170316]
+[node name="box4" type="Sprite2D" parent="CanvasLayer2/patchMenu/row1" unique_id=1438170316]
 position = Vector2(803.5199, 273.52)
 scale = Vector2(4.47, 4.47)
 texture = ExtResource("2_3oasr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox5" unique_id=449003344]
-position = Vector2(0.5592864, -4.026847)
-sprite_frames = SubResource("SpriteFrames_82awa")
-autoplay = "default"
-frame_progress = 0.13633914
-
-[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox5" unique_id=662161020]
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row1/box4" unique_id=662161020]
 modulate = Color(1, 1, 1, 0)
 offset_left = -14.913007
 offset_top = -14.913007
 offset_right = 14.913009
 offset_bottom = 14.74731
 
-[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/frogBox5" unique_id=1169570704]
-offset_left = -14.876958
+[node name="box4Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row1/box4" unique_id=2140425599]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row1/box4/box4Vis" unique_id=449003344]
+position = Vector2(0.5592804, -4.026844)
+sprite_frames = SubResource("SpriteFrames_82awa")
+autoplay = "default"
+frame_progress = 0.13633914
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row1/box4/box4Vis" unique_id=1169570704]
+offset_left = -14.876968
 offset_top = 4.4742737
-offset_right = 123.51331
+offset_right = 123.513306
 offset_bottom = 49.474274
 scale = Vector2(0.215, 0.215)
 text = "Second:
@@ -3191,28 +3744,30 @@ label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="frogBox6" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=1553681104]
+[node name="box5" type="Sprite2D" parent="CanvasLayer2/patchMenu/row1" unique_id=1553681104]
 position = Vector2(942.5199, 273.52)
 scale = Vector2(4.47, 4.47)
 texture = ExtResource("2_3oasr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox6" unique_id=978001879]
-position = Vector2(0.5592864, -4.026847)
-sprite_frames = SubResource("SpriteFrames_82awa")
-autoplay = "default"
-frame_progress = 0.13633914
-
-[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox6" unique_id=1158759465]
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row1/box5" unique_id=1158759465]
 modulate = Color(1, 1, 1, 0)
 offset_left = -14.913007
 offset_top = -14.913007
 offset_right = 14.913009
 offset_bottom = 14.74731
 
-[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/frogBox6" unique_id=1915672460]
-offset_left = -14.876958
+[node name="box5Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row1/box5" unique_id=1738255578]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row1/box5/box5Vis" unique_id=978001879]
+position = Vector2(0.5592804, -4.026844)
+sprite_frames = SubResource("SpriteFrames_82awa")
+autoplay = "default"
+frame_progress = 0.13633914
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row1/box5/box5Vis" unique_id=1915672460]
+offset_left = -14.876953
 offset_top = 4.4742737
-offset_right = 123.51331
+offset_right = 123.51332
 offset_bottom = 49.474274
 scale = Vector2(0.215, 0.215)
 text = "Boost:
@@ -3221,28 +3776,30 @@ label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="frogBox7" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=1491506382]
+[node name="box6" type="Sprite2D" parent="CanvasLayer2/patchMenu/row1" unique_id=1491506382]
 position = Vector2(1081.52, 273.52)
 scale = Vector2(4.47, 4.47)
 texture = ExtResource("2_3oasr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox7" unique_id=1477023747]
-position = Vector2(0.5592864, -4.026847)
-sprite_frames = SubResource("SpriteFrames_82awa")
-autoplay = "default"
-frame_progress = 0.13633914
-
-[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox7" unique_id=2116608750]
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row1/box6" unique_id=2116608750]
 modulate = Color(1, 1, 1, 0)
 offset_left = -14.913007
 offset_top = -14.913007
 offset_right = 14.913009
 offset_bottom = 14.74731
 
-[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/frogBox7" unique_id=27282316]
-offset_left = -14.876958
+[node name="box6Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row1/box6" unique_id=241221408]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row1/box6/box6Vis" unique_id=1477023747]
+position = Vector2(0.5592804, -4.026844)
+sprite_frames = SubResource("SpriteFrames_82awa")
+autoplay = "default"
+frame_progress = 0.13633914
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row1/box6/box6Vis" unique_id=27282316]
+offset_left = -14.876953
 offset_top = 4.4742737
-offset_right = 123.51331
+offset_right = 123.51332
 offset_bottom = 49.474274
 scale = Vector2(0.215, 0.215)
 text = "Protocol:
@@ -3251,28 +3808,30 @@ label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="frogBox8" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=2100790677]
+[node name="box7" type="Sprite2D" parent="CanvasLayer2/patchMenu/row1" unique_id=2100790677]
 position = Vector2(1220.52, 273.52)
 scale = Vector2(4.47, 4.47)
 texture = ExtResource("2_3oasr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox8" unique_id=308676698]
-position = Vector2(0.5592864, -4.026847)
-sprite_frames = SubResource("SpriteFrames_82awa")
-autoplay = "default"
-frame_progress = 0.13633914
-
-[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox8" unique_id=1826046362]
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row1/box7" unique_id=1826046362]
 modulate = Color(1, 1, 1, 0)
 offset_left = -14.913007
 offset_top = -14.913007
 offset_right = 14.913009
 offset_bottom = 14.74731
 
-[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/frogBox8" unique_id=2059444577]
-offset_left = -14.876958
+[node name="box7Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row1/box7" unique_id=995685783]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row1/box7/box7Vis" unique_id=308676698]
+position = Vector2(0.55926514, -4.026844)
+sprite_frames = SubResource("SpriteFrames_82awa")
+autoplay = "default"
+frame_progress = 0.13633914
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row1/box7/box7Vis" unique_id=2059444577]
+offset_left = -14.876953
 offset_top = 4.4742737
-offset_right = 123.51331
+offset_right = 123.51332
 offset_bottom = 49.474274
 scale = Vector2(0.215, 0.215)
 text = "Protocol:
@@ -3281,28 +3840,30 @@ label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="frogBox9" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=793355964]
+[node name="box8" type="Sprite2D" parent="CanvasLayer2/patchMenu/row1" unique_id=793355964]
 position = Vector2(1359.52, 273.52)
 scale = Vector2(4.47, 4.47)
 texture = ExtResource("2_3oasr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox9" unique_id=2044351909]
-position = Vector2(0.5592864, -4.026847)
-sprite_frames = SubResource("SpriteFrames_82awa")
-autoplay = "default"
-frame_progress = 0.13633914
-
-[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox9" unique_id=962022533]
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row1/box8" unique_id=962022533]
 modulate = Color(1, 1, 1, 0)
 offset_left = -14.913007
 offset_top = -14.913007
 offset_right = 14.913009
 offset_bottom = 14.74731
 
-[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/frogBox9" unique_id=1378897140]
-offset_left = -14.876958
+[node name="box8Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row1/box8" unique_id=1781274111]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row1/box8/box8Vis" unique_id=2044351909]
+position = Vector2(0.55929565, -4.026844)
+sprite_frames = SubResource("SpriteFrames_82awa")
+autoplay = "default"
+frame_progress = 0.13633914
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row1/box8/box8Vis" unique_id=1378897140]
+offset_left = -14.876953
 offset_top = 4.4742737
-offset_right = 123.51331
+offset_right = 123.51332
 offset_bottom = 49.474274
 scale = Vector2(0.215, 0.215)
 text = "Protocol:
@@ -3311,28 +3872,30 @@ label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="frogBox10" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=705512435]
+[node name="box9" type="Sprite2D" parent="CanvasLayer2/patchMenu/row1" unique_id=705512435]
 position = Vector2(1498.5199, 273.52)
 scale = Vector2(4.47, 4.47)
 texture = ExtResource("2_3oasr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox10" unique_id=1397622263]
-position = Vector2(0.5592864, -4.026847)
-sprite_frames = SubResource("SpriteFrames_q3a7b")
-autoplay = "default"
-frame_progress = 0.51239514
-
-[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox10" unique_id=1862239966]
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row1/box9" unique_id=1862239966]
 modulate = Color(1, 1, 1, 0)
 offset_left = -14.913007
 offset_top = -14.913007
 offset_right = 14.913009
 offset_bottom = 14.74731
 
-[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/frogBox10" unique_id=100985929]
-offset_left = -14.876958
+[node name="box9Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row1/box9" unique_id=1550459886]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row1/box9/box9Vis" unique_id=1397622263]
+position = Vector2(0.55929565, -4.026844)
+sprite_frames = SubResource("SpriteFrames_q3a7b")
+autoplay = "default"
+frame_progress = 0.51239514
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row1/box9/box9Vis" unique_id=100985929]
+offset_left = -14.876953
 offset_top = 4.4742737
-offset_right = 123.51331
+offset_right = 123.51332
 offset_bottom = 49.474274
 scale = Vector2(0.215, 0.215)
 text = "Boost:
@@ -3341,28 +3904,30 @@ label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="frogBox11" type="Sprite2D" parent="CanvasLayer2/patchMenu" unique_id=69754612]
+[node name="box10" type="Sprite2D" parent="CanvasLayer2/patchMenu/row1" unique_id=69754612]
 position = Vector2(1637.52, 273.52)
 scale = Vector2(4.47, 4.47)
 texture = ExtResource("2_3oasr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/frogBox11" unique_id=839339548]
-position = Vector2(0.5592864, -4.026847)
-sprite_frames = SubResource("SpriteFrames_ybhnk")
-autoplay = "default"
-frame_progress = 0.38232064
-
-[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/frogBox11" unique_id=690429251]
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row1/box10" unique_id=690429251]
 modulate = Color(1, 1, 1, 0)
 offset_left = -14.913007
 offset_top = -14.913007
 offset_right = 14.913009
 offset_bottom = 14.74731
 
-[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/frogBox11" unique_id=777264249]
-offset_left = -14.876958
+[node name="box10Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row1/box10" unique_id=1229843229]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row1/box10/box10Vis" unique_id=839339548]
+position = Vector2(0.55929565, -4.026844)
+sprite_frames = SubResource("SpriteFrames_ybhnk")
+autoplay = "default"
+frame_progress = 0.38232064
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row1/box10/box10Vis" unique_id=777264249]
+offset_left = -14.876953
 offset_top = 4.4742737
-offset_right = 123.51331
+offset_right = 123.51332
 offset_bottom = 49.474274
 scale = Vector2(0.215, 0.215)
 text = "Second:
@@ -3370,6 +3935,665 @@ Chance"
 label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="row2" type="Node2D" parent="CanvasLayer2/patchMenu" unique_id=2071593259]
+position = Vector2(0, 139)
+
+[node name="box11" type="Sprite2D" parent="CanvasLayer2/patchMenu/row2" unique_id=759318176]
+position = Vector2(388, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row2/box11" unique_id=1125320869]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="box11Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row2/box11" unique_id=2137255399]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row2/box11/box11Vis" unique_id=1627145081]
+position = Vector2(0.55929565, -4.026848)
+sprite_frames = SubResource("SpriteFrames_q3a7b")
+autoplay = "default"
+frame_progress = 0.51239514
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row2/box11/box11Vis" unique_id=996516769]
+offset_left = -14.876953
+offset_top = 4.4742737
+offset_right = 123.51332
+offset_bottom = 49.474274
+scale = Vector2(0.215, 0.215)
+text = "Endless:
+Defense"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="box12" type="Sprite2D" parent="CanvasLayer2/patchMenu/row2" unique_id=164207454]
+position = Vector2(526.52, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row2/box12" unique_id=1943580701]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="box12Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row2/box12" unique_id=148182749]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row2/box12/box12Vis" unique_id=780921145]
+position = Vector2(0.5592804, -4.026848)
+sprite_frames = SubResource("SpriteFrames_q3a7b")
+autoplay = "default"
+frame_progress = 0.70272255
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row2/box12/box12Vis" unique_id=1216536339]
+offset_left = -14.876961
+offset_top = 4.4742737
+offset_right = 123.51331
+offset_bottom = 49.474274
+scale = Vector2(0.215, 0.215)
+text = "Endless:
+Strength"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="box13" type="Sprite2D" parent="CanvasLayer2/patchMenu/row2" unique_id=528037352]
+position = Vector2(665.52, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row2/box13" unique_id=557479158]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="box13Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row2/box13" unique_id=1647771051]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row2/box13/box13Vis" unique_id=604143375]
+position = Vector2(0.5592804, -4.026848)
+sprite_frames = SubResource("SpriteFrames_q3a7b")
+autoplay = "default"
+frame_progress = 0.51239514
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row2/box13/box13Vis" unique_id=1236660594]
+offset_left = -14.876953
+offset_top = 4.4742737
+offset_right = 123.51332
+offset_bottom = 49.474274
+scale = Vector2(0.215, 0.215)
+text = "Endless:
+Speed"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="box14" type="Sprite2D" parent="CanvasLayer2/patchMenu/row2" unique_id=1135892963]
+position = Vector2(803.5199, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row2/box14" unique_id=942851886]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="box14Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row2/box14" unique_id=1682479064]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row2/box14/box14Vis" unique_id=128426745]
+position = Vector2(0.5592804, -4.026848)
+sprite_frames = SubResource("SpriteFrames_q3a7b")
+autoplay = "default"
+frame_progress = 0.51239514
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row2/box14/box14Vis" unique_id=525418124]
+offset_left = -14.876968
+offset_top = 4.4742737
+offset_right = 123.513306
+offset_bottom = 49.474274
+scale = Vector2(0.215, 0.215)
+text = "Second:
+Wind"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="box15" type="Sprite2D" parent="CanvasLayer2/patchMenu/row2" unique_id=1044835082]
+position = Vector2(942.5199, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row2/box15" unique_id=254523306]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="box15Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row2/box15" unique_id=1419987730]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row2/box15/box15Vis" unique_id=1368539038]
+position = Vector2(0.5592804, -4.026848)
+sprite_frames = SubResource("SpriteFrames_q3a7b")
+autoplay = "default"
+frame_progress = 0.51239514
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row2/box15/box15Vis" unique_id=150874680]
+offset_left = -14.876953
+offset_top = 4.4742737
+offset_right = 123.51332
+offset_bottom = 49.474274
+scale = Vector2(0.215, 0.215)
+text = "Revenge:
+Fireball"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="box16" type="Sprite2D" parent="CanvasLayer2/patchMenu/row2" unique_id=1344848174]
+position = Vector2(1081.52, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row2/box16" unique_id=314966514]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="box16Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row2/box16" unique_id=1646683364]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row2/box16/box16Vis" unique_id=1207966680]
+position = Vector2(0.5592804, -4.026848)
+sprite_frames = SubResource("SpriteFrames_q3a7b")
+autoplay = "default"
+frame_progress = 0.51239514
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row2/box16/box16Vis" unique_id=1792749694]
+offset_left = -14.876953
+offset_top = 4.4742737
+offset_right = 123.51332
+offset_bottom = 49.474274
+scale = Vector2(0.215, 0.215)
+text = "Protocol:
+Sword"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="box17" type="Sprite2D" parent="CanvasLayer2/patchMenu/row2" unique_id=1502143207]
+position = Vector2(1220.52, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row2/box17" unique_id=1076806104]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="box17Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row2/box17" unique_id=1233621267]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row2/box17/box17Vis" unique_id=2129362948]
+position = Vector2(0.5592346, -4.026848)
+sprite_frames = SubResource("SpriteFrames_q3a7b")
+autoplay = "default"
+frame_progress = 0.51239514
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row2/box17/box17Vis" unique_id=360298085]
+offset_left = -14.876953
+offset_top = 4.4742737
+offset_right = 123.51332
+offset_bottom = 49.474274
+scale = Vector2(0.215, 0.215)
+text = "Protocol:
+Electrocute"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="box18" type="Sprite2D" parent="CanvasLayer2/patchMenu/row2" unique_id=1250240587]
+position = Vector2(1359.52, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row2/box18" unique_id=1162649772]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="box18Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row2/box18" unique_id=1918594791]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row2/box18/box18Vis" unique_id=2047265119]
+position = Vector2(0.55929565, -4.026848)
+sprite_frames = SubResource("SpriteFrames_q3a7b")
+autoplay = "default"
+frame_progress = 0.51239514
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row2/box18/box18Vis" unique_id=185986543]
+offset_left = -14.876953
+offset_top = 4.4742737
+offset_right = 123.51332
+offset_bottom = 49.474274
+scale = Vector2(0.215, 0.215)
+text = "Protocol:
+Caffeinate"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="box19" type="Sprite2D" parent="CanvasLayer2/patchMenu/row2" unique_id=739493920]
+position = Vector2(1498.5199, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row2/box19" unique_id=1161701716]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="box19Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row2/box19" unique_id=226146034]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row2/box19/box19Vis" unique_id=1539892309]
+position = Vector2(0.55929565, -4.026848)
+sprite_frames = SubResource("SpriteFrames_q3a7b")
+autoplay = "default"
+frame_progress = 0.51239514
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row2/box19/box19Vis" unique_id=908982732]
+offset_left = -14.876953
+offset_top = 4.4742737
+offset_right = 123.51332
+offset_bottom = 49.474274
+scale = Vector2(0.215, 0.215)
+text = "Revenge:
+Heal"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="box20" type="Sprite2D" parent="CanvasLayer2/patchMenu/row2" unique_id=1669806323]
+position = Vector2(1637.52, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row2/box20" unique_id=1869842487]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="box20Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row2/box20" unique_id=522124984]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row2/box20/box20Vis" unique_id=2067624234]
+position = Vector2(0.55929565, -4.026848)
+sprite_frames = SubResource("SpriteFrames_ybhnk")
+autoplay = "default"
+frame_progress = 0.38232064
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row2/box20/box20Vis" unique_id=1510268520]
+offset_left = -14.876953
+offset_top = 4.4742737
+offset_right = 123.51332
+offset_bottom = 49.474274
+scale = Vector2(0.215, 0.215)
+text = "Revenge:
+Smite"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="row3" type="Node2D" parent="CanvasLayer2/patchMenu" unique_id=570068351]
+position = Vector2(0, 278)
+
+[node name="box21" type="Sprite2D" parent="CanvasLayer2/patchMenu/row3" unique_id=1733515535]
+position = Vector2(388, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row3/box21" unique_id=1784255188]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="box21Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row3/box21" unique_id=1666407395]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row3/box21/box21Vis" unique_id=543775170]
+position = Vector2(0.55929565, -4.026848)
+sprite_frames = SubResource("SpriteFrames_58jx4")
+autoplay = "default"
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row3/box21/box21Vis" unique_id=1870006539]
+offset_left = -14.876953
+offset_top = 4.474266
+offset_right = 123.51332
+offset_bottom = 49.474266
+scale = Vector2(0.215, 0.215)
+text = "Block:
+Cleaving"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="box22" type="Sprite2D" parent="CanvasLayer2/patchMenu/row3" unique_id=1232489559]
+position = Vector2(526.52, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row3/box22" unique_id=1083095997]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="box22Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row3/box22" unique_id=1590539089]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row3/box22/box22Vis" unique_id=1800944723]
+position = Vector2(0.5592804, -4.026848)
+sprite_frames = SubResource("SpriteFrames_58jx4")
+autoplay = "default"
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row3/box22/box22Vis" unique_id=1936587096]
+offset_left = -14.876961
+offset_top = 4.474266
+offset_right = 123.51331
+offset_bottom = 49.474266
+scale = Vector2(0.215, 0.215)
+text = "Block:
+Stun"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="box23" type="Sprite2D" parent="CanvasLayer2/patchMenu/row3" unique_id=1271672219]
+position = Vector2(665.52, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row3/box23" unique_id=1304955115]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="box23Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row3/box23" unique_id=1752599401]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row3/box23/box23Vis" unique_id=2127245572]
+position = Vector2(0.5592804, -4.026848)
+sprite_frames = SubResource("SpriteFrames_58jx4")
+autoplay = "default"
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row3/box23/box23Vis" unique_id=934911778]
+offset_left = -14.876953
+offset_top = 4.474266
+offset_right = 123.51332
+offset_bottom = 49.474266
+scale = Vector2(0.215, 0.215)
+text = "Block:
+Stun"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="box24" type="Sprite2D" parent="CanvasLayer2/patchMenu/row3" unique_id=1201319592]
+position = Vector2(803.5199, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row3/box24" unique_id=909512685]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="box24Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row3/box24" unique_id=1217055833]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row3/box24/box24Vis" unique_id=1454122166]
+position = Vector2(0.5592804, -4.026848)
+sprite_frames = SubResource("SpriteFrames_58jx4")
+autoplay = "default"
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row3/box24/box24Vis" unique_id=1839870761]
+offset_left = -14.876968
+offset_top = 4.474266
+offset_right = 123.513306
+offset_bottom = 49.474266
+scale = Vector2(0.215, 0.215)
+text = "Counter:
+Strike"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="box25" type="Sprite2D" parent="CanvasLayer2/patchMenu/row3" unique_id=1478236571]
+position = Vector2(942.5199, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row3/box25" unique_id=748531641]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="box25Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row3/box25" unique_id=1429171823]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row3/box25/box25Vis" unique_id=1760687637]
+position = Vector2(0.5592804, -4.026848)
+sprite_frames = SubResource("SpriteFrames_58jx4")
+autoplay = "default"
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row3/box25/box25Vis" unique_id=2094826760]
+offset_left = -14.876953
+offset_top = 4.474266
+offset_right = 123.51332
+offset_bottom = 49.474266
+scale = Vector2(0.215, 0.215)
+text = "Counter:
+Pummel"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="box26" type="Sprite2D" parent="CanvasLayer2/patchMenu/row3" unique_id=746976141]
+position = Vector2(1081.52, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row3/box26" unique_id=3422832]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="box26Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row3/box26" unique_id=1643699682]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row3/box26/box26Vis" unique_id=1936196571]
+position = Vector2(0.5592804, -4.026848)
+sprite_frames = SubResource("SpriteFrames_58jx4")
+autoplay = "default"
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row3/box26/box26Vis" unique_id=927377958]
+offset_left = -14.876953
+offset_top = 4.474266
+offset_right = 123.51332
+offset_bottom = 49.474266
+scale = Vector2(0.215, 0.215)
+text = "Protocol:
+Gamble"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="box27" type="Sprite2D" parent="CanvasLayer2/patchMenu/row3" unique_id=21109326]
+position = Vector2(1220.52, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row3/box27" unique_id=1624155606]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="box27Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row3/box27" unique_id=1621415467]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row3/box27/box27Vis" unique_id=420224724]
+position = Vector2(0.5592346, -4.026848)
+sprite_frames = SubResource("SpriteFrames_58jx4")
+autoplay = "default"
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row3/box27/box27Vis" unique_id=475549715]
+offset_left = -14.876953
+offset_top = 4.474266
+offset_right = 123.51332
+offset_bottom = 49.474266
+scale = Vector2(0.215, 0.215)
+text = "Protocol:
+Pollute"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="box28" type="Sprite2D" parent="CanvasLayer2/patchMenu/row3" unique_id=1368425909]
+position = Vector2(1359.52, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row3/box28" unique_id=557588588]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="box28Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row3/box28" unique_id=363452397]
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row3/box28/box28Vis" unique_id=1069468631]
+offset_left = -14.876953
+offset_top = 4.474266
+offset_right = 123.51332
+offset_bottom = 49.474266
+scale = Vector2(0.215, 0.215)
+text = "Protocol:
+Hydrate"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row3/box28/box28Vis" unique_id=2093722994]
+position = Vector2(0.55929565, -4.026848)
+sprite_frames = SubResource("SpriteFrames_58jx4")
+autoplay = "default"
+
+[node name="box29" type="Sprite2D" parent="CanvasLayer2/patchMenu/row3" unique_id=872097613]
+position = Vector2(1498.5199, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row3/box29" unique_id=72304106]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="box29Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row3/box29" unique_id=718209799]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row3/box29/box29Vis" unique_id=475454825]
+position = Vector2(0.55929565, -4.026848)
+sprite_frames = SubResource("SpriteFrames_58jx4")
+autoplay = "default"
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row3/box29/box29Vis" unique_id=642146300]
+offset_left = -14.876953
+offset_top = 4.474266
+offset_right = 123.51332
+offset_bottom = 49.474266
+scale = Vector2(0.215, 0.215)
+text = "Counter:
+Electrocute"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="box30" type="Sprite2D" parent="CanvasLayer2/patchMenu/row3" unique_id=659915804]
+position = Vector2(1637.52, 273.52)
+scale = Vector2(4.47, 4.47)
+texture = ExtResource("2_3oasr")
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/row3/box30" unique_id=964943806]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
+
+[node name="box30Vis" type="Node2D" parent="CanvasLayer2/patchMenu/row3/box30" unique_id=192836447]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/row3/box30/box30Vis" unique_id=204237428]
+position = Vector2(0.55929565, -4.026848)
+sprite_frames = SubResource("SpriteFrames_58jx4")
+autoplay = "default"
+
+[node name="Label" type="Label" parent="CanvasLayer2/patchMenu/row3/box30/box30Vis" unique_id=1138782676]
+offset_left = -14.876953
+offset_top = 4.474266
+offset_right = 123.51332
+offset_bottom = 49.474266
+scale = Vector2(0.215, 0.215)
+text = "Boost:
+Experience"
+label_settings = SubResource("LabelSettings_lswqs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="partyRep" type="Node2D" parent="CanvasLayer2/patchMenu" unique_id=1961382948]
+
+[node name="frogBox" type="Sprite2D" parent="CanvasLayer2/patchMenu/partyRep" unique_id=1330277999]
+position = Vector2(526, 746.00006)
+scale = Vector2(6.035, 6.035)
+texture = ExtResource("2_3oasr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/patchMenu/partyRep/frogBox" unique_id=1648022932]
+position = Vector2(0, -1.1599007)
+sprite_frames = SubResource("SpriteFrames_4grux")
+autoplay = "default"
+
+[node name="frogButton" type="Button" parent="CanvasLayer2/patchMenu/partyRep/frogBox" unique_id=499687411]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.913007
+offset_top = -14.913007
+offset_right = 14.913009
+offset_bottom = 14.74731
 
 [node name="Label" type="Label" parent="CanvasLayer2/patchMenu" unique_id=354673880]
 layout_mode = 0
@@ -3699,35 +4923,95 @@ autoplay = &"RESET"
 [connection signal="mouse_entered" from="CanvasLayer2/partyMenu/joeBox/joeButton" to="CanvasLayer2/partyMenu" method="_on_joe_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer2/partyMenu/joeBox/joeButton" to="CanvasLayer2/partyMenu" method="_on_frog_button_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer2/partyMenu/joeBox/joeButton" to="CanvasLayer2/partyMenu" method="_on_joe_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox2/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox2/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox2/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox3/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox3/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox3/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox4/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox4/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox4/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox5/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox5/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox5/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox6/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox6/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox6/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox7/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox7/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox7/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox8/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox8/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox8/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox9/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox9/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox9/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox10/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox10/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox10/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/frogBox11/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/frogBox11/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer2/patchMenu/frogBox11/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row1/box1/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row1/box1/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row1/box1/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row1/box2/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row1/box2/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row1/box2/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row1/box3/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row1/box3/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row1/box3/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row1/box4/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row1/box4/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row1/box4/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row1/box5/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row1/box5/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row1/box5/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row1/box6/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row1/box6/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row1/box6/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row1/box7/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row1/box7/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row1/box7/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row1/box8/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row1/box8/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row1/box8/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row1/box9/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row1/box9/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row1/box9/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row1/box10/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row1/box10/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row1/box10/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row2/box11/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row2/box11/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row2/box11/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row2/box12/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row2/box12/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row2/box12/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row2/box13/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row2/box13/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row2/box13/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row2/box14/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row2/box14/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row2/box14/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row2/box15/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row2/box15/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row2/box15/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row2/box16/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row2/box16/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row2/box16/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row2/box17/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row2/box17/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row2/box17/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row2/box18/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row2/box18/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row2/box18/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row2/box19/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row2/box19/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row2/box19/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row2/box20/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row2/box20/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row2/box20/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row3/box21/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row3/box21/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row3/box21/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row3/box22/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row3/box22/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row3/box22/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row3/box23/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row3/box23/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row3/box23/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row3/box24/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row3/box24/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row3/box24/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row3/box25/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row3/box25/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row3/box25/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row3/box26/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row3/box26/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row3/box26/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row3/box27/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row3/box27/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row3/box27/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row3/box28/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row3/box28/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row3/box28/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row3/box29/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row3/box29/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row3/box29/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row3/box30/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer2/patchMenu/row3/box30/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer2/patchMenu/row3/box30/frogButton" to="CanvasLayer2/patchMenu" method="_on_frog_button_pressed"]
 [connection signal="pressed" from="CanvasLayer2/partyButton" to="." method="_on_party_button_pressed"]
 [connection signal="pressed" from="CanvasLayer2/patchesButton" to="." method="_on_patches_button_pressed"]
