@@ -72,6 +72,7 @@ var dice=preload("res://moves/diceRoll.tscn")
 var hDef=preload("res://patches/hDefense.tscn")
 var hStr=preload("res://patches/hStrength.tscn")
 var hSpd=preload("res://patches/hSpeed.tscn")
+var secoNat=preload("res://patches/secondNature.tscn")
 @onready var curChar : AnimatedSprite2D
 
 @export var health:=10.0:
@@ -327,6 +328,10 @@ func _process(delta: float) -> void:
 
 
 func _on_move_handler_move_used(move: String) -> void:
+	if curPatch==4:
+		var haha=secoNat.instantiate()
+		haha.char=character
+		frog_layer.add_child(haha)
 	print(move)
 	party_handler.moveMenuOpen=false
 	turnbar_animator.play("RESET")
