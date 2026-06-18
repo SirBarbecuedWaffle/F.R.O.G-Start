@@ -392,6 +392,288 @@ func _process(delta: float) -> void:
 					patchGrabbed=30
 				CManager.currentPatches[0]=0
 				boxback_1.color=Color(0.0, 0.0, 0.0, 0.0)
+		if dropOnParty==2:
+			if CManager.currentPatches[1]!=0 && patchGrabbed==0:
+				if CManager.currentPatches[1]==1:
+					curPicked=box_1_vis
+					patchGrabbed=1
+				if CManager.currentPatches[1]==2:
+					curPicked=box_2_vis
+					patchGrabbed=2
+				if CManager.currentPatches[1]==3:
+					curPicked=box_3_vis
+					patchGrabbed=3
+				if CManager.currentPatches[1]==4:
+					curPicked=box_4_vis
+					patchGrabbed=4
+				if CManager.currentPatches[1]==5:
+					curPicked=box_5_vis
+					patchGrabbed=5
+				if CManager.currentPatches[1]==6:
+					curPicked=box_6_vis
+					patchGrabbed=6
+				if CManager.currentPatches[1]==7:
+					curPicked=box_7_vis
+					patchGrabbed=7
+				if CManager.currentPatches[1]==8:
+					curPicked=box_8_vis
+					patchGrabbed=8
+				if CManager.currentPatches[1]==9:
+					curPicked=box_9_vis
+					patchGrabbed=9
+				if CManager.currentPatches[1]==10:
+					curPicked=box_10_vis
+					patchGrabbed=10
+				if CManager.currentPatches[1]==11:
+					curPicked=box_11_vis
+					patchGrabbed=11
+				if CManager.currentPatches[1]==12:
+					curPicked=box_12_vis
+					patchGrabbed=12
+				if CManager.currentPatches[1]==13:
+					curPicked=box_13_vis
+					patchGrabbed=13
+				if CManager.currentPatches[1]==14:
+					curPicked=box_14_vis
+					patchGrabbed=14
+				if CManager.currentPatches[1]==15:
+					curPicked=box_15_vis
+					patchGrabbed=15
+				if CManager.currentPatches[1]==16:
+					curPicked=box_16_vis
+					patchGrabbed=16
+				if CManager.currentPatches[1]==17:
+					curPicked=box_17_vis
+					patchGrabbed=17
+				if CManager.currentPatches[1]==18:
+					curPicked=box_18_vis
+					patchGrabbed=18
+				if CManager.currentPatches[1]==19:
+					curPicked=box_19_vis
+					patchGrabbed=19
+				if CManager.currentPatches[1]==20:
+					curPicked=box_20_vis
+					patchGrabbed=20
+				if CManager.currentPatches[1]==21:
+					curPicked=box_21_vis
+					patchGrabbed=21
+				if CManager.currentPatches[1]==22:
+					curPicked=box_22_vis
+					patchGrabbed=22
+				if CManager.currentPatches[1]==23:
+					curPicked=box_23_vis
+					patchGrabbed=23
+				if CManager.currentPatches[1]==24:
+					curPicked=box_24_vis
+					patchGrabbed=24
+				if CManager.currentPatches[1]==25:
+					curPicked=box_25_vis
+					patchGrabbed=25
+				if CManager.currentPatches[1]==26:
+					curPicked=box_26_vis
+					patchGrabbed=26
+				if CManager.currentPatches[1]==27:
+					curPicked=box_27_vis
+					patchGrabbed=27
+				if CManager.currentPatches[1]==28:
+					curPicked=box_28_vis
+					patchGrabbed=28
+				if CManager.currentPatches[1]==29:
+					curPicked=box_29_vis
+					patchGrabbed=29
+				if CManager.currentPatches[1]==30:
+					curPicked=box_30_vis
+					patchGrabbed=30
+				CManager.currentPatches[1]=0
+				boxback_2.color=Color(0.0, 0.0, 0.0, 0.0)
+		if dropOnParty==3:
+			if CManager.currentPatches[2]!=0 && patchGrabbed==0:
+				if CManager.currentPatches[2]==1:
+					curPicked=box_1_vis
+					patchGrabbed=1
+				if CManager.currentPatches[2]==2:
+					curPicked=box_2_vis
+					patchGrabbed=2
+				if CManager.currentPatches[2]==3:
+					curPicked=box_3_vis
+					patchGrabbed=3
+				if CManager.currentPatches[2]==4:
+					curPicked=box_4_vis
+					patchGrabbed=4
+				if CManager.currentPatches[2]==5:
+					curPicked=box_5_vis
+					patchGrabbed=5
+				if CManager.currentPatches[2]==6:
+					curPicked=box_6_vis
+					patchGrabbed=6
+				if CManager.currentPatches[2]==7:
+					curPicked=box_7_vis
+					patchGrabbed=7
+				if CManager.currentPatches[2]==8:
+					curPicked=box_8_vis
+					patchGrabbed=8
+				if CManager.currentPatches[2]==9:
+					curPicked=box_9_vis
+					patchGrabbed=9
+				if CManager.currentPatches[2]==10:
+					curPicked=box_10_vis
+					patchGrabbed=10
+				if CManager.currentPatches[2]==11:
+					curPicked=box_11_vis
+					patchGrabbed=11
+				if CManager.currentPatches[2]==12:
+					curPicked=box_12_vis
+					patchGrabbed=12
+				if CManager.currentPatches[2]==13:
+					curPicked=box_13_vis
+					patchGrabbed=13
+				if CManager.currentPatches[2]==14:
+					curPicked=box_14_vis
+					patchGrabbed=14
+				if CManager.currentPatches[2]==15:
+					curPicked=box_15_vis
+					patchGrabbed=15
+				if CManager.currentPatches[2]==16:
+					curPicked=box_16_vis
+					patchGrabbed=16
+				if CManager.currentPatches[2]==17:
+					curPicked=box_17_vis
+					patchGrabbed=17
+				if CManager.currentPatches[2]==18:
+					curPicked=box_18_vis
+					patchGrabbed=18
+				if CManager.currentPatches[2]==19:
+					curPicked=box_19_vis
+					patchGrabbed=19
+				if CManager.currentPatches[2]==20:
+					curPicked=box_20_vis
+					patchGrabbed=20
+				if CManager.currentPatches[2]==21:
+					curPicked=box_21_vis
+					patchGrabbed=21
+				if CManager.currentPatches[2]==22:
+					curPicked=box_22_vis
+					patchGrabbed=22
+				if CManager.currentPatches[2]==23:
+					curPicked=box_23_vis
+					patchGrabbed=23
+				if CManager.currentPatches[2]==24:
+					curPicked=box_24_vis
+					patchGrabbed=24
+				if CManager.currentPatches[2]==25:
+					curPicked=box_25_vis
+					patchGrabbed=25
+				if CManager.currentPatches[2]==26:
+					curPicked=box_26_vis
+					patchGrabbed=26
+				if CManager.currentPatches[2]==27:
+					curPicked=box_27_vis
+					patchGrabbed=27
+				if CManager.currentPatches[2]==28:
+					curPicked=box_28_vis
+					patchGrabbed=28
+				if CManager.currentPatches[2]==29:
+					curPicked=box_29_vis
+					patchGrabbed=29
+				if CManager.currentPatches[2]==30:
+					curPicked=box_30_vis
+					patchGrabbed=30
+				CManager.currentPatches[2]=0
+				boxback_3.color=Color(0.0, 0.0, 0.0, 0.0)
+		if dropOnParty==4:
+			if CManager.currentPatches[3]!=0 && patchGrabbed==0:
+				if CManager.currentPatches[3]==1:
+					curPicked=box_1_vis
+					patchGrabbed=1
+				if CManager.currentPatches[3]==2:
+					curPicked=box_2_vis
+					patchGrabbed=2
+				if CManager.currentPatches[3]==3:
+					curPicked=box_3_vis
+					patchGrabbed=3
+				if CManager.currentPatches[3]==4:
+					curPicked=box_4_vis
+					patchGrabbed=4
+				if CManager.currentPatches[3]==5:
+					curPicked=box_5_vis
+					patchGrabbed=5
+				if CManager.currentPatches[3]==6:
+					curPicked=box_6_vis
+					patchGrabbed=6
+				if CManager.currentPatches[3]==7:
+					curPicked=box_7_vis
+					patchGrabbed=7
+				if CManager.currentPatches[3]==8:
+					curPicked=box_8_vis
+					patchGrabbed=8
+				if CManager.currentPatches[3]==9:
+					curPicked=box_9_vis
+					patchGrabbed=9
+				if CManager.currentPatches[3]==10:
+					curPicked=box_10_vis
+					patchGrabbed=10
+				if CManager.currentPatches[3]==11:
+					curPicked=box_11_vis
+					patchGrabbed=11
+				if CManager.currentPatches[3]==12:
+					curPicked=box_12_vis
+					patchGrabbed=12
+				if CManager.currentPatches[3]==13:
+					curPicked=box_13_vis
+					patchGrabbed=13
+				if CManager.currentPatches[3]==14:
+					curPicked=box_14_vis
+					patchGrabbed=14
+				if CManager.currentPatches[3]==15:
+					curPicked=box_15_vis
+					patchGrabbed=15
+				if CManager.currentPatches[3]==16:
+					curPicked=box_16_vis
+					patchGrabbed=16
+				if CManager.currentPatches[3]==17:
+					curPicked=box_17_vis
+					patchGrabbed=17
+				if CManager.currentPatches[3]==18:
+					curPicked=box_18_vis
+					patchGrabbed=18
+				if CManager.currentPatches[3]==19:
+					curPicked=box_19_vis
+					patchGrabbed=19
+				if CManager.currentPatches[3]==20:
+					curPicked=box_20_vis
+					patchGrabbed=20
+				if CManager.currentPatches[3]==21:
+					curPicked=box_21_vis
+					patchGrabbed=21
+				if CManager.currentPatches[3]==22:
+					curPicked=box_22_vis
+					patchGrabbed=22
+				if CManager.currentPatches[3]==23:
+					curPicked=box_23_vis
+					patchGrabbed=23
+				if CManager.currentPatches[3]==24:
+					curPicked=box_24_vis
+					patchGrabbed=24
+				if CManager.currentPatches[3]==25:
+					curPicked=box_25_vis
+					patchGrabbed=25
+				if CManager.currentPatches[3]==26:
+					curPicked=box_26_vis
+					patchGrabbed=26
+				if CManager.currentPatches[3]==27:
+					curPicked=box_27_vis
+					patchGrabbed=27
+				if CManager.currentPatches[3]==28:
+					curPicked=box_28_vis
+					patchGrabbed=28
+				if CManager.currentPatches[3]==29:
+					curPicked=box_29_vis
+					patchGrabbed=29
+				if CManager.currentPatches[3]==30:
+					curPicked=box_30_vis
+					patchGrabbed=30
+				CManager.currentPatches[3]=0
+				boxback_4.color=Color(0.0, 0.0, 0.0, 0.0)
 		if curPicked!=null:
 			if curPicked.modulate!=Color(0.0, 0.0, 0.0, 1.0):
 				if patchGrabbed==0:
@@ -473,8 +755,210 @@ func _process(delta: float) -> void:
 				CManager.currentPatches[0]=patchGrabbed
 				boxback_1.color=Color(0.0, 0.0, 0.0, 0.482)
 				curPicked=null
-		
-		
+			if dropOnParty==2:
+				curPicked.global_position=frog_box_2.position
+				curPicked.z_index=2
+				if CManager.currentPatches[1]==1:
+					box_1_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==2:
+					box_2_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==2:
+					box_2_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==3:
+					box_3_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==4:
+					box_4_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==5:
+					box_5_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==6:
+					box_6_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==7:
+					box_7_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==8:
+					box_8_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==9:
+					box_9_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==10:
+					box_10_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==11:
+					box_11_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==12:
+					box_12_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==13:
+					box_13_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==14:
+					box_14_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==15:
+					box_15_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==16:
+					box_16_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==17:
+					box_17_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==18:
+					box_18_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==19:
+					box_19_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==20:
+					box_20_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==21:
+					box_21_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==22:
+					box_22_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==23:
+					box_23_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==24:
+					box_24_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==25:
+					box_25_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==26:
+					box_26_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==27:
+					box_27_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==28:
+					box_28_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==29:
+					box_29_vis.position=Vector2.ZERO
+				if CManager.currentPatches[1]==30:
+					box_30_vis.position=Vector2.ZERO
+				CManager.currentPatches[1]=patchGrabbed
+				boxback_2.color=Color(0.0, 0.0, 0.0, 0.482)
+				curPicked=null
+			if dropOnParty==3:
+				curPicked.global_position=frog_box_3.position
+				curPicked.z_index=2
+				if CManager.currentPatches[2]==1:
+					box_1_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==2:
+					box_2_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==2:
+					box_2_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==3:
+					box_3_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==4:
+					box_4_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==5:
+					box_5_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==6:
+					box_6_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==7:
+					box_7_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==8:
+					box_8_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==9:
+					box_9_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==10:
+					box_10_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==11:
+					box_11_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==12:
+					box_12_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==13:
+					box_13_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==14:
+					box_14_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==15:
+					box_15_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==16:
+					box_16_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==17:
+					box_17_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==18:
+					box_18_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==19:
+					box_19_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==20:
+					box_20_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==21:
+					box_21_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==22:
+					box_22_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==23:
+					box_23_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==24:
+					box_24_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==25:
+					box_25_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==26:
+					box_26_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==27:
+					box_27_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==28:
+					box_28_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==29:
+					box_29_vis.position=Vector2.ZERO
+				if CManager.currentPatches[2]==30:
+					box_30_vis.position=Vector2.ZERO
+				CManager.currentPatches[2]=patchGrabbed
+				boxback_3.color=Color(0.0, 0.0, 0.0, 0.482)
+				curPicked=null
+			if dropOnParty==4:
+				curPicked.global_position=frog_box_4.position
+				curPicked.z_index=2
+				if CManager.currentPatches[3]==1:
+					box_1_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==2:
+					box_2_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==2:
+					box_2_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==3:
+					box_3_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==4:
+					box_4_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==5:
+					box_5_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==6:
+					box_6_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==7:
+					box_7_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==8:
+					box_8_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==9:
+					box_9_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==10:
+					box_10_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==11:
+					box_11_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==12:
+					box_12_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==13:
+					box_13_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==14:
+					box_14_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==15:
+					box_15_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==16:
+					box_16_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==17:
+					box_17_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==18:
+					box_18_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==19:
+					box_19_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==20:
+					box_20_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==21:
+					box_21_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==22:
+					box_22_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==23:
+					box_23_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==24:
+					box_24_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==25:
+					box_25_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==26:
+					box_26_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==27:
+					box_27_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==28:
+					box_28_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==29:
+					box_29_vis.position=Vector2.ZERO
+				if CManager.currentPatches[3]==30:
+					box_30_vis.position=Vector2.ZERO
+				CManager.currentPatches[3]=patchGrabbed
+				boxback_4.color=Color(0.0, 0.0, 0.0, 0.482)
+				curPicked=null
 		patchGrabbed=0
 
 
@@ -489,7 +973,7 @@ func _on_frog_button_mouse_exited() -> void:
 
 
 func _on_boxback_1_mouse_entered() -> void:
-	if CManager.party[0]!=10:
+	if CManager.party[0]!=10 && CManager.party[0]!=0:
 		dropOnParty=1
 
 
@@ -640,3 +1124,17 @@ func _on_box_button_28_mouse_entered() -> void:
 func _on_box_button_29_mouse_entered() -> void:
 	if !Input.is_action_pressed("lClick"):
 		patchHoved=30
+
+
+func _on_boxback_2_mouse_entered() -> void:
+	if CManager.party[1]!=10 && CManager.party[1]!=0:
+		dropOnParty=2
+
+func _on_boxback_3_mouse_entered() -> void:
+	if CManager.party[2]!=10 && CManager.party[2]!=0:
+		dropOnParty=3
+
+
+func _on_boxback_4_mouse_entered() -> void:
+	if CManager.party[3]!=10 && CManager.party[3]!=0:
+		dropOnParty=4
