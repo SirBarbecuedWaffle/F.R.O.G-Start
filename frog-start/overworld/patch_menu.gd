@@ -44,6 +44,7 @@ var curPicked: Node2D =null
 @onready var box_29_vis: Node2D = $row3/box29/box29Vis
 @onready var box_30_vis: Node2D = $row3/box30/box30Vis
 
+
 func updateParty()->void:
 	box_1_vis.position=Vector2.ZERO
 	box_2_vis.position=Vector2.ZERO
@@ -75,6 +76,45 @@ func updateParty()->void:
 	box_28_vis.position=Vector2.ZERO
 	box_29_vis.position=Vector2.ZERO
 	box_30_vis.position=Vector2.ZERO
+	var boxes = [
+	box_1_vis,
+	box_2_vis,
+	box_3_vis,
+	box_4_vis,
+	box_5_vis,
+	box_6_vis,
+	box_7_vis,
+	box_8_vis,
+	box_9_vis,
+	box_10_vis,
+	box_11_vis,
+	box_12_vis,
+	box_13_vis,
+	box_14_vis,
+	box_15_vis,
+	box_16_vis,
+	box_17_vis,
+	box_18_vis,
+	box_19_vis,
+	box_20_vis,
+	box_21_vis,
+	box_22_vis,
+	box_23_vis,
+	box_24_vis,
+	box_25_vis,
+	box_26_vis,
+	box_27_vis,
+	box_28_vis,
+	box_29_vis,
+	box_30_vis
+]
+	var count:=0
+	for f in boxes:
+		f.modulate=Color(1.0, 1.0, 1.0, 1.0)
+		if CManager.patchesUnlocked[count]==0:
+			if f!=null:
+				f.modulate=Color(0.0, 0.0, 0.0, 1.0)
+		count+=1
 	
 	
 	for i in range(4):
@@ -194,7 +234,6 @@ func _ready() -> void:
 	updateParty()
 
 func _process(delta: float) -> void:
-	print(CManager.currentPatches)
 	if curPicked!=null:
 		curPicked.z_index=3
 	if patchHoved==1:
@@ -354,9 +393,12 @@ func _process(delta: float) -> void:
 				CManager.currentPatches[0]=0
 				boxback_1.color=Color(0.0, 0.0, 0.0, 0.0)
 		if curPicked!=null:
-			if patchGrabbed==0:
-				patchGrabbed=patchHoved
-			curPicked.global_position=get_global_mouse_position()
+			if curPicked.modulate!=Color(0.0, 0.0, 0.0, 1.0):
+				if patchGrabbed==0:
+					patchGrabbed=patchHoved
+				curPicked.global_position=get_global_mouse_position()
+			else:
+				patchHoved=0
 		
 	else:
 		if curPicked!=null:
