@@ -58,6 +58,7 @@ func _process(delta: float) -> void:
 	
 	
 func _ready() -> void:
+	party_1.curPatch=CManager.currentPatches[0]
 	if CManager.party[0]==1:
 		frog.global_position=party_1.global_position
 		frog.visible=true
@@ -101,7 +102,7 @@ func _ready() -> void:
 		gorf.visible=true
 		party_1.character="gorf"
 	
-	
+	party_2.curPatch=CManager.currentPatches[1]
 	if CManager.party[1]==1:
 		frog.global_position=party_2.global_position
 		frog.visible=true
@@ -145,7 +146,7 @@ func _ready() -> void:
 		gorf.visible=true
 		party_2.character="gorf"
 	
-	
+	party_3.curPatch=CManager.currentPatches[2]
 	if CManager.party[2]==1:
 		frog.global_position=party_3.global_position
 		frog.visible=true
@@ -189,7 +190,7 @@ func _ready() -> void:
 		gorf.visible=true
 		party_3.character="gorf"
 	
-	
+	party_4.curPatch=CManager.currentPatches[3]
 	if CManager.party[3]==1:
 		frog.global_position=party_4.global_position
 		frog.visible=true

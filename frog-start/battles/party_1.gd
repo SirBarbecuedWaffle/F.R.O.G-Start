@@ -108,6 +108,7 @@ var dice=preload("res://moves/diceRoll.tscn")
 @export var stun:=0.0
 @export var regen:=0
 @export var invincible:=0.0
+@export var curPatch:=0
 var turnTime:=randi_range(120,450)
 @onready var def_up_ind: Sprite2D = $arrowHandler/goodArrows/defUpInd
 @onready var spd_up_ind: Sprite2D = $arrowHandler/goodArrows/spdUpInd

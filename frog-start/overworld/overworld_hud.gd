@@ -25,6 +25,8 @@ func _on_party_button_pressed() -> void:
 		for i in range(4):
 			if CManager.party[i]==10:
 				CManager.currentPatches[i]=0
+			if CManager.party[i]==0:
+				CManager.currentPatches[i]=0
 		if party_menu.visible==false:
 			party_menu.visible=true
 			patch_menu.visible=false
@@ -60,6 +62,8 @@ func _on_patches_button_pressed() -> void:
 	if transition_animator.current_animation!="transition":
 		for i in range(4):
 			if CManager.party[i]==10:
+				CManager.currentPatches[i]=0
+			if CManager.party[i]==0:
 				CManager.currentPatches[i]=0
 		if patch_menu.visible==false:
 			party_rep.updateParty()
