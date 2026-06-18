@@ -26,7 +26,7 @@ signal moveUsed(move : String)
 
 var moves1=["Arrow Barrage","Overclock","All Skill Baby","Sword Barrage","Coffee Break","Fireball","Arrow Barrage 2"]
 var moves2=["Block","Zip Bomb","Strike","Strength Spell","Cannon Barrage","You're Fired","Alt F4","Curse: Corrupt"]
-var moves3=["Strike","Infect","Curse: Weaken","Health Potion","Smite","Fireball","Pummel","Pressure Wash","Bluescreen"]
+var moves3=["Strike","Infect","Curse: Weaken","Health Potion","Smite","Fireball","Pummel","Pressure Wash","Bluescreen","Even More Skill"]
 var moves4=["Frogsicle","Alt F4","Curse: Poison","Fireball","Electrocute","Scald","Flashbang","Toxic Fumes","Bottoms Up","DDoS"]
 @onready var move_handler: Node2D = $"."
 

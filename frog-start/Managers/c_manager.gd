@@ -1,5 +1,5 @@
 extends Node
-@export var party:=[7,2,5,6]
+@export var party:=[1,8,9,10]
 @export var charUnlocked=[1,1,1,1,1,1,1,1,1,1]
 @export var charXP=[0,0,0,0,0,0,0,0,0,0]
 @export var charLVL=[1,1,1,1,1,1,1,1,1,1]
