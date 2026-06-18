@@ -9,6 +9,9 @@ signal victory
 
 func _ready() -> void:
 	var allowance=randi_range(2,3+PManager.allowance)
+	for d in range(4):
+		if CManager.currentPatches[d]==5:
+			allowance+=10
 	while allowance/3.0>1:
 		var curEnem=randi_range(2,3)
 		allowance-=curEnem

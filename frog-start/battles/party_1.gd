@@ -67,6 +67,11 @@ var toxiced=preload("res://moves/toxicsludge.tscn")
 var cleanse=preload("res://moves/pressure_wash.tscn")
 var bottoms=preload("res://moves/BottomsUp.tscn")
 var dice=preload("res://moves/diceRoll.tscn")
+
+
+var hDef=preload("res://patches/hDefense.tscn")
+var hStr=preload("res://patches/hStrength.tscn")
+var hSpd=preload("res://patches/hSpeed.tscn")
 @onready var curChar : AnimatedSprite2D
 
 @export var health:=10.0:
@@ -172,7 +177,18 @@ func _ready() -> void:
 		curChar.play("idle")
 		maxHealth=CManager.charHP[8]+CManager.charLVL[8]*30
 	health=maxHealth
-
+	await get_tree().create_timer(1.0).timeout
+	if curPatch==1:
+		var haha=hDef.instantiate()
+		frog_layer.add_child(haha)
+	if curPatch==2:
+		var haha=hStr.instantiate()
+		if character=="frog":
+			haha.addSpd=5
+		frog_layer.add_child(haha)
+	if curPatch==3:
+		var haha=hSpd.instantiate()
+		frog_layer.add_child(haha)
 func invincAnim()->void:
 		var tweente := create_tween()
 		tweente.tween_property(invin_on, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.5)
