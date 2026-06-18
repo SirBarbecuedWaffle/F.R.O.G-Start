@@ -74,3 +74,7 @@ func _on_patches_button_pressed() -> void:
 			PManager.paused=false
 			patch_menu.visible=false
 			patch_back.color=Color(0.388, 0.576, 0.996, 0.816)
+
+
+func _on_box_button_20_mouse_entered() -> void:
+	pass # Replace with function body.

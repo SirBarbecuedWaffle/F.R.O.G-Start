@@ -6424,6 +6424,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="patchMenu" type="ColorRect" parent="CanvasLayer2" unique_id=438977713]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -6795,6 +6796,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="boxButton10" type="Button" parent="CanvasLayer2/patchMenu/row2/box11/box11Vis" unique_id=381976071]
+modulate = Color(1, 0, 0, 0)
+offset_left = -14.913002
+offset_top = -14.913006
+offset_right = 14.913013
+offset_bottom = 14.747311
+focus_mode = 0
+
 [node name="box12" type="Sprite2D" parent="CanvasLayer2/patchMenu/row2" unique_id=164207454]
 position = Vector2(526.52, 273.52)
 scale = Vector2(4.47, 4.47)
@@ -6819,6 +6828,14 @@ Strength"
 label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="boxButton11" type="Button" parent="CanvasLayer2/patchMenu/row2/box12/box12Vis" unique_id=1736785270]
+modulate = Color(1, 0, 0, 0)
+offset_left = -14.913002
+offset_top = -14.913006
+offset_right = 14.913013
+offset_bottom = 14.747311
+focus_mode = 0
 
 [node name="box13" type="Sprite2D" parent="CanvasLayer2/patchMenu/row2" unique_id=528037352]
 position = Vector2(665.52, 273.52)
@@ -6846,6 +6863,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="boxButton12" type="Button" parent="CanvasLayer2/patchMenu/row2/box13/box13Vis" unique_id=2076373664]
+modulate = Color(1, 0, 0, 0)
+offset_left = -14.913002
+offset_top = -14.913006
+offset_right = 14.913013
+offset_bottom = 14.747311
+focus_mode = 0
+
 [node name="box14" type="Sprite2D" parent="CanvasLayer2/patchMenu/row2" unique_id=1135892963]
 position = Vector2(803.5199, 273.52)
 scale = Vector2(4.47, 4.47)
@@ -6870,6 +6895,14 @@ Wind"
 label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="boxButton13" type="Button" parent="CanvasLayer2/patchMenu/row2/box14/box14Vis" unique_id=118119946]
+modulate = Color(1, 0, 0, 0)
+offset_left = -14.913002
+offset_top = -14.913006
+offset_right = 14.913013
+offset_bottom = 14.747311
+focus_mode = 0
 
 [node name="box15" type="Sprite2D" parent="CanvasLayer2/patchMenu/row2" unique_id=1044835082]
 position = Vector2(942.5199, 273.52)
@@ -6896,6 +6929,14 @@ label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="boxButton14" type="Button" parent="CanvasLayer2/patchMenu/row2/box15/box15Vis" unique_id=1777763057]
+modulate = Color(1, 0, 0, 0)
+offset_left = -14.913002
+offset_top = -14.913006
+offset_right = 14.913013
+offset_bottom = 14.747311
+focus_mode = 0
+
 [node name="box16" type="Sprite2D" parent="CanvasLayer2/patchMenu/row2" unique_id=1344848174]
 position = Vector2(1081.52, 273.52)
 scale = Vector2(4.47, 4.47)
@@ -6921,6 +6962,14 @@ label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="boxButton15" type="Button" parent="CanvasLayer2/patchMenu/row2/box16/box16Vis" unique_id=206691535]
+modulate = Color(1, 0, 0, 0)
+offset_left = -14.913002
+offset_top = -14.913006
+offset_right = 14.913013
+offset_bottom = 14.747311
+focus_mode = 0
+
 [node name="box17" type="Sprite2D" parent="CanvasLayer2/patchMenu/row2" unique_id=1502143207]
 position = Vector2(1220.52, 273.52)
 scale = Vector2(4.47, 4.47)
@@ -6945,6 +6994,14 @@ Electrocute"
 label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="boxButton16" type="Button" parent="CanvasLayer2/patchMenu/row2/box17/box17Vis" unique_id=1410576336]
+modulate = Color(1, 0, 0, 0)
+offset_left = -14.913002
+offset_top = -14.913006
+offset_right = 14.913013
+offset_bottom = 14.747311
+focus_mode = 0
 
 [node name="box18" type="Sprite2D" parent="CanvasLayer2/patchMenu/row2" unique_id=1250240587]
 position = Vector2(1359.52, 273.52)
@@ -6972,6 +7029,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="boxButton17" type="Button" parent="CanvasLayer2/patchMenu/row2/box18/box18Vis" unique_id=856105783]
+modulate = Color(1, 0, 0, 0)
+offset_left = -14.913002
+offset_top = -14.913006
+offset_right = 14.913013
+offset_bottom = 14.747311
+focus_mode = 0
+
 [node name="box19" type="Sprite2D" parent="CanvasLayer2/patchMenu/row2" unique_id=739493920]
 position = Vector2(1498.5199, 273.52)
 scale = Vector2(4.47, 4.47)
@@ -6997,6 +7062,14 @@ label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="boxButton18" type="Button" parent="CanvasLayer2/patchMenu/row2/box19/box19Vis" unique_id=400457050]
+modulate = Color(1, 0, 0, 0)
+offset_left = -14.913002
+offset_top = -14.913006
+offset_right = 14.913013
+offset_bottom = 14.747311
+focus_mode = 0
+
 [node name="box20" type="Sprite2D" parent="CanvasLayer2/patchMenu/row2" unique_id=1669806323]
 position = Vector2(1637.52, 273.52)
 scale = Vector2(4.47, 4.47)
@@ -7021,6 +7094,14 @@ Smite"
 label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="boxButton19" type="Button" parent="CanvasLayer2/patchMenu/row2/box20/box20Vis" unique_id=1504112689]
+modulate = Color(1, 0, 0, 0)
+offset_left = -14.913002
+offset_top = -14.913006
+offset_right = 14.913013
+offset_bottom = 14.747311
+focus_mode = 0
 
 [node name="row3" type="Node2D" parent="CanvasLayer2/patchMenu" unique_id=570068351]
 position = Vector2(0, 278)
@@ -7049,6 +7130,14 @@ label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="boxButton20" type="Button" parent="CanvasLayer2/patchMenu/row3/box21/box21Vis" unique_id=1392803124]
+modulate = Color(1, 0, 0, 0)
+offset_left = -14.913002
+offset_top = -14.913006
+offset_right = 14.913013
+offset_bottom = 14.747311
+focus_mode = 0
+
 [node name="box22" type="Sprite2D" parent="CanvasLayer2/patchMenu/row3" unique_id=1232489559]
 position = Vector2(526.52, 273.52)
 scale = Vector2(4.47, 4.47)
@@ -7072,6 +7161,14 @@ Stun"
 label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="boxButton21" type="Button" parent="CanvasLayer2/patchMenu/row3/box22/box22Vis" unique_id=109577395]
+modulate = Color(1, 0, 0, 0)
+offset_left = -14.913002
+offset_top = -14.913006
+offset_right = 14.913013
+offset_bottom = 14.747311
+focus_mode = 0
 
 [node name="box23" type="Sprite2D" parent="CanvasLayer2/patchMenu/row3" unique_id=1271672219]
 position = Vector2(665.52, 273.52)
@@ -7098,6 +7195,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="boxButton22" type="Button" parent="CanvasLayer2/patchMenu/row3/box23/box23Vis" unique_id=2053625409]
+modulate = Color(1, 0, 0, 0)
+offset_left = -14.913002
+offset_top = -14.913006
+offset_right = 14.913013
+offset_bottom = 14.747311
+focus_mode = 0
+
 [node name="box24" type="Sprite2D" parent="CanvasLayer2/patchMenu/row3" unique_id=1201319592]
 position = Vector2(803.5199, 273.52)
 scale = Vector2(4.47, 4.47)
@@ -7121,6 +7226,14 @@ Strike"
 label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="boxButton23" type="Button" parent="CanvasLayer2/patchMenu/row3/box24/box24Vis" unique_id=657290423]
+modulate = Color(1, 0, 0, 0)
+offset_left = -14.913002
+offset_top = -14.913006
+offset_right = 14.913013
+offset_bottom = 14.747311
+focus_mode = 0
 
 [node name="box25" type="Sprite2D" parent="CanvasLayer2/patchMenu/row3" unique_id=1478236571]
 position = Vector2(942.5199, 273.52)
@@ -7146,6 +7259,14 @@ label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="boxButton24" type="Button" parent="CanvasLayer2/patchMenu/row3/box25/box25Vis" unique_id=502397250]
+modulate = Color(1, 0, 0, 0)
+offset_left = -14.913002
+offset_top = -14.913006
+offset_right = 14.913013
+offset_bottom = 14.747311
+focus_mode = 0
+
 [node name="box26" type="Sprite2D" parent="CanvasLayer2/patchMenu/row3" unique_id=746976141]
 position = Vector2(1081.52, 273.52)
 scale = Vector2(4.47, 4.47)
@@ -7169,6 +7290,14 @@ Gamble"
 label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="boxButton25" type="Button" parent="CanvasLayer2/patchMenu/row3/box26/box26Vis" unique_id=2010554010]
+modulate = Color(1, 0, 0, 0)
+offset_left = -14.913002
+offset_top = -14.913006
+offset_right = 14.913013
+offset_bottom = 14.747311
+focus_mode = 0
 
 [node name="box27" type="Sprite2D" parent="CanvasLayer2/patchMenu/row3" unique_id=21109326]
 position = Vector2(1220.52, 273.52)
@@ -7194,6 +7323,14 @@ label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="boxButton26" type="Button" parent="CanvasLayer2/patchMenu/row3/box27/box27Vis" unique_id=864539514]
+modulate = Color(1, 0, 0, 0)
+offset_left = -14.913002
+offset_top = -14.913006
+offset_right = 14.913013
+offset_bottom = 14.747311
+focus_mode = 0
+
 [node name="box28" type="Sprite2D" parent="CanvasLayer2/patchMenu/row3" unique_id=1368425909]
 position = Vector2(1359.52, 273.52)
 scale = Vector2(4.47, 4.47)
@@ -7217,6 +7354,14 @@ vertical_alignment = 1
 position = Vector2(0.55929565, -4.026848)
 sprite_frames = SubResource("SpriteFrames_58jx4")
 autoplay = "default"
+
+[node name="boxButton27" type="Button" parent="CanvasLayer2/patchMenu/row3/box28/box28Vis" unique_id=1840291805]
+modulate = Color(1, 0, 0, 0)
+offset_left = -14.913002
+offset_top = -14.913006
+offset_right = 14.913013
+offset_bottom = 14.747311
+focus_mode = 0
 
 [node name="box29" type="Sprite2D" parent="CanvasLayer2/patchMenu/row3" unique_id=872097613]
 position = Vector2(1498.5199, 273.52)
@@ -7242,6 +7387,14 @@ label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="boxButton28" type="Button" parent="CanvasLayer2/patchMenu/row3/box29/box29Vis" unique_id=567729948]
+modulate = Color(1, 0, 0, 0)
+offset_left = -14.913002
+offset_top = -14.913006
+offset_right = 14.913013
+offset_bottom = 14.747311
+focus_mode = 0
+
 [node name="box30" type="Sprite2D" parent="CanvasLayer2/patchMenu/row3" unique_id=659915804]
 position = Vector2(1637.52, 273.52)
 scale = Vector2(4.47, 4.47)
@@ -7265,6 +7418,14 @@ Experience"
 label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="boxButton29" type="Button" parent="CanvasLayer2/patchMenu/row3/box30/box30Vis" unique_id=377970156]
+modulate = Color(1, 0, 0, 0)
+offset_left = -14.913002
+offset_top = -14.913006
+offset_right = 14.913013
+offset_bottom = 14.747311
+focus_mode = 0
 
 [node name="partyRep" type="Node2D" parent="CanvasLayer2/patchMenu" unique_id=1961382948]
 script = ExtResource("32_neeud")
@@ -7813,6 +7974,26 @@ autoplay = &"RESET"
 [connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row1/box8/box8Vis/boxButton7" to="CanvasLayer2/patchMenu" method="_on_box_button_7_mouse_entered"]
 [connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row1/box9/box9Vis/boxButton8" to="CanvasLayer2/patchMenu" method="_on_box_button_8_mouse_entered"]
 [connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row1/box10/box10Vis/boxButton9" to="CanvasLayer2/patchMenu" method="_on_box_button_9_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row2/box11/box11Vis/boxButton10" to="CanvasLayer2/patchMenu" method="_on_box_button_10_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row2/box12/box12Vis/boxButton11" to="CanvasLayer2/patchMenu" method="_on_box_button_11_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row2/box13/box13Vis/boxButton12" to="CanvasLayer2/patchMenu" method="_on_box_button_12_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row2/box14/box14Vis/boxButton13" to="CanvasLayer2/patchMenu" method="_on_box_button_13_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row2/box15/box15Vis/boxButton14" to="CanvasLayer2/patchMenu" method="_on_box_button_14_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row2/box16/box16Vis/boxButton15" to="CanvasLayer2/patchMenu" method="_on_box_button_15_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row2/box17/box17Vis/boxButton16" to="CanvasLayer2/patchMenu" method="_on_box_button_16_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row2/box18/box18Vis/boxButton17" to="CanvasLayer2/patchMenu" method="_on_box_button_17_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row2/box19/box19Vis/boxButton18" to="CanvasLayer2/patchMenu" method="_on_box_button_18_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row2/box20/box20Vis/boxButton19" to="CanvasLayer2/patchMenu" method="_on_box_button_19_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row3/box21/box21Vis/boxButton20" to="CanvasLayer2/patchMenu" method="_on_box_button_20_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row3/box22/box22Vis/boxButton21" to="CanvasLayer2/patchMenu" method="_on_box_button_21_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row3/box23/box23Vis/boxButton22" to="CanvasLayer2/patchMenu" method="_on_box_button_22_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row3/box24/box24Vis/boxButton23" to="CanvasLayer2/patchMenu" method="_on_box_button_23_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row3/box25/box25Vis/boxButton24" to="CanvasLayer2/patchMenu" method="_on_box_button_24_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row3/box26/box26Vis/boxButton25" to="CanvasLayer2/patchMenu" method="_on_box_button_25_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row3/box27/box27Vis/boxButton26" to="CanvasLayer2/patchMenu" method="_on_box_button_26_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row3/box28/box28Vis/boxButton27" to="CanvasLayer2/patchMenu" method="_on_box_button_27_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row3/box29/box29Vis/boxButton28" to="CanvasLayer2/patchMenu" method="_on_box_button_28_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer2/patchMenu/row3/box30/box30Vis/boxButton29" to="CanvasLayer2/patchMenu" method="_on_box_button_29_mouse_entered"]
 [connection signal="mouse_entered" from="CanvasLayer2/patchMenu/partyRep/frogBox/boxback1" to="CanvasLayer2/patchMenu" method="_on_boxback_1_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer2/patchMenu/partyRep/frogBox/boxback1" to="CanvasLayer2/patchMenu" method="_on_boxback_1_mouse_exited"]
 [connection signal="timeout" from="CanvasLayer2/patchMenu/partyRep/glitchTimer" to="CanvasLayer2/patchMenu/partyRep" method="_on_glitch_timer_timeout"]

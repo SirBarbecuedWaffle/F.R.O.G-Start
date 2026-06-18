@@ -498,3 +498,103 @@ func _on_box_button_8_mouse_entered() -> void:
 func _on_box_button_9_mouse_entered() -> void:
 	if !Input.is_action_pressed("lClick"):
 		patchHoved=10
+
+
+func _on_box_button_10_mouse_entered() -> void:
+	if !Input.is_action_pressed("lClick"):
+		patchHoved=11
+
+
+func _on_box_button_20_mouse_entered() -> void:
+	if !Input.is_action_pressed("lClick"):
+		patchHoved=21
+
+
+func _on_box_button_11_mouse_entered() -> void:
+	if !Input.is_action_pressed("lClick"):
+		patchHoved=12
+
+
+func _on_box_button_12_mouse_entered() -> void:
+	if !Input.is_action_pressed("lClick"):
+		patchHoved=13
+
+
+func _on_box_button_13_mouse_entered() -> void:
+	if !Input.is_action_pressed("lClick"):
+		patchHoved=14
+
+
+func _on_box_button_14_mouse_entered() -> void:
+	if !Input.is_action_pressed("lClick"):
+		patchHoved=15
+
+
+func _on_box_button_15_mouse_entered() -> void:
+	if !Input.is_action_pressed("lClick"):
+		patchHoved=16
+
+
+func _on_box_button_16_mouse_entered() -> void:
+	if !Input.is_action_pressed("lClick"):
+		patchHoved=17
+
+
+func _on_box_button_17_mouse_entered() -> void:
+	if !Input.is_action_pressed("lClick"):
+		patchHoved=18
+
+
+func _on_box_button_18_mouse_entered() -> void:
+	if !Input.is_action_pressed("lClick"):
+		patchHoved=19
+
+
+func _on_box_button_19_mouse_entered() -> void:
+	if !Input.is_action_pressed("lClick"):
+		patchHoved=20
+
+
+func _on_box_button_21_mouse_entered() -> void:
+	if !Input.is_action_pressed("lClick"):
+		patchHoved=22
+
+
+func _on_box_button_22_mouse_entered() -> void:
+	if !Input.is_action_pressed("lClick"):
+		patchHoved=23
+
+
+func _on_box_button_23_mouse_entered() -> void:
+	if !Input.is_action_pressed("lClick"):
+		patchHoved=24
+
+
+func _on_box_button_24_mouse_entered() -> void:
+	if !Input.is_action_pressed("lClick"):
+		patchHoved=25
+
+
+func _on_box_button_25_mouse_entered() -> void:
+	if !Input.is_action_pressed("lClick"):
+		patchHoved=26
+
+
+func _on_box_button_26_mouse_entered() -> void:
+	if !Input.is_action_pressed("lClick"):
+		patchHoved=27
+
+
+func _on_box_button_27_mouse_entered() -> void:
+	if !Input.is_action_pressed("lClick"):
+		patchHoved=28
+
+
+func _on_box_button_28_mouse_entered() -> void:
+	if !Input.is_action_pressed("lClick"):
+		patchHoved=29
+
+
+func _on_box_button_29_mouse_entered() -> void:
+	if !Input.is_action_pressed("lClick"):
+		patchHoved=30
