@@ -9,6 +9,9 @@ extends Control
 @onready var patch_back: ColorRect = $CanvasLayer2/patchesButton/patchBack
 @onready var party_rep: Node2D = $CanvasLayer2/patchMenu/partyRep
 
+func _ready() -> void:
+	patch_menu.visible=false
+
 func transition()->void:
 	transition_animator.play("transition")
 	PManager.paused=false

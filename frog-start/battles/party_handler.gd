@@ -33,9 +33,10 @@ func getAlivePlayers()->Array:
 	var curSlot:=0
 	for i in get_children():
 		if i is partyMember:
-			if i.health>0:
+			if i.health>0 ||  (i.curPatch==10 && !i.revived):
+				if curSlot<3:
+					curSlot+=1
 				alivePlayers[curSlot]=i
-			curSlot+=1
 	return alivePlayers
 
 func _process(delta: float) -> void:

@@ -73,6 +73,8 @@ var hDef=preload("res://patches/hDefense.tscn")
 var hStr=preload("res://patches/hStrength.tscn")
 var hSpd=preload("res://patches/hSpeed.tscn")
 var secoNat=preload("res://patches/secondNature.tscn")
+var secoChan=preload("res://patches/secChance.tscn")
+var burnenem=preload("res://patches/burnEnemies.tscn")
 @onready var curChar : AnimatedSprite2D
 
 @export var health:=10.0:
@@ -132,6 +134,7 @@ var turnTime:=randi_range(120,450)
 @onready var frog_layer: CanvasLayer = $"../.."
 @onready var poison_damage: Timer = $poisonDamage
 @onready var stun_anim: AnimatedSprite2D = $stunAnim
+@export var revived:=false
 
 func _ready() -> void:
 	await get_tree().create_timer(0.01).timeout
@@ -177,19 +180,43 @@ func _ready() -> void:
 		curChar=barrel
 		curChar.play("idle")
 		maxHealth=CManager.charHP[8]+CManager.charLVL[8]*30
+	if curPatch==9:
+		
+		if character=="robot":
+			maxHealth*=2
+		elif character=="fox":
+			maxHealth*=randf_range(0.8,2.5)
+		else:
+			maxHealth*=1.5
 	health=maxHealth
 	await get_tree().create_timer(1.0).timeout
 	if curPatch==1:
 		var haha=hDef.instantiate()
+		if character=="robot":
+			haha.addRegen=150
+		if character=="lizard":
+			haha.addInvinc=20
+			haha.addDef=-31
 		frog_layer.add_child(haha)
 	if curPatch==2:
 		var haha=hStr.instantiate()
 		if character=="frog":
 			haha.addSpd=5
+		if character=="pink":
+			haha.subSpd=31
+			haha.addStr=30
+		
+		
 		frog_layer.add_child(haha)
 	if curPatch==3:
 		var haha=hSpd.instantiate()
+		if character=="fox":
+			haha.addSpd=30
+			haha.subDef=20
+		if character=="steve":
+			haha.addSpd=10
 		frog_layer.add_child(haha)
+	
 func invincAnim()->void:
 		var tweente := create_tween()
 		tweente.tween_property(invin_on, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.5)
@@ -235,9 +262,30 @@ func _process(delta: float) -> void:
 	if health<1:
 		if curChar!=null:
 			if curChar.animation!="die":
-				node_2d.playerDowned()
 				curChar.play("die")
 				health-=randi_range(30,90)
+				if curPatch==10 && !revived:
+					await get_tree().create_timer(1.0).timeout
+					revived=true
+					var revive=secoChan.instantiate()
+					revive.place=global_position
+					frog_layer.add_child(revive)
+					if character=="barrel":
+						await get_tree().create_timer(1.0).timeout
+						var haha=hSpd.instantiate()
+						haha.addRegen=200
+						haha.addSpd=-31
+						frog_layer.add_child(haha)
+					if character=="pink":
+						await get_tree().create_timer(1.0).timeout
+						var haha=burnenem.instantiate()
+						frog_layer.add_child(haha)
+					
+				else:
+					node_2d.playerDowned()
+				
+				
+					
 	atk_up_ind.visible=atkUp>1
 	if atkUp>0:
 		atkUp-=1*delta

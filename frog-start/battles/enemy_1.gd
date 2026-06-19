@@ -41,6 +41,7 @@ signal perished
 @export var defUp:=20.0
 @export var spdUp:=15.0
 @export var stun:=0.0
+@export var regen:=0
 @export var attackSpeed:=625
 @export var attackDamage:=30
 @export var enemyType:=0
@@ -73,6 +74,15 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
+	if regen>0:
+		regen-=1*delta
+		if regen%125==0:
+			if health!=maxHealth:
+				health+=5
+			var movie=damageIcon.instantiate()
+			movie.damageAmount=-5
+			movie.global_position=global_position
+			frog_layer.add_child(movie)
 	if stun_anim!=null:
 		stun_anim.visible=stun>0
 	if stun>0:
@@ -187,6 +197,7 @@ func _process(delta: float) -> void:
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area is damager:
 		health-=area.damage
+		regen+=area.regen*20
 		if area.damage!=0:
 			if area.damage>0:
 				if area.damage>5:

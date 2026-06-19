@@ -13,6 +13,9 @@ var patchHoved:=0
 var patchGrabbed:=0
 var dropOnParty:=0
 var curPicked: Node2D =null	
+@onready var exp_box_name: Label = $hoverBox/expBoxName
+@onready var exp_box_desc: RichTextLabel = $hoverBox/expBoxDesc
+@onready var hover_box: Control = $hoverBox
 @onready var box_1_vis: Node2D = $row1/box1/box1Vis
 @onready var box_2_vis: Node2D = $row1/box2/box2Vis
 @onready var box_3_vis: Node2D = $row1/box3/box3Vis
@@ -44,6 +47,8 @@ var curPicked: Node2D =null
 @onready var box_29_vis: Node2D = $row3/box29/box29Vis
 @onready var box_30_vis: Node2D = $row3/box30/box30Vis
 
+
+var hovis:=0.0
 
 func updateParty()->void:
 	box_1_vis.position=Vector2.ZERO
@@ -230,10 +235,240 @@ func updateParty()->void:
 								if m is Button:
 									m.connect("mouse_exited",_on_frog_button_mouse_exited)
 
+func get_box_offset(mouse_x: float) -> float:
+	if mouse_x <= 1013.5:
+		return lerp(450.0, 600.0, inverse_lerp(1013.5, 1712.0, mouse_x))
+		
+
+	# Segment 2: 1013.5 → 1712  (offset 450 → 600)
+	elif mouse_x <= 1712.0:
+		return lerp(300.0, 450.0, inverse_lerp(315.0, 1013.5, mouse_x))
+		
+	return 600.0
+
+
+
 func _ready() -> void:
 	updateParty()
 
 func _process(delta: float) -> void:
+	if !hovis>0:
+		exp_box_desc.text=""
+	hover_box.visible=hovis>0
+	if !Input.is_action_pressed("lClick"):
+		if patchHoved!=0:
+				if patchHoved==1:
+					exp_box_name.text="Headstart: Defense"
+					exp_box_desc.text="Applies 30 seconds of increased \ndefense to your entire party at the start of battle"
+				if patchHoved==2:
+					exp_box_name.text="Headstart: Strength"
+					exp_box_desc.text="Applies 30 seconds of increased \nattack to your entire party at the start of battle"
+				if patchHoved==3:
+					exp_box_name.text="Headstart: Speed"
+					exp_box_desc.text="Applies 30 seconds of increased \nspeed to your entire party at the start of battle"
+				if patchHoved==4:
+					exp_box_name.text="Second: Nature"
+					exp_box_desc.text="Deals 20 damage to a randomly chosen enemy whenever this party member uses a move"
+				if patchHoved==5:
+					exp_box_name.text="Boost: Difficulty"
+					exp_box_desc.text="Increases the amount of higher health enemies encountered, and increases boss health and speed"
+				if patchHoved==6:
+					exp_box_name.text="Protocol: Arrow"
+					exp_box_desc.text="Every 6 seconds fires an arrow at a random enemy, afflicting a status debuff or dealing medium damage"
+				if patchHoved==7:
+					exp_box_name.text="Protocol: Alt F4"
+					exp_box_desc.text="Every 20 seconds\nattempts to instakill a random non-boss enemy"
+				if patchHoved==8:
+					exp_box_name.text="Protocol: Curse"
+					exp_box_desc.text="Every 25 seconds afflicts every enemy with decreased attack for 10 seconds"
+				if patchHoved==9:
+					exp_box_name.text="Boost: Health"
+					exp_box_desc.text="Increases the max health of the party member with the patch equipped by 50%"
+				if patchHoved==10:
+					exp_box_name.text="Second: Chance"
+					exp_box_desc.text="Once per fight, allows the party member with the patch equipped to automatically revive after death"
+				hovis=1
+				hover_box.global_position.x=get_global_mouse_position().x-get_box_offset(get_global_mouse_position().x)
+				hover_box.global_position.y=get_global_mouse_position().y-724
+		elif dropOnParty!=0 && CManager.currentPatches[dropOnParty-1]!=0:
+				if CManager.currentPatches[dropOnParty-1]==1:
+					exp_box_name.text="Headstart: Defense"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Applies 30 seconds of increased \ndefense to your entire party at the start of battle")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==5:
+						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+150 hp regen to your entire party at the start of battle")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==8:
+						exp_box_desc.push_color(Color(0.4, 0.0, 1.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+20 seconds of invincibility at the start of battle\n-30 seconds of increased defense")
+						exp_box_desc.pop()
+					
+					
+				if CManager.currentPatches[dropOnParty-1]==2:
+					exp_box_name.text="Headstart: Strength"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Applies 30 seconds of increased \nattack to your entire party at the start of battle")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==1:
+						exp_box_desc.push_color(Color(0.017, 1.0, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+5 seconds of increased speed at the start of battle")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==4:
+						exp_box_desc.push_color(Color(1.0, 0.43, 0.972, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+30 seconds of increased attack\n+30 seconds of decreased speed at the start of battle")
+						exp_box_desc.pop()
+					
+						
+				if CManager.currentPatches[dropOnParty-1]==3:
+					exp_box_name.text="Headstart: Speed"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Applies 30 seconds of increased \nspeed to your entire party at the start of battle")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==2:
+						exp_box_desc.push_color(Color(0.0, 0.967, 1.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+10 seconds of increased speed at the start of battle")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==7:
+						exp_box_desc.push_color(Color(1.0, 0.683, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+30 seconds of increased speed\n+20 seconds of decreased defense at the start of battle")
+					
+				if CManager.currentPatches[dropOnParty-1]==4:
+					exp_box_name.text="Second: Nature"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Deals 20 damage to a randomly chosen enemy whenever this party member uses a move")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==1:
+						exp_box_desc.push_color(Color(0.017, 1.0, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+10 damage")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==2:
+						exp_box_desc.push_color(Color(0.0, 0.967, 1.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n-10 damage\n+20 poison damage")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==3:
+						exp_box_desc.push_color(Color(1.0, 0.604, 0.12, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+7 seconds of decreased attack to enemy hit")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==4:
+						exp_box_desc.push_color(Color(1.0, 0.43, 0.972, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n-20 damge\n+50 burn damage")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==5:
+						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+5 burn damage\n+1 second of stun to enemy hit\n+3 seconds of decreased speed to enemy hit")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==6:
+						exp_box_desc.push_color(Color(0.467, 0.0, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n-20 damage\n+40 burn damage\n+3 seconds of decreased defense to enemy hit")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==7:
+						exp_box_desc.push_color(Color(1.0, 0.683, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+?? damage")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==8:
+						exp_box_desc.push_color(Color(0.4, 0.0, 1.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+20 burn damage\n+20 poison damage")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==9:
+						exp_box_desc.push_color(Color(1.0, 0.0, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+50 damage\n+20 hp regen to enemy hit")
+						exp_box_desc.pop()
+
+				if CManager.currentPatches[dropOnParty-1]==5:
+					exp_box_name.text="Boost: Difficulty"
+					exp_box_desc.text="Increases the amount of higher health enemies encountered, and increases boss health and speed"
+				
+				if CManager.currentPatches[dropOnParty-1]==6:
+					exp_box_name.text="Protocol: Arrow"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Every 6 seconds fires an arrow at a random enemy, afflicting a status debuff or dealing medium damage")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==1:
+						exp_box_desc.push_color(Color(0.017, 1.0, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n-33% cooldown")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==3:
+						exp_box_desc.push_color(Color(1.0, 0.604, 0.12, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+1 arrow fired\n+66% cooldown")
+						exp_box_desc.pop()
+				
+				if CManager.currentPatches[dropOnParty-1]==7:
+					exp_box_name.text="Protocol: Alt F4"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Every 20 seconds\nattempts to instakill a random non-boss enemy")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==2:
+						exp_box_desc.push_color(Color(0.0, 0.967, 1.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n-20% cooldown\n+10% luck")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==6:
+						exp_box_desc.push_color(Color(0.467, 0.0, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\nNow targets every enemy and afflicts burn if it fails\n+100% cooldown\n-40% luck")
+						exp_box_desc.pop()
+				
+				if CManager.currentPatches[dropOnParty-1]==8:
+					exp_box_name.text="Protocol: Curse"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Every 25 seconds afflicts every enemy with decreased attack for 10 seconds")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==3:
+						exp_box_desc.push_color(Color(1.0, 0.604, 0.12, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\nWill randomize the status effect afflicted")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==8:
+						exp_box_desc.push_color(Color(0.4, 0.0, 1.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\nWill afflict decreased speed instead of attack\n+40 poison damage")
+						exp_box_desc.pop()
+				
+				if CManager.currentPatches[dropOnParty-1]==10:
+					exp_box_name.text="Second: Chance"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Once per fight, allows the party member with the patch equipped to automatically revive after death")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==9:
+						exp_box_desc.push_color(Color(1.0, 0.0, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+200 hp regen to every party member upon triggering")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==4:
+						exp_box_desc.push_color(Color(1.0, 0.43, 0.972, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+120 burn damage to every enemy upon triggering")
+						exp_box_desc.pop()
+				
+					
+				if CManager.currentPatches[dropOnParty-1]==9:
+					exp_box_name.text="Boost: Health"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Increases the max health of the party member with the patch equipped by 50%")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==7:
+						exp_box_desc.push_color(Color(1.0, 0.604, 0.12, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\nRandomizes the percent health increase")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==5:
+						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+50% max health")
+						exp_box_desc.pop()
+				hovis=1
+				hover_box.global_position.x=get_global_mouse_position().x-get_box_offset(get_global_mouse_position().x)
+				hover_box.global_position.y=get_global_mouse_position().y-724
+		else:
+			if hovis>0:
+				hovis-=30*delta
+	else:
+		hovis=0
+		exp_box_desc.text=""
+		
 	if curPicked!=null:
 		curPicked.z_index=3
 	if patchHoved==1:

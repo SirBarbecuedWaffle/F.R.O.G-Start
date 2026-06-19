@@ -16,5 +16,5 @@ position = Vector2(1504, 605)
 [node name="arrow1" parent="Arrows" unique_id=1142312808 instance=ExtResource("2_vmql4")]
 position = Vector2(184, -69.99997)
 scale = Vector2(17, 17)
-strBuf = 16
+strBuf = 31
 oneHit = false

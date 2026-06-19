@@ -5672,6 +5672,10 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="Theme" id="Theme_rm58s"]
+default_font = ExtResource("3_p5nna")
+default_font_size = 22
+
 [sub_resource type="Theme" id="Theme_w2y6w"]
 default_font = ExtResource("3_p5nna")
 default_font_size = 62
@@ -6424,7 +6428,6 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="patchMenu" type="ColorRect" parent="CanvasLayer2" unique_id=438977713]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -7189,7 +7192,7 @@ offset_right = 123.51332
 offset_bottom = 49.474266
 scale = Vector2(0.215, 0.215)
 text = "Block:
-Stun"
+Debuff"
 label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -7659,6 +7662,75 @@ label_settings = SubResource("LabelSettings_6xw8e")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="hoverBox" type="Control" parent="CanvasLayer2/patchMenu" unique_id=1606952093]
+anchors_preset = 0
+offset_left = -245.0
+offset_top = -880.0
+offset_right = -205.0
+offset_bottom = -840.0
+mouse_filter = 2
+
+[node name="expBoxName" type="Label" parent="CanvasLayer2/patchMenu/hoverBox" unique_id=559283018]
+z_index = 11
+layout_mode = 0
+offset_left = 291.0
+offset_top = 545.0
+offset_right = 593.0
+offset_bottom = 579.0
+mouse_behavior_recursive = 1
+theme = SubResource("Theme_rm58s")
+text = "Headstart: Defense"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2/patchMenu/hoverBox/expBoxName" unique_id=1296510018]
+z_index = 10
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_behavior_recursive = 1
+color = Color(0, 0, 0, 0.85490197)
+
+[node name="expBoxName2" type="Label" parent="CanvasLayer2/patchMenu/hoverBox" unique_id=2133915245]
+z_index = 11
+layout_mode = 0
+offset_left = 305.0
+offset_top = 552.0
+offset_right = 588.0
+offset_bottom = 579.0
+mouse_behavior_recursive = 1
+theme = SubResource("Theme_rm58s")
+text = "_______________________"
+
+[node name="expBoxDesc" type="RichTextLabel" parent="CanvasLayer2/patchMenu/hoverBox" unique_id=2115334242]
+z_index = 11
+layout_mode = 0
+offset_left = 291.0
+offset_top = 579.0
+offset_right = 593.0
+offset_bottom = 687.0
+mouse_behavior_recursive = 1
+theme = SubResource("Theme_rm58s")
+text = "Applies 30 seconds of increased defense to your entire party at the "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2/patchMenu/hoverBox/expBoxDesc" unique_id=894884088]
+z_index = 10
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_behavior_recursive = 1
+color = Color(0, 0, 0, 0.85490197)
 
 [node name="partyButton" type="Button" parent="CanvasLayer2" unique_id=28289476]
 self_modulate = Color(1, 1, 0, 1)

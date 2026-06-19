@@ -26,16 +26,13 @@ func _ready() -> void:
 		strike_projectile.damage=0
 		strike_projectile.defRev=3
 	if char=="fox":
-		strike_projectile.damage=randi_range(strike_projectile.damage-5,strike_projectile.damage*3)
+		strike_projectile.damage=randi_range(15,60)
 	if char=="lizard":
 		strike_projectile.poison=strike_projectile.damage
 		strike_projectile.burn=strike_projectile.damage
 	if char=="barrel":
-		strike_projectile.damage*=0.75
-		strike_projectile.regen=10
-		strike_projectile.spdRev=4
-		strike_projectile.defRev=4
-		strike_projectile.strRev=4
+		strike_projectile.damage=70
+		strike_projectile.regen=20
 		
 func _process(delta: float) -> void:
 	strike_projectile.global_position=places.get_children()[randi_range(0,3)].global_position
