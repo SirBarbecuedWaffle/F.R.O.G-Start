@@ -62,6 +62,9 @@ var turnTime:=randi_range(attackSpeed-120,attackSpeed+75)
 @onready var spd_down_lab: Label = $arrowHandler/badArrows/spdDownInd/spdDownLab
 @onready var poison_damage: Timer = $poisonDamage
 @onready var attack_animator: AnimationPlayer = $attackAnimator
+
+var fireball=preload("res://moves/fireball.tscn")
+
 func _ready() -> void:
 	health=maxHealth
 	await get_tree().create_timer(0.1).timeout
@@ -197,13 +200,19 @@ func _process(delta: float) -> void:
 						get_tree().change_scene_to_file("res://gameOver.tscn")
 	else:
 		if attack_animator.current_animation!="die":
+			
 			health_label.modulate=Color(1.0, 1.0, 1.0, 0.0)
 			attack_animator.play("die")
 			
 			await get_tree().create_timer(0.1).timeout
+			for g in CManager.currentPatches:
+				if g==15:
+					var fired=fireball.instantiate()
+					frog_layer.add_child(fired)
 			var deathThing=deathAnim.instantiate()
 			frog_layer.add_child(deathThing)
 			deathThing.global_position=global_position
+			
 
 
 func _on_hit_box_area_entered(area: Area2D) -> void:

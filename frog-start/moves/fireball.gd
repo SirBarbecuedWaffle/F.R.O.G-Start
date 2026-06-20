@@ -33,8 +33,12 @@ func _ready() -> void:
 		var specTarg=targets.get_children()[randi_range(0,targets.get_children().size()-1)]
 		var tween = create_tween()
 		tween.tween_property(arrow_4,"global_position",specTarg.global_position,1.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
-	await get_tree().create_timer(7.0).timeout
-	queue_free()
+		await tween.finished
+		await get_tree().create_timer(0.2).timeout
+		queue_free()
+	else:
+		await get_tree().create_timer(7.0).timeout
+		queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
