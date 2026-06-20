@@ -7060,7 +7060,7 @@ offset_right = 123.51332
 offset_bottom = 49.474274
 scale = Vector2(0.215, 0.215)
 text = "Revenge:
-Heal"
+Frogsicle"
 label_settings = SubResource("LabelSettings_lswqs")
 horizontal_alignment = 1
 vertical_alignment = 1

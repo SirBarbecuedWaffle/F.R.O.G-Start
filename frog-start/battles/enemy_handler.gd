@@ -6,6 +6,10 @@ var snowmanAnim=preload("res://battles/enemyFrames/snowmanEnemy.tres")
 signal victory
 @export var totalXP=0
 @export var xpMultiplier:=100
+@onready var frog_layer: CanvasLayer = $".."
+var fireball=preload("res://moves/fireball.tscn")
+var sicle=preload("res://moves/frogsicle.tscn")
+var smite=preload("res://moves/smite_move.tscn")
 
 func _ready() -> void:
 	var allowance=randi_range(2,3+PManager.allowance)
@@ -55,7 +59,20 @@ func _process(delta: float) -> void:
 
 
 func _on_enemy_perished(type : int) -> void:
+	
 	totalXP+=xpMultiplier*type
 	aliveEnemies-=1
 	if aliveEnemies<1:
 		victory.emit()
+	else:
+		await get_tree().create_timer(0.2).timeout
+		for g in CManager.currentPatches:
+			if g==15:
+				var fired=fireball.instantiate()
+				frog_layer.add_child(fired)
+			if g==19:
+				var fired=sicle.instantiate()
+				frog_layer.add_child(fired)
+			if g==20:
+				var fired=smite.instantiate()
+				frog_layer.add_child(fired)

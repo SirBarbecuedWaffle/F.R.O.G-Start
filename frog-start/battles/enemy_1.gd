@@ -63,7 +63,7 @@ var turnTime:=randi_range(attackSpeed-120,attackSpeed+75)
 @onready var poison_damage: Timer = $poisonDamage
 @onready var attack_animator: AnimationPlayer = $attackAnimator
 
-var fireball=preload("res://moves/fireball.tscn")
+
 
 func _ready() -> void:
 	health=maxHealth
@@ -205,13 +205,11 @@ func _process(delta: float) -> void:
 			attack_animator.play("die")
 			
 			await get_tree().create_timer(0.1).timeout
-			for g in CManager.currentPatches:
-				if g==15:
-					var fired=fireball.instantiate()
-					frog_layer.add_child(fired)
+			
 			var deathThing=deathAnim.instantiate()
 			frog_layer.add_child(deathThing)
 			deathThing.global_position=global_position
+			
 			
 
 

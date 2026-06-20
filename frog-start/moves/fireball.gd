@@ -12,11 +12,11 @@ extends Node2D
 @onready var arrow_3: damager = $Arrows/arrow3
 @onready var arrow_4: damager = $Arrows/arrow4
 @onready var arrows: Node2D = $Arrows
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var fireball: AnimatedSprite2D = $Arrows/arrow4/fireball
 @onready var explosion: AnimatedSprite2D = $explosion
 @export var multiplier:=1.0
 @onready var burn_effect: damager = $burnEffect
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -31,13 +31,17 @@ func _ready() -> void:
 	await get_tree().create_timer(0.6).timeout
 	if targets.get_children().size()!=0:
 		var specTarg=targets.get_children()[randi_range(0,targets.get_children().size()-1)]
+		arrow_4.global_position.x=specTarg.global_position.x+2300
+		arrow_4.global_position.y=specTarg.global_position.y-2000
 		var tween = create_tween()
 		tween.tween_property(arrow_4,"global_position",specTarg.global_position,1.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 		await tween.finished
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(1.0).timeout
+		animation_player.play("fadeOut")
+		await get_tree().create_timer(0.5).timeout
 		queue_free()
 	else:
-		await get_tree().create_timer(7.0).timeout
+		await get_tree().create_timer(1.0).timeout
 		queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
