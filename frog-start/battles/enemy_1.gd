@@ -182,7 +182,19 @@ func _process(delta: float) -> void:
 				print(hit.global_position)
 				frog_layer.add_child(hit)
 			else:
-				get_tree().change_scene_to_file("res://gameOver.tscn")
+				var only1:=0
+				for d in CManager.party:
+					if d!=0:
+						only1+=1
+				if only1>1:
+					get_tree().change_scene_to_file("res://gameOver.tscn")
+				else:
+					var send2Limbo:=false
+					for g in CManager.currentPatches:
+						if g==14:
+							send2Limbo=true
+					if !send2Limbo:
+						get_tree().change_scene_to_file("res://gameOver.tscn")
 	else:
 		if attack_animator.current_animation!="die":
 			health_label.modulate=Color(1.0, 1.0, 1.0, 0.0)

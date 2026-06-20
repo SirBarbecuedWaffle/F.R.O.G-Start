@@ -19,6 +19,7 @@ class_name partyMember
 @onready var turnbar_animator: AnimationPlayer = $turnBar/turnbarAnimator
 @onready var node_2d: Node2D = $"../../Node2D"
 @onready var invin_on: AnimatedSprite2D = $invinOn
+@onready var explan_animator: AnimationPlayer = $"../party2/moveHandler/CanvasLayer/explanAnimator"
 
 
 
@@ -42,6 +43,7 @@ var overclockMove=preload("res://moves/overclock.tscn")
 var zipMove=preload("res://moves/zipbomb.tscn")
 var altMove=preload("res://moves/altf4.tscn")
 var infectMove=preload("res://moves/infect_move.tscn")
+var infectMove2=preload("res://moves/infect_2_move.tscn")
 var curPoiMove=preload("res://moves/poison_curse.tscn")
 var curWeakMove=preload("res://moves/weak_curse.tscn")
 var coinMove=preload("res://moves/coinMove.tscn")
@@ -75,8 +77,9 @@ var hSpd=preload("res://patches/hSpeed.tscn")
 var secoNat=preload("res://patches/secondNature.tscn")
 var secoChan=preload("res://patches/secChance.tscn")
 var burnenem=preload("res://patches/burnEnemies.tscn")
+var secWind=preload("res://patches/secondWind.tscn")
 @onready var curChar : AnimatedSprite2D
-
+var permaDead:=false
 @export var health:=10.0:
 	set(newHP):
 		if health<maxHealth:
@@ -135,6 +138,7 @@ var turnTime:=randi_range(120,450)
 @onready var poison_damage: Timer = $poisonDamage
 @onready var stun_anim: AnimatedSprite2D = $stunAnim
 @export var revived:=false
+@export var canLoseSecWind:=false
 
 func _ready() -> void:
 	await get_tree().create_timer(0.01).timeout
@@ -181,14 +185,21 @@ func _ready() -> void:
 		curChar.play("idle")
 		maxHealth=CManager.charHP[8]+CManager.charLVL[8]*30
 	if curPatch==9:
-		
 		if character=="robot":
 			maxHealth*=2
 		elif character=="fox":
 			maxHealth*=randf_range(0.8,2.5)
 		else:
 			maxHealth*=1.5
+	if curPatch==11 && character=="joe":
+		maxHealth*=1.2
 	health=maxHealth
+	if curPatch==11:
+		defUp=9999
+	if curPatch==12:
+		atkUp=9999
+	if curPatch==13 && character!="lizard":
+		spdUp=9999
 	await get_tree().create_timer(1.0).timeout
 	if curPatch==1:
 		var haha=hDef.instantiate()
@@ -240,8 +251,10 @@ func invincAnim()->void:
 			tweent3.tween_property(curChar, "self_modulate", Color(1.0, 1.0, 1.0, 1.0), 0.5)
 
 func _process(delta: float) -> void:
+	if permaDead:
+		health=-99999
+		regen=0
 	if invincible>0:	
-		print(invincible)
 		invincible-=1*delta
 	stun_anim.visible=stun>0
 	if stun>0:
@@ -262,6 +275,7 @@ func _process(delta: float) -> void:
 	if health<1:
 		if curChar!=null:
 			if curChar.animation!="die":
+				explan_animator.play("hideText")
 				curChar.play("die")
 				health-=randi_range(30,90)
 				if curPatch==10 && !revived:
@@ -282,6 +296,30 @@ func _process(delta: float) -> void:
 						frog_layer.add_child(haha)
 					
 				else:
+					if curPatch==14:
+						permaDead=true
+						var siced=secWind.instantiate()
+						var guys=party_handler.getOtherPlayers(self)
+						print(guys)
+						siced.targets=guys
+						siced.spawnLoca=self.global_position
+						frog_layer.add_child(siced)
+						if character=="robot":
+							await get_tree().create_timer(1.0).timeout
+							var haha=burnenem.instantiate()
+							haha.addBurn=-120
+							haha.addStun=10
+							frog_layer.add_child(haha)
+						if character=="mask":
+							await get_tree().create_timer(1.0).timeout
+							var haha=burnenem.instantiate()
+							haha.addBurn=-120
+							haha.subSpd=31
+							haha.subStr=31
+							haha.subDef=31
+							frog_layer.add_child(haha)
+						await get_tree().create_timer(1.1).timeout
+						canLoseSecWind=true
 					node_2d.playerDowned()
 				
 				
@@ -333,13 +371,18 @@ func _process(delta: float) -> void:
 			
 	if health>maxHealth:
 		health=maxHealth
-	health_label.text=str(int(health))
-	if health>=1:
+	if !permaDead:
+		health_label.text=str(int(health))
+	else:
+		health_label.text="DEAD"
+		health_label.modulate=Color(0.474, 0.474, 0.474, 1.0)
+	if health>=1 && !permaDead:
 		if health_label.modulate==Color(1.0, 0.0, 0.0, 1.0):
 			curChar.play("unDie")
 			health_label.modulate=Color(1.0, 1.0, 1.0, 1.0)
 		turn_bar.scale.x=(moveProgress/turnTime)*0.354
-		health_bar.scale.x=(health/maxHealth)*-0.377
+		if health<maxHealth+1:
+			health_bar.scale.x=(health/maxHealth)*-0.377
 		if moveProgress<turnTime:
 			moveProgress+=70*delta
 			if invincible>0:
@@ -352,12 +395,15 @@ func _process(delta: float) -> void:
 			turnbar_animator.play("flash")
 			if !party_handler.moveMenuOpen:
 				if !move_handler.visible:
+					if curPatch==13 && character=="frog":
+						atkUp=2
 					move_handler.visible=true
 					party_handler.moveMenuOpen=true
 					move_handler.fadeIn()
 	else:
 		health_bar.scale.x=0
-		health_label.modulate=Color(1.0, 0.0, 0.0, 1.0)
+		if health_label.modulate==Color(1.0, 1.0, 1.0, 1.0):
+			health_label.modulate=Color(1.0, 0.0, 0.0, 1.0)
 		if move_handler.visible:
 			move_handler.visible=false
 			party_handler.moveMenuOpen=false
@@ -376,6 +422,17 @@ func _process(delta: float) -> void:
 
 
 func _on_move_handler_move_used(move: String) -> void:
+	if curPatch==11 && character=="steve":
+		invincible=1
+		invincAnim()
+	if curPatch==12 && character=="pink":
+		spdUp=3
+	if curPatch==12 && character=="robot":
+		health+=10
+		var movie=damageIcon.instantiate()
+		movie.damageAmount=-10
+		movie.global_position=global_position
+		frog_layer.add_child(movie)
 	if curPatch==4:
 		var haha=secoNat.instantiate()
 		haha.char=character
@@ -385,6 +442,8 @@ func _on_move_handler_move_used(move: String) -> void:
 	turnbar_animator.play("RESET")
 	moveProgress=0
 	turnTime=randi_range(420,650)
+	if curPatch==13 && character=="lizard":
+		stun=0.03
 	#if character=="barrel":
 		#stun=1
 	if curChar!=null:
@@ -427,6 +486,13 @@ func _on_move_handler_move_used(move: String) -> void:
 		frog_layer.add_child(alted)
 	if move=="Infect":
 		var infed=infectMove.instantiate()
+		if atkUp>0:
+			infed.multiplier+=0.5
+		if atkDown>0:
+			infed.multiplier-=0.5
+		frog_layer.add_child(infed)
+	if move=="Infect 2":
+		var infed=infectMove2.instantiate()
 		if atkUp>0:
 			infed.multiplier+=0.5
 		if atkDown>0:

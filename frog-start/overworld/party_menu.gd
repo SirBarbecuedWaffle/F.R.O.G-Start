@@ -580,3 +580,7 @@ func _on_glitch_timer_timeout() -> void:
 			var scramble2=randi_range(0,name_label.text.length()-1)
 			name_label.text[scramble2]=glitchedChars[randi_range(0,glitchedChars.size()-1)]
 	
+
+
+func _on_glitch_button_mouse_entered() -> void:
+	pass # Replace with function body.

@@ -46,7 +46,7 @@ var curPicked: Node2D =null
 @onready var box_28_vis: Node2D = $row3/box28/box28Vis
 @onready var box_29_vis: Node2D = $row3/box29/box29Vis
 @onready var box_30_vis: Node2D = $row3/box30/box30Vis
-
+var showGlitch:=false
 
 var hovis:=0.0
 
@@ -252,6 +252,7 @@ func _ready() -> void:
 	updateParty()
 
 func _process(delta: float) -> void:
+
 	if !hovis>0:
 		exp_box_desc.text=""
 	hover_box.visible=hovis>0
@@ -274,7 +275,7 @@ func _process(delta: float) -> void:
 					exp_box_desc.text="Increases the amount of higher health enemies encountered, and increases boss health and speed"
 				if patchHoved==6:
 					exp_box_name.text="Protocol: Arrow"
-					exp_box_desc.text="Every 6 seconds fires an arrow at a random enemy, afflicting a status debuff or dealing medium damage"
+					exp_box_desc.text="Every 6 seconds fires an arrow at a random enemy, afflicting a 3 second long status debuff or dealing 15 damage"
 				if patchHoved==7:
 					exp_box_name.text="Protocol: Alt F4"
 					exp_box_desc.text="Every 20 seconds\nattempts to instakill a random non-boss enemy"
@@ -287,6 +288,36 @@ func _process(delta: float) -> void:
 				if patchHoved==10:
 					exp_box_name.text="Second: Chance"
 					exp_box_desc.text="Once per fight, allows the party member with the patch equipped to automatically revive after death"
+				if patchHoved==11:
+					exp_box_name.text="Endless: Defense"
+					exp_box_desc.text="Applies permanent increased defense to the party member with the patch equipped"
+				if patchHoved==12:
+					exp_box_name.text="Endless: Strength"
+					exp_box_desc.text="Applies permanent increased strength to the party member with the patch equipped"
+				if patchHoved==13:
+					exp_box_name.text="Endless: Speed"
+					exp_box_desc.text="Applies permanent increased speed to the party member with the patch equipped"
+				if patchHoved==14:
+					exp_box_name.text="Second: Wind"
+					exp_box_desc.text="When the party member with the patch dies the rest of the party gets a massive boost\n\nThe party member with this patch equipped cannot be revived"
+				if patchHoved==15:
+					exp_box_name.text="Revenge: Fireball"
+					exp_box_desc.text="Summons a fireball whenever an enemy gets killed\nDeals high singular damage and burns nearby enemies"
+				if patchHoved==16:
+					exp_box_name.text="Protocol: Sword"
+					exp_box_desc.text="Every 2 seconds fires a sword that deals 10 damage to a random enemy"
+				if patchHoved==17:
+					exp_box_name.text="Protocol: Electrocute"
+					exp_box_desc.text="Evey 10 seconds electrocutes a random enemy stunning it for 3 seconds"
+				if patchHoved==18:
+					exp_box_name.text="Protocol: Caffeinate"
+					exp_box_desc.text="Every 15 seconds fires a coffee mug that either heals a random member of your party for 100 health or burns a random enemy for 100 damage"
+				if patchHoved==19:
+					exp_box_name.text="Revenge: Frogsicle"
+					exp_box_desc.text="Summons healing frogsicles for your entire party whenever an enemy gets killed"
+				if patchHoved==20:
+					exp_box_name.text="Revenge: Smite"
+					exp_box_desc.text="Smites a random enemy whenever an enemy gets killed\nDeals high singular damage and temporarily lowers their defense"
 				hovis=1
 				hover_box.global_position.x=get_global_mouse_position().x-get_box_offset(get_global_mouse_position().x)
 				hover_box.global_position.y=get_global_mouse_position().y-724
@@ -459,9 +490,86 @@ func _process(delta: float) -> void:
 						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
 						exp_box_desc.add_text("\n\nHarmony Bonus:\n+50% max health")
 						exp_box_desc.pop()
+				
+				
+				if CManager.currentPatches[dropOnParty-1]==11:
+					exp_box_name.text="Endless: Defense"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Applies permanent increased defense to the party member with the patch equipped")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==6:
+						exp_box_desc.push_color(Color(0.467, 0.0, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+20% Max Health")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==2:
+						exp_box_desc.push_color(Color(0.0, 0.967, 1.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+1 second of invicibility on move use")
+						exp_box_desc.pop()
+				
+				if CManager.currentPatches[dropOnParty-1]==12:
+					exp_box_name.text="Endless: Attack"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Applies permanent increased attack to the party member with the patch equipped")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==5:
+						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+10 health on move use")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==4:
+						exp_box_desc.push_color(Color(1.0, 0.43, 0.972, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+2 seconds of increased speed after move use")
+						exp_box_desc.pop()
+				if CManager.currentPatches[dropOnParty-1]==13:
+					exp_box_name.text="Endless: Speed"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Applies permanent increased speed to the party member with the patch equipped")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==1:
+						exp_box_desc.push_color(Color(0.017, 1.0, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+1 second of increased strength whenever a move can be used")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==8:
+						exp_box_desc.push_color(Color(0.4, 0.0, 1.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\nRandomizes turn progress after move use\nNo longer increases speed")
+						exp_box_desc.pop()
+				
+				if CManager.currentPatches[dropOnParty-1]==14:
+					exp_box_name.text="Second: Wind"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("When the party member with the patch dies the rest of the party gets a massive boost\n\nThe party member with this patch equipped cannot be revived")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==5:
+						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+10 seconds of stun to every enemy when triggered")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==3:
+						exp_box_desc.push_color(Color(1.0, 0.604, 0.12, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+30 seconds of debuffs to every enemy when triggered")
+						exp_box_desc.pop()
+				
+				
+				
+				
 				hovis=1
 				hover_box.global_position.x=get_global_mouse_position().x-get_box_offset(get_global_mouse_position().x)
 				hover_box.global_position.y=get_global_mouse_position().y-724
+		elif showGlitch:
+			print("WEEE")
+			exp_box_name.text="Protocol: ERROR"
+			exp_box_desc.text=""
+			exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+			exp_box_desc.add_text("Will randomize moves available to the party member with the patch equipped")
+			exp_box_desc.pop()
+			exp_box_desc.push_color(Color(0.57, 0.0, 0.76, 1.0)) 
+			exp_box_desc.add_text("\n\nHarmony Bonus:\nCannot be unequipped")
+			exp_box_desc.pop()
+			hovis=1
+			hover_box.global_position.x=get_global_mouse_position().x-get_box_offset(get_global_mouse_position().x)
+			hover_box.global_position.y=get_global_mouse_position().y-724
 		else:
 			if hovis>0:
 				hovis-=30*delta
@@ -1208,12 +1316,14 @@ func _on_frog_button_mouse_exited() -> void:
 
 
 func _on_boxback_1_mouse_entered() -> void:
+
 	if CManager.party[0]!=10 && CManager.party[0]!=0:
 		dropOnParty=1
 
 
 func _on_boxback_1_mouse_exited() -> void:
 	dropOnParty=0
+	showGlitch=false
 
 
 func _on_box_button_mouse_entered() -> void:
@@ -1365,11 +1475,22 @@ func _on_boxback_2_mouse_entered() -> void:
 	if CManager.party[1]!=10 && CManager.party[1]!=0:
 		dropOnParty=2
 
+
 func _on_boxback_3_mouse_entered() -> void:
 	if CManager.party[2]!=10 && CManager.party[2]!=0:
 		dropOnParty=3
 
 
+
 func _on_boxback_4_mouse_entered() -> void:
 	if CManager.party[3]!=10 && CManager.party[3]!=0:
 		dropOnParty=4
+
+
+
+func _on_glitch_button_mouse_exited() -> void:
+	showGlitch=false
+
+
+func _on_glitch_button_mouse_entered() -> void:
+	showGlitch=true

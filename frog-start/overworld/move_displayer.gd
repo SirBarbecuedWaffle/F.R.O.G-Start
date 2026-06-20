@@ -90,6 +90,8 @@ func _process(delta: float) -> void:
 		move_type.text="Type: Multitarget"
 	if moveHovered=="Infect":
 		move_explainer.text="Deals medium damage and poisons a single enemy"
+	if moveHovered=="Infect 2":
+		move_explainer.text="Deals high damage and deeply poisons a single enemy"
 		move_type.text="Type: Poison"
 	if moveHovered=="Alt F4":
 		move_explainer.text="Has a 1/5 chance to instakill a random non-boss enemy"
@@ -207,7 +209,7 @@ func _process(delta: float) -> void:
 		move_3_lab.text="Even More Skill"
 		move_4_lab.text="Flashbang"
 	if party_menu.getChar()=="lizard":
-		move_1_lab.text="Infect"
+		move_1_lab.text="Infect 2"
 		move_2_lab.text="Cannon Barrage"
 		move_3_lab.text="Pummel"
 		move_4_lab.text="Toxic Fumes"
@@ -235,7 +237,7 @@ func _process(delta: float) -> void:
 	if move_1_lab.text=="Fireball":
 		move_1.texture_hover=fireMoveHover
 		move_1.texture_normal=fireMoveIcon
-	if move_1_lab.text=="Infect":
+	if move_1_lab.text=="Infect" || move_1_lab.text=="Infect 2":
 		move_1.texture_hover=poisMoveHover
 		move_1.texture_normal=poisMoveIcon
 	

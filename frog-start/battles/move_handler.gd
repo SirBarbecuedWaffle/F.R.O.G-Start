@@ -24,7 +24,7 @@ signal moveUsed(move : String)
 @onready var glitchIcon=preload("res://moves/moveAssets/glitchIcon.png")
 @onready var gorf_timer: Timer = $gorfTimer
 
-var moves1=["Arrow Barrage","Overclock","All Skill Baby","Sword Barrage","Coffee Break","Fireball","Arrow Barrage 2"]
+var moves1=["Arrow Barrage","Overclock","All Skill Baby","Sword Barrage","Coffee Break","Fireball","Arrow Barrage 2","Infect 2"]
 var moves2=["Block","Zip Bomb","Strike","Strength Spell","Cannon Barrage","You're Fired","Alt F4","Curse: Corrupt"]
 var moves3=["Strike","Infect","Curse: Weaken","Health Potion","Smite","Fireball","Pummel","Pressure Wash","Bluescreen","Even More Skill"]
 var moves4=["Frogsicle","Alt F4","Curse: Poison","Fireball","Electrocute","Scald","Flashbang","Toxic Fumes","Bottoms Up","DDoS"]
@@ -63,6 +63,8 @@ func _process(delta: float) -> void:
 		move_explainer.text="Deals medium damage to every enemy"
 	if moveHovered=="Infect":
 		move_explainer.text="Deals medium damage and poisons a single enemy"
+	if moveHovered=="Infect 2":
+		move_explainer.text="Deals high damage and deeply poisons a single enemy"
 	if moveHovered=="Alt F4":
 		move_explainer.text="Has a 1/5 chance to instakill a random non-boss enemy"
 	if moveHovered=="All Skill Baby":
@@ -142,7 +144,7 @@ func _process(delta: float) -> void:
 		move_3_lab.text="Even More Skill"
 		move_4_lab.text="Flashbang"
 	if get_parent().getChar()=="lizard":
-		move_1_lab.text="Infect"
+		move_1_lab.text="Infect 2"
 		move_2_lab.text="Cannon Barrage"
 		move_3_lab.text="Pummel"
 		move_4_lab.text="Toxic Fumes"
@@ -173,7 +175,7 @@ func _process(delta: float) -> void:
 	if move_1_lab.text=="Coffee Break":
 		move_1.texture_hover=HealMoveHover
 		move_1.texture_normal=HealMoveIcon
-	if move_1_lab.text=="Infect":
+	if move_1_lab.text=="Infect" || move_1_lab.text=="Infect 2":
 		move_1.texture_hover=poisMoveHover
 		move_1.texture_normal=poisMoveIcon
 		

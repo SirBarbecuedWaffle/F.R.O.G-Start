@@ -33,11 +33,27 @@ func getAlivePlayers()->Array:
 	var curSlot:=0
 	for i in get_children():
 		if i is partyMember:
-			if i.health>0 ||  (i.curPatch==10 && !i.revived):
+			if i.health>0 ||  (i.curPatch==10 && !i.revived) || (i.curPatch==14 && !i.canLoseSecWind):
 				if curSlot<3:
 					curSlot+=1
 				alivePlayers[curSlot]=i
 	return alivePlayers
+
+func getOtherPlayers(remov : Node2D)->Array:
+	var allPlays=[party_1,party_2,party_3,party_4]
+	var Players:=[null,null,null]
+	var curSlot:=0
+	for i in allPlays:
+		if i==remov:
+			allPlays[curSlot]=null
+		curSlot+=1
+	curSlot=0
+	for i in allPlays:
+		if i!=null:
+			Players[curSlot]=i
+			curSlot+=1
+			
+	return Players
 
 func _process(delta: float) -> void:
 	if frog.animation=="useMove":

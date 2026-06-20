@@ -9,6 +9,7 @@ extends Node2D
 @export var subSpd:=0
 @export var subDef:=0
 @export var addBurn:=0
+@export var addStun:=0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,6 +22,7 @@ func _ready() -> void:
 	arrow_1.defRev+=subDef
 	arrow_1.strRev+=subStr
 	arrow_1.regen+=addRegen
+	arrow_1.stun+=addStun
 	arrow_1.invincible=addInvinc
 	await get_tree().create_timer(3.0).timeout
 	queue_free()

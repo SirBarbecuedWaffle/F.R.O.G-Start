@@ -4601,6 +4601,7 @@ label_settings = SubResource("LabelSettings_p3ynn")
 horizontal_alignment = 2
 
 [node name="arrowHandler" type="Node2D" parent="frogLayer/partyHandler/party1" unique_id=124448671]
+z_index = 1
 scale = Vector2(1.0012685, 1.0012685)
 
 [node name="goodArrows" type="Node2D" parent="frogLayer/partyHandler/party1/arrowHandler" unique_id=1821736783]
@@ -4664,6 +4665,7 @@ label_settings = SubResource("LabelSettings_ose5c")
 horizontal_alignment = 2
 
 [node name="badArrows" type="Node2D" parent="frogLayer/partyHandler/party1/arrowHandler" unique_id=774596683]
+position = Vector2(0, 10)
 
 [node name="atkDownInd" type="Sprite2D" parent="frogLayer/partyHandler/party1/arrowHandler/badArrows" unique_id=1621438159]
 self_modulate = Color(0.75743943, 0.37918973, 0, 1)
@@ -5056,6 +5058,7 @@ label_settings = SubResource("LabelSettings_p3ynn")
 horizontal_alignment = 2
 
 [node name="arrowHandler" type="Node2D" parent="frogLayer/partyHandler/party2" unique_id=1199304813]
+z_index = 1
 scale = Vector2(1.0012685, 1.0012685)
 
 [node name="goodArrows" type="Node2D" parent="frogLayer/partyHandler/party2/arrowHandler" unique_id=519197930]
@@ -5511,6 +5514,7 @@ label_settings = SubResource("LabelSettings_p3ynn")
 horizontal_alignment = 2
 
 [node name="arrowHandler" type="Node2D" parent="frogLayer/partyHandler/party3" unique_id=832525902]
+z_index = 1
 scale = Vector2(1.0012685, 1.0012685)
 
 [node name="goodArrows" type="Node2D" parent="frogLayer/partyHandler/party3/arrowHandler" unique_id=1028275168]
@@ -5966,6 +5970,7 @@ label_settings = SubResource("LabelSettings_p3ynn")
 horizontal_alignment = 2
 
 [node name="arrowHandler" type="Node2D" parent="frogLayer/partyHandler/party4" unique_id=1045808250]
+z_index = 1
 scale = Vector2(1.0012685, 1.0012685)
 
 [node name="goodArrows" type="Node2D" parent="frogLayer/partyHandler/party4/arrowHandler" unique_id=1631956672]

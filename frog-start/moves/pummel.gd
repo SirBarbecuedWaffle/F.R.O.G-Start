@@ -34,7 +34,7 @@ func _on_strike_projectile_area_entered(area: Area2D) -> void:
 		strike_projectile_2.queue_free()
 	if curStrike==2:
 		strike_projectile_3.queue_free()
-	await get_tree().create_timer(0.75).timeout	
+	await get_tree().create_timer(0.35).timeout	
 	curStrike+=1
 	if curStrike>2:
 		queue_free()
