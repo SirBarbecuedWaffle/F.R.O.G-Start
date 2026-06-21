@@ -10,6 +10,7 @@ signal victory
 var fireball=preload("res://moves/fireball.tscn")
 var sicle=preload("res://moves/frogsicle.tscn")
 var smite=preload("res://moves/smite_move.tscn")
+var sfired=preload("res://moves/Fired.tscn")
 
 func _ready() -> void:
 	var allowance=randi_range(2,3+PManager.allowance)
@@ -66,10 +67,21 @@ func _on_enemy_perished(type : int) -> void:
 		victory.emit()
 	else:
 		await get_tree().create_timer(0.2).timeout
+		var count:=-1
 		for g in CManager.currentPatches:
+			count+=1
 			if g==15:
-				var fired=fireball.instantiate()
-				frog_layer.add_child(fired)
+				if CManager.party[count]==4:
+					var fired=fireball.instantiate()
+					fired.multiplier=1.5
+					frog_layer.add_child(fired)
+				elif CManager.party[count]==6:
+					var firede=sfired.instantiate()
+					firede.odds=5
+					frog_layer.add_child(firede)
+				else:
+					var fired=fireball.instantiate()
+					frog_layer.add_child(fired)
 			if g==19:
 				var fired=sicle.instantiate()
 				frog_layer.add_child(fired)

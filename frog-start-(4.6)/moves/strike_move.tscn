@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dncgya7gm34b8"]
+
+[ext_resource type="Script" uid="uid://b2iwt5xymqmip" path="res://moves/strike_move.gd" id="1_ivmcl"]
+[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="2_7e0eo"]
+
+[node name="StrikeMove" type="Node2D" unique_id=1384217156]
+script = ExtResource("1_ivmcl")
+
+[node name="strikeProjectile" parent="." unique_id=1142312808 instance=ExtResource("2_7e0eo")]
+collision_layer = 8
+damage = 100
+randomNumbers = true
+
+[node name="places" type="Node2D" parent="." unique_id=881540487]
+position = Vector2(-952, 0)
+
+[node name="place1" type="Node2D" parent="places" unique_id=1620240567]
+position = Vector2(1589, 438)
+
+[node name="place2" type="Node2D" parent="places" unique_id=2034117173]
+position = Vector2(1153, 491)
+
+[node name="place3" type="Node2D" parent="places" unique_id=1275259744]
+position = Vector2(1368, 819)
+
+[node name="place4" type="Node2D" parent="places" unique_id=728835411]
+position = Vector2(1370, 157)
+
+[connection signal="area_entered" from="strikeProjectile" to="." method="_on_strike_projectile_area_entered"]

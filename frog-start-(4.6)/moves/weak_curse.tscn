@@ -1,0 +1,371 @@
+[gd_scene format=3 uid="uid://ctwf8g5jiyrbi"]
+
+[ext_resource type="Script" uid="uid://ywsfqfqdrnlp" path="res://moves/poison_curse.gd" id="1_aru05"]
+[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="2_7088e"]
+[ext_resource type="Texture2D" uid="uid://w8a353hpv4pm" path="res://2DAssets/image (2).png" id="3_aru05"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7088e"]
+atlas = ExtResource("3_aru05")
+region = Rect2(0, 1088, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acmao"]
+atlas = ExtResource("3_aru05")
+region = Rect2(64, 1088, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0p82p"]
+atlas = ExtResource("3_aru05")
+region = Rect2(128, 1088, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahini"]
+atlas = ExtResource("3_aru05")
+region = Rect2(192, 1088, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7088e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7088e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acmao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0p82p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahini")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="poisonCurse" type="Node2D" unique_id=298654084]
+script = ExtResource("1_aru05")
+
+[node name="strikeProjectile" parent="." unique_id=1142312808 instance=ExtResource("2_7088e")]
+modulate = Color(0.8485125, 0.34035888, 0, 1)
+position = Vector2(2505, 526.00006)
+scale = Vector2(20, 20)
+collision_layer = 8
+strRev = 20
+oneHit = false
+
+[node name="Node2D" type="Node2D" parent="strikeProjectile" unique_id=1826899038]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="strikeProjectile/Node2D" unique_id=632636614]
+position = Vector2(-14.925, 19.9)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+frame_progress = 0.6089379
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="strikeProjectile/Node2D" unique_id=461591086]
+position = Vector2(-14.925, 11.3499975)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="strikeProjectile/Node2D" unique_id=1126383141]
+position = Vector2(-14.925, 4.499998)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="strikeProjectile/Node2D" unique_id=2015750827]
+position = Vector2(-14.925, -1.5000014)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="strikeProjectile/Node2D" unique_id=1824804186]
+position = Vector2(-14.925, -8.450003)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="strikeProjectile/Node2D" unique_id=290534293]
+position = Vector2(-14.925, -8.450003)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="strikeProjectile/Node2D" unique_id=38993401]
+position = Vector2(-14.7, -13.1500025)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="strikeProjectile/Node2D" unique_id=77226589]
+position = Vector2(-14.7, -19.050003)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="strikeProjectile/Node2D" unique_id=2112237780]
+position = Vector2(-14.7, -25.900002)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="strikeProjectile/Node2D" unique_id=861489662]
+position = Vector2(-14.7, 25.049992)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="Node2D2" type="Node2D" parent="strikeProjectile" unique_id=1830267987]
+modulate = Color(1, 1, 1, 0.6666667)
+position = Vector2(2.9499996, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="strikeProjectile/Node2D2" unique_id=1617667301]
+position = Vector2(-14.925, 19.9)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="strikeProjectile/Node2D2" unique_id=1038327714]
+position = Vector2(-14.925, 11.3499975)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="strikeProjectile/Node2D2" unique_id=1739098123]
+position = Vector2(-14.925, 4.499998)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="strikeProjectile/Node2D2" unique_id=1451645803]
+position = Vector2(-14.925, -1.5000014)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="strikeProjectile/Node2D2" unique_id=576205817]
+position = Vector2(-14.925, -8.450003)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="strikeProjectile/Node2D2" unique_id=1747547632]
+position = Vector2(-14.925, -8.450003)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="strikeProjectile/Node2D2" unique_id=1886378663]
+position = Vector2(-14.7, -13.1500025)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="strikeProjectile/Node2D2" unique_id=556600127]
+position = Vector2(-14.7, -19.050003)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="strikeProjectile/Node2D2" unique_id=2143357427]
+position = Vector2(-14.7, -25.900002)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="strikeProjectile/Node2D2" unique_id=176624602]
+position = Vector2(-14.7, 25.049992)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="Node2D3" type="Node2D" parent="strikeProjectile" unique_id=2095708593]
+modulate = Color(1, 1, 1, 0.41960785)
+position = Vector2(5.1999993, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="strikeProjectile/Node2D3" unique_id=1384940214]
+position = Vector2(-14.925, 19.9)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="strikeProjectile/Node2D3" unique_id=1197567692]
+position = Vector2(-14.925, 11.3499975)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="strikeProjectile/Node2D3" unique_id=1133298807]
+position = Vector2(-14.925, 4.499998)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="strikeProjectile/Node2D3" unique_id=62730252]
+position = Vector2(-14.925, -1.5000014)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="strikeProjectile/Node2D3" unique_id=1259961904]
+position = Vector2(-14.925, -8.450003)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="strikeProjectile/Node2D3" unique_id=762898441]
+position = Vector2(-14.925, -8.450003)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="strikeProjectile/Node2D3" unique_id=922283808]
+position = Vector2(-14.7, -13.1500025)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="strikeProjectile/Node2D3" unique_id=365235537]
+position = Vector2(-14.7, -19.050003)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="strikeProjectile/Node2D3" unique_id=1284878485]
+position = Vector2(-14.7, -25.900002)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="strikeProjectile/Node2D3" unique_id=1584853886]
+position = Vector2(-14.7, 25.049992)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="Node2D4" type="Node2D" parent="strikeProjectile" unique_id=354672285]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(7.299999, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="strikeProjectile/Node2D4" unique_id=1397417730]
+position = Vector2(-14.925, 19.9)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="strikeProjectile/Node2D4" unique_id=1940812315]
+position = Vector2(-14.925, 11.3499975)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="strikeProjectile/Node2D4" unique_id=1754853956]
+position = Vector2(-14.925, 4.499998)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="strikeProjectile/Node2D4" unique_id=472993639]
+position = Vector2(-14.925, -1.5000014)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="strikeProjectile/Node2D4" unique_id=268482948]
+position = Vector2(-14.925, -8.450003)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="strikeProjectile/Node2D4" unique_id=82928151]
+position = Vector2(-14.925, -8.450003)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="strikeProjectile/Node2D4" unique_id=2135232978]
+position = Vector2(-14.7, -13.1500025)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="strikeProjectile/Node2D4" unique_id=2138160480]
+position = Vector2(-14.7, -19.050003)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="strikeProjectile/Node2D4" unique_id=474606670]
+position = Vector2(-14.7, -25.900002)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="strikeProjectile/Node2D4" unique_id=1488005534]
+position = Vector2(-14.7, 25.049992)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="Node2D5" type="Node2D" parent="strikeProjectile" unique_id=2081574146]
+modulate = Color(1, 1, 1, 0.078431375)
+position = Vector2(10.849998, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="strikeProjectile/Node2D5" unique_id=1744512210]
+position = Vector2(-14.925, 19.9)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="strikeProjectile/Node2D5" unique_id=1997361184]
+position = Vector2(-14.925, 11.3499975)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="strikeProjectile/Node2D5" unique_id=1678035149]
+position = Vector2(-14.925, 4.499998)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="strikeProjectile/Node2D5" unique_id=1384987573]
+position = Vector2(-14.925, -1.5000014)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="strikeProjectile/Node2D5" unique_id=574961019]
+position = Vector2(-14.925, -8.450003)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="strikeProjectile/Node2D5" unique_id=1301747689]
+position = Vector2(-14.925, -8.450003)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="strikeProjectile/Node2D5" unique_id=1021026964]
+position = Vector2(-14.7, -13.1500025)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="strikeProjectile/Node2D5" unique_id=1893634953]
+position = Vector2(-14.7, -19.050003)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="strikeProjectile/Node2D5" unique_id=1183847886]
+position = Vector2(-14.7, -25.900002)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="strikeProjectile/Node2D5" unique_id=1351059050]
+position = Vector2(-14.7, 25.049992)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_7088e")
+autoplay = "default"

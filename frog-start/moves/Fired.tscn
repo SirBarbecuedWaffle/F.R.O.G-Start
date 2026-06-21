@@ -573,7 +573,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w8mos")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 50.0
 }]

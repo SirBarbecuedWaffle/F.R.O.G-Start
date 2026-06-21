@@ -1,0 +1,253 @@
+[gd_scene format=3 uid="uid://b2mrax8w4d1u7"]
+
+[ext_resource type="Script" uid="uid://ctk5t0rgcvwkc" path="res://moves/arrow_barrage.gd" id="1_wrmbw"]
+[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="2_8ikig"]
+[ext_resource type="Texture2D" uid="uid://v1w5ul1pex2p" path="res://battles/Miss.png" id="3_4toh0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ul3v"]
+size = Vector2(109, 138)
+
+[sub_resource type="Animation" id="Animation_8ikig"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("arrow1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("arrow1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4toh0"]
+resource_name = "arrowsSpawn"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("arrow1:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 0.43333334),
+"transitions": PackedFloat32Array(3.7321322, 1),
+"update": 0,
+"values": [-0.7853981633974483, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("arrow1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.26666668, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("arrow2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.43333334, 0.79999995),
+"transitions": PackedFloat32Array(3.7321322, 1),
+"update": 0,
+"values": [-0.7853981633974483, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("arrow2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5959505, 0.92928386),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("arrow3:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.9359928, 1.2693261),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("arrow3:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.8062859, 1.1729525),
+"transitions": PackedFloat32Array(3.7321322, 1),
+"update": 0,
+"values": [-0.7853981633974483, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("arrow4:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.1673619, 1.5340285),
+"transitions": PackedFloat32Array(3.7321322, 1),
+"update": 0,
+"values": [-0.7853981633974483, 0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("arrow4:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.2725295, 1.6058629),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l6svt"]
+_data = {
+&"RESET": SubResource("Animation_8ikig"),
+&"arrowsSpawn": SubResource("Animation_4toh0")
+}
+
+[node name="arrowBarrage" type="Node2D" unique_id=278365401]
+z_index = 1
+script = ExtResource("1_wrmbw")
+spawnLoca = Vector2(200, 200)
+
+[node name="places" type="Node2D" parent="." unique_id=1351447801]
+position = Vector2(-952, 0)
+
+[node name="place1" type="Area2D" parent="places" unique_id=1548890133]
+position = Vector2(1397, 148)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place1" unique_id=1675188904]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_0ul3v")
+
+[node name="place2" type="Area2D" parent="places" unique_id=1516056219]
+position = Vector2(1598, 432)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place2" unique_id=1656460194]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_0ul3v")
+
+[node name="place3" type="Area2D" parent="places" unique_id=551631987]
+position = Vector2(1371, 820)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place3" unique_id=48757301]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_0ul3v")
+
+[node name="place4" type="Area2D" parent="places" unique_id=1984335278]
+position = Vector2(1160, 482)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place4" unique_id=1149187771]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_0ul3v")
+
+[node name="spawnLocation" type="Marker2D" parent="." unique_id=674989445]
+position = Vector2(1394, 374)
+
+[node name="Arrows" type="Node2D" parent="." unique_id=853504226]
+position = Vector2(1504, 605)
+
+[node name="arrow1" parent="Arrows" unique_id=1142312808 instance=ExtResource("2_8ikig")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Arrows/arrow1" unique_id=1995694293]
+modulate = Color(1, 1, 0, 1)
+rotation = -1.5707964
+scale = Vector2(5, 5)
+texture = ExtResource("3_4toh0")
+region_enabled = true
+region_rect = Rect2(0, 0, 17.867775, 18)
+
+[node name="arrow2" parent="Arrows" unique_id=480341962 instance=ExtResource("2_8ikig")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(56, -44)
+rotation = -0.7853982
+
+[node name="Sprite2D2" type="Sprite2D" parent="Arrows/arrow2" unique_id=397954698]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(-0.9999962, -1.9999962)
+scale = Vector2(5, 5)
+texture = ExtResource("3_4toh0")
+region_enabled = true
+region_rect = Rect2(0, 0, 17.867775, 18)
+
+[node name="arrow3" parent="Arrows" unique_id=1082886084 instance=ExtResource("2_8ikig")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(111, 0)
+rotation = -0.7853982
+
+[node name="Sprite2D3" type="Sprite2D" parent="Arrows/arrow3" unique_id=232750836]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(1.9999996, -1.0000005)
+rotation = 1.5707964
+scale = Vector2(5, 5)
+texture = ExtResource("3_4toh0")
+region_enabled = true
+region_rect = Rect2(0, 0, 17.867775, 18)
+
+[node name="arrow4" parent="Arrows" unique_id=1436437994 instance=ExtResource("2_8ikig")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(56, 41)
+rotation = -0.7853982
+
+[node name="Sprite2D4" type="Sprite2D" parent="Arrows/arrow4" unique_id=1461095681]
+modulate = Color(0, 0.5833335, 1, 1)
+position = Vector2(1.0000038, 0.9999924)
+rotation = 3.1415927
+scale = Vector2(5, 5)
+texture = ExtResource("3_4toh0")
+region_enabled = true
+region_rect = Rect2(0, 0, 17.867775, 18)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Arrows" unique_id=4047694]
+libraries/ = SubResource("AnimationLibrary_l6svt")
+autoplay = &"arrowsSpawn"
+
+[node name="targets" type="Node2D" parent="." unique_id=1186052481]
+
+[connection signal="area_entered" from="places/place1" to="." method="_on_place_1_area_entered"]
+[connection signal="area_entered" from="places/place2" to="." method="_on_place_2_area_entered"]
+[connection signal="area_entered" from="places/place3" to="." method="_on_place_3_area_entered"]
+[connection signal="area_entered" from="places/place4" to="." method="_on_place_4_area_entered"]

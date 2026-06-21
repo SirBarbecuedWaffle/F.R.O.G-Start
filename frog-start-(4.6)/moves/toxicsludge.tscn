@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://bd61sk4jo420x"]
+
+[ext_resource type="Script" uid="uid://c38cusor1iyas" path="res://moves/toxicsludge.gd" id="1_b5idn"]
+[ext_resource type="Texture2D" uid="uid://beyr0s25b3yyi" path="res://2DAssets/New Piskel (10).png" id="3_06685"]
+[ext_resource type="Texture2D" uid="uid://gqnqlwk8p5xl" path="res://2DAssets/New Piskel (9).png" id="4_qo2w3"]
+[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="4_uk61h"]
+
+[sub_resource type="Gradient" id="Gradient_74p8y"]
+offsets = PackedFloat32Array(0.56658596)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_s6exj"]
+gradient = SubResource("Gradient_74p8y")
+
+[sub_resource type="Gradient" id="Gradient_nqnng"]
+offsets = PackedFloat32Array(0.055690072, 0.16949153, 0.20338982, 0.23970944, 0.28329298, 0.40193704, 0.42372882, 0.4479419, 0.47457626, 0.5084746, 0.6246973, 0.83777237, 1)
+colors = PackedColorArray(0, 1, 0, 1, 1, 1, 1, 1, 0.6982759, 1, 0.6982759, 1, 0.37499994, 1, 0.37499994, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0.3617022, 1, 0.3617022, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tfkdh"]
+gradient = SubResource("Gradient_nqnng")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s6exj"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_min = 138.09
+initial_velocity_max = 138.09
+gravity = Vector3(0, 0, 0)
+scale_min = 4.0
+scale_max = 4.0
+color_ramp = SubResource("GradientTexture1D_tfkdh")
+color_initial_ramp = SubResource("GradientTexture1D_s6exj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nqnng"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_min = 138.09
+initial_velocity_max = 138.09
+gravity = Vector3(0, 0, 0)
+scale_min = 4.0
+scale_max = 4.0
+color_ramp = SubResource("GradientTexture1D_tfkdh")
+color_initial_ramp = SubResource("GradientTexture1D_s6exj")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ts12a"]
+size = Vector2(109, 138)
+
+[node name="arrowBarrage" type="Node2D" unique_id=278365401]
+z_index = 1
+script = ExtResource("1_b5idn")
+
+[node name="spawnLocation" type="Marker2D" parent="." unique_id=674989445]
+position = Vector2(1394, 374)
+
+[node name="bomb" type="Node2D" parent="." unique_id=853504226]
+position = Vector2(410, 928)
+
+[node name="targets" type="Node2D" parent="." unique_id=1186052481]
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="." unique_id=1428129465]
+position = Vector2(408, 459)
+scale = Vector2(3, 3)
+emitting = false
+amount = 80
+texture = ExtResource("3_06685")
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.76
+randomness = 1.0
+trail_lifetime = 10.0
+trail_sections = 2
+trail_section_subdivisions = 1
+process_material = SubResource("ParticleProcessMaterial_s6exj")
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="." unique_id=73660407]
+position = Vector2(408, 459)
+scale = Vector2(3, 3)
+emitting = false
+amount = 80
+texture = ExtResource("4_qo2w3")
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.76
+trail_lifetime = 10.0
+trail_sections = 2
+trail_section_subdivisions = 1
+process_material = SubResource("ParticleProcessMaterial_nqnng")
+
+[node name="damage" type="Node2D" parent="." unique_id=1157350384]
+position = Vector2(0, -1872)
+
+[node name="places" type="Node2D" parent="." unique_id=1909395057]
+position = Vector2(-952, 0)
+
+[node name="place1" type="Area2D" parent="places" unique_id=1361007723]
+position = Vector2(1397, 148)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place1" unique_id=652083110]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_ts12a")
+
+[node name="place2" type="Area2D" parent="places" unique_id=399563241]
+position = Vector2(1598, 432)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place2" unique_id=1324337667]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_ts12a")
+
+[node name="place3" type="Area2D" parent="places" unique_id=1986845815]
+position = Vector2(1371, 820)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place3" unique_id=509249501]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_ts12a")
+
+[node name="place4" type="Area2D" parent="places" unique_id=2103393301]
+position = Vector2(1160, 482)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place4" unique_id=1416877264]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_ts12a")
+
+[node name="strikeProjectile2" parent="." unique_id=1142312808 instance=ExtResource("4_uk61h")]
+position = Vector2(404, 2508)
+scale = Vector2(18.51, 18.51)
+collision_layer = 8
+spdRev = 30
+randomNumbers = true

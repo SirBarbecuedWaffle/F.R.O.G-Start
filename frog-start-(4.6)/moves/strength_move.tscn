@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://48xf4f42eb3e"]
+
+[ext_resource type="Script" uid="uid://d0hahp2xuhimo" path="res://moves/block_move.gd" id="1_mn6gc"]
+[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="2_kbcui"]
+
+[node name="strengthMove" type="Node2D" unique_id=1384217156]
+script = ExtResource("1_mn6gc")
+
+[node name="strikeProjectile" parent="." unique_id=1142312808 instance=ExtResource("2_kbcui")]
+position = Vector2(1452, 559)
+strBuf = 16
+
+[node name="strikeProjectile2" parent="." unique_id=251642194 instance=ExtResource("2_kbcui")]
+position = Vector2(1653, 269)
+strBuf = 16
+
+[node name="strikeProjectile3" parent="." unique_id=125973024 instance=ExtResource("2_kbcui")]
+position = Vector2(1900, 524)
+strBuf = 16
+
+[node name="strikeProjectile4" parent="." unique_id=1413958594 instance=ExtResource("2_kbcui")]
+position = Vector2(1680, 848)
+strBuf = 16
+
+[connection signal="area_entered" from="strikeProjectile" to="." method="_on_strike_projectile_area_entered"]
+[connection signal="area_entered" from="strikeProjectile2" to="." method="_on_strike_projectile_area_entered"]
+[connection signal="area_entered" from="strikeProjectile3" to="." method="_on_strike_projectile_area_entered"]
+[connection signal="area_entered" from="strikeProjectile4" to="." method="_on_strike_projectile_area_entered"]

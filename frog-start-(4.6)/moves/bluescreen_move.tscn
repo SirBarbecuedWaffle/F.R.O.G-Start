@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://ce4ibu0i1oic5"]
+
+[ext_resource type="Script" uid="uid://c421wnkif7tbp" path="res://moves/bluescreen_move.gd" id="1_1nndg"]
+[ext_resource type="Texture2D" uid="uid://bwqq1lib264c8" path="res://2DAssets/bluescreen.png" id="1_4nrtq"]
+[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="3_xp4hq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1nndg"]
+size = Vector2(109, 138)
+
+[node name="bluescreenMove" type="Node2D" unique_id=1860347963]
+script = ExtResource("1_1nndg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1844008506]
+layer = 100000000
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1550293405]
+visible = false
+z_index = 4096
+position = Vector2(1006.00006, 532)
+scale = Vector2(1.935, 1.935)
+texture = ExtResource("1_4nrtq")
+
+[node name="places" type="Node2D" parent="." unique_id=1550141852]
+position = Vector2(-952, 0)
+
+[node name="place1" type="Area2D" parent="places" unique_id=1488559144]
+position = Vector2(1397, 148)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place1" unique_id=623852119]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_1nndg")
+
+[node name="place2" type="Area2D" parent="places" unique_id=135948093]
+position = Vector2(1598, 432)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place2" unique_id=2080754889]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_1nndg")
+
+[node name="place3" type="Area2D" parent="places" unique_id=206396734]
+position = Vector2(1371, 820)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place3" unique_id=1906533808]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_1nndg")
+
+[node name="place4" type="Area2D" parent="places" unique_id=421512677]
+position = Vector2(1160, 482)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place4" unique_id=817698632]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_1nndg")
+
+[node name="bomps" type="Node2D" parent="." unique_id=1734291686]
+
+[node name="strikeProjectile" parent="bomps" unique_id=1142312808 instance=ExtResource("3_xp4hq")]
+position = Vector2(196, 491)
+collision_layer = 8
+damage = 99999
+glitch = true
+
+[node name="strikeProjectile2" parent="bomps" unique_id=371225847 instance=ExtResource("3_xp4hq")]
+position = Vector2(432, 154)
+collision_layer = 8
+damage = 99999
+glitch = true
+
+[node name="strikeProjectile3" parent="bomps" unique_id=910439901 instance=ExtResource("3_xp4hq")]
+position = Vector2(623, 431)
+collision_layer = 8
+damage = 99999
+glitch = true
+
+[node name="strikeProjectile4" parent="bomps" unique_id=1882345334 instance=ExtResource("3_xp4hq")]
+position = Vector2(404, 832)
+collision_layer = 8
+damage = 99999
+glitch = true

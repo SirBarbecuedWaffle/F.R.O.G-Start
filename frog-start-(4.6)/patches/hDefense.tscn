@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bksropu5c3qp7"]
+
+[ext_resource type="Script" uid="uid://lyy0l2b4b3f0" path="res://patches/h_defense.gd" id="1_3kx23"]
+[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="2_13pmr"]
+
+[node name="hDefense" type="Node2D" unique_id=278365401]
+z_index = 1
+script = ExtResource("1_3kx23")
+
+[node name="spawnLocation" type="Marker2D" parent="." unique_id=674989445]
+position = Vector2(1394, 374)
+
+[node name="Arrows" type="Node2D" parent="." unique_id=853504226]
+position = Vector2(1504, 605)
+
+[node name="arrow1" parent="Arrows" unique_id=1142312808 instance=ExtResource("2_13pmr")]
+position = Vector2(184, -69.99997)
+scale = Vector2(17, 17)
+defBuf = 31
+oneHit = false

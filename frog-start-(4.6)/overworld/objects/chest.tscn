@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://c6jwyu3bbtlgk"]
+
+[ext_resource type="Texture2D" uid="uid://qig86iqs2tof" path="res://overworld/section4assets/Props.png" id="1_23whb"]
+[ext_resource type="Script" uid="uid://smwc2amstx72" path="res://overworld/objects/chest.gd" id="1_k72fp"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_23whb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k72fp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23whb"]
+size = Vector2(17, 12)
+
+[node name="chest" type="Node2D" unique_id=294661463]
+script = ExtResource("1_k72fp")
+
+[node name="closed" type="Sprite2D" parent="." unique_id=1495902738]
+texture = ExtResource("1_23whb")
+region_enabled = true
+region_rect = Rect2(64, 0, 16, 16)
+
+[node name="open" type="Sprite2D" parent="." unique_id=449385033]
+visible = false
+position = Vector2(0, -6)
+texture = ExtResource("1_23whb")
+region_enabled = true
+region_rect = Rect2(64, 22, 16, 24)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=258889360]
+physics_material_override = SubResource("PhysicsMaterial_23whb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=124110732]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_k72fp")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=886932055]
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1674351123]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_23whb")
+debug_color = Color(0.5254502, 0.57310176, 5.7756904e-07, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

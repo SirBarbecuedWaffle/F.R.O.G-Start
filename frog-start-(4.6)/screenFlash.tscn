@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://ccdfk0jq1ik4j"]
+
+[ext_resource type="Script" uid="uid://bqxjo715kmf2b" path="res://screen_flash.gd" id="1_b8er0"]
+
+[sub_resource type="Animation" id="Animation_ex7p2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.26666668)]
+}
+
+[sub_resource type="Animation" id="Animation_b8er0"]
+resource_name = "new_animation"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.26666668), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t08wc"]
+_data = {
+&"RESET": SubResource("Animation_ex7p2"),
+&"new_animation": SubResource("Animation_b8er0")
+}
+
+[node name="Node2D" type="Node2D" unique_id=971702533]
+visible = false
+script = ExtResource("1_b8er0")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=50651125]
+modulate = Color(1, 1, 1, 0.26666668)
+offset_left = -162.0
+offset_top = -207.0
+offset_right = 2195.0
+offset_bottom = 1162.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1523504891]
+libraries/ = SubResource("AnimationLibrary_t08wc")
+autoplay = &"new_animation"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

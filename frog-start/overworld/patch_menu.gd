@@ -330,7 +330,7 @@ func _process(delta: float) -> void:
 					exp_box_desc.pop()
 					if CManager.party[dropOnParty-1]==5:
 						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
-						exp_box_desc.add_text("\n\nHarmony Bonus:\n+150 hp regen to your entire party at the start of battle")
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+150 health regen to your entire party at the start of battle")
 						exp_box_desc.pop()
 					if CManager.party[dropOnParty-1]==8:
 						exp_box_desc.push_color(Color(0.4, 0.0, 1.0, 1.0)) 
@@ -408,7 +408,7 @@ func _process(delta: float) -> void:
 						exp_box_desc.pop()
 					if CManager.party[dropOnParty-1]==9:
 						exp_box_desc.push_color(Color(1.0, 0.0, 0.0, 1.0)) 
-						exp_box_desc.add_text("\n\nHarmony Bonus:\n+50 damage\n+20 hp regen to enemy hit")
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+50 damage\n+20 health regen to enemy hit")
 						exp_box_desc.pop()
 
 				if CManager.currentPatches[dropOnParty-1]==5:
@@ -468,7 +468,7 @@ func _process(delta: float) -> void:
 					exp_box_desc.pop()
 					if CManager.party[dropOnParty-1]==9:
 						exp_box_desc.push_color(Color(1.0, 0.0, 0.0, 1.0)) 
-						exp_box_desc.add_text("\n\nHarmony Bonus:\n+200 hp regen to every party member upon triggering")
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+200 health regen to every party member upon triggering")
 						exp_box_desc.pop()
 					if CManager.party[dropOnParty-1]==4:
 						exp_box_desc.push_color(Color(1.0, 0.43, 0.972, 1.0)) 
@@ -521,6 +521,7 @@ func _process(delta: float) -> void:
 						exp_box_desc.push_color(Color(1.0, 0.43, 0.972, 1.0)) 
 						exp_box_desc.add_text("\n\nHarmony Bonus:\n+2 seconds of increased speed after move use")
 						exp_box_desc.pop()
+						
 				if CManager.currentPatches[dropOnParty-1]==13:
 					exp_box_name.text="Endless: Speed"
 					exp_box_desc.text=""
@@ -550,9 +551,53 @@ func _process(delta: float) -> void:
 						exp_box_desc.push_color(Color(1.0, 0.604, 0.12, 1.0)) 
 						exp_box_desc.add_text("\n\nHarmony Bonus:\n+30 seconds of debuffs to every enemy when triggered")
 						exp_box_desc.pop()
+						
+				if CManager.currentPatches[dropOnParty-1]==15:
+					exp_box_name.text="Revenge: Fireball"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Summons a fireball whenever an enemy gets killed\nDeals high singular damage and burns nearby enemies")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==6:
+						exp_box_desc.push_color(Color(0.467, 0.0, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+15 burn damage on activation\nHas a chance to instakill every enemy\n\nNo longer summons a fireball")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==4:
+						exp_box_desc.push_color(Color(1.0, 0.43, 0.972, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+50% Fireball Damage")
+						exp_box_desc.pop()
 				
+				if CManager.currentPatches[dropOnParty-1]==19:
+					exp_box_name.text="Revenge: Frogsicle"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Summons healing frogsicles for your entire party whenever an enemy gets killed")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==1:
+						exp_box_desc.push_color(Color(0.017, 1.0, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+5 seconds of invincibility on activation")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==9:
+						exp_box_desc.push_color(Color(1.0, 0.0, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+100 health regen on activation")
+						exp_box_desc.pop()
 				
-				
+				if CManager.currentPatches[dropOnParty-1]==20:
+					exp_box_name.text="Revenge: Smite"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Smites a random enemy whenever an enemy gets killed\nDeals high singular damage and temporarily lowers their defense")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==5:
+						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+50 Damage")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==8:
+						exp_box_desc.push_color(Color(0.4, 0.0, 1.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+10 seconds of decreased defense")
+						exp_box_desc.pop()
+
+
 				
 				hovis=1
 				hover_box.global_position.x=get_global_mouse_position().x-get_box_offset(get_global_mouse_position().x)

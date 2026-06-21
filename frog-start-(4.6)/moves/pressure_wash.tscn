@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cx381c1aatrcb"]
+
+[ext_resource type="Script" uid="uid://u8uajfdo6ogf" path="res://pressure_wash.gd" id="1_yf5ea"]
+
+[node name="pressure wash" type="Node2D" unique_id=502823414]
+script = ExtResource("1_yf5ea")
+
+[node name="bomb" type="Node2D" parent="." unique_id=1099917460]
+position = Vector2(1894, 486)
