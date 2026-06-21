@@ -94,7 +94,7 @@ animations = [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 14.0
 }]
@@ -178,7 +178,7 @@ animations = [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 10.0
 }]
@@ -192,7 +192,6 @@ collision_layer = 8
 damage = 60
 burn = 20
 defRev = 15
-randomNumbers = true
 
 [node name="places" type="Node2D" parent="." unique_id=881540487]
 position = Vector2(-952, 0)

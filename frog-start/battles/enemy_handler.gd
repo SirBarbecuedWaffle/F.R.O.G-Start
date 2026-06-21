@@ -87,4 +87,8 @@ func _on_enemy_perished(type : int) -> void:
 				frog_layer.add_child(fired)
 			if g==20:
 				var fired=smite.instantiate()
+				if CManager.party[count]==5:
+					fired.multiplier=2
+				if CManager.party[count]==8:
+					fired.defDown=30
 				frog_layer.add_child(fired)

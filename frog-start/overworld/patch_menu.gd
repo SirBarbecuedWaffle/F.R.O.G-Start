@@ -590,11 +590,11 @@ func _process(delta: float) -> void:
 					exp_box_desc.pop()
 					if CManager.party[dropOnParty-1]==5:
 						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
-						exp_box_desc.add_text("\n\nHarmony Bonus:\n+50 Damage")
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+60 Damage")
 						exp_box_desc.pop()
 					if CManager.party[dropOnParty-1]==8:
 						exp_box_desc.push_color(Color(0.4, 0.0, 1.0, 1.0)) 
-						exp_box_desc.add_text("\n\nHarmony Bonus:\n+10 seconds of decreased defense")
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+15 seconds of decreased defense")
 						exp_box_desc.pop()
 
 
