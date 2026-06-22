@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://lmia0dbl2mhx"]
+
+[ext_resource type="Script" uid="uid://l07b2rdbc16q" path="res://moves/frogsicle.gd" id="1_wmjsc"]
+[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="2_8h5wl"]
+[ext_resource type="Texture2D" uid="uid://cdfr0y7fl3enb" path="res://2DAssets/Frogsicle2.png" id="3_s5lbt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvt6q"]
+size = Vector2(109, 138)
+
+[sub_resource type="Animation" id="Animation_8ikig"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4toh0"]
+resource_name = "arrowsSpawn"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l6svt"]
+_data = {
+&"RESET": SubResource("Animation_8ikig"),
+&"arrowsSpawn": SubResource("Animation_4toh0")
+}
+
+[node name="frogsicle3" type="Node2D" unique_id=278365401]
+z_index = 1
+script = ExtResource("1_wmjsc")
+
+[node name="places" type="Node2D" parent="." unique_id=1573095243]
+position = Vector2(307, 73)
+
+[node name="place1" type="Area2D" parent="places" unique_id=1595523340]
+position = Vector2(1397, 148)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place1" unique_id=1649506526]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_uvt6q")
+
+[node name="place2" type="Area2D" parent="places" unique_id=1653346876]
+position = Vector2(1598, 432)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place2" unique_id=31848612]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_uvt6q")
+
+[node name="place3" type="Area2D" parent="places" unique_id=1366140814]
+position = Vector2(1371, 820)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place3" unique_id=757552924]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_uvt6q")
+
+[node name="place4" type="Area2D" parent="places" unique_id=781389499]
+position = Vector2(1160, 482)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place4" unique_id=691870363]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_uvt6q")
+
+[node name="spawnLocation" type="Marker2D" parent="." unique_id=674989445]
+position = Vector2(1394, 374)
+
+[node name="Arrows" type="Node2D" parent="." unique_id=853504226]
+position = Vector2(1504, 605)
+
+[node name="arrow1" parent="Arrows" unique_id=1142312808 instance=ExtResource("2_8h5wl")]
+visible = false
+position = Vector2(175, -538)
+damage = -75
+invincible = 5
+
+[node name="Sprite2D2" type="Sprite2D" parent="Arrows/arrow1" unique_id=440049594]
+position = Vector2(-2.0000002, 4.000002)
+scale = Vector2(3, 3)
+texture = ExtResource("3_s5lbt")
+region_enabled = true
+region_rect = Rect2(121.693054, 1.0263138, 37.050903, 34.612755)
+
+[node name="arrow2" parent="Arrows" unique_id=1842772094 instance=ExtResource("2_8h5wl")]
+visible = false
+position = Vector2(-61, -204)
+damage = -75
+invincible = 5
+
+[node name="Sprite2D2" type="Sprite2D" parent="Arrows/arrow2" unique_id=693938854]
+position = Vector2(-2.0000002, 4.000002)
+scale = Vector2(3, 3)
+texture = ExtResource("3_s5lbt")
+region_enabled = true
+region_rect = Rect2(121.693054, 1.0263138, 37.050903, 34.612755)
+
+[node name="arrow3" parent="Arrows" unique_id=346935710 instance=ExtResource("2_8h5wl")]
+visible = false
+position = Vector2(-646, -64)
+damage = -75
+invincible = 5
+
+[node name="Sprite2D2" type="Sprite2D" parent="Arrows/arrow3" unique_id=1655962644]
+position = Vector2(-2.0000002, 4.000002)
+scale = Vector2(3, 3)
+texture = ExtResource("3_s5lbt")
+region_enabled = true
+region_rect = Rect2(121.693054, 1.0263138, 37.050903, 34.612755)
+
+[node name="arrow4" parent="Arrows" unique_id=1232609900 instance=ExtResource("2_8h5wl")]
+visible = false
+position = Vector2(-410, -365)
+damage = -75
+invincible = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Arrows/arrow4" unique_id=709892211]
+position = Vector2(-2.0000002, 4.000002)
+scale = Vector2(3, 3)
+texture = ExtResource("3_s5lbt")
+region_enabled = true
+region_rect = Rect2(121.693054, 1.0263138, 37.050903, 34.612755)
+
+[node name="targets" type="Node2D" parent="." unique_id=1186052481]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=4047694]
+root_node = NodePath("../Arrows")
+libraries/ = SubResource("AnimationLibrary_l6svt")
+autoplay = &"arrowsSpawn"
+
+[connection signal="area_entered" from="places/place1" to="." method="_on_place_1_area_entered"]
+[connection signal="area_entered" from="places/place2" to="." method="_on_place_2_area_entered"]
+[connection signal="area_entered" from="places/place3" to="." method="_on_place_3_area_entered"]
+[connection signal="area_entered" from="places/place4" to="." method="_on_place_4_area_entered"]

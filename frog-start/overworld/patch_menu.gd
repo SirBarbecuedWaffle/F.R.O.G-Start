@@ -318,6 +318,24 @@ func _process(delta: float) -> void:
 				if patchHoved==20:
 					exp_box_name.text="Revenge: Smite"
 					exp_box_desc.text="Smites a random enemy whenever an enemy gets killed\nDeals high singular damage and temporarily lowers their defense"
+				if patchHoved==21:
+					exp_box_name.text="Block: Cleaving"
+					exp_box_desc.text="Stops your party from being killed at full health\nPrevents cleaving damage"
+				if patchHoved==22:
+					exp_box_name.text="Block: Stun"
+					exp_box_desc.text="Prevents your party from being stunned\nReduces fire damage by 2"
+				if patchHoved==23:
+					exp_box_name.text="Block: Debuffs"
+					exp_box_desc.text="Prevents your party from being afflicted with status debuffs"
+				if patchHoved==24:
+					exp_box_name.text="Counter: Strike"
+					exp_box_desc.text="Automatically deals 100 damage to a random enemy\nTriggers whenever the party member with the patch equipped gets attacked"
+				if patchHoved==25:
+					exp_box_name.text="Counter: Pummel"
+					exp_box_desc.text="Automatically deals 20 damage to two random enemies before dealing 75 damage to and decreasing the attack of a random enemy\nTriggers whenever the party member with the patch equipped gets attacked"
+				if patchHoved==29:
+					exp_box_name.text="Counter: Electrocute"
+					exp_box_desc.text="Automatically burns and stuns a random enemy for 5 seconds\nTriggers whenever the party member with the patch equipped gets attacked"
 				hovis=1
 				hover_box.global_position.x=get_global_mouse_position().x-get_box_offset(get_global_mouse_position().x)
 				hover_box.global_position.y=get_global_mouse_position().y-724

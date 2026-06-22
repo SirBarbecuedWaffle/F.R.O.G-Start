@@ -9,6 +9,8 @@ signal victory
 @onready var frog_layer: CanvasLayer = $".."
 var fireball=preload("res://moves/fireball.tscn")
 var sicle=preload("res://moves/frogsicle.tscn")
+var sicle2=preload("res://patches/frogsicle2.tscn")
+var sicle3=preload("res://patches/frogsicle3.tscn")
 var smite=preload("res://moves/smite_move.tscn")
 var sfired=preload("res://moves/Fired.tscn")
 
@@ -83,8 +85,15 @@ func _on_enemy_perished(type : int) -> void:
 					var fired=fireball.instantiate()
 					frog_layer.add_child(fired)
 			if g==19:
-				var fired=sicle.instantiate()
-				frog_layer.add_child(fired)
+				if CManager.party[count]==1:
+					var fired=sicle3.instantiate()			
+					frog_layer.add_child(fired)
+				elif CManager.party[count]==9:
+					var fired=sicle2.instantiate()			
+					frog_layer.add_child(fired)
+				else:
+					var fired=sicle.instantiate()			
+					frog_layer.add_child(fired)
 			if g==20:
 				var fired=smite.instantiate()
 				if CManager.party[count]==5:
