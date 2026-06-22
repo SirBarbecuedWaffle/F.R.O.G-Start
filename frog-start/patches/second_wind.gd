@@ -33,9 +33,11 @@ func _ready() -> void:
 	arrow_2.spdBuf=45
 	arrow_2.strBuf=45
 	arrow_2.defBuf=45
+
 	arrow_3.spdBuf=45
 	arrow_3.strBuf=45
 	arrow_3.defBuf=45
+	
 	await get_tree().create_timer(0.1).timeout
 	arrow_1.global_position.y-=5000
 	arrow_2.global_position.y-=5000

@@ -50,7 +50,8 @@ func _process(delta: float) -> void:
 				if CManager.party[i]!=0:
 					var curChar=CManager.party[i]
 					CManager.charXP[curChar-1]+=xpGained
-			
+					if CManager.currentPatches[i]==30:
+						CManager.charXP[curChar-1]+=xpGained
 			var tweencred = create_tween()
 			tweencred.tween_property(self,"xpGained",0,1.0)
 			await tweencred.finished

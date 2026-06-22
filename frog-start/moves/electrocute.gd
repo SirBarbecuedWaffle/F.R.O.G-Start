@@ -4,10 +4,11 @@ extends Node2D
 @onready var area_2d: Area2D = $Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @export var multiplier:=1.0
-
+@export var stunLength:=10
 
 func _ready() -> void:
 	strike_projectile.damage*=multiplier
+	strike_projectile.stun=stunLength
 
 func _process(delta: float) -> void:
 	if !area_2d.audio_bus_override:

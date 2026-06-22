@@ -156,3 +156,7 @@ autoplay = &"arrowsSpawn"
 [connection signal="area_entered" from="places/place2" to="." method="_on_place_2_area_entered"]
 [connection signal="area_entered" from="places/place3" to="." method="_on_place_3_area_entered"]
 [connection signal="area_entered" from="places/place4" to="." method="_on_place_4_area_entered"]
+[connection signal="area_entered" from="Arrows/arrow1" to="." method="_on_arrow_1_area_entered"]
+[connection signal="area_entered" from="Arrows/arrow2" to="." method="_on_arrow_2_area_entered"]
+[connection signal="area_entered" from="Arrows/arrow3" to="." method="_on_arrow_3_area_entered"]
+[connection signal="area_entered" from="Arrows/arrow4" to="." method="_on_arrow_4_area_entered"]

@@ -20,6 +20,7 @@ class_name partyMember
 @onready var node_2d: Node2D = $"../../Node2D"
 @onready var invin_on: AnimatedSprite2D = $invinOn
 @onready var explan_animator: AnimationPlayer = $"../party2/moveHandler/CanvasLayer/explanAnimator"
+@onready var hitcol: CollisionShape2D = $hitBox/hitcol
 
 
 
@@ -33,6 +34,7 @@ class_name partyMember
 @onready var str_buff_anim: AnimatedSprite2D = $strBuffAnim
 @onready var spd_buff_anim: AnimatedSprite2D = $spdBuffAnim
 @onready var animation_player_2: AnimationPlayer = $AnimationPlayer2
+@onready var hit_box: Area2D = $hitBox
 
 #move preloads
 var strikeMove=preload("res://moves/strike_move.tscn")
@@ -251,8 +253,11 @@ func invincAnim()->void:
 			tweent3.tween_property(curChar, "self_modulate", Color(1.0, 1.0, 1.0, 1.0), 0.5)
 
 func _process(delta: float) -> void:
+	invin_on.visible=health>0
 	if permaDead:
 		health=-99999
+		if hitcol!=null:
+			hitcol.disabled=true
 		regen=0
 	if invincible>0:	
 		invincible-=1*delta
@@ -277,10 +282,10 @@ func _process(delta: float) -> void:
 			if curChar.animation!="die":
 				explan_animator.play("hideText")
 				curChar.play("die")
-				health-=randi_range(30,90)
+				if health>-300:
+					health-=randi_range(30,90)
 				if curPatch==10 && !revived:
 					await get_tree().create_timer(1.0).timeout
-					revived=true
 					var revive=secoChan.instantiate()
 					revive.place=global_position
 					frog_layer.add_child(revive)
@@ -294,6 +299,8 @@ func _process(delta: float) -> void:
 						await get_tree().create_timer(1.0).timeout
 						var haha=burnenem.instantiate()
 						frog_layer.add_child(haha)
+					await get_tree().create_timer(1.0).timeout
+					revived=true
 					
 				else:
 					if curPatch==14:
@@ -378,7 +385,14 @@ func _process(delta: float) -> void:
 		health_label.modulate=Color(0.474, 0.474, 0.474, 1.0)
 	if health>=1 && !permaDead:
 		if health_label.modulate==Color(1.0, 0.0, 0.0, 1.0):
+			if curPatch==11:
+				defUp=9999
+			if curPatch==12:
+				atkUp=9999
+			if curPatch==13 && character!="lizard":
+				spdUp=9999
 			curChar.play("unDie")
+			moveProgress=0
 			health_label.modulate=Color(1.0, 1.0, 1.0, 1.0)
 		turn_bar.scale.x=(moveProgress/turnTime)*0.354
 		if health<maxHealth+1:
@@ -396,7 +410,7 @@ func _process(delta: float) -> void:
 			if !party_handler.moveMenuOpen:
 				if !move_handler.visible:
 					if curPatch==13 && character=="frog":
-						atkUp=2
+						atkUp+=2
 					move_handler.visible=true
 					party_handler.moveMenuOpen=true
 					move_handler.fadeIn()
@@ -623,22 +637,60 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 			var flashe=flash.instantiate()
 			frog_layer.add_child(flashe)
 		if area.damage!=0:
+			var damned:=true
 			if invin_on.modulate==Color(1.0, 1.0, 1.0, 0.0):
-				health-=area.damage
-				if area.damage>0:
+				
+				if area.damage>9998:
+					for g in CManager.currentPatches:
+						if g==21:
+							var movie=damageIcon.instantiate()
+							movie.blocked=true
+							movie.global_position=global_position
+							frog_layer.add_child(movie)
+							damned=false
+					if damned:
+						health-=999+health
+						await get_tree().create_timer(0.01).timeout
+						if health<0:
+							health=-999
+				elif area.damage>0:
+					if curPatch==24:
+						var striked=strikeMove.instantiate()
+						frog_layer.add_child(striked)
+					if curPatch==25:
+						var striked=pummeld.instantiate()
+						frog_layer.add_child(striked)
+					if curPatch==29:
+						var striked=elect.instantiate()
+						striked.stunLength=5
+						frog_layer.add_child(striked)
+					
 					if defUp>0:
 						area.damage-=(area.damage)/2
 					if defDown>0:
 						area.damage+=(area.damage)/2
-			
-			var movie=damageIcon.instantiate()
-			if  invin_on.modulate==Color(1.0, 1.0, 1.0, 0.0):
-				if area.damage!=0:
-					movie.damageAmount=area.damage
-			else:
-				movie.damageAmount=0
-			movie.global_position=global_position
-			frog_layer.add_child(movie)
+					for g in CManager.currentPatches:
+						if g==21:
+							if area.damage>maxHealth && health==maxHealth:
+								area.damage=maxHealth-1
+					health-=area.damage
+				else:
+					health-=area.damage
+			if damned:
+				var movie=damageIcon.instantiate()
+				if  invin_on.modulate==Color(1.0, 1.0, 1.0, 0.0):
+					if area.damage!=0:
+						movie.damageAmount=area.damage
+					if area.damage>9998:
+						movie.damageType="cleaving"
+				else:
+					if area.damage<0:
+						health-=area.damage
+						movie.damageAmount=area.damage
+					else:					
+						movie.damageAmount=0
+				movie.global_position=global_position
+				frog_layer.add_child(movie)
 		if invin_on.modulate==Color(1.0, 1.0, 1.0, 0.0):
 			poison+=area.poison
 			stun+=area.stun
@@ -681,9 +733,10 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 		if area.invincible>invincible+1:
 			invincible=area.invincible
 			invincAnim()
-		
-		if area.oneHit:
-			area.queue_free()
+	if area!=null:
+		if area is damager:
+			if area.oneHit:
+				area.queue_free()
 
 
 func _on_poison_damage_timeout() -> void:

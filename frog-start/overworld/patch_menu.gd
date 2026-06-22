@@ -336,6 +336,9 @@ func _process(delta: float) -> void:
 				if patchHoved==29:
 					exp_box_name.text="Counter: Electrocute"
 					exp_box_desc.text="Automatically burns and stuns a random enemy for 5 seconds\nTriggers whenever the party member with the patch equipped gets attacked"
+				if patchHoved==30:
+					exp_box_name.text="Boost: Experience"
+					exp_box_desc.text="Doubles the experience gained by the party member with the patch equipped"
 				hovis=1
 				hover_box.global_position.x=get_global_mouse_position().x-get_box_offset(get_global_mouse_position().x)
 				hover_box.global_position.y=get_global_mouse_position().y-724

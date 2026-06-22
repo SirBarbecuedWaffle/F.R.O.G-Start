@@ -191,6 +191,9 @@ func _process(delta: float) -> void:
 	if move_4_lab.text=="You're Fired":
 		move_4.texture_normal=instaKillIcon
 		move_4.texture_hover=instaKillHover
+	if move_2_lab.text=="You're Fired":
+		move_2.texture_normal=instaKillIcon
+		move_2.texture_hover=instaKillHover
 		
 	if move_3_lab.text=="Strike" || move_3_lab.text=="Even More Skill":
 		move_3.texture_hover=singleTarHover
@@ -211,8 +214,8 @@ func _process(delta: float) -> void:
 		move_3.texture_hover=fireMoveHover
 		move_3.texture_normal=fireMoveIcon
 	if move_3_lab.text=="Pressure Wash":
-		move_3.texture_hover=BuffMoveHover
-		move_3.texture_normal=BuffMoveIcon
+		move_3.texture_hover=MultiMoveHover
+		move_3.texture_normal=MultiMoveIcon
 		
 	if move_4_lab.text=="Bottoms Up":
 		move_4.texture_hover=BuffMoveHover

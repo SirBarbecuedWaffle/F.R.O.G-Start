@@ -277,8 +277,8 @@ func _process(delta: float) -> void:
 		move_3.texture_hover=fireMoveHover
 		move_3.texture_normal=fireMoveIcon
 	if move_3_lab.text=="Pressure Wash":
-		move_3.texture_hover=BuffMoveHover
-		move_3.texture_normal=BuffMoveIcon
+		move_3.texture_hover=MultiMoveHover
+		move_3.texture_normal=MultiMoveIcon
 	
 		
 	if move_4_lab.text=="Bottoms Up":

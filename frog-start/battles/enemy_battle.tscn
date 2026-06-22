@@ -4914,7 +4914,7 @@ z_index = 10
 collision_layer = 16
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="frogLayer/partyHandler/party1/hitBox" unique_id=1538024165]
+[node name="hitcol" type="CollisionShape2D" parent="frogLayer/partyHandler/party1/hitBox" unique_id=1538024165]
 position = Vector2(10.869385, 30.41455)
 shape = SubResource("RectangleShape2D_3a61k")
 debug_color = Color(0, 0.6, 0, 0.41960785)
@@ -6460,9 +6460,8 @@ flip_h = true
 position = Vector2(-882.63074, 1095.9146)
 scale = Vector2(5.9999995, 5.9999995)
 sprite_frames = SubResource("SpriteFrames_e5lwx")
-animation = &"idle"
+animation = &"hurt"
 autoplay = "idle"
-frame_progress = 0.52835107
 
 [node name="enemyHandler" type="Node2D" parent="frogLayer" unique_id=257024737]
 position = Vector2(-978, 0)

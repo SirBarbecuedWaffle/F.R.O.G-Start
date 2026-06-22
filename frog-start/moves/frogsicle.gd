@@ -53,3 +53,21 @@ func _on_place_3_area_entered(area: Area2D) -> void:
 
 func _on_place_4_area_entered(area: Area2D) -> void:
 	arrow_4.visible=true
+
+
+func _on_arrow_1_area_entered(area: Area2D) -> void:
+	arrow_1.queue_free()
+
+
+func _on_arrow_2_area_entered(area: Area2D) -> void:
+	arrow_2.queue_free()
+
+
+
+func _on_arrow_3_area_entered(area: Area2D) -> void:
+	arrow_3.queue_free()
+
+
+
+func _on_arrow_4_area_entered(area: Area2D) -> void:
+	arrow_4.queue_free()
