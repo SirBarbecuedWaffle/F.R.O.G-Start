@@ -693,7 +693,18 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 				frog_layer.add_child(movie)
 		if invin_on.modulate==Color(1.0, 1.0, 1.0, 0.0):
 			poison+=area.poison
-			stun+=area.stun
+			var stunBlocked:=false
+			if area.stun>0:
+				for g in CManager.currentPatches:
+					if g==22:
+						stunBlocked=true
+						await get_tree().create_timer(0.25).timeout
+						var movie=damageIcon.instantiate()
+						movie.blocked=true
+						movie.global_position=global_position
+						frog_layer.add_child(movie)
+			if !stunBlocked:
+				stun+=area.stun
 			fire+=area.burn
 		
 		#applies buffs

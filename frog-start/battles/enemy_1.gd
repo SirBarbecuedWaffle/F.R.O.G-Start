@@ -44,6 +44,7 @@ signal perished
 @export var regen:=0
 @export var attackSpeed:=625
 @export var attackDamage:=30
+@export var attackStun:=0
 @export var enemyType:=0
 var turnTime:=randi_range(attackSpeed-120,attackSpeed+75)
 @onready var frog_layer: CanvasLayer = $"../.."
@@ -168,6 +169,7 @@ func _process(delta: float) -> void:
 			await get_tree().create_timer(0.36).timeout
 			var hit=basicHit.instantiate()
 			hit.damage=attackDamage
+			hit.stun=attackStun
 			if atkDown>0:
 				hit.damage/=2
 			hit.collision_layer=4
@@ -178,11 +180,10 @@ func _process(delta: float) -> void:
 				var numTargets=0
 				var target=randi_range(0,3)
 				while party_handler.getAlivePlayers()[target]==null:
-					target=randi_range(0,3)
+					target=randi_range(0,party_handler.getAlivePlayers().size()-1)
 				if party_handler.getAlivePlayers()[target]!=null:
 					var targese=party_handler.getAlivePlayers()[target]
 					hit.global_position=targese.global_position
-				print(hit.global_position)
 				frog_layer.add_child(hit)
 			else:
 				var only1:=0

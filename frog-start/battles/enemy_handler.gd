@@ -41,16 +41,19 @@ func _ready() -> void:
 				self.get_children()[e].maxHealth=30.0
 				self.get_children()[e].attackSpeed=600.0
 				self.get_children()[e].attackDamage=10.0
+				self.get_children()[e].attackStun=0
 				self.get_children()[e].enemyType=1
 			if curEnems[e]==2:
 				self.get_children()[e].maxHealth=60.0
 				self.get_children()[e].attackSpeed=400.0
 				self.get_children()[e].attackDamage=20.0
+				self.get_children()[e].attackStun=0
 				self.get_children()[e].enemyType=2
 			if curEnems[e]==3:
 				self.get_children()[e].maxHealth=110.0
 				self.get_children()[e].attackSpeed=300.0
 				self.get_children()[e].attackDamage=30.0
+				self.get_children()[e].attackStun=0
 				self.get_children()[e].enemyType=3
 		else:
 			self.get_children()[e].queue_free()

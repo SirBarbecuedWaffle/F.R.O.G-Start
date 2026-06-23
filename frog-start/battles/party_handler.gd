@@ -30,7 +30,7 @@ extends Node2D
 
 func getAlivePlayers()->Array:
 	var alivePlayers:=[null,null,null,null]
-	var curSlot:=0
+	var curSlot:=-1
 	for i in get_children():
 		if i is partyMember:
 			if i.health>0 ||  (i.curPatch==10 && !i.revived) || (i.curPatch==14 && !i.canLoseSecWind):
