@@ -45,6 +45,11 @@ signal perished
 @export var attackSpeed:=625
 @export var attackDamage:=30
 @export var attackStun:=0
+@export var attackBurn:=0
+@export var attackPoison:=0
+@export var attackSPDRev:=0
+@export var attackATKRev:=0
+@export var attackDEFRev:=0
 @export var enemyType:=0
 var turnTime:=randi_range(attackSpeed-120,attackSpeed+75)
 @onready var frog_layer: CanvasLayer = $"../.."
@@ -170,6 +175,11 @@ func _process(delta: float) -> void:
 			var hit=basicHit.instantiate()
 			hit.damage=attackDamage
 			hit.stun=attackStun
+			hit.burn=attackBurn
+			hit.poison=attackPoison
+			hit.strRev=attackATKRev
+			hit.defRev=attackDEFRev
+			hit.spdRev=attackSPDRev
 			if atkDown>0:
 				hit.damage/=2
 			hit.collision_layer=4

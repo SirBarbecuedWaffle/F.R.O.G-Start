@@ -54,6 +54,11 @@ func _ready() -> void:
 				self.get_children()[e].attackSpeed=300.0
 				self.get_children()[e].attackDamage=30.0
 				self.get_children()[e].attackStun=0
+				self.get_children()[e].attackATKRev=15
+				self.get_children()[e].attackDEFRev=15
+				self.get_children()[e].attackSPDRev=15
+				#self.get_children()[e].attackBurn=100
+				#self.get_children()[e].attackPoison=50
 				self.get_children()[e].enemyType=3
 		else:
 			self.get_children()[e].queue_free()

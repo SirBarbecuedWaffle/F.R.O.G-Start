@@ -30,6 +30,7 @@ class_name partyMember
 
 @onready var poison_dam: AnimatedSprite2D = $poisonDam
 @onready var poison_on: AnimatedSprite2D = $poisonOn
+@onready var fire_on: AnimatedSprite2D = $fireOn
 @onready var def_buff_anim: AnimatedSprite2D = $defBuffAnim
 @onready var str_buff_anim: AnimatedSprite2D = $strBuffAnim
 @onready var spd_buff_anim: AnimatedSprite2D = $spdBuffAnim
@@ -83,10 +84,7 @@ var secWind=preload("res://patches/secondWind.tscn")
 @onready var curChar : AnimatedSprite2D
 var permaDead:=false
 @export var health:=10.0:
-	set(newHP):
-		if health<maxHealth:
-			if newHP<health-1:
-				hit_sprite.play("default")
+	set(newHP):	
 		if newHP<health:
 			if newHP<health-5:
 				if newHP<maxHealth:
@@ -111,7 +109,7 @@ var permaDead:=false
 @export var maxHealth:=140.0
 @export var moveProgress:=0.0
 @export var poison:=0.0
-@export var fire:=0
+@export var fire:=0.0
 @export var atkDown:=00.0
 @export var defDown:=00.0
 @export var spdDown:=00.0
@@ -253,6 +251,25 @@ func invincAnim()->void:
 			tweent3.tween_property(curChar, "self_modulate", Color(1.0, 1.0, 1.0, 1.0), 0.5)
 
 func _process(delta: float) -> void:
+	fire_on.visible=fire>0
+	if fire>0:
+		fire-=10*delta
+		if int(fire)%5==0:
+			var movie=damageIcon.instantiate()
+			fire-=1
+			var fireBlock:=false
+			for g in CManager.currentPatches:
+					if g==22:
+						fireBlock=true
+			if fireBlock:
+				movie.damageAmount=3
+				health-=3
+			else:
+				movie.damageAmount=5
+				health-=5
+			movie.global_position=global_position
+			movie.damageType="fire"
+			frog_layer.add_child(movie)
 	invin_on.visible=health>0
 	if permaDead:
 		health=-99999
@@ -261,6 +278,7 @@ func _process(delta: float) -> void:
 		regen=0
 	if invincible>0:	
 		invincible-=1*delta
+		fire=0
 	stun_anim.visible=stun>0
 	if stun>0:
 		if turnbar_animator.current_animation!="flash":
@@ -729,18 +747,30 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 			spd_buff_anim.play()
 		
 		#applies debuffs
-		if spdDown<area.spdRev:
-			spdDown=area.spdRev
+		var blockDebuff:=false
+		for g in CManager.currentPatches:
+			if g==23:
+				blockDebuff=true
+		if !blockDebuff:
+			if spdDown<area.spdRev:
+				spdDown=area.spdRev
+			else:
+				spdDown+=(area.spdRev/2)
+			if atkDown<area.strRev:
+				atkDown=area.strRev
+			else:
+				atkDown+=(area.strRev/2)
+			if defDown<area.defRev:
+				defDown=area.defRev
+			else:
+				defDown+=(area.defRev/2)
 		else:
-			spdDown+=(area.spdRev/2)
-		if atkDown<area.strRev:
-			atkDown=area.strRev
-		else:
-			atkDown+=(area.strRev/2)
-		if defDown<area.defRev:
-			defDown=area.defRev
-		else:
-			defDown+=(area.defRev/2)
+			if area.spdRev>0 || area.strRev>0 || area.defRev>0:
+				await get_tree().create_timer(0.25).timeout
+				var movie=damageIcon.instantiate()
+				movie.blocked=true
+				movie.global_position=global_position
+				frog_layer.add_child(movie)
 		if area.invincible>invincible+1:
 			invincible=area.invincible
 			invincAnim()
@@ -753,12 +783,12 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 func _on_poison_damage_timeout() -> void:
 	var am=randi_range(1,10)
 	var movie=damageIcon.instantiate()
-	movie.damageAmount=am
+	movie.damageAmount=am+(maxHealth*0.02)
 	movie.global_position=global_position
 	movie.damageType="poison"
 	poison_dam.play("default")
 	frog_layer.add_child(movie)
-	health-=am
+	health-=am+(maxHealth*0.02)
 	poison-=am
 	poison_damage.start(randi_range(1,5))
 
