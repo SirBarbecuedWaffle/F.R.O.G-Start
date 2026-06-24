@@ -279,6 +279,7 @@ func _process(delta: float) -> void:
 	if invincible>0:	
 		invincible-=1*delta
 		fire=0
+		poison=0
 	stun_anim.visible=stun>0
 	if stun>0:
 		if turnbar_animator.current_animation!="flash":

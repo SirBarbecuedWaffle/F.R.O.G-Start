@@ -4968,7 +4968,7 @@ rotation = -3.1415925
 scale = Vector2(3.533, -3.533)
 sprite_frames = SubResource("SpriteFrames_6w4hd")
 autoplay = "default"
-frame_progress = 0.23713338
+frame_progress = 0.3052828
 
 [node name="invinOn" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party1" unique_id=593509536]
 modulate = Color(1, 1, 1, 0)
@@ -7682,7 +7682,6 @@ libraries/ = SubResource("AnimationLibrary_pbmit")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=334568632]
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=675429401]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
