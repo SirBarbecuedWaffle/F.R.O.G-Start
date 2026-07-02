@@ -333,6 +333,15 @@ func _process(delta: float) -> void:
 				if patchHoved==25:
 					exp_box_name.text="Counter: Pummel"
 					exp_box_desc.text="Automatically deals 20 damage to two random enemies before dealing 75 damage to and decreasing the attack of a random enemy\nTriggers whenever the party member with the patch equipped gets attacked"
+				if patchHoved==26:
+					exp_box_name.text="Protocol: Gamble"
+					exp_box_desc.text="Every 6 seconds fires an arrow at a random enemy, afflicting a 3 second long status debuff or dealing 15 damage"
+				if patchHoved==27:
+					exp_box_name.text="Protocol: Pollute"
+					exp_box_desc.text=""
+				if patchHoved==28:
+					exp_box_name.text="Protocol: Hydrate"
+					exp_box_desc.text=""
 				if patchHoved==29:
 					exp_box_name.text="Counter: Electrocute"
 					exp_box_desc.text="Automatically burns and stuns a random enemy for 5 seconds\nTriggers whenever the party member with the patch equipped gets attacked"
@@ -608,6 +617,156 @@ func _process(delta: float) -> void:
 					exp_box_desc.text=""
 					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
 					exp_box_desc.add_text("Smites a random enemy whenever an enemy gets killed\nDeals high singular damage and temporarily lowers their defense")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==5:
+						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+60 Damage")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==8:
+						exp_box_desc.push_color(Color(0.4, 0.0, 1.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+15 seconds of decreased defense")
+						exp_box_desc.pop()
+				
+				if CManager.currentPatches[dropOnParty-1]==21:
+					exp_box_name.text="Block: Cleaving"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Stops your party from being killed at full health\nPrevents cleaving damage")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==5:
+						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+60 Damage")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==8:
+						exp_box_desc.push_color(Color(0.4, 0.0, 1.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+15 seconds of decreased defense")
+						exp_box_desc.pop()
+				
+				if CManager.currentPatches[dropOnParty-1]==22:
+					exp_box_name.text="Block: Stun"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Prevents your party from being stunned\nReduces fire damage by 2")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==5:
+						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+60 Damage")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==8:
+						exp_box_desc.push_color(Color(0.4, 0.0, 1.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+15 seconds of decreased defense")
+						exp_box_desc.pop()
+				
+				if CManager.currentPatches[dropOnParty-1]==23:
+					exp_box_name.text="Block: Debuff"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Prevents your party from being afflicted with status debuffs")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==5:
+						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+60 Damage")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==8:
+						exp_box_desc.push_color(Color(0.4, 0.0, 1.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+15 seconds of decreased defense")
+						exp_box_desc.pop()
+				
+				if CManager.currentPatches[dropOnParty-1]==24:
+					exp_box_name.text="Counter: Strike"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Automatically deals 100 damage to a random enemy\nTriggers whenever the party member with the patch equipped gets attacked")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==5:
+						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+60 Damage")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==8:
+						exp_box_desc.push_color(Color(0.4, 0.0, 1.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+15 seconds of decreased defense")
+						exp_box_desc.pop()
+				
+				if CManager.currentPatches[dropOnParty-1]==25:
+					exp_box_name.text="Counter: Pummel"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Automatically deals 20 damage to two random enemies before dealing 75 damage to and decreasing the attack of a random enemy\nTriggers whenever the party member with the patch equipped gets attacked")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==5:
+						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+60 Damage")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==8:
+						exp_box_desc.push_color(Color(0.4, 0.0, 1.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+15 seconds of decreased defense")
+						exp_box_desc.pop()
+				
+				if CManager.currentPatches[dropOnParty-1]==26:
+					exp_box_name.text="Protocol: Gamble"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Smites a random enemy whenever an enemy gets killed\nDeals high singular damage and temporarily lowers their defense")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==5:
+						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+60 Damage")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==8:
+						exp_box_desc.push_color(Color(0.4, 0.0, 1.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+15 seconds of decreased defense")
+						exp_box_desc.pop()
+				
+				if CManager.currentPatches[dropOnParty-1]==27:
+					exp_box_name.text="Protocol: Pollute"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Smites a random enemy whenever an enemy gets killed\nDeals high singular damage and temporarily lowers their defense")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==5:
+						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+60 Damage")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==8:
+						exp_box_desc.push_color(Color(0.4, 0.0, 1.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+15 seconds of decreased defense")
+						exp_box_desc.pop()
+				
+				if CManager.currentPatches[dropOnParty-1]==28:
+					exp_box_name.text="Protocol: Hydrate"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Smites a random enemy whenever an enemy gets killed\nDeals high singular damage and temporarily lowers their defense")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==5:
+						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+60 Damage")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==8:
+						exp_box_desc.push_color(Color(0.4, 0.0, 1.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+15 seconds of decreased defense")
+						exp_box_desc.pop()
+				
+				if CManager.currentPatches[dropOnParty-1]==29:
+					exp_box_name.text="Counter: Electrocute"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Automatically burns and stuns a random enemy for 5 seconds\nTriggers whenever the party member with the patch equipped gets attacked")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==5:
+						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+60 Damage")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==8:
+						exp_box_desc.push_color(Color(0.4, 0.0, 1.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+15 seconds of decreased defense")
+						exp_box_desc.pop()
+				
+				if CManager.currentPatches[dropOnParty-1]==30:
+					exp_box_name.text="Boost: Experience"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Doubles the experience gained by the party member with the patch equipped")
 					exp_box_desc.pop()
 					if CManager.party[dropOnParty-1]==5:
 						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
