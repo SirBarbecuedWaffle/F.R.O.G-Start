@@ -4555,6 +4555,24 @@ script = ExtResource("3_uk303")
 position = Vector2(1465, 540)
 scale = Vector2(1.0000001, 1.0000001)
 script = ExtResource("4_oikim")
+character = null
+health = null
+maxHealth = null
+moveProgress = null
+poison = null
+fire = null
+atkDown = null
+defDown = null
+spdDown = null
+atkUp = null
+defUp = null
+spdUp = null
+stun = null
+regen = null
+invincible = null
+curPatch = null
+revived = null
+canLoseSecWind = null
 
 [node name="TextureRect" type="TextureRect" parent="frogLayer/partyHandler/party1" unique_id=2133704799]
 modulate = Color(0.20511743, 0.20511743, 0.20511743, 1)
@@ -4960,6 +4978,7 @@ autoplay = "default"
 frame_progress = 0.2837064
 
 [node name="fireOn" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party1" unique_id=1783026268]
+visible = false
 modulate = Color(0.91, 0.91, 0.91, 1)
 z_index = 1
 position = Vector2(4.8186035, 16.914549)
@@ -5022,6 +5041,24 @@ autoplay = &"loadIn"
 position = Vector2(1680, 855)
 scale = Vector2(1.0000001, 1.0000001)
 script = ExtResource("4_oikim")
+character = null
+health = null
+maxHealth = null
+moveProgress = null
+poison = null
+fire = null
+atkDown = null
+defDown = null
+spdDown = null
+atkUp = null
+defUp = null
+spdUp = null
+stun = null
+regen = null
+invincible = null
+curPatch = null
+revived = null
+canLoseSecWind = null
 
 [node name="TextureRect" type="TextureRect" parent="frogLayer/partyHandler/party2" unique_id=1886694492]
 modulate = Color(0.20511743, 0.20511743, 0.20511743, 1)
@@ -5489,6 +5526,24 @@ autoplay = "default"
 position = Vector2(1660, 275)
 scale = Vector2(1.0000001, 1.0000001)
 script = ExtResource("4_oikim")
+character = null
+health = null
+maxHealth = null
+moveProgress = null
+poison = null
+fire = null
+atkDown = null
+defDown = null
+spdDown = null
+atkUp = null
+defUp = null
+spdUp = null
+stun = null
+regen = null
+invincible = null
+curPatch = null
+revived = null
+canLoseSecWind = null
 
 [node name="TextureRect" type="TextureRect" parent="frogLayer/partyHandler/party3" unique_id=1214981182]
 modulate = Color(0.20511743, 0.20511743, 0.20511743, 1)
@@ -5956,6 +6011,24 @@ autoplay = "default"
 position = Vector2(1900, 530)
 scale = Vector2(1.0000001, 1.0000001)
 script = ExtResource("4_oikim")
+character = null
+health = null
+maxHealth = null
+moveProgress = null
+poison = null
+fire = null
+atkDown = null
+defDown = null
+spdDown = null
+atkUp = null
+defUp = null
+spdUp = null
+stun = null
+regen = null
+invincible = null
+curPatch = null
+revived = null
+canLoseSecWind = null
 
 [node name="TextureRect" type="TextureRect" parent="frogLayer/partyHandler/party4" unique_id=1346121303]
 modulate = Color(0.20511743, 0.20511743, 0.20511743, 1)

@@ -216,8 +216,7 @@ func _ready() -> void:
 		if character=="pink":
 			haha.subSpd=31
 			haha.addStr=30
-		
-		
+			
 		frog_layer.add_child(haha)
 	if curPatch==3:
 		var haha=hSpd.instantiate()
@@ -227,7 +226,9 @@ func _ready() -> void:
 		if character=="steve":
 			haha.addSpd=10
 		frog_layer.add_child(haha)
-	
+	if curPatch==22:
+		if character=="pink":
+			fire_on.modulate=Color(0.0, 1.353, 0.0, 0.718)
 func invincAnim()->void:
 		var tweente := create_tween()
 		tweente.tween_property(invin_on, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.5)
@@ -255,6 +256,8 @@ func _process(delta: float) -> void:
 	if fire>0:
 		fire-=10*delta
 		if int(fire)%5==0:
+			if character=="fox":
+				fire_on.modulate=Color(1.0, 1.0, 1.0, 1.0)
 			var movie=damageIcon.instantiate()
 			fire-=1
 			var fireBlock:=false
@@ -262,13 +265,29 @@ func _process(delta: float) -> void:
 					if g==22:
 						fireBlock=true
 			if fireBlock:
-				movie.damageAmount=3
-				health-=3
+				if character=="pink":
+					movie.damageAmount=-5
+					health-=-5
+				elif character=="fox":
+					var fireDam=randi_range(-2,3)
+					movie.damageAmount=fireDam
+					health-=fireDam
+					if fireDam>0:
+						fire_on.modulate=Color(1.0, 1.0, 1.0, 1.0)
+						movie.damageType="fire"
+					else:
+						fire_on.modulate=Color(0.0, 1.353, 0.0, 0.718)
+						
+				else:
+					movie.damageAmount=3
+					movie.damageType="fire"
+					health-=3
 			else:
 				movie.damageAmount=5
+				movie.damageType="fire"
 				health-=5
 			movie.global_position=global_position
-			movie.damageType="fire"
+			
 			frog_layer.add_child(movie)
 	invin_on.visible=health>0
 	if permaDead:
@@ -667,6 +686,15 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 							movie.global_position=global_position
 							frog_layer.add_child(movie)
 							damned=false
+							if character=="steve":
+								spdUp+=5
+							if character=="joe":
+								health+=(maxHealth*0.3)
+								await get_tree().create_timer(0.25).timeout
+								var movie2=damageIcon.instantiate()
+								movie2.damageAmount=maxHealth*-0.3
+								movie2.global_position=global_position
+								frog_layer.add_child(movie2)
 					if damned:
 						health-=999+health
 						await get_tree().create_timer(0.01).timeout
@@ -681,7 +709,7 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 						frog_layer.add_child(striked)
 					if curPatch==29:
 						var striked=elect.instantiate()
-						striked.stunLength=5
+						striked.stunLength=3
 						frog_layer.add_child(striked)
 					
 					if defUp>0:
@@ -692,6 +720,14 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 						if g==21:
 							if area.damage>maxHealth && health==maxHealth:
 								area.damage=maxHealth-1
+								if character=="steve":
+									spdUp+=5
+								if character=="joe":
+									health+=maxHealth*0.3
+									var movie=damageIcon.instantiate()
+									movie.damageAmount=maxHealth*-0.3
+									movie.global_position=global_position
+									frog_layer.add_child(movie)
 					health-=area.damage
 				else:
 					health-=area.damage

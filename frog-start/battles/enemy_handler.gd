@@ -57,7 +57,7 @@ func _ready() -> void:
 				self.get_children()[e].attackATKRev=15
 				self.get_children()[e].attackDEFRev=15
 				self.get_children()[e].attackSPDRev=15
-				#self.get_children()[e].attackBurn=100
+				self.get_children()[e].attackBurn=100
 				#self.get_children()[e].attackPoison=50
 				self.get_children()[e].enemyType=3
 		else:
