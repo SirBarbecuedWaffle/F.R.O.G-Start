@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bhdiuk3idnjv8"]
+
+[ext_resource type="Script" uid="uid://cqy1ukjbi86t8" path="res://patches/protocols/frog_protocol.gd" id="1_hmr8e"]
+[ext_resource type="Texture2D" uid="uid://dtcxqs5aox6ei" path="res://overworldPlayer/playerAssets/Ninja Frog/Jump (32x32).png" id="1_ykxy5"]
+
+[node name="FrogProtocol" type="Node2D" unique_id=1056466694]
+position = Vector2(1191, 598)
+scale = Vector2(2, 2)
+script = ExtResource("1_hmr8e")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=188320007]
+texture = ExtResource("1_ykxy5")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 20)
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D" unique_id=968276031]
+z_index = -1
+offset_left = -5.0
+offset_right = 6.0
+offset_bottom = 11.0
+color = Color(0.12941177, 0.12156863, 0.1882353, 1)
