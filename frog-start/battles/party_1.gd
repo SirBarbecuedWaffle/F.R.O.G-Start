@@ -803,11 +803,23 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 				defDown+=(area.defRev/2)
 		else:
 			if area.spdRev>0 || area.strRev>0 || area.defRev>0:
-				await get_tree().create_timer(0.25).timeout
+				
+				if character=="mask":
+					spdUp+=area.spdRev
+					defUp+=area.defRev
+					atkUp+=area.strRev
+				
 				var movie=damageIcon.instantiate()
 				movie.blocked=true
 				movie.global_position=global_position
 				frog_layer.add_child(movie)
+				await get_tree().create_timer(0.25).timeout
+				if character=="lizard":
+					health+=maxHealth*0.3
+					var movie2=damageIcon.instantiate()
+					movie2.damageAmount=maxHealth*-0.3
+					movie2.global_position=global_position
+					frog_layer.add_child(movie2)
 		if area.invincible>invincible+1:
 			invincible=area.invincible
 			invincAnim()

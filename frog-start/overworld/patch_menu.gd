@@ -669,7 +669,7 @@ func _process(delta: float) -> void:
 						exp_box_desc.pop()
 					if CManager.party[dropOnParty-1]==8:
 						exp_box_desc.push_color(Color(0.4, 0.0, 1.0, 1.0)) 
-						exp_box_desc.add_text("\n\nHarmony Bonus:\n+5% health upon blocking debuffs")
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+30% health upon blocking debuffs")
 						exp_box_desc.pop()
 				
 				if CManager.currentPatches[dropOnParty-1]==24:
