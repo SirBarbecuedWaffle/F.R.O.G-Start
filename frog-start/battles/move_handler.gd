@@ -255,6 +255,7 @@ func _process(delta: float) -> void:
 
 func fadeIn()->void:
 	moveHovered=""
+	move_explainer.visible=true
 	animation_player.play("fadeIn")
 	explan_animator.play("showText")
 

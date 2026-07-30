@@ -21,7 +21,8 @@ class_name partyMember
 @onready var invin_on: AnimatedSprite2D = $invinOn
 @onready var explan_animator: AnimationPlayer = $"../party2/moveHandler/CanvasLayer/explanAnimator"
 @onready var hitcol: CollisionShape2D = $hitBox/hitcol
-
+var curProt=null
+@onready var move_explainer: Label = $moveHandler/CanvasLayer/moveExplainer
 
 
 @export var character:=""
@@ -81,6 +82,9 @@ var secoNat=preload("res://patches/secondNature.tscn")
 var secoChan=preload("res://patches/secChance.tscn")
 var burnenem=preload("res://patches/burnEnemies.tscn")
 var secWind=preload("res://patches/secondWind.tscn")
+
+var frogProt=preload("res://patches/protocols/frog_protocol.tscn")
+var steveProt=preload("res://patches/protocols/steve_protocol.tscn")
 @onready var curChar : AnimatedSprite2D
 var permaDead:=false
 @export var health:=10.0:
@@ -184,6 +188,24 @@ func _ready() -> void:
 		curChar=barrel
 		curChar.play("idle")
 		maxHealth=CManager.charHP[8]+CManager.charLVL[8]*30
+	
+	if curPatch==6:
+		var frogees=frogProt.instantiate()
+		if character=="frog":
+			frogees.bonus=1
+		if character=="mask":
+			frogees.bonus=2
+		curProt=frogees
+		self.add_child(frogees)
+	if curPatch==7:
+		var frogees=steveProt.instantiate()
+		if character=="steve":
+			frogees.bonus=1
+		if character=="joe":
+			frogees.bonus=2
+		curProt=frogees
+		self.add_child(frogees)
+	
 	if curPatch==9:
 		if character=="robot":
 			maxHealth*=2
@@ -198,6 +220,7 @@ func _ready() -> void:
 		defUp=9999
 	if curPatch==12:
 		atkUp=9999
+	
 	if curPatch==13 && character!="lizard":
 		spdUp=9999
 	await get_tree().create_timer(1.0).timeout
@@ -252,6 +275,9 @@ func invincAnim()->void:
 			tweent3.tween_property(curChar, "self_modulate", Color(1.0, 1.0, 1.0, 1.0), 0.5)
 
 func _process(delta: float) -> void:
+	if party_handler.battleWon:
+		if curProt!=null:
+			curProt.deactivated=true
 	fire_on.visible=fire>0
 	if fire>0:
 		fire-=10*delta
@@ -320,6 +346,9 @@ func _process(delta: float) -> void:
 			if curChar.animation!="die":
 				explan_animator.play("hideText")
 				curChar.play("die")
+				move_explainer.visible=false
+				if curProt!=null:
+					curProt.die()
 				if health>-300:
 					health-=randi_range(30,90)
 				if curPatch==10 && !revived:
@@ -429,6 +458,8 @@ func _process(delta: float) -> void:
 				atkUp=9999
 			if curPatch==13 && character!="lizard":
 				spdUp=9999
+			if curProt!=null:
+				curProt.alive()
 			curChar.play("unDie")
 			moveProgress=0
 			health_label.modulate=Color(1.0, 1.0, 1.0, 1.0)

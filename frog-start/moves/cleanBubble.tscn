@@ -549,7 +549,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ch88d")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 15.0
 }, {
@@ -572,7 +572,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yk8ig")
 }],
-"loop": false,
+"loop": 0,
 "name": &"pop",
 "speed": 15.0
 }, {
@@ -598,12 +598,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mq7t7")
 }],
-"loop": false,
+"loop": 0,
 "name": &"spawn",
 "speed": 15.0
 }]
 
 [node name="Node2D" type="Node2D" unique_id=1871889031]
+z_index = 2
 position = Vector2(0, 2)
 script = ExtResource("1_d8kfd")
 

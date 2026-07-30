@@ -472,7 +472,7 @@ func _process(delta: float) -> void:
 						exp_box_desc.pop()
 					if CManager.party[dropOnParty-1]==6:
 						exp_box_desc.push_color(Color(0.467, 0.0, 0.0, 1.0)) 
-						exp_box_desc.add_text("\n\nHarmony Bonus:\nNow targets every enemy and afflicts burn if it fails\n+100% cooldown\n-40% luck")
+						exp_box_desc.add_text("\n\nHarmony Bonus:\nNow targets every enemy and afflicts burn if it fails\n+50% cooldown\n-40% luck")
 						exp_box_desc.pop()
 				
 				if CManager.currentPatches[dropOnParty-1]==8:

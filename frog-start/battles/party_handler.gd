@@ -25,7 +25,7 @@ extends Node2D
 @onready var move_handler2: Node2D = $party2/moveHandler
 @onready var move_handler3: Node2D = $party3/moveHandler
 @onready var move_handler4: Node2D = $party4/moveHandler
-
+@export var battleWon:=false
 
 
 func getAlivePlayers()->Array:
@@ -312,6 +312,7 @@ func _on_cleanse_box_area_entered(area: Area2D) -> void:
 
 func _on_enemy_handler_victory() -> void:
 	moveMenuOpen=true
+	battleWon=true
 	if move_handler.modulate!=Color(1.0, 1.0, 1.0, 0.0):
 		var tweenc = create_tween()
 		tweenc.tween_property(move_handler,"modulate",Color(1.0, 1.0, 1.0, 0.0),0.5).set_trans(Tween.TRANS_SINE)

@@ -3,21 +3,22 @@ extends Node2D
 var spawnLoca:=Vector2.ZERO
 @onready var sprite_2d: Sprite2D = $spinner/Sprite2D
 @onready var spinner: Sprite2D = $spinner
-var cooldown:=6.0
+var cooldown:=20.0
 var activeCooldown:=0.0
 @onready var animation_player: AnimationPlayer = $spinner/Sprite2D/AnimationPlayer
 @onready var frog_layer: CanvasLayer = $frogLayer
 @export var deactivated=false
 @export var bonus:=0
 var dead=false
-var attack=preload("res://patches/protocols/arrowProtMove.tscn")
+var attack=preload("res://moves/altf4.tscn")
+var attack2=preload("res://moves/Fired.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if bonus==1:
-		cooldown=4.0
+		cooldown=16.0
 	if bonus==2:
-		cooldown=10.0
+		cooldown=30.0
 	spawnLoca=self.global_position
 
 func die()->void:
@@ -55,13 +56,12 @@ func _process(delta: float) -> void:
 	if activeCooldown>=cooldown:
 		activeCooldown=0
 		if !deactivated:
-			var attA=attack.instantiate()
-			attA.spawnLoca=sprite_2d.global_position
-			frog_layer.add_child(attA)
 			if bonus==2:
-				var attA2=attack.instantiate()
-				attA2.spawnLoca=sprite_2d.global_position
-				frog_layer.add_child(attA2)
+				var attA=attack2.instantiate()
+				frog_layer.add_child(attA)
+			else:
+				var attA=attack.instantiate()
+				frog_layer.add_child(attA)
 			
 	spinner.rotation_degrees=90+(360*(activeCooldown/cooldown))
 	sprite_2d.rotation_degrees=0-spinner.rotation_degrees

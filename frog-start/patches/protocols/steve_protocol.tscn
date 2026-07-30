@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://bhdiuk3idnjv8"]
+[gd_scene format=3 uid="uid://b7bohlvqh1dd7"]
 
-[ext_resource type="Script" uid="uid://cqy1ukjbi86t8" path="res://patches/protocols/frog_protocol.gd" id="1_hmr8e"]
-[ext_resource type="Texture2D" uid="uid://dtcxqs5aox6ei" path="res://overworldPlayer/playerAssets/Ninja Frog/Jump (32x32).png" id="1_ykxy5"]
-[ext_resource type="Texture2D" uid="uid://dqbnukev4cip1" path="res://2DAssets/slasher.webp" id="2_7i0rm"]
+[ext_resource type="Script" uid="uid://b04yvmi4qggqd" path="res://patches/protocols/steve_protocol.gd" id="1_f472p"]
+[ext_resource type="Texture2D" uid="uid://dqbnukev4cip1" path="res://2DAssets/slasher.webp" id="2_p68it"]
+[ext_resource type="Texture2D" uid="uid://dyanhgfpxl74d" path="res://overworldPlayer/playerAssets/Virtual Guy/Jump (32x32).png" id="3_f472p"]
 
 [sub_resource type="Animation" id="Animation_7i0rm"]
 length = 0.001
@@ -48,7 +48,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.26666668, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(0, 18.892157, 0, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(0, 18.892157, 18.892157, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_atouy"]
@@ -77,14 +77,14 @@ _data = {
 
 [node name="FrogProtocol" type="Node2D" unique_id=1056466694]
 scale = Vector2(2, 2)
-script = ExtResource("1_hmr8e")
+script = ExtResource("1_f472p")
 
 [node name="spinner" type="Sprite2D" parent="." unique_id=1877391608]
 self_modulate = Color(1, 1, 1, 0)
 position = Vector2(0, 10)
 rotation = 1.5707964
 scale = Vector2(0.35, 0.35)
-texture = ExtResource("2_7i0rm")
+texture = ExtResource("2_p68it")
 
 [node name="Sprite2D" type="Sprite2D" parent="spinner" unique_id=188320007]
 z_index = 4
@@ -92,7 +92,7 @@ z_as_relative = false
 position = Vector2(-200, 0)
 rotation = -1.5707964
 scale = Vector2(-3.704, 3.704)
-texture = ExtResource("1_ykxy5")
+texture = ExtResource("3_f472p")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 20)
 
