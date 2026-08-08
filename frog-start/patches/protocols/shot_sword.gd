@@ -1,20 +1,20 @@
 extends Sprite2D
 @onready var timer: Timer = $Timer
+
 @onready var strike_projectile: damager = $strikeProjectile
-@onready var strike_projectile_2: damager = $strikeProjectile2
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var strike_projectile_3: damager = $strikeProjectile3
+
 var speed:=1800
-@export var damage:=2
-var moving:=true
+@export var damage:=10
+@export var crip:=false
 func _ready() -> void:
 	strike_projectile.damage=damage
-	strike_projectile_2.damage=damage-1
-	strike_projectile_2.damage=damage-1
+	
+
 func _process(delta: float) -> void:
-	speed+=5*delta
-	if moving:
-		global_position.x-=speed*delta
+	if crip:
+		strike_projectile.strRev=2
 	if global_position.x<-200:
 		queue_free()
 
@@ -26,12 +26,4 @@ func _on_timer_timeout() -> void:
 
 func _on_strike_projectile_area_entered(area: Area2D) -> void:
 	if global_position.x<1013:
-		animation_player.play("flash")
-
-
-func _on_strike_projectile_3_area_entered(area: Area2D) -> void:
-	if global_position.x<1013:
-		animation_player.play("flash")
-		moving=false
-		await get_tree().create_timer(0.1).timeout
 		queue_free()

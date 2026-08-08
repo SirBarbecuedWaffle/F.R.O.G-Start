@@ -14,14 +14,14 @@ size = Vector2(47, 61)
 [sub_resource type="Gradient" id="Gradient_83tgv"]
 colors = PackedColorArray(1, 1, 1, 1, 0.3779188, 0.37791887, 0.37791884, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_68jta"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6ny30"]
 gradient = SubResource("Gradient_83tgv")
 
 [sub_resource type="Gradient" id="Gradient_fmfu8"]
 offsets = PackedFloat32Array(0.50121063, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_fr7aw"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_83tgv"]
 gradient = SubResource("Gradient_fmfu8")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6ny30"]
@@ -35,8 +35,8 @@ linear_accel_max = -59.23
 scale_min = 3.0
 scale_max = 3.0
 color = Color(1, 0, 0, 1)
-color_ramp = SubResource("GradientTexture1D_fr7aw")
-color_initial_ramp = SubResource("GradientTexture1D_68jta")
+color_ramp = SubResource("GradientTexture1D_83tgv")
+color_initial_ramp = SubResource("GradientTexture1D_6ny30")
 
 [node name="alt f4" type="Node2D" unique_id=1384217156]
 script = ExtResource("1_ojhyd")

@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://bkn3de80meh5e"]
+[gd_scene format=3 uid="uid://bmgc3vh22de2n"]
 
-[ext_resource type="Texture2D" uid="uid://dqbnukev4cip1" path="res://2DAssets/slasher.webp" id="1_e1q58"]
-[ext_resource type="Script" uid="uid://dsk2iybq1wcyf" path="res://moves/sword.gd" id="2_0pn8q"]
-[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="2_4g3ir"]
+[ext_resource type="Texture2D" uid="uid://dqbnukev4cip1" path="res://2DAssets/slasher.webp" id="1_a2vde"]
+[ext_resource type="Script" uid="uid://2j8q1470sii" path="res://patches/protocols/shot_sword.gd" id="2_5eib4"]
+[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="3_abpte"]
 
 [sub_resource type="Animation" id="Animation_4g3ir"]
 length = 0.001
@@ -44,30 +44,17 @@ _data = {
 [node name="sword" type="Sprite2D" unique_id=344447335]
 modulate = Color(0.33333302, 0, 1, 1)
 z_index = 2
-position = Vector2(2663, 456)
-texture = ExtResource("1_e1q58")
-script = ExtResource("2_0pn8q")
+z_as_relative = false
+rotation = 3.1415927
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_a2vde")
+script = ExtResource("2_5eib4")
 
-[node name="strikeProjectile" parent="." unique_id=1142312808 instance=ExtResource("2_4g3ir")]
-visible = false
-position = Vector2(-60, 0)
+[node name="strikeProjectile" parent="." unique_id=1142312808 instance=ExtResource("3_abpte")]
+position = Vector2(-38.333336, 6.712996e-06)
+scale = Vector2(2.33, 1)
 collision_layer = 8
 damage = 2
-oneHit = false
-randomNumbers = true
-
-[node name="strikeProjectile2" parent="." unique_id=1447791171 instance=ExtResource("2_4g3ir")]
-visible = false
-position = Vector2(4, 0)
-collision_layer = 8
-damage = 1
-oneHit = false
-randomNumbers = true
-
-[node name="strikeProjectile3" parent="." unique_id=686724173 instance=ExtResource("2_4g3ir")]
-position = Vector2(63, 0)
-collision_layer = 8
-damage = 1
 oneHit = false
 randomNumbers = true
 
@@ -79,6 +66,4 @@ autostart = true
 libraries/ = SubResource("AnimationLibrary_8dc6l")
 
 [connection signal="area_entered" from="strikeProjectile" to="." method="_on_strike_projectile_area_entered"]
-[connection signal="area_entered" from="strikeProjectile2" to="." method="_on_strike_projectile_area_entered"]
-[connection signal="area_entered" from="strikeProjectile3" to="." method="_on_strike_projectile_3_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

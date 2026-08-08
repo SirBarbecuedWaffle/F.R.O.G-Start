@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://cjk7fklj48wj0"]
+
+[ext_resource type="Script" uid="uid://6yhhy1a80ukt" path="res://patches/protocols/sword_shot.gd" id="1_ihktn"]
+[ext_resource type="PackedScene" uid="uid://bmgc3vh22de2n" path="res://patches/protocols/shotSword.tscn" id="2_ikna5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ul3v"]
+size = Vector2(109, 138)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ikig"]
+size = Vector2(503, 180)
+
+[sub_resource type="Animation" id="Animation_8ikig"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_l6svt"]
+resource_name = "arrowFade"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4toh0"]
+resource_name = "arrowsSpawn"
+length = 2.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l6svt"]
+_data = {
+&"RESET": SubResource("Animation_8ikig"),
+&"arrowFade": SubResource("Animation_l6svt"),
+&"arrowsSpawn": SubResource("Animation_4toh0")
+}
+
+[node name="swordShot" type="Node2D" unique_id=278365401]
+z_index = 1
+z_as_relative = false
+script = ExtResource("1_ihktn")
+
+[node name="places" type="Node2D" parent="." unique_id=1351447801]
+position = Vector2(-952, 0)
+
+[node name="place1" type="Area2D" parent="places" unique_id=1548890133]
+position = Vector2(1397, 148)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place1" unique_id=1675188904]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_0ul3v")
+
+[node name="place3" type="Area2D" parent="places" unique_id=551631987]
+position = Vector2(1371, 820)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place3" unique_id=48757301]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_0ul3v")
+
+[node name="place4" type="Area2D" parent="places" unique_id=1984335278]
+position = Vector2(1160, 482)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place4" unique_id=1149187771]
+position = Vector2(176.5, -16)
+shape = SubResource("RectangleShape2D_8ikig")
+
+[node name="spawnLocation" type="Marker2D" parent="." unique_id=674989445]
+position = Vector2(1394, 374)
+
+[node name="Arrows" type="Node2D" parent="." unique_id=853504226]
+position = Vector2(1504, 605)
+
+[node name="arrow1" parent="Arrows" unique_id=344447335 instance=ExtResource("2_ikna5")]
+visible = false
+position = Vector2(-1504, -605)
+
+[node name="targets" type="Node2D" parent="." unique_id=1186052481]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=4047694]
+root_node = NodePath("../Arrows")
+libraries/ = SubResource("AnimationLibrary_l6svt")
+autoplay = &"arrowsSpawn"
+
+[connection signal="area_entered" from="places/place1" to="." method="_on_place_1_area_entered"]
+[connection signal="area_entered" from="places/place3" to="." method="_on_place_3_area_entered"]
+[connection signal="area_entered" from="places/place4" to="." method="_on_place_4_area_entered"]

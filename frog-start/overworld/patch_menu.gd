@@ -308,7 +308,7 @@ func _process(delta: float) -> void:
 					exp_box_desc.text="Every 2 seconds fires a sword that deals 10 damage to a random enemy"
 				if patchHoved==17:
 					exp_box_name.text="Protocol: Electrocute"
-					exp_box_desc.text="Evey 10 seconds electrocutes a random enemy stunning it for 3 seconds"
+					exp_box_desc.text="Every 10 seconds electrocutes a random enemy stunning it for 3 seconds"
 				if patchHoved==18:
 					exp_box_name.text="Protocol: Caffeinate"
 					exp_box_desc.text="Every 15 seconds fires a coffee mug that either heals a random member of your party for 100 health or burns a random enemy for 100 damage"
@@ -597,6 +597,55 @@ func _process(delta: float) -> void:
 						exp_box_desc.add_text("\n\nHarmony Bonus:\n+50% Fireball Damage")
 						exp_box_desc.pop()
 				
+				if CManager.currentPatches[dropOnParty-1]==16:
+					exp_box_name.text="Protocol: Sword"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Every 2 seconds fires a sword that deals 10 damage to a random enemy")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==4:
+						exp_box_desc.push_color(Color(1.0, 0.43, 0.972, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+1 Sword")
+						exp_box_desc.pop()
+						
+					if CManager.party[dropOnParty-1]==1:
+						exp_box_desc.push_color(Color(0.017, 1.0, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+1 second of decreased defense to enemies hit")
+						exp_box_desc.pop()
+				
+				if CManager.currentPatches[dropOnParty-1]==17:
+					exp_box_name.text="Protocol: Electrocute"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Every 10 seconds electrocutes a random enemy stunning it for 3 seconds and burning it for 25 damage")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==5:
+						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+100 burn damage")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==2:
+						exp_box_desc.push_color(Color(0.0, 0.967, 1.0, 1.0))  
+						exp_box_desc.add_text("\n\nHarmony Bonus:\nNo longer stuns\n+25 burn damage\n+1/20 chance to cleave the enemy hit")
+						exp_box_desc.pop()
+				
+				if CManager.currentPatches[dropOnParty-1]==18:
+					exp_box_name.text="Protocol: Caffeinate"
+					exp_box_desc.text=""
+					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
+					exp_box_desc.add_text("Every 15 seconds fires a coffee mug that either heals a random member of your party for 100 health or burns a random enemy for 100 damage")
+					exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==6:
+						exp_box_desc.push_color(Color(0.467, 0.0, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+50 health to allies\n+5 seconds of increased speed to allies")
+						exp_box_desc.pop()
+					if CManager.party[dropOnParty-1]==4:
+						exp_box_desc.push_color(Color(1.0, 0.43, 0.972, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+50 burn damage\n+5 seconds of decreased speed to enemies")
+						exp_box_desc.pop()
+				
+				
+				
+				
 				if CManager.currentPatches[dropOnParty-1]==19:
 					exp_box_name.text="Revenge: Frogsicle"
 					exp_box_desc.text=""
@@ -759,7 +808,7 @@ func _process(delta: float) -> void:
 						exp_box_desc.pop()
 					if CManager.party[dropOnParty-1]==7:
 						exp_box_desc.push_color(Color(1.0, 0.683, 0.0, 1.0)) 
-						exp_box_desc.add_text("\n\nHarmony Bonus:\nRandomizes stun duration between 1 and 7 seconds")
+						exp_box_desc.add_text("\n\nHarmony Bonus:\nRandomizes stun duration between 1 and 9 seconds")
 						exp_box_desc.pop()
 				
 				if CManager.currentPatches[dropOnParty-1]==30:

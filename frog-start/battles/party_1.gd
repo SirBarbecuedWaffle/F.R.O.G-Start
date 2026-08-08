@@ -85,6 +85,10 @@ var secWind=preload("res://patches/secondWind.tscn")
 
 var frogProt=preload("res://patches/protocols/frog_protocol.tscn")
 var steveProt=preload("res://patches/protocols/steve_protocol.tscn")
+var maskProt=preload("res://patches/protocols/mask_protocol.tscn")
+var hoodProt=preload("res://patches/protocols/hood_protocol.tscn")
+var robotProt=preload("res://patches/protocols/robot_protocol.tscn")
+var joeProt=preload("res://patches/protocols/joe_protocol.tscn")
 @onready var curChar : AnimatedSprite2D
 var permaDead:=false
 @export var health:=10.0:
@@ -202,6 +206,40 @@ func _ready() -> void:
 		if character=="steve":
 			frogees.bonus=1
 		if character=="joe":
+			frogees.bonus=2
+		curProt=frogees
+		self.add_child(frogees)
+	if curPatch==8:
+		var frogees=maskProt.instantiate()
+		if character=="mask":
+			frogees.bonus=1
+		if character=="lizard":
+			frogees.bonus=2
+		curProt=frogees
+		self.add_child(frogees)
+		
+	if curPatch==16:
+		var frogees=hoodProt.instantiate()
+		if character=="pink":
+			frogees.bonus=1
+		if character=="frog":
+			frogees.bonus=2
+		curProt=frogees
+		self.add_child(frogees)
+	if curPatch==17:
+		var frogees=robotProt.instantiate()
+		if character=="robot":
+			frogees.bonus=1
+		if character=="steve":
+			frogees.bonus=2
+		curProt=frogees
+		self.add_child(frogees)
+		
+	if curPatch==18:
+		var frogees=joeProt.instantiate()
+		if character=="joe":
+			frogees.bonus=1
+		if character=="pink":
 			frogees.bonus=2
 		curProt=frogees
 		self.add_child(frogees)
@@ -734,13 +772,27 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 				elif area.damage>0:
 					if curPatch==24:
 						var striked=strikeMove.instantiate()
+						if character=="frog":
+							striked.multiplier=3
+						if character=="mask":
+							striked.slowSpd=true
 						frog_layer.add_child(striked)
 					if curPatch==25:
 						var striked=pummeld.instantiate()
+						if character=="lizard":
+							striked.multiplier=2
 						frog_layer.add_child(striked)
+						if character=="robot":
+							await get_tree().create_timer(1.5).timeout
+							var striked2=pummeld.instantiate()
+							frog_layer.add_child(striked2)
 					if curPatch==29:
 						var striked=elect.instantiate()
 						striked.stunLength=3
+						if character=="robot":
+							striked.stunLength=5
+						if character=="fox":
+							striked.stunLength=randi_range(1,9)
 						frog_layer.add_child(striked)
 					
 					if defUp>0:

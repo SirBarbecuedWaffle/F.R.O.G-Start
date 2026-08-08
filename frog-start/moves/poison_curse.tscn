@@ -35,7 +35,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hi305")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 15.0
 }]
@@ -44,7 +44,7 @@ animations = [{
 script = ExtResource("1_dgboc")
 
 [node name="strikeProjectile" parent="." unique_id=1142312808 instance=ExtResource("1_jk85q")]
-modulate = Color(0, 0.57254905, 0, 0.44313726)
+modulate = Color(0, 0.57254905, 0, 0.49019608)
 position = Vector2(2528, 526.00006)
 scale = Vector2(20, 20)
 collision_layer = 8

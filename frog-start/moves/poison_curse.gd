@@ -1,6 +1,6 @@
 extends Node2D
 @onready var strike_projectile: damager = $strikeProjectile
-var strikeVel:=30.0
+var strikeVel:=150.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
