@@ -4988,7 +4988,7 @@ frame = 17
 frame_progress = 1.0
 
 [node name="strBuffAnim" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party1" unique_id=41032111]
-modulate = Color(1, 0, 0.016666412, 0.7529412)
+modulate = Color(1, 0, 0.015686275, 0.7529412)
 z_index = 1
 position = Vector2(-1.6306152, -24.08545)
 scale = Vector2(2.9999995, 2.9999995)

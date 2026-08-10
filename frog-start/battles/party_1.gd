@@ -89,6 +89,7 @@ var maskProt=preload("res://patches/protocols/mask_protocol.tscn")
 var hoodProt=preload("res://patches/protocols/hood_protocol.tscn")
 var robotProt=preload("res://patches/protocols/robot_protocol.tscn")
 var joeProt=preload("res://patches/protocols/joe_protocol.tscn")
+var foxProt=preload("res://patches/protocols/fox_protocol.tscn")
 @onready var curChar : AnimatedSprite2D
 var permaDead:=false
 @export var health:=10.0:
@@ -244,6 +245,15 @@ func _ready() -> void:
 		curProt=frogees
 		self.add_child(frogees)
 	
+	if curPatch==26:
+		var frogees=foxProt.instantiate()
+		if character=="fox":
+			frogees.bonus=1
+		if character=="steve":
+			frogees.bonus=2
+		curProt=frogees
+		self.add_child(frogees)
+	
 	if curPatch==9:
 		if character=="robot":
 			maxHealth*=2
@@ -369,9 +379,10 @@ func _process(delta: float) -> void:
 			stun-=1*delta
 			moveProgress=randi_range(0,turnTime-50)
 	if regen>0:
-		regen-=1*delta
-		if regen%125==0:
+		regen-=25*delta
+		if regen%50==0:
 			if health!=maxHealth:
+				
 				health+=5
 			var movie=damageIcon.instantiate()
 			movie.damageAmount=-5

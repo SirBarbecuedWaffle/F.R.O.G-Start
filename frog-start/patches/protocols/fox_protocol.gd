@@ -3,15 +3,14 @@ extends Node2D
 var spawnLoca:=Vector2.ZERO
 @onready var sprite_2d: Sprite2D = $spinner/Sprite2D
 @onready var spinner: Sprite2D = $spinner
-var cooldown:=15.0
+var cooldown:=12.0
 var activeCooldown:=0.0
 @onready var animation_player: AnimationPlayer = $spinner/Sprite2D/AnimationPlayer
 @onready var frog_layer: CanvasLayer = $frogLayer
 @export var deactivated=false
 @export var bonus:=0
 var dead=false
-var attack1=preload("res://moves/scald.tscn")
-var attack2=preload("res://moves/singleCoffee.tscn")
+var attack1=preload("res://patches/protocols/singleDiceRoll.tscn")
 var shot:=false
 
 # Called when the node enters the scene tree for the first time.
@@ -48,25 +47,14 @@ func _process(delta: float) -> void:
 		activeCooldown+=1*delta
 	if activeCooldown>cooldown-0.35:
 		if !deactivated && !shot:
-			var chance:=randi_range(0,1)
 			shot=true
-			if chance==0:
-				var attA=attack1.instantiate()
-				if bonus==2:
-					attA.improved=true
-				await get_tree().create_timer(0.2).timeout
-				attA.spawnLoca=sprite_2d.global_position
-				if deactivated:
-					attA.queue_free()
-				frog_layer.add_child(attA)
-			if chance==1:
-				var attA=attack2.instantiate()
-				if bonus==1:
-					attA.improved=true
-				await get_tree().create_timer(0.2).timeout
-				if deactivated:
-					attA.queue_free()
-				frog_layer.add_child(attA)
+			await get_tree().create_timer(0.2).timeout
+			var attA=attack1.instantiate()
+			attA.bone=bonus
+			attA.spawnLoca=sprite_2d.global_position
+			if deactivated:
+				attA.queue_free()
+			frog_layer.add_child(attA)
 	if activeCooldown>cooldown-0.25:
 		if animation_player.current_animation!="flash" && !deactivated:
 			animation_player.play("flash")

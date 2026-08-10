@@ -12,12 +12,14 @@ extends Node2D
 @onready var arrow_3: damager = $Arrows/arrow3
 @onready var arrow_4: damager = $Arrows/arrow4
 @onready var arrows: Node2D = $Arrows
-
+@export var improved:=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if improved:
+		arrow_1.damage-=50
+		arrow_1.spdBuf=6
 	spawn_location.global_position=spawnLoca
-	
 	arrow_1.global_position=place_1.global_position
 	arrow_1.global_position.y=place_1.global_position.y-170
 	await get_tree().create_timer(0.1).timeout
