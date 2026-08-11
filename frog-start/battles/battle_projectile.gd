@@ -15,6 +15,7 @@ class_name damager
 @export var oneHit:=true
 @export var randomNumbers:=false
 @export var glitch:=false
+@export var envenom:=false
 
 func _ready() -> void:
 	if randomNumbers:

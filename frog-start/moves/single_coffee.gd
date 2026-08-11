@@ -18,7 +18,7 @@ extends Node2D
 func _ready() -> void:
 	if improved:
 		arrow_1.damage-=50
-		arrow_1.spdBuf=6
+		arrow_1.spdBuf+=5
 	spawn_location.global_position=spawnLoca
 	arrow_1.global_position=place_1.global_position
 	arrow_1.global_position.y=place_1.global_position.y-170

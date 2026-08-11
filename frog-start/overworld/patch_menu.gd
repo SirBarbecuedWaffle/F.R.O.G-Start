@@ -311,7 +311,7 @@ func _process(delta: float) -> void:
 					exp_box_desc.text="Every 10 seconds electrocutes a random enemy stunning it for 3 seconds"
 				if patchHoved==18:
 					exp_box_name.text="Protocol: Caffeinate"
-					exp_box_desc.text="Every 15 seconds fires a coffee mug that either heals a random member of your party for 100 health or burns a random enemy for 100 damage"
+					exp_box_desc.text="Every 15 seconds fires a coffee mug that either heals a random member of your party for 100 health and raises their speed for 5 seconds or burns a random enemy for 100 damage"
 				if patchHoved==19:
 					exp_box_name.text="Revenge: Frogsicle"
 					exp_box_desc.text="Summons healing frogsicles for your entire party whenever an enemy gets killed"
@@ -341,7 +341,7 @@ func _process(delta: float) -> void:
 					exp_box_desc.text="Every 15 seconds targets a random enemy, afflicting poison and negative status effects for 5 seconds"
 				if patchHoved==28:
 					exp_box_name.text="Protocol: Hydrate"
-					exp_box_desc.text="Every 20 seconds heals your entire party for 200 health"
+					exp_box_desc.text="Every 20 seconds heals every member of your party for 75 health and applies a random positive status effect"
 				if patchHoved==29:
 					exp_box_name.text="Counter: Electrocute"
 					exp_box_desc.text="Automatically burns and stuns a random enemy for 3 seconds\nTriggers whenever the party member with the patch equipped gets attacked"
@@ -632,7 +632,7 @@ func _process(delta: float) -> void:
 					exp_box_name.text="Protocol: Caffeinate"
 					exp_box_desc.text=""
 					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
-					exp_box_desc.add_text("Every 15 seconds fires a coffee mug that either heals a random member of your party for 100 health or burns a random enemy for 100 damage")
+					exp_box_desc.add_text("Every 15 seconds fires a coffee mug that either heals a random member of your party for 100 health and raises their speed for 5 seconds or burns a random enemy for 100 damage")
 					exp_box_desc.pop()
 					if CManager.party[dropOnParty-1]==6:
 						exp_box_desc.push_color(Color(0.467, 0.0, 0.0, 1.0)) 
@@ -785,15 +785,15 @@ func _process(delta: float) -> void:
 					exp_box_name.text="Protocol: Hydrate"
 					exp_box_desc.text=""
 					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
-					exp_box_desc.add_text("Every 20 seconds heals your entire party for 200 health")
+					exp_box_desc.add_text("Every 20 seconds heals every member of your party for 75 health and applies a random positive status effect")
 					exp_box_desc.pop()
 					if CManager.party[dropOnParty-1]==9:
 						exp_box_desc.push_color(Color(1.0, 0.0, 0.0, 1.0)) 
-						exp_box_desc.add_text("\n\nHarmony Bonus:\n+10 seconds of all 3 positive status effects upon activation")
+						exp_box_desc.add_text("\n\nHarmony Bonus:\nCan now apply regen and invincibility")
 						exp_box_desc.pop()
 					if CManager.party[dropOnParty-1]==6:
 						exp_box_desc.push_color(Color(0.467, 0.0, 0.0, 1.0)) 
-						exp_box_desc.add_text("\n\nHarmony Bonus:\n+100 health upon activation")
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+25 health\nAdditionally heals and increases the speed of a random party member upon activation")
 						exp_box_desc.pop()
 				
 				if CManager.currentPatches[dropOnParty-1]==29:

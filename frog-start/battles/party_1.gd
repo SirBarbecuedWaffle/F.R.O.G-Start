@@ -73,7 +73,7 @@ var toxiced=preload("res://moves/toxicsludge.tscn")
 var cleanse=preload("res://moves/pressure_wash.tscn")
 var bottoms=preload("res://moves/BottomsUp.tscn")
 var dice=preload("res://moves/diceRoll.tscn")
-
+var envenom=preload("res://moves/envenom.tscn")
 
 var hDef=preload("res://patches/hDefense.tscn")
 var hStr=preload("res://patches/hStrength.tscn")
@@ -90,6 +90,8 @@ var hoodProt=preload("res://patches/protocols/hood_protocol.tscn")
 var robotProt=preload("res://patches/protocols/robot_protocol.tscn")
 var joeProt=preload("res://patches/protocols/joe_protocol.tscn")
 var foxProt=preload("res://patches/protocols/fox_protocol.tscn")
+
+var barrProt=preload("res://patches/protocols/barrel_protocol.tscn")
 @onready var curChar : AnimatedSprite2D
 var permaDead:=false
 @export var health:=10.0:
@@ -254,6 +256,24 @@ func _ready() -> void:
 		curProt=frogees
 		self.add_child(frogees)
 	
+	if curPatch==27:
+		var frogees=foxProt.instantiate()
+		if character=="fox":
+			frogees.bonus=1
+		if character=="steve":
+			frogees.bonus=2
+		curProt=frogees
+		self.add_child(frogees)
+	
+	if curPatch==28:
+		var frogees=barrProt.instantiate()
+		if character=="barrel":
+			frogees.bonus=1
+		if character=="joe":
+			frogees.bonus=2
+		curProt=frogees
+		self.add_child(frogees)
+	
 	if curPatch==9:
 		if character=="robot":
 			maxHealth*=2
@@ -379,11 +399,13 @@ func _process(delta: float) -> void:
 			stun-=1*delta
 			moveProgress=randi_range(0,turnTime-50)
 	if regen>0:
-		regen-=25*delta
-		if regen%50==0:
-			if health!=maxHealth:
-				
+		regen-=20*delta
+		if regen%20==0:
+			if health<maxHealth-4:
+				print(regen)
 				health+=5
+			else:
+				health=maxHealth
 			var movie=damageIcon.instantiate()
 			movie.damageAmount=-5
 			movie.global_position=global_position
@@ -631,6 +653,14 @@ func _on_move_handler_move_used(move: String) -> void:
 			infed.multiplier-=0.5
 		frog_layer.add_child(infed)
 		
+	if move=="Envenom":
+		var infed=envenom.instantiate()
+		if atkUp>0:
+			infed.multiplier+=0.5
+		if atkDown>0:
+			infed.multiplier-=0.5
+		frog_layer.add_child(infed)
+	
 	if move=="Curse: Poison":
 		var cursed=curPoiMove.instantiate()
 		frog_layer.add_child(cursed)
@@ -750,7 +780,7 @@ func getChar()->String:
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area is damager:
-		regen+=area.regen*20
+		regen+=area.regen*4
 		if !area.damage<0:
 			var flashe=flash.instantiate()
 			frog_layer.add_child(flashe)

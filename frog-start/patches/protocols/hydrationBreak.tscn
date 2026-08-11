@@ -1,0 +1,283 @@
+[gd_scene format=3 uid="uid://dimdonyq06yl3"]
+
+[ext_resource type="Script" uid="uid://c5u01xyg11ee" path="res://patches/protocols/hydration_break.gd" id="1_vr7as"]
+[ext_resource type="PackedScene" uid="uid://ed4lq6nfb7e3" path="res://battles/battle_projectile.tscn" id="2_vjxwc"]
+[ext_resource type="Texture2D" uid="uid://0mdpbo6ttc1g" path="res://2DAssets/AssetPack_V01_FREE.png" id="3_e362i"]
+[ext_resource type="Texture2D" uid="uid://dddb0x0nt7ias" path="res://2DAssets/beer.png" id="4_qu5ye"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvt6q"]
+size = Vector2(109, 138)
+
+[sub_resource type="Animation" id="Animation_8ikig"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4toh0"]
+resource_name = "arrowsSpawn"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l6svt"]
+_data = {
+&"RESET": SubResource("Animation_8ikig"),
+&"arrowsSpawn": SubResource("Animation_4toh0")
+}
+
+[node name="hydrateBreak" type="Node2D" unique_id=278365401]
+z_index = 1
+script = ExtResource("1_vr7as")
+
+[node name="places" type="Node2D" parent="." unique_id=1573095243]
+position = Vector2(307, 73)
+
+[node name="place1" type="Area2D" parent="places" unique_id=1595523340]
+position = Vector2(1397, 148)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place1" unique_id=1649506526]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_uvt6q")
+
+[node name="place2" type="Area2D" parent="places" unique_id=1653346876]
+position = Vector2(1598, 432)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place2" unique_id=31848612]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_uvt6q")
+
+[node name="place3" type="Area2D" parent="places" unique_id=1366140814]
+position = Vector2(1371, 820)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place3" unique_id=757552924]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_uvt6q")
+
+[node name="place4" type="Area2D" parent="places" unique_id=781389499]
+position = Vector2(1160, 482)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place4" unique_id=691870363]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_uvt6q")
+
+[node name="spawnLocation" type="Marker2D" parent="." unique_id=674989445]
+position = Vector2(1394, 374)
+
+[node name="Arrows" type="Node2D" parent="." unique_id=853504226]
+position = Vector2(1504, 605)
+
+[node name="arrow1" parent="Arrows" unique_id=1142312808 instance=ExtResource("2_vjxwc")]
+visible = false
+position = Vector2(175, -538)
+damage = -75
+
+[node name="cof1" type="Sprite2D" parent="Arrows/arrow1" unique_id=1909176716]
+visible = false
+position = Vector2(-2.0000002, 4.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("3_e362i")
+region_enabled = true
+region_rect = Rect2(48.35092, 16.104969, 15.533623, 15.915485)
+
+[node name="inv1" type="Sprite2D" parent="Arrows/arrow1" unique_id=39156719]
+visible = false
+position = Vector2(-2.0000002, 4.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("3_e362i")
+region_enabled = true
+region_rect = Rect2(64, 16, 16, 16)
+
+[node name="def1" type="Sprite2D" parent="Arrows/arrow1" unique_id=918486334]
+visible = false
+position = Vector2(-2.0000002, 4.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("3_e362i")
+region_enabled = true
+region_rect = Rect2(48, 48, 16, 16)
+
+[node name="str1" type="Sprite2D" parent="Arrows/arrow1" unique_id=1289575706]
+visible = false
+position = Vector2(1.9999998, 19.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("4_qu5ye")
+region_rect = Rect2(48, 48, 16, 16)
+
+[node name="reg1" type="Sprite2D" parent="Arrows/arrow1" unique_id=2003823238]
+visible = false
+position = Vector2(-4, 2.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("3_e362i")
+region_enabled = true
+region_rect = Rect2(32, 48, 16, 16)
+
+[node name="arrow2" parent="Arrows" unique_id=1842772094 instance=ExtResource("2_vjxwc")]
+visible = false
+position = Vector2(-61, -204)
+damage = -75
+
+[node name="cof2" type="Sprite2D" parent="Arrows/arrow2" unique_id=62712553]
+visible = false
+position = Vector2(-2.0000002, 4.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("3_e362i")
+region_enabled = true
+region_rect = Rect2(48.35092, 16.104969, 15.533623, 15.915485)
+
+[node name="inv2" type="Sprite2D" parent="Arrows/arrow2" unique_id=1227417947]
+visible = false
+position = Vector2(-2.0000002, 4.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("3_e362i")
+region_enabled = true
+region_rect = Rect2(64, 16, 16, 16)
+
+[node name="def2" type="Sprite2D" parent="Arrows/arrow2" unique_id=1094281110]
+visible = false
+position = Vector2(-2.0000002, 4.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("3_e362i")
+region_enabled = true
+region_rect = Rect2(48, 48, 16, 16)
+
+[node name="str2" type="Sprite2D" parent="Arrows/arrow2" unique_id=1893271708]
+visible = false
+position = Vector2(1.9999998, 19.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("4_qu5ye")
+region_rect = Rect2(48, 48, 16, 16)
+
+[node name="reg2" type="Sprite2D" parent="Arrows/arrow2" unique_id=474588381]
+visible = false
+position = Vector2(-4, 2.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("3_e362i")
+region_enabled = true
+region_rect = Rect2(32, 48, 16, 16)
+
+[node name="arrow3" parent="Arrows" unique_id=346935710 instance=ExtResource("2_vjxwc")]
+visible = false
+position = Vector2(-646, -64)
+damage = -75
+
+[node name="cof3" type="Sprite2D" parent="Arrows/arrow3" unique_id=285536592]
+visible = false
+position = Vector2(-2.0000002, 4.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("3_e362i")
+region_enabled = true
+region_rect = Rect2(48.35092, 16.104969, 15.533623, 15.915485)
+
+[node name="inv3" type="Sprite2D" parent="Arrows/arrow3" unique_id=696062567]
+visible = false
+position = Vector2(-2.0000002, 4.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("3_e362i")
+region_enabled = true
+region_rect = Rect2(64, 16, 16, 16)
+
+[node name="def3" type="Sprite2D" parent="Arrows/arrow3" unique_id=386272744]
+visible = false
+position = Vector2(-2.0000002, 4.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("3_e362i")
+region_enabled = true
+region_rect = Rect2(48, 48, 16, 16)
+
+[node name="str3" type="Sprite2D" parent="Arrows/arrow3" unique_id=388228971]
+visible = false
+position = Vector2(1.9999998, 19.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("4_qu5ye")
+region_rect = Rect2(48, 48, 16, 16)
+
+[node name="reg3" type="Sprite2D" parent="Arrows/arrow3" unique_id=2134358004]
+visible = false
+position = Vector2(-4, 2.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("3_e362i")
+region_enabled = true
+region_rect = Rect2(32, 48, 16, 16)
+
+[node name="arrow4" parent="Arrows" unique_id=1232609900 instance=ExtResource("2_vjxwc")]
+visible = false
+position = Vector2(-410, -365)
+damage = -75
+
+[node name="cof4" type="Sprite2D" parent="Arrows/arrow4" unique_id=709892211]
+visible = false
+position = Vector2(-2.0000002, 4.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("3_e362i")
+region_enabled = true
+region_rect = Rect2(48.35092, 16.104969, 15.533623, 15.915485)
+
+[node name="inv4" type="Sprite2D" parent="Arrows/arrow4" unique_id=1687134533]
+visible = false
+position = Vector2(-2.0000002, 4.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("3_e362i")
+region_enabled = true
+region_rect = Rect2(64, 16, 16, 16)
+
+[node name="def4" type="Sprite2D" parent="Arrows/arrow4" unique_id=1887424565]
+visible = false
+position = Vector2(-2.0000002, 4.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("3_e362i")
+region_enabled = true
+region_rect = Rect2(48, 48, 16, 16)
+
+[node name="str4" type="Sprite2D" parent="Arrows/arrow4" unique_id=214148001]
+visible = false
+position = Vector2(1.9999998, 19.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("4_qu5ye")
+region_rect = Rect2(48, 48, 16, 16)
+
+[node name="reg4" type="Sprite2D" parent="Arrows/arrow4" unique_id=2071592726]
+visible = false
+position = Vector2(-4, 2.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("3_e362i")
+region_enabled = true
+region_rect = Rect2(32, 48, 16, 16)
+
+[node name="targets" type="Node2D" parent="." unique_id=1186052481]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=4047694]
+root_node = NodePath("../Arrows")
+libraries/ = SubResource("AnimationLibrary_l6svt")
+autoplay = &"arrowsSpawn"
+
+[connection signal="area_entered" from="places/place1" to="." method="_on_place_1_area_entered"]
+[connection signal="area_entered" from="places/place2" to="." method="_on_place_2_area_entered"]
+[connection signal="area_entered" from="places/place3" to="." method="_on_place_3_area_entered"]
+[connection signal="area_entered" from="places/place4" to="." method="_on_place_4_area_entered"]

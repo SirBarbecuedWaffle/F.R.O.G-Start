@@ -226,7 +226,6 @@ func _process(delta: float) -> void:
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area is damager:
-		health-=area.damage
 		regen+=area.regen*20
 		if area.damage!=0:
 			if area.damage>0:
@@ -236,15 +235,29 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 					area.damage-=(area.damage)/2
 				if defDown>0:
 					area.damage+=(area.damage)/2
-			var movie=damageIcon.instantiate()
-			movie.damageAmount=area.damage
-			movie.global_position=global_position
-			if area.damage>3000:
-				movie.damageType="cleaving"
-			if area.glitch:
-				movie.damageType="glitch"
-			frog_layer.add_child(movie)
-		poison+=area.poison
+			if !area.envenom || poison<1:
+				var movie=damageIcon.instantiate()
+				movie.damageAmount=area.damage
+				movie.global_position=global_position
+				if area.damage>3000:
+					movie.damageType="cleaving"
+				if area.glitch:
+					movie.damageType="glitch"
+				frog_layer.add_child(movie)
+		if area.envenom:
+			if poison>0:
+				var movie=damageIcon.instantiate()
+				movie.damageAmount=poison*(maxHealth*0.0005)+area.damage
+				movie.global_position=global_position
+				movie.damageType="poison"
+				frog_layer.add_child(movie)
+				health-=poison*(maxHealth*0.0005)
+				poison=0
+			else:
+				poison+=area.poison
+		else:
+			poison+=area.poison
+		health-=area.damage
 		stun+=area.stun
 		fire+=area.burn
 		
@@ -295,11 +308,11 @@ func _on_attack_animator_animation_finished(anim_name: StringName) -> void:
 func _on_poison_damage_timeout() -> void:
 	var am=randi_range(6,10)
 	var movie=damageIcon.instantiate()
-	movie.damageAmount=am+(maxHealth*0.01)
+	movie.damageAmount=am+(maxHealth*0.0025)
 	movie.global_position=global_position
 	movie.damageType="poison"
 	poison_dam.play("default")
 	frog_layer.add_child(movie)
-	health-=am+(maxHealth*0.01)
+	health-=am+(maxHealth*0.0025)
 	poison-=am
 	poison_damage.start(randi_range(1,5))

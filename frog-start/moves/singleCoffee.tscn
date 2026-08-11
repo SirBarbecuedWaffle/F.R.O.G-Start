@@ -97,6 +97,7 @@ position = Vector2(1504, 605)
 visible = false
 position = Vector2(175, -538)
 damage = -100
+spdBuf = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="Arrows/arrow1" unique_id=1909176716]
 position = Vector2(-2.0000002, 4.000002)
