@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://dm32w0jug0j18"]
+
+[ext_resource type="Script" uid="uid://b4bvbaacojwk6" path="res://patches/protocols/lizard_protocol.gd" id="1_x0wmv"]
+[ext_resource type="Texture2D" uid="uid://dqbnukev4cip1" path="res://2DAssets/slasher.webp" id="2_hphsq"]
+[ext_resource type="Texture2D" uid="uid://bo1doragepbwc" path="res://overworldPlayer/playerAssets/lizard/Idle.png" id="3_x0wmv"]
+
+[sub_resource type="Animation" id="Animation_7i0rm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kflkd"]
+resource_name = "die"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8rspm"]
+resource_name = "flash"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(18.892157, 0, 18.892157, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_atouy"]
+resource_name = "undie"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kflkd"]
+_data = {
+&"RESET": SubResource("Animation_7i0rm"),
+&"die": SubResource("Animation_kflkd"),
+&"flash": SubResource("Animation_8rspm"),
+&"undie": SubResource("Animation_atouy")
+}
+
+[node name="lizardProtocol" type="Node2D" unique_id=1056466694]
+scale = Vector2(2, 2)
+script = ExtResource("1_x0wmv")
+
+[node name="spinner" type="Sprite2D" parent="." unique_id=1877391608]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(0, 10)
+rotation = 1.5707964
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_hphsq")
+
+[node name="Sprite2D" type="Sprite2D" parent="spinner" unique_id=188320007]
+z_index = 4
+z_as_relative = false
+position = Vector2(-200, 0)
+rotation = -1.5707964
+scale = Vector2(3.704, 3.704)
+texture = ExtResource("3_x0wmv")
+region_enabled = true
+region_rect = Rect2(35.5, 22, 27, 16)
+
+[node name="ColorRect" type="ColorRect" parent="spinner/Sprite2D" unique_id=968276031]
+z_index = -1
+offset_left = -8.485038
+offset_top = 3.085469
+offset_right = 5.514962
+offset_bottom = 9.256402
+color = Color(0.12941177, 0.12156863, 0.1882353, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="spinner/Sprite2D" unique_id=90490476]
+libraries/ = SubResource("AnimationLibrary_kflkd")
+
+[node name="frogLayer" type="CanvasLayer" parent="." unique_id=2038239477]
+layer = 10

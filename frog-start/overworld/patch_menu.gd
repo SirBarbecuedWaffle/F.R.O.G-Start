@@ -772,13 +772,13 @@ func _process(delta: float) -> void:
 					exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 
 					exp_box_desc.add_text("Every 15 seconds targets a random enemy, afflicting poison and negative status effects for 5 seconds")
 					exp_box_desc.pop()
-					if CManager.party[dropOnParty-1]==1:
-						exp_box_desc.push_color(Color(0.017, 1.0, 0.0, 1.0)) 
-						exp_box_desc.add_text("\n\nHarmony Bonus:\n+60 ")
+					if CManager.party[dropOnParty-1]==5:
+						exp_box_desc.push_color(Color(1.0, 0.9, 0.0, 1.0)) 
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+5 seconds of decreased speed\n+5 seconds of decreased attack")
 						exp_box_desc.pop()
 					if CManager.party[dropOnParty-1]==8:
 						exp_box_desc.push_color(Color(0.4, 0.0, 1.0, 1.0)) 
-						exp_box_desc.add_text("\n\nHarmony Bonus:\n+15 seconds of decreased defense")
+						exp_box_desc.add_text("\n\nHarmony Bonus:\n+5 seconds of decreased defense")
 						exp_box_desc.pop()
 						
 				if CManager.currentPatches[dropOnParty-1]==28:

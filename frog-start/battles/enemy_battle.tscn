@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://ciykyc00kn11t" path="res://moves/moveAssets/instakillHoverAIcon.png" id="12_n2aaj"]
 [ext_resource type="Texture2D" uid="uid://c82r3hhgwavk1" path="res://overworldPlayer/playerAssets/Desappearing (96x96).png" id="13_p8gpp"]
 [ext_resource type="Texture2D" uid="uid://csoynefetwsuk" path="res://overworldPlayer/playerAssets/Ninja Frog/Hit (32x32).png" id="13_qc7af"]
+[ext_resource type="Texture2D" uid="uid://bj2sunfkyu5dy" path="res://2DAssets/Green Effect and Bullet 16x16.png" id="15_pbmit"]
 [ext_resource type="Texture2D" uid="uid://ejwp5n6npaso" path="res://overworldPlayer/playerAssets/Appearing (96x96).png" id="16_p8gpp"]
 [ext_resource type="Texture2D" uid="uid://cacrvjuk32wte" path="res://2DAssets/Stun.png" id="18_6s7rt"]
 [ext_resource type="Script" uid="uid://cyd328vd0rcag" path="res://battles/enemy_1.gd" id="18_uf5a6"]
@@ -1129,28 +1130,28 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xfsow"]
-atlas = ExtResource("25_w42gv")
-region = Rect2(0, 64, 64, 64)
+atlas = ExtResource("15_pbmit")
+region = Rect2(480, 148, 16, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_at463"]
-atlas = ExtResource("25_w42gv")
-region = Rect2(64, 64, 64, 64)
+atlas = ExtResource("15_pbmit")
+region = Rect2(496, 148, 16, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jp7xn"]
-atlas = ExtResource("25_w42gv")
-region = Rect2(128, 64, 64, 64)
+atlas = ExtResource("15_pbmit")
+region = Rect2(512, 148, 16, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3p6ou"]
-atlas = ExtResource("25_w42gv")
-region = Rect2(192, 64, 64, 64)
+atlas = ExtResource("15_pbmit")
+region = Rect2(528, 148, 16, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvil0"]
-atlas = ExtResource("25_w42gv")
-region = Rect2(256, 64, 64, 64)
+atlas = ExtResource("15_pbmit")
+region = Rect2(544, 148, 16, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_324ru"]
-atlas = ExtResource("25_w42gv")
-region = Rect2(320, 64, 64, 64)
+atlas = ExtResource("15_pbmit")
+region = Rect2(560, 148, 16, 29)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yerlx"]
 animations = [{
@@ -4951,13 +4952,13 @@ frame_progress = 1.0
 
 [node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party1" unique_id=234935440]
 visible = false
-modulate = Color(0, 0.60120547, 0, 1)
+modulate = Color(0, 0.8901961, 0, 1)
 z_index = 1
-position = Vector2(3.3693848, 0.9145508)
-scale = Vector2(3.9999995, 3.9999995)
+position = Vector2(6.369384, 7.914549)
+scale = Vector2(6.69, 6.69)
 sprite_frames = SubResource("SpriteFrames_yerlx")
 autoplay = "default"
-frame_progress = 0.2837064
+frame_progress = 0.18302462
 
 [node name="fireOn" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party1" unique_id=1783026268]
 modulate = Color(0.91, 0.91, 0.91, 1)
@@ -5415,16 +5416,6 @@ sprite_frames = SubResource("SpriteFrames_dj0x7")
 frame = 10
 frame_progress = 1.0
 
-[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party2" unique_id=1120363952]
-visible = false
-modulate = Color(0, 0.60120547, 0, 1)
-z_index = 1
-position = Vector2(3.3693848, 0.9145508)
-scale = Vector2(3.9999995, 3.9999995)
-sprite_frames = SubResource("SpriteFrames_yerlx")
-autoplay = "default"
-frame_progress = 0.2837064
-
 [node name="fireOn" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party2" unique_id=1121049487]
 visible = false
 modulate = Color(0.91, 0.91, 0.91, 1)
@@ -5484,6 +5475,16 @@ position = Vector2(-3.7105694, 2.834591)
 scale = Vector2(4.53, 4.53)
 sprite_frames = SubResource("SpriteFrames_vggg0")
 autoplay = "default"
+
+[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party2" unique_id=543281941]
+visible = false
+modulate = Color(0, 0.8901961, 0, 1)
+z_index = 1
+position = Vector2(6.369384, 7.914549)
+scale = Vector2(6.69, 6.69)
+sprite_frames = SubResource("SpriteFrames_yerlx")
+autoplay = "default"
+frame_progress = 0.91415113
 
 [node name="party3" type="Node2D" parent="frogLayer/partyHandler" unique_id=1384647988]
 position = Vector2(1660, 275)
@@ -5882,15 +5883,15 @@ sprite_frames = SubResource("SpriteFrames_dj0x7")
 frame = 10
 frame_progress = 1.0
 
-[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party3" unique_id=747197616]
+[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party3" unique_id=1323255961]
 visible = false
-modulate = Color(0, 0.60120547, 0, 1)
+modulate = Color(0, 0.8901961, 0, 1)
 z_index = 1
-position = Vector2(3.3693848, 0.9145508)
-scale = Vector2(3.9999995, 3.9999995)
+position = Vector2(6.369385, 7.914551)
+scale = Vector2(6.69, 6.69)
 sprite_frames = SubResource("SpriteFrames_yerlx")
 autoplay = "default"
-frame_progress = 0.37577686
+frame_progress = 0.91415113
 
 [node name="fireOn" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party3" unique_id=654927]
 visible = false
@@ -6349,15 +6350,15 @@ sprite_frames = SubResource("SpriteFrames_dj0x7")
 frame = 10
 frame_progress = 1.0
 
-[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party4" unique_id=588381681]
+[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party4" unique_id=1095746667]
 visible = false
-modulate = Color(0, 0.60120547, 0, 1)
+modulate = Color(0, 0.8901961, 0, 1)
 z_index = 1
-position = Vector2(3.3693848, 0.9145508)
-scale = Vector2(3.9999995, 3.9999995)
+position = Vector2(6.369385, 7.914551)
+scale = Vector2(6.69, 6.69)
 sprite_frames = SubResource("SpriteFrames_yerlx")
 autoplay = "default"
-frame_progress = 0.2837064
+frame_progress = 0.91415113
 
 [node name="fireOn" type="AnimatedSprite2D" parent="frogLayer/partyHandler/party4" unique_id=1017989082]
 visible = false
@@ -6557,16 +6558,6 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.81098926
 
-[node name="poisonDam" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy1/enemyBody" unique_id=1436903173]
-modulate = Color(0, 0.60120547, 0, 1)
-z_index = 1
-position = Vector2(1.6952505, -5.999989)
-rotation = 3.1415927
-scale = Vector2(2.848, -2.848)
-sprite_frames = SubResource("SpriteFrames_dj0x7")
-frame = 10
-frame_progress = 1.0
-
 [node name="fireOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy1/enemyBody" unique_id=1454228131]
 visible = false
 modulate = Color(0.91, 0.91, 0.91, 1)
@@ -6577,15 +6568,25 @@ sprite_frames = SubResource("SpriteFrames_6w4hd")
 autoplay = "default"
 frame_progress = 0.8763258
 
-[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy1/enemyBody" unique_id=977795196]
+[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy1/enemyBody" unique_id=637537151]
 visible = false
-modulate = Color(0, 0.60120547, 0, 1)
-position = Vector2(4.8186026, -0.9999943)
-rotation = 3.1415927
-scale = Vector2(3.003, -3.003)
+modulate = Color(0, 0.8901961, 0, 1)
+z_index = 1
+position = Vector2(6.369385, -23)
+scale = Vector2(6.69, 6.69)
 sprite_frames = SubResource("SpriteFrames_yerlx")
 autoplay = "default"
-frame_progress = 0.05430242
+frame_progress = 0.71233803
+
+[node name="poisonDam" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy1/enemyBody" unique_id=1436903173]
+modulate = Color(0, 0.60120547, 0, 1)
+z_index = 1
+position = Vector2(1.6952515, -6)
+rotation = -3.1415925
+scale = Vector2(2.848, -2.848)
+sprite_frames = SubResource("SpriteFrames_dj0x7")
+frame = 10
+frame_progress = 1.0
 
 [node name="stunAnim" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy1/enemyBody" unique_id=1079838306]
 visible = false
@@ -6631,7 +6632,7 @@ horizontal_alignment = 2
 scale = Vector2(1.0012685, 1.0012685)
 
 [node name="goodArrows" type="Node2D" parent="frogLayer/enemyHandler/enemy1/arrowHandler" unique_id=1381429463]
-position = Vector2(0, 0.40147206)
+position = Vector2(0, 1.2816575)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="defUpInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy1/arrowHandler/goodArrows" unique_id=1799021251]
@@ -6692,7 +6693,7 @@ label_settings = SubResource("LabelSettings_ose5c")
 horizontal_alignment = 2
 
 [node name="badArrows" type="Node2D" parent="frogLayer/enemyHandler/enemy1/arrowHandler" unique_id=1451582571]
-position = Vector2(0, 9.598528)
+position = Vector2(0, 8.718342)
 
 [node name="atkDownInd" type="Sprite2D" parent="frogLayer/enemyHandler/enemy1/arrowHandler/badArrows" unique_id=1848873033]
 self_modulate = Color(0.75743943, 0.37918973, 0, 1)
@@ -6831,16 +6832,6 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.5192194
 
-[node name="poisonDam" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy4/enemyBody" unique_id=2016391569]
-modulate = Color(0, 0.60120547, 0, 1)
-z_index = 1
-position = Vector2(1.6952505, -5.999989)
-rotation = 3.1415927
-scale = Vector2(2.848, -2.848)
-sprite_frames = SubResource("SpriteFrames_dj0x7")
-frame = 10
-frame_progress = 1.0
-
 [node name="fireOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy4/enemyBody" unique_id=341866526]
 visible = false
 modulate = Color(0.91, 0.91, 0.91, 1)
@@ -6849,17 +6840,27 @@ rotation = 3.1415927
 scale = Vector2(3.533, -3.533)
 sprite_frames = SubResource("SpriteFrames_6w4hd")
 autoplay = "default"
-frame_progress = 0.63400096
+frame_progress = 0.8845734
 
-[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy4/enemyBody" unique_id=1158812143]
+[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy4/enemyBody" unique_id=1552102034]
 visible = false
-modulate = Color(0, 0.60120547, 0, 1)
-position = Vector2(4.8186026, -0.9999943)
-rotation = 3.1415927
-scale = Vector2(3.003, -3.003)
+modulate = Color(0, 0.8901961, 0, 1)
+z_index = 1
+position = Vector2(6.369385, -23)
+scale = Vector2(6.69, 6.69)
 sprite_frames = SubResource("SpriteFrames_yerlx")
 autoplay = "default"
-frame_progress = 0.99093264
+frame_progress = 0.07091204
+
+[node name="poisonDam" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy4/enemyBody" unique_id=2016391569]
+modulate = Color(0, 0.60120547, 0, 1)
+z_index = 1
+position = Vector2(1.6952515, -6)
+rotation = -3.1415925
+scale = Vector2(2.848, -2.848)
+sprite_frames = SubResource("SpriteFrames_dj0x7")
+frame = 10
+frame_progress = 1.0
 
 [node name="stunAnim" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy4/enemyBody" unique_id=67328719]
 visible = false
@@ -7104,16 +7105,6 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.5192194
 
-[node name="poisonDam" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy3/enemyBody" unique_id=507653061]
-modulate = Color(0, 0.60120547, 0, 1)
-z_index = 1
-position = Vector2(1.6952505, -5.999989)
-rotation = 3.1415927
-scale = Vector2(2.848, -2.848)
-sprite_frames = SubResource("SpriteFrames_dj0x7")
-frame = 10
-frame_progress = 1.0
-
 [node name="fireOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy3/enemyBody" unique_id=791710990]
 visible = false
 modulate = Color(0.91, 0.91, 0.91, 1)
@@ -7124,15 +7115,25 @@ sprite_frames = SubResource("SpriteFrames_6w4hd")
 autoplay = "default"
 frame_progress = 0.63400096
 
-[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy3/enemyBody" unique_id=698175851]
+[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy3/enemyBody" unique_id=1885651217]
 visible = false
-modulate = Color(0, 0.60120547, 0, 1)
-position = Vector2(4.8186026, -0.9999943)
-rotation = 3.1415927
-scale = Vector2(3.003, -3.003)
+modulate = Color(0, 0.8901961, 0, 1)
+z_index = 1
+position = Vector2(6.369385, -23)
+scale = Vector2(6.69, 6.69)
 sprite_frames = SubResource("SpriteFrames_yerlx")
 autoplay = "default"
-frame_progress = 0.99093264
+frame_progress = 0.6012095
+
+[node name="poisonDam" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy3/enemyBody" unique_id=507653061]
+modulate = Color(0, 0.60120547, 0, 1)
+z_index = 1
+position = Vector2(1.6952515, -5.9999847)
+rotation = -3.1415925
+scale = Vector2(2.848, -2.848)
+sprite_frames = SubResource("SpriteFrames_dj0x7")
+frame = 10
+frame_progress = 1.0
 
 [node name="stunAnim" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy3/enemyBody" unique_id=485622386]
 visible = false
@@ -7377,16 +7378,6 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.5192194
 
-[node name="poisonDam" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2/enemyBody" unique_id=393777376]
-modulate = Color(0, 0.60120547, 0, 1)
-z_index = 1
-position = Vector2(1.6952505, -5.999989)
-rotation = 3.1415927
-scale = Vector2(2.848, -2.848)
-sprite_frames = SubResource("SpriteFrames_dj0x7")
-frame = 10
-frame_progress = 1.0
-
 [node name="fireOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2/enemyBody" unique_id=1718993896]
 visible = false
 modulate = Color(0.91, 0.91, 0.91, 1)
@@ -7397,15 +7388,25 @@ sprite_frames = SubResource("SpriteFrames_6w4hd")
 autoplay = "default"
 frame_progress = 0.63400096
 
-[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2/enemyBody" unique_id=601730414]
+[node name="poisonOn" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2/enemyBody" unique_id=1283501406]
 visible = false
-modulate = Color(0, 0.60120547, 0, 1)
-position = Vector2(4.8186026, -0.9999943)
-rotation = 3.1415927
-scale = Vector2(3.003, -3.003)
+modulate = Color(0, 0.8901961, 0, 1)
+z_index = 1
+position = Vector2(6.369385, -23)
+scale = Vector2(6.69, 6.69)
 sprite_frames = SubResource("SpriteFrames_yerlx")
 autoplay = "default"
-frame_progress = 0.99093264
+frame_progress = 0.07091204
+
+[node name="poisonDam" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2/enemyBody" unique_id=393777376]
+modulate = Color(0, 0.60120547, 0, 1)
+z_index = 1
+position = Vector2(1.6952515, -6)
+rotation = -3.1415925
+scale = Vector2(2.848, -2.848)
+sprite_frames = SubResource("SpriteFrames_dj0x7")
+frame = 10
+frame_progress = 1.0
 
 [node name="stunAnim" type="AnimatedSprite2D" parent="frogLayer/enemyHandler/enemy2/enemyBody" unique_id=117201525]
 visible = false

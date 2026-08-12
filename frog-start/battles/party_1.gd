@@ -90,7 +90,7 @@ var hoodProt=preload("res://patches/protocols/hood_protocol.tscn")
 var robotProt=preload("res://patches/protocols/robot_protocol.tscn")
 var joeProt=preload("res://patches/protocols/joe_protocol.tscn")
 var foxProt=preload("res://patches/protocols/fox_protocol.tscn")
-
+var lizardProt=preload("res://patches/protocols/lizard_protocol.tscn")
 var barrProt=preload("res://patches/protocols/barrel_protocol.tscn")
 @onready var curChar : AnimatedSprite2D
 var permaDead:=false
@@ -257,10 +257,10 @@ func _ready() -> void:
 		self.add_child(frogees)
 	
 	if curPatch==27:
-		var frogees=foxProt.instantiate()
-		if character=="fox":
+		var frogees=lizardProt.instantiate()
+		if character=="lizard":
 			frogees.bonus=1
-		if character=="steve":
+		if character=="robot":
 			frogees.bonus=2
 		curProt=frogees
 		self.add_child(frogees)
@@ -402,7 +402,6 @@ func _process(delta: float) -> void:
 		regen-=20*delta
 		if regen%20==0:
 			if health<maxHealth-4:
-				print(regen)
 				health+=5
 			else:
 				health=maxHealth
@@ -445,7 +444,6 @@ func _process(delta: float) -> void:
 						permaDead=true
 						var siced=secWind.instantiate()
 						var guys=party_handler.getOtherPlayers(self)
-						print(guys)
 						siced.targets=guys
 						siced.spawnLoca=self.global_position
 						frog_layer.add_child(siced)

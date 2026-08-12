@@ -22,6 +22,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	arrow_1.crip=cripp
+	if cripp:
+		self.modulate=Color(1.039, 0.619, 0.209, 1.0)
 	spawn_location.global_position=spawnLoca
 	arrow_1.global_position=spawn_location.global_position
 	await get_tree().create_timer(0.1).timeout
