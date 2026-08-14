@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if !area_2d.audio_bus_override:
-		area_2d.global_position=places.get_children()[randi_range(0,3)].global_position
+		area_2d.global_position=places.get_children()[randi_range(0,4)].global_position
 	if strike_projectile!=null:
 		if animated_sprite_2d.frame==2:
 			strike_projectile.global_position.x=animated_sprite_2d.global_position.x

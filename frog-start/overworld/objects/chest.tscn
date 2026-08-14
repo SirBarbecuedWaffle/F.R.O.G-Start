@@ -13,17 +13,56 @@ size = Vector2(17, 12)
 [node name="chest" type="Node2D" unique_id=294661463]
 script = ExtResource("1_k72fp")
 
-[node name="closed" type="Sprite2D" parent="." unique_id=1495902738]
+[node name="closedb" type="Sprite2D" parent="." unique_id=1495902738]
 texture = ExtResource("1_23whb")
 region_enabled = true
 region_rect = Rect2(64, 0, 16, 16)
 
-[node name="open" type="Sprite2D" parent="." unique_id=449385033]
+[node name="openb" type="Sprite2D" parent="." unique_id=449385033]
 visible = false
 position = Vector2(0, -6)
 texture = ExtResource("1_23whb")
 region_enabled = true
 region_rect = Rect2(64, 22, 16, 24)
+
+[node name="closedg" type="Sprite2D" parent="." unique_id=648560959]
+visible = false
+texture = ExtResource("1_23whb")
+region_enabled = true
+region_rect = Rect2(80, 0, 16, 16)
+
+[node name="openg" type="Sprite2D" parent="." unique_id=1808285115]
+visible = false
+position = Vector2(0, -6)
+texture = ExtResource("1_23whb")
+region_enabled = true
+region_rect = Rect2(80, 22, 16, 24)
+
+[node name="closedr" type="Sprite2D" parent="." unique_id=315804859]
+visible = false
+texture = ExtResource("1_23whb")
+region_enabled = true
+region_rect = Rect2(96, 0, 16, 16)
+
+[node name="openr" type="Sprite2D" parent="." unique_id=577717567]
+visible = false
+position = Vector2(0, -6)
+texture = ExtResource("1_23whb")
+region_enabled = true
+region_rect = Rect2(96, 22, 16, 24)
+
+[node name="closedp" type="Sprite2D" parent="." unique_id=1384044526]
+visible = false
+texture = ExtResource("1_23whb")
+region_enabled = true
+region_rect = Rect2(112, 0, 16, 16)
+
+[node name="openp" type="Sprite2D" parent="." unique_id=542105447]
+visible = false
+position = Vector2(0, -6)
+texture = ExtResource("1_23whb")
+region_enabled = true
+region_rect = Rect2(112, 22, 16, 24)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=258889360]
 physics_material_override = SubResource("PhysicsMaterial_23whb")

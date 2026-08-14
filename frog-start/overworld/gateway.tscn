@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://bj7qp3qjgcfgq"]
+
+[ext_resource type="Script" uid="uid://be07q3bkxn83a" path="res://overworld/gateway.gd" id="1_03cop"]
+[ext_resource type="Texture2D" uid="uid://be6lbfbke4lsp" path="res://2DAssets/deaad.jpg" id="1_kuhla"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q21vg"]
+size = Vector2(28, 29)
+
+[sub_resource type="Gradient" id="Gradient_fysd7"]
+colors = PackedColorArray(1, 1, 1, 1, 0.3779188, 0.37791887, 0.37791884, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6ny30"]
+gradient = SubResource("Gradient_fysd7")
+
+[sub_resource type="Gradient" id="Gradient_tyf74"]
+offsets = PackedFloat32Array(0.50121063, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_83tgv"]
+gradient = SubResource("Gradient_tyf74")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5dwah"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 30.0
+initial_velocity_max = 30.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -59.23
+linear_accel_max = -59.23
+scale_min = 0.39999998
+scale_max = 0.39999998
+color = Color(0, 0, 0, 1)
+color_ramp = SubResource("GradientTexture1D_83tgv")
+color_initial_ramp = SubResource("GradientTexture1D_6ny30")
+
+[node name="gateway" type="Area2D" unique_id=1819456757]
+collision_layer = 2
+script = ExtResource("1_03cop")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1116426480]
+position = Vector2(0, -9.5)
+shape = SubResource("RectangleShape2D_q21vg")
+debug_color = Color(0.7438006, 0.21330047, 0.99999994, 0.41960785)
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="." unique_id=352299830]
+position = Vector2(0, -8)
+amount = 16
+texture = ExtResource("1_kuhla")
+lifetime = 0.3
+speed_scale = 2.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_5dwah")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=603644198]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -8.000001)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("1_kuhla")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=822898557]
+
+[node name="Node2D" type="Node2D" parent="CanvasLayer" unique_id=1890274148]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Node2D" unique_id=1485362793]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 2027.0
+offset_bottom = 1037.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.01, 0.01)
+pivot_offset = Vector2(1013.5, 518.5)
+color = Color(0, 0, 0, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

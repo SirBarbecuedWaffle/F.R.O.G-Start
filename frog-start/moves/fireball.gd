@@ -5,6 +5,7 @@ extends Node2D
 @onready var place_2: Area2D = $places/place2
 @onready var place_3: Area2D = $places/place3
 @onready var place_4: Area2D = $places/place4
+@onready var place_5: Area2D = $places/place5
 @onready var places: Node2D = $places
 @onready var targets: Node2D = $targets
 @onready var arrow_1: damager = $Arrows/arrow1
@@ -74,3 +75,7 @@ func _on_arrow_4_area_entered(area: Area2D) -> void:
 	arrow_4.queue_free()
 	await get_tree().create_timer(3.0).timeout
 	queue_free()
+
+
+func _on_place_5_area_entered(area: Area2D) -> void:
+	place_5.audio_bus_override=true

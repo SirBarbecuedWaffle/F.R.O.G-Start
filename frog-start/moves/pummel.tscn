@@ -154,6 +154,10 @@ position = Vector2(1363, 832)
 [node name="place4" type="Node2D" parent="places" unique_id=774542488]
 position = Vector2(1364, 169)
 
+[node name="place5" type="Node2D" parent="places" unique_id=821042352]
+position = Vector2(1378, 492)
+scale = Vector2(0.53, 0.53)
+
 [node name="Node2D" type="Node2D" parent="." unique_id=1269273114]
 
 [node name="strikeProjectile" parent="Node2D" unique_id=1142312808 instance=ExtResource("2_pogtr")]

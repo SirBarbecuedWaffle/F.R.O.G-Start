@@ -26,5 +26,5 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 
 func _on_timer_timeout() -> void:
-	strike_projectile.global_position=places.get_children()[randi_range(0,3)].global_position
+	strike_projectile.global_position=places.get_children()[randi_range(0,5)].global_position
 	strike_projectile.damage=randi_range(1,4)

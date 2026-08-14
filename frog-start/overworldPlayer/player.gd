@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@export var speed:=65
+@export var speed:=650
 var firstPressed:=""
 var lastPressed:=""
 signal pickedupItem(item : int)

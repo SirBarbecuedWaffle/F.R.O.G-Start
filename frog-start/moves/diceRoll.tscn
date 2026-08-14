@@ -65,7 +65,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j1pay")
 }],
-"loop": true,
+"loop": 1,
 "name": &"1",
 "speed": 5.0
 }, {
@@ -73,7 +73,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tsx2n")
 }],
-"loop": true,
+"loop": 1,
 "name": &"2",
 "speed": 5.0
 }, {
@@ -81,7 +81,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nmmd8")
 }],
-"loop": true,
+"loop": 1,
 "name": &"3",
 "speed": 5.0
 }, {
@@ -89,7 +89,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mupuw")
 }],
-"loop": true,
+"loop": 1,
 "name": &"4",
 "speed": 5.0
 }, {
@@ -97,7 +97,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gdv6q")
 }],
-"loop": true,
+"loop": 1,
 "name": &"5",
 "speed": 5.0
 }, {
@@ -105,7 +105,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ngash")
 }],
-"loop": true,
+"loop": 1,
 "name": &"6",
 "speed": 5.0
 }, {
@@ -128,7 +128,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mp0di")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 12.0
 }]
@@ -393,7 +393,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i0w31")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 15.0
 }]
@@ -409,6 +409,9 @@ size = Vector2(109, 138)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmmd8"]
 size = Vector2(119, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5csx"]
+size = Vector2(109, 138)
 
 [node name="diceRoll" type="Node2D" unique_id=667611672]
 script = ExtResource("1_betis")
@@ -633,6 +636,16 @@ collision_mask = 16
 position = Vector2(-15.5, -16)
 shape = SubResource("RectangleShape2D_nmmd8")
 
+[node name="place5" type="Area2D" parent="places" unique_id=599139009]
+position = Vector2(1378, 492)
+scale = Vector2(0.53, 0.53)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place5" unique_id=266749976]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_y5csx")
+
 [node name="places2" type="Node2D" parent="." unique_id=1904954054]
 position = Vector2(2963, 11)
 scale = Vector2(-1, 1)
@@ -688,6 +701,7 @@ position = Vector2(0, -3)
 [connection signal="area_entered" from="places/place2" to="." method="_on_place_2_area_entered"]
 [connection signal="area_entered" from="places/place3" to="." method="_on_place_3_area_entered"]
 [connection signal="area_entered" from="places/place4" to="." method="_on_place_4_area_entered"]
+[connection signal="area_entered" from="places/place5" to="." method="_on_place_5_area_entered"]
 [connection signal="area_entered" from="places2/place12" to="." method="_on_place_12_area_entered"]
 [connection signal="area_entered" from="places2/place22" to="." method="_on_place_22_area_entered"]
 [connection signal="area_entered" from="places2/place32" to="." method="_on_place_32_area_entered"]

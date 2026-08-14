@@ -8,7 +8,7 @@ script = ExtResource("1_lebka")
 
 [node name="strikeProjectile" parent="." unique_id=1142312808 instance=ExtResource("2_vv6c5")]
 collision_layer = 8
-damage = 2
+damage = 3
 defRev = 2
 oneHit = false
 randomNumbers = true
@@ -28,6 +28,14 @@ position = Vector2(1368, 819)
 
 [node name="place4" type="Node2D" parent="places" unique_id=728835411]
 position = Vector2(1370, 157)
+
+[node name="place6" type="Node2D" parent="places" unique_id=1458087788]
+position = Vector2(1378, 487)
+scale = Vector2(0.28089997, 0.28089997)
+
+[node name="place5" type="Node2D" parent="places" unique_id=497973269]
+position = Vector2(1378, 492)
+scale = Vector2(0.53, 0.53)
 
 [node name="Timer" type="Timer" parent="." unique_id=486678230]
 wait_time = 0.05

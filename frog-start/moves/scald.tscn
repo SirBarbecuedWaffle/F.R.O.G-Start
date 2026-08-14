@@ -7,6 +7,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ul3v"]
 size = Vector2(109, 138)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gyt4"]
+size = Vector2(109, 138)
+
 [sub_resource type="Animation" id="Animation_8ikig"]
 length = 0.001
 tracks/0/type = "value"
@@ -116,6 +119,16 @@ collision_mask = 16
 position = Vector2(-20.5, 5)
 shape = SubResource("RectangleShape2D_0ul3v")
 
+[node name="place5" type="Area2D" parent="places" unique_id=2083242250]
+position = Vector2(1378, 492)
+scale = Vector2(0.53, 0.53)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place5" unique_id=1963333289]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_1gyt4")
+
 [node name="spawnLocation" type="Marker2D" parent="." unique_id=674989445]
 position = Vector2(1394, 374)
 
@@ -145,3 +158,4 @@ autoplay = &"arrowsSpawn"
 [connection signal="area_entered" from="places/place2" to="." method="_on_place_2_area_entered"]
 [connection signal="area_entered" from="places/place3" to="." method="_on_place_3_area_entered"]
 [connection signal="area_entered" from="places/place4" to="." method="_on_place_4_area_entered"]
+[connection signal="area_entered" from="places/place5" to="." method="_on_place_5_area_entered"]

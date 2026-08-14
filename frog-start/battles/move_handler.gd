@@ -318,7 +318,7 @@ func _on_move_4_mouse_entered() -> void:
 
 
 func _on_gorf_timer_timeout() -> void:
-	gorf_timer.start(randf_range(0.2,1.0))
+	gorf_timer.start(randf_range(1.0,1.5))
 	if get_parent().getChar()=="gorf":
 		move_1_lab.text=moves1[randi_range(0,moves1.size()-1)]
 		move_2_lab.text=moves2[randi_range(0,moves2.size()-1)]

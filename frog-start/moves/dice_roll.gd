@@ -8,6 +8,7 @@ var cycles:=2
 @onready var place_2: Area2D = $places/place2
 @onready var place_3: Area2D = $places/place3
 @onready var place_4: Area2D = $places/place4
+@onready var place_5: Area2D = $places/place5
 @onready var places_2: Node2D = $places2
 @onready var place_12: Area2D = $places2/place12
 @onready var place_22: Area2D = $places2/place22
@@ -99,6 +100,7 @@ func _ready() -> void:
 		dice_1.play("6")
 	await get_tree().create_timer(0.52).timeout
 	dice2r=randi_range(1,6)
+	
 	if dice2r==1:
 		dice_2.play("1")
 	if dice2r==2:
@@ -113,13 +115,11 @@ func _ready() -> void:
 		dice_2.play("6")
 	await get_tree().create_timer(0.51).timeout
 	dice3r=randi_range(1,6)
-	if dice1r==dice2r && dice1r==dice3r:
-		pass
-	else:
-		if dice1r==dice3r:
-			dice3r=randi_range(1,6)
-		if dice1r==dice2r:
-			dice2r=randi_range(1,6)
+	#if dice1r==dice2r && dice1r==dice3r:
+		#pass
+	#else:
+		#if dice1r==dice3r:
+			#dice3r=randi_range(1,6)
 	if dice3r==1:
 		dice_3.play("1")
 	if dice3r==2:
@@ -318,3 +318,7 @@ func _on_place_32_area_entered(area: Area2D) -> void:
 
 func _on_place_42_area_entered(area: Area2D) -> void:
 	place_42.audio_bus_override=true
+
+
+func _on_place_5_area_entered(area: Area2D) -> void:
+	place_5.audio_bus_override=true

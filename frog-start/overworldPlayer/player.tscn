@@ -245,7 +245,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3y61j")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idleBack",
 "speed": 5.0
 }, {
@@ -262,7 +262,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cemh7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idleFront",
 "speed": 5.0
 }, {
@@ -279,7 +279,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bk3pe")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idleRight",
 "speed": 5.0
 }, {
@@ -311,7 +311,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_a16pi")
 }],
-"loop": false,
+"loop": 0,
 "name": &"itemPickup",
 "speed": 30.0
 }, {
@@ -343,7 +343,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x4orj")
 }],
-"loop": false,
+"loop": 0,
 "name": &"itemPut",
 "speed": 45.0
 }, {
@@ -429,7 +429,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8nu66")
 }],
-"loop": false,
+"loop": 0,
 "name": &"scared",
 "speed": 15.0
 }, {
@@ -458,7 +458,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0gpdp")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkBack",
 "speed": 10.0
 }, {
@@ -487,7 +487,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b0kyp")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkFront",
 "speed": 10.0
 }, {
@@ -516,7 +516,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l4xyy")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walkRight",
 "speed": 10.0
 }]
@@ -563,7 +563,7 @@ _data = {
 [sub_resource type="SpriteFrames" id="SpriteFrames_dqkch"]
 animations = [{
 "frames": [],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 3.0
 }]

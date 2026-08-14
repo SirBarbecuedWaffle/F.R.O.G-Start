@@ -209,7 +209,7 @@ length = 2.5
 
 [sub_resource type="Animation" id="Animation_mswpb"]
 resource_name = "blue"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -225,7 +225,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_kkfbd"]
 resource_name = "red"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

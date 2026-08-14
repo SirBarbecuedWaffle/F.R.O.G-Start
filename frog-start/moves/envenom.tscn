@@ -29,4 +29,8 @@ position = Vector2(1368, 819)
 [node name="place4" type="Node2D" parent="places" unique_id=728835411]
 position = Vector2(1370, 157)
 
+[node name="place5" type="Node2D" parent="places" unique_id=1649701828]
+position = Vector2(1378, 492)
+scale = Vector2(0.53, 0.53)
+
 [connection signal="area_entered" from="strikeProjectile" to="." method="_on_strike_projectile_area_entered"]

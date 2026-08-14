@@ -107,3 +107,4 @@ color = Color(0.12941177, 0.12156863, 0.1882353, 1)
 libraries/ = SubResource("AnimationLibrary_kflkd")
 
 [node name="frogLayer" type="CanvasLayer" parent="." unique_id=2038239477]
+layer = 4

@@ -6,6 +6,7 @@ extends Node2D
 @onready var place_2: Area2D = $places/place2
 @onready var place_3: Area2D = $places/place3
 @onready var place_4: Area2D = $places/place4
+@onready var place_5: Area2D = $places/place5
 @onready var targets: Node2D = $targets
 @onready var strike_projectile: damager = $strikeProjectile
 @onready var sl_1: AnimatedSprite2D = $sl1
@@ -68,3 +69,7 @@ func _on_place_3_area_entered(area: Area2D) -> void:
 
 func _on_place_4_area_entered(area: Area2D) -> void:
 	place_4.audio_bus_override=true
+
+
+func _on_place_5_area_entered(area: Area2D) -> void:
+	place_5.audio_bus_override=true

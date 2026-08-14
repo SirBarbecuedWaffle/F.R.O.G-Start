@@ -188,10 +188,12 @@ script = ExtResource("1_23w3t")
 
 [node name="strikeProjectile" parent="." unique_id=1142312808 instance=ExtResource("2_jsbq7")]
 position = Vector2(0, -323)
+scale = Vector2(0.5, 0.5)
 collision_layer = 8
 damage = 60
 burn = 20
 defRev = 15
+oneHit = false
 
 [node name="places" type="Node2D" parent="." unique_id=881540487]
 position = Vector2(-952, 0)
@@ -208,14 +210,20 @@ position = Vector2(1368, 819)
 [node name="place4" type="Node2D" parent="places" unique_id=728835411]
 position = Vector2(1370, 157)
 
+[node name="place5" type="Node2D" parent="places" unique_id=1103623346]
+position = Vector2(1378, 492)
+scale = Vector2(0.53, 0.53)
+
 [node name="Area2D" type="Area2D" parent="." unique_id=1082586477]
 position = Vector2(0, -134)
+scale = Vector2(0.5, 0.5)
 collision_layer = 8
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=854157012]
 position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_gr8ey")
+debug_color = Color(0.57093704, 0.5560805, 1.92523e-07, 0.41960785)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=422119715]
 modulate = Color(2.4061394, 2.4061394, 1.0796262, 1)

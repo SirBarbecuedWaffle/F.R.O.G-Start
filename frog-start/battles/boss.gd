@@ -13,6 +13,7 @@ extends Node2D
 @onready var poison_on: AnimatedSprite2D = $enemyBody/poisonOn
 @onready var stun_anim: AnimatedSprite2D = $enemyBody/stunAnim
 @onready var node_2d: Node2D = $"../../Node2D"
+@onready var turn_bar: Sprite2D = $turnBar
 
 
 var deathAnim=preload("res://2DAssets/deathAnimation.tscn")
@@ -32,6 +33,7 @@ signal perished
 		
 @export var maxHealth:=999.0
 @export var moveProgress:=0.0
+@export var bmoveProgress:=0.0
 @export var poison:=0
 @export var fire:=0.0
 @export var atkDown:=20.0
@@ -51,7 +53,9 @@ signal perished
 @export var attackATKRev:=0
 @export var attackDEFRev:=0
 @export var enemyType:=0
-var turnTime:=randi_range(attackSpeed-120,attackSpeed+75)
+@export var bossType:=0
+var turnTime:=randi_range(attackSpeed-120,attackSpeed)
+var bturnTime:=randi_range(1300,1520)
 @onready var frog_layer: CanvasLayer = $"../.."
 @onready var def_up_ind: Sprite2D = $arrowHandler/goodArrows/defUpInd
 @onready var spd_up_ind: Sprite2D = $arrowHandler/goodArrows/spdUpInd
@@ -73,15 +77,6 @@ var turnTime:=randi_range(attackSpeed-120,attackSpeed+75)
 
 func _ready() -> void:
 	health=maxHealth
-	await get_tree().create_timer(0.1).timeout
-	if enemyType==1:
-		enemy_spr_1.visible=true
-	else:
-		enemy_spr_1.visible=false
-	if enemyType==2:
-		enemy_spr_2.visible=true
-	if enemyType==3:
-		enemy_spr_3.visible=true
 
 func _process(delta: float) -> void:
 	if regen>0:
@@ -161,7 +156,20 @@ func _process(delta: float) -> void:
 	health_label.text=str(int(health))
 	if health>=1:
 		health_label.modulate=Color(1.0, 1.0, 1.0, 1.0)
-		health_bar.scale.x=(health/maxHealth)*-0.377
+		health_bar.scale.x=(health/maxHealth)*-1.925
+		turn_bar.scale.x=(bmoveProgress/bturnTime)*1.766
+		if bmoveProgress<bturnTime:
+			if stun>0:
+				pass
+			else:
+				bmoveProgress+=60*delta
+				if spdUp>0:
+					bmoveProgress+=30*delta
+				if spdDown>0:
+					bmoveProgress-=30*delta
+		else:
+			bmoveProgress=0
+			bturnTime=randi_range(1300,1520)
 		if moveProgress<turnTime:
 			moveProgress+=60*delta
 			if spdUp>0:
@@ -169,7 +177,7 @@ func _process(delta: float) -> void:
 			if spdDown>0:
 				moveProgress-=30*delta
 		else:
-			attack_animator.play("attack")
+			enemy_spr_1.play("punch")
 			moveProgress=0
 			turnTime=randi_range(attackSpeed-120,attackSpeed+75)
 			await get_tree().create_timer(0.36).timeout
@@ -242,24 +250,25 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 				movie.global_position=global_position
 				if area.damage>3000:
 					movie.damageType="cleaving"
+					area.damage=3000+health*0.05
 				if area.glitch:
 					movie.damageType="glitch"
 				frog_layer.add_child(movie)
 		if area.envenom:
 			if poison>0:
 				var movie=damageIcon.instantiate()
-				movie.damageAmount=poison*(maxHealth*0.0005)+area.damage
+				movie.damageAmount=poison*(maxHealth*0.00005)+area.damage
 				movie.global_position=global_position
 				movie.damageType="poison"
 				frog_layer.add_child(movie)
-				health-=poison*(maxHealth*0.0005)
+				health-=poison*(maxHealth*0.00005)
 				poison=0
 			else:
 				poison+=area.poison
 		else:
 			poison+=area.poison
 		health-=area.damage
-		stun+=area.stun
+		stun+=area.stun/2
 		fire+=area.burn
 		
 		#applies buffs
@@ -317,3 +326,7 @@ func _on_poison_damage_timeout() -> void:
 	health-=am+(maxHealth*0.0025)
 	poison-=am
 	poison_damage.start(randi_range(1,5))
+
+
+func _on_enemy_spr_1_animation_finished() -> void:
+	enemy_spr_1.play("idle")

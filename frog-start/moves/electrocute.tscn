@@ -110,6 +110,10 @@ position = Vector2(1368, 819)
 [node name="place4" type="Node2D" parent="places" unique_id=728835411]
 position = Vector2(1370, 157)
 
+[node name="place5" type="Node2D" parent="places" unique_id=416012886]
+position = Vector2(1378, 492)
+scale = Vector2(0.53, 0.53)
+
 [node name="Area2D" type="Area2D" parent="." unique_id=1082586477]
 position = Vector2(0, -134)
 collision_layer = 8

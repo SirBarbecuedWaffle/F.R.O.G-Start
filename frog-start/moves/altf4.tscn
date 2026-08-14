@@ -8,6 +8,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83tgv"]
 size = Vector2(109, 138)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68jta"]
+size = Vector2(109, 138)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ny30"]
 size = Vector2(47, 61)
 
@@ -85,6 +88,16 @@ collision_mask = 16
 position = Vector2(-20.5, 5)
 shape = SubResource("RectangleShape2D_83tgv")
 
+[node name="place5" type="Area2D" parent="places" unique_id=1379368968]
+position = Vector2(1378, 492)
+scale = Vector2(0.53, 0.53)
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="places/place5" unique_id=387329021]
+position = Vector2(-20.5, 5)
+shape = SubResource("RectangleShape2D_68jta")
+
 [node name="targe" type="Area2D" parent="." unique_id=745083498]
 collision_layer = 134217728
 collision_mask = 16
@@ -116,4 +129,5 @@ process_material = SubResource("ParticleProcessMaterial_6ny30")
 [connection signal="area_entered" from="places/place2" to="." method="_on_place_2_area_entered"]
 [connection signal="area_entered" from="places/place3" to="." method="_on_place_3_area_entered"]
 [connection signal="area_entered" from="places/place4" to="." method="_on_place_4_area_entered"]
+[connection signal="area_entered" from="places/place5" to="." method="_on_place_5_area_entered"]
 [connection signal="area_entered" from="targe" to="." method="_on_targe_area_entered"]

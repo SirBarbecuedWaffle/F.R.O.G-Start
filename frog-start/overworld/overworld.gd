@@ -20,3 +20,14 @@ func _on_encounter_timer_timeout() -> void:
 	overworld_hud.transition()
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://battles/enemy_battle.tscn")
+
+
+func _on_boss_trigger_start_boss(bossN : int) -> void:
+	PManager.playerX=player.global_position.x
+	PManager.playerY=player.global_position.y
+	player.itemPicked=1
+	overworld_hud.transition()
+	await get_tree().create_timer(0.5).timeout
+	if bossN==1:
+		PManager.beatBoss1=true
+		get_tree().change_scene_to_file("res://battles/boss_battle.tscn")

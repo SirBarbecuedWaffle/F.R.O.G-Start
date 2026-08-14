@@ -13,58 +13,20 @@ var sicle2=preload("res://patches/frogsicle2.tscn")
 var sicle3=preload("res://patches/frogsicle3.tscn")
 var smite=preload("res://moves/smite_move.tscn")
 var sfired=preload("res://moves/Fired.tscn")
-@onready var enemy_handler: Node2D = $"."
-
-
+@onready var boss: Node2D = $boss
 
 func _ready() -> void:
-	var allowance=randi_range(2,3+PManager.allowance)
+	if boss.bossType==1:
+		totalXP+=5
+	await get_tree().create_timer(0.1).timeout
 	for d in range(4):
 		if CManager.currentPatches[d]==5:
-			allowance+=10
-	while allowance/3.0>1:
-		var curEnem=randi_range(2,3)
-		allowance-=curEnem
-		
-		for i in range(4):
-			if curEnems[i]==0:
-				aliveEnemies+=1
-				curEnems[i]=curEnem
-				break
-	while allowance>0:
-		allowance-=1
-		for i in range(4):
-			if curEnems[i]==0:
-				aliveEnemies+=1
-				curEnems[i]=1
-				break
-	for e in range(4):
-		if curEnems[e]!=0:
-			if curEnems[e]==1:
-				self.get_children()[e].maxHealth=30.0
-				self.get_children()[e].attackSpeed=600.0
-				self.get_children()[e].attackDamage=10.0
-				self.get_children()[e].attackStun=0
-				self.get_children()[e].enemyType=1
-			if curEnems[e]==2:
-				self.get_children()[e].maxHealth=60.0
-				self.get_children()[e].attackSpeed=400.0
-				self.get_children()[e].attackDamage=20.0
-				self.get_children()[e].attackStun=0
-				self.get_children()[e].enemyType=2
-			if curEnems[e]==3:
-				self.get_children()[e].maxHealth=110.0
-				self.get_children()[e].attackSpeed=300.0
-				self.get_children()[e].attackDamage=30.0
-				self.get_children()[e].attackStun=0
-				#self.get_children()[e].attackATKRev=15
-				#self.get_children()[e].attackDEFRev=15
-				#self.get_children()[e].attackSPDRev=15
-				#self.get_children()[e].attackBurn=100
-				#self.get_children()[e].attackPoison=50
-				self.get_children()[e].enemyType=3
-		else:
-			self.get_children()[e].queue_free()
+			xpMultiplier*=2
+			boss.maxHealth*=1.5
+			boss.health*=1.5
+			boss.attackDamage*=1.5
+			boss.attackSpeed*=0.7
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -73,8 +35,7 @@ func _process(delta: float) -> void:
 
 
 func _on_enemy_perished(type : int) -> void:
-	
-	totalXP+=xpMultiplier*type
+	totalXP*=xpMultiplier
 	aliveEnemies-=1
 	if aliveEnemies<1:
 		victory.emit()

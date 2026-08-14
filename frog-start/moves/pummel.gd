@@ -23,7 +23,7 @@ func _ready() -> void:
 
 func findTarg()->void:
 	if curStrike%2==0 && trigger!=null:
-		trigger.global_position=places.get_children()[randi_range(0,3)].global_position
+		trigger.global_position=places.get_children()[randi_range(0,4)].global_position
 		await get_tree().create_timer(0.05).timeout
 		findTarg()
 			

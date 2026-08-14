@@ -3,3 +3,4 @@ extends Node
 @export var playerY:=0
 @export var paused:=false
 @export var allowance:=4
+@export var beatBoss1:=false

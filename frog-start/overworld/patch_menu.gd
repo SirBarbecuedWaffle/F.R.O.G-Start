@@ -257,7 +257,7 @@ func _process(delta: float) -> void:
 		exp_box_desc.text=""
 	hover_box.visible=hovis>0
 	if !Input.is_action_pressed("lClick"):
-		if patchHoved!=0:
+		if patchHoved!=0 && CManager.patchesUnlocked[patchHoved-1]!=0:
 				if patchHoved==1:
 					exp_box_name.text="Headstart: Defense"
 					exp_box_desc.text="Applies 30 seconds of increased \ndefense to your entire party at the start of battle"

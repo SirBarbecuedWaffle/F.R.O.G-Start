@@ -6,9 +6,9 @@ extends Node
 @export var charHP=[200,175,225,275,320,360,400,600,225,999]
 @export var levelUpDisplays=[0,0,0,0]
 @export var fauxParty=[0,0,0,0]
-#@export var patchesUnlocked=[0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
+#@export var patchesUnlocked=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 @export var patchesUnlocked=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
-@export var currentPatches=[0,0,0,0]
+@export var currentPatches=[5,0,0,0]
 
 func updateXP()->void:
 	for i in range(4):

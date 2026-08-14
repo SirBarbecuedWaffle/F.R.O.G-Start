@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://b3qt2tdb7qmui"]
+
+[ext_resource type="Script" uid="uid://dhyecdkaecas2" path="res://overworld/boss_trigger.gd" id="1_cv7fa"]
+[ext_resource type="Texture2D" uid="uid://tq53i470migx" path="res://2DAssets/bosses/santa idle.png" id="1_mlxsn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q21vg"]
+size = Vector2(38, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp5fb"]
+atlas = ExtResource("1_mlxsn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fysd7"]
+atlas = ExtResource("1_mlxsn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyf74"]
+atlas = ExtResource("1_mlxsn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dwah"]
+atlas = ExtResource("1_mlxsn")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q21vg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xp5fb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fysd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyf74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dwah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyf74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fysd7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="bossTrigger" type="Area2D" unique_id=1289784356]
+collision_mask = 2
+script = ExtResource("1_cv7fa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=711354198]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_q21vg")
+debug_color = Color(0.9764134, 0, 0.41563377, 0.41960785)
+
+[node name="boss1" type="AnimatedSprite2D" parent="." unique_id=1950899668]
+sprite_frames = SubResource("SpriteFrames_q21vg")
+autoplay = "default"
+frame_progress = 0.0036010875
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

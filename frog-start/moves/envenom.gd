@@ -12,7 +12,7 @@ func _ready() -> void:
 		strike_projectile.spdRev=11
 
 func _process(delta: float) -> void:
-	strike_projectile.global_position=places.get_children()[randi_range(0,3)].global_position
+	strike_projectile.global_position=places.get_children()[randi_range(0,4)].global_position
 
 
 func _on_strike_projectile_area_entered(area: Area2D) -> void:
