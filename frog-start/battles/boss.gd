@@ -244,7 +244,7 @@ func _process(delta: float) -> void:
 
 
 func bigAttack()->void:
-	var attack=randi_range(0,1)
+	var attack=2
 	if attack==0:
 		enemy_spr_1.play("doublepunch")
 		await get_tree().create_timer(0.0625).timeout
@@ -263,6 +263,20 @@ func bigAttack()->void:
 		animation_player.play("pulse")
 		atkUp=21
 		defUp=21
+	if attack==2:
+		enemy_spr_1.play("kick")
+		animation_player.play("kick")
+		await get_tree().create_timer(0.28).timeout
+		var pawnch=smallPunch.instantiate()
+		pawnch.multiplier=10
+		pawnch.kick=true
+		if atkDown>0:
+			pawnch.multiplier*=0.5
+		if atkUp>0:
+			pawnch.multiplier*=2
+		frog_layer.add_child(pawnch)
+		await get_tree().create_timer(1.12).timeout
+		enemy_spr_1.play("kickDone")
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area is damager:

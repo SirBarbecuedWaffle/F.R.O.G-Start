@@ -9,7 +9,7 @@ script = ExtResource("1_tnvf0")
 [node name="strikeProjectile" parent="." unique_id=1142312808 instance=ExtResource("2_28h54")]
 position = Vector2(1701, 557)
 scale = Vector2(12.905, 12.905)
-damage = 10
+damage = 5
 strRev = 11
 oneHit = false
 randomNumbers = true

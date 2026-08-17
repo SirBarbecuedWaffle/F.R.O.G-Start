@@ -4259,11 +4259,15 @@ region = Rect2(576, 480, 48, 95)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3r7n7"]
 atlas = ExtResource("70_wsrr3")
-region = Rect2(672, 480, 48, 95)
+region = Rect2(576, 480, 48, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ls21e"]
 atlas = ExtResource("70_wsrr3")
-region = Rect2(768, 480, 48, 95)
+region = Rect2(672, 480, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7y8x1"]
+atlas = ExtResource("70_wsrr3")
+region = Rect2(768, 480, 48, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c032d"]
 atlas = ExtResource("70_wsrr3")
@@ -4560,18 +4564,26 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6qwas")
 }, {
-"duration": 1.0,
+"duration": 30.0,
 "texture": SubResource("AtlasTexture_61wyy")
+}],
+"loop": 0,
+"name": &"kick",
+"speed": 24.0
 }, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3r7n7")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ls21e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7y8x1")
 }],
-"loop": 1,
-"name": &"kick",
-"speed": 8.0
+"loop": 0,
+"name": &"kickDone",
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -4699,6 +4711,34 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(8, -2)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(117.81338, -191.04984)]
+}
+
+[sub_resource type="Animation" id="Animation_lavft"]
+resource_name = "kick"
+length = 1.8333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.35, 1.51, 1.65, 1.8333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(117.81338, -191.04984), Vector2(2600, -50), Vector2(2600, 3000), Vector2(-800, 1000), Vector2(-800, 0), Vector2(117.81338, -191.04984)]
+}
 
 [sub_resource type="Animation" id="Animation_eysyo"]
 resource_name = "pulse"
@@ -4743,6 +4783,7 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lavft"]
 _data = {
 &"RESET": SubResource("Animation_rjvk1"),
+&"kick": SubResource("Animation_lavft"),
 &"pulse": SubResource("Animation_eysyo")
 }
 
@@ -7262,10 +7303,8 @@ z_index = -1
 position = Vector2(117.81338, -191.04984)
 scale = Vector2(16.02, 16.02)
 sprite_frames = SubResource("SpriteFrames_24uf3")
-animation = &"present"
+animation = &"kickDone"
 autoplay = "idle"
-frame = 6
-frame_progress = 0.74383324
 
 [node name="Sprite2D" type="Sprite2D" parent="frogLayer/enemyHandler/boss/enemyBody/enemySpr1" unique_id=268316571]
 visible = false
