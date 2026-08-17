@@ -15,6 +15,7 @@ extends Node2D
 @onready var node_2d: Node2D = $"../../Node2D"
 @onready var turn_bar: Sprite2D = $turnBar
 
+var smallPunch=preload("res://moves/santa_punch.tscn")
 
 var deathAnim=preload("res://2DAssets/deathAnimation.tscn")
 
@@ -72,6 +73,8 @@ var bturnTime:=randi_range(1300,1520)
 @onready var spd_down_lab: Label = $arrowHandler/badArrows/spdDownInd/spdDownLab
 @onready var poison_damage: Timer = $poisonDamage
 @onready var attack_animator: AnimationPlayer = $attackAnimator
+@onready var sprite_2d: Sprite2D = $enemyBody/enemySpr1/Sprite2D
+@onready var animation_player: AnimationPlayer = $enemyBody/enemySpr1/AnimationPlayer
 
 
 
@@ -79,6 +82,8 @@ func _ready() -> void:
 	health=maxHealth
 
 func _process(delta: float) -> void:
+
+			
 	if regen>0:
 		regen-=1*delta
 		if regen%125==0:
@@ -170,54 +175,59 @@ func _process(delta: float) -> void:
 		else:
 			bmoveProgress=0
 			bturnTime=randi_range(1300,1520)
-		if moveProgress<turnTime:
+			bigAttack()
+		if moveProgress<turnTime && enemy_spr_1.animation=="idle":
 			moveProgress+=60*delta
 			if spdUp>0:
 				moveProgress+=30*delta
 			if spdDown>0:
 				moveProgress-=30*delta
 		else:
-			enemy_spr_1.play("punch")
-			moveProgress=0
-			turnTime=randi_range(attackSpeed-120,attackSpeed+75)
-			await get_tree().create_timer(0.36).timeout
-			var hit=basicHit.instantiate()
-			hit.damage=attackDamage
-			hit.stun=attackStun
-			hit.burn=attackBurn
-			hit.poison=attackPoison
-			hit.strRev=attackATKRev
-			hit.defRev=attackDEFRev
-			hit.spdRev=attackSPDRev
-			if atkDown>0:
-				hit.damage/=2
-			hit.collision_layer=4
-			hit.collision_mask=5
-			hit.randomNumbers=true
-			var alivePeople=party_handler.getAlivePlayers()
-			if alivePeople!=[null,null,null,null]:
-				var numTargets=0
-				var target=randi_range(0,3)
-				while party_handler.getAlivePlayers()[target]==null:
-					target=randi_range(0,party_handler.getAlivePlayers().size()-1)
-				if party_handler.getAlivePlayers()[target]!=null:
-					var targese=party_handler.getAlivePlayers()[target]
-					hit.global_position=targese.global_position
-				frog_layer.add_child(hit)
-			else:
-				var only1:=0
-				for d in CManager.party:
-					if d!=0:
-						only1+=1
-				if only1>1:
-					get_tree().change_scene_to_file("res://gameOver.tscn")
+			if moveProgress!=0:
+				if enemy_spr_1.animation=="idle":
+					enemy_spr_1.play("punch")
+				moveProgress=0
+				turnTime=randi_range(attackSpeed-120,attackSpeed+75)
+				await get_tree().create_timer(0.36).timeout
+				var hit=basicHit.instantiate()
+				hit.damage=attackDamage
+				hit.stun=attackStun
+				hit.burn=attackBurn
+				hit.poison=attackPoison
+				hit.strRev=attackATKRev
+				hit.defRev=attackDEFRev
+				hit.spdRev=attackSPDRev
+				if atkDown>0:
+					hit.damage/=2
+				if atkUp>0:
+					hit.damage*=2
+				hit.collision_layer=4
+				hit.collision_mask=5
+				hit.randomNumbers=true
+				var alivePeople=party_handler.getAlivePlayers()
+				if alivePeople!=[null,null,null,null]:
+					var numTargets=0
+					var target=randi_range(0,3)
+					while party_handler.getAlivePlayers()[target]==null:
+						target=randi_range(0,party_handler.getAlivePlayers().size()-1)
+					if party_handler.getAlivePlayers()[target]!=null:
+						var targese=party_handler.getAlivePlayers()[target]
+						hit.global_position=targese.global_position
+					frog_layer.add_child(hit)
 				else:
-					var send2Limbo:=false
-					for g in CManager.currentPatches:
-						if g==14:
-							send2Limbo=true
-					if !send2Limbo:
+					var only1:=0
+					for d in CManager.party:
+						if d!=0:
+							only1+=1
+					if only1>1:
 						get_tree().change_scene_to_file("res://gameOver.tscn")
+					else:
+						var send2Limbo:=false
+						for g in CManager.currentPatches:
+							if g==14:
+								send2Limbo=true
+						if !send2Limbo:
+							get_tree().change_scene_to_file("res://gameOver.tscn")
 	else:
 		if attack_animator.current_animation!="die":
 			
@@ -232,6 +242,27 @@ func _process(delta: float) -> void:
 			
 			
 
+
+func bigAttack()->void:
+	var attack=randi_range(0,1)
+	if attack==0:
+		enemy_spr_1.play("doublepunch")
+		await get_tree().create_timer(0.0625).timeout
+		for i in range(10):
+			var pawnch=smallPunch.instantiate()
+			if atkDown>0:
+				pawnch.multiplier*=0.5
+			if atkUp>0:
+				pawnch.multiplier*=2
+			frog_layer.add_child(pawnch)
+			await get_tree().create_timer(0.0625*5).timeout
+	if attack==1:
+		enemy_spr_1.play("present")
+		await get_tree().create_timer(0.75).timeout
+		sprite_2d.visible=true
+		animation_player.play("pulse")
+		atkUp=21
+		defUp=21
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area is damager:
@@ -302,6 +333,8 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 		
 		if area.oneHit:
 			area.queue_free()
+
+
 
 
 func _on_death_anim_animation_finished() -> void:
