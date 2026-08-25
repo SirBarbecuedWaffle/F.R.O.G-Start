@@ -824,7 +824,6 @@ func _process(delta: float) -> void:
 				hover_box.global_position.x=get_global_mouse_position().x-get_box_offset(get_global_mouse_position().x)
 				hover_box.global_position.y=get_global_mouse_position().y-724
 		elif showGlitch:
-			print("WEEE")
 			exp_box_name.text="Protocol: ERROR"
 			exp_box_desc.text=""
 			exp_box_desc.push_color(Color(1.0, 1.0, 1.0, 1.0)) 

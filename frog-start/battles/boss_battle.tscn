@@ -4165,6 +4165,30 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3iptf"]
+atlas = ExtResource("70_wsrr3")
+region = Rect2(0, 960, 48, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xube0"]
+atlas = ExtResource("70_wsrr3")
+region = Rect2(96, 960, 48, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ik5im"]
+atlas = ExtResource("70_wsrr3")
+region = Rect2(192, 960, 48, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uffii"]
+atlas = ExtResource("70_wsrr3")
+region = Rect2(288, 960, 48, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3uhf"]
+atlas = ExtResource("70_wsrr3")
+region = Rect2(384, 960, 48, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7uy3"]
+atlas = ExtResource("70_wsrr3")
+region = Rect2(480, 960, 48, 95)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_24uf3"]
 atlas = ExtResource("70_wsrr3")
 region = Rect2(0, 192, 48, 95)
@@ -4367,6 +4391,29 @@ region = Rect2(672, 576, 48, 95)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_24uf3"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3iptf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xube0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ik5im")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uffii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3uhf")
+}, {
+"duration": 20.0,
+"texture": SubResource("AtlasTexture_r7uy3")
+}],
+"loop": 0,
+"name": &"die",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_24uf3")
@@ -5045,6 +5092,10 @@ _data = {
 &"die": SubResource("Animation_lq4w6")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_yupk3"]
+font = ExtResource("7_cvd2s")
+font_size = 53
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_0kh12"]
 atlas = ExtResource("76_ik5im")
 region = Rect2(0, 0, 8, 8)
@@ -5292,7 +5343,7 @@ _data = {
 &"loadIn": SubResource("Animation_jyg6p")
 }
 
-[node name="enemyBattle" type="Node3D" unique_id=837671535]
+[node name="enemyBattle2" type="Node3D" unique_id=837671535]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=902784629]
@@ -7291,6 +7342,7 @@ atkDown = 0.0
 defDown = 0.0
 atkUp = 0.0
 defUp = 0.0
+spdUp = 0.0
 attackSpeed = 300
 bossType = 1
 
@@ -7303,7 +7355,7 @@ z_index = -1
 position = Vector2(117.81338, -191.04984)
 scale = Vector2(16.02, 16.02)
 sprite_frames = SubResource("SpriteFrames_24uf3")
-animation = &"kickDone"
+animation = &"die"
 autoplay = "idle"
 
 [node name="Sprite2D" type="Sprite2D" parent="frogLayer/enemyHandler/boss/enemyBody/enemySpr1" unique_id=268316571]
@@ -7581,6 +7633,22 @@ frame_progress = 1.0
 
 [node name="poisonDamage" type="Timer" parent="frogLayer/enemyHandler/boss" unique_id=116328848]
 autostart = true
+
+[node name="bmoveDis" type="Node2D" parent="frogLayer/enemyHandler/boss" unique_id=859828343]
+visible = false
+position = Vector2(-449.99994, -611.99994)
+
+[node name="PanelContainer" type="PanelContainer" parent="frogLayer/enemyHandler/boss/bmoveDis" unique_id=1967984988]
+custom_minimum_size = Vector2(0, 86.415)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="bmoveLab" type="Label" parent="frogLayer/enemyHandler/boss/bmoveDis/PanelContainer" unique_id=989904226]
+layout_mode = 2
+text = " DECK THE HALLS "
+label_settings = SubResource("LabelSettings_yupk3")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Node2D" type="Node2D" parent="frogLayer" unique_id=958398695]
 modulate = Color(1, 1, 1, 0)

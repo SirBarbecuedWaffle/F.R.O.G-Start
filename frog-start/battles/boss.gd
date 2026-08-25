@@ -14,6 +14,8 @@ extends Node2D
 @onready var stun_anim: AnimatedSprite2D = $enemyBody/stunAnim
 @onready var node_2d: Node2D = $"../../Node2D"
 @onready var turn_bar: Sprite2D = $turnBar
+@onready var bmove_lab: Label = $bmoveDis/PanelContainer/bmoveLab
+@onready var bmove_dis: Node2D = $bmoveDis
 
 var smallPunch=preload("res://moves/santa_punch.tscn")
 
@@ -82,8 +84,6 @@ func _ready() -> void:
 	health=maxHealth
 
 func _process(delta: float) -> void:
-
-			
 	if regen>0:
 		regen-=1*delta
 		if regen%125==0:
@@ -230,33 +230,35 @@ func _process(delta: float) -> void:
 							get_tree().change_scene_to_file("res://gameOver.tscn")
 	else:
 		if attack_animator.current_animation!="die":
-			
 			health_label.modulate=Color(1.0, 1.0, 1.0, 0.0)
+			health_bar.visible=false
+			enemy_spr_1.play("die")
+			await get_tree().create_timer(1.2).timeout
 			attack_animator.play("die")
 			
-			await get_tree().create_timer(0.1).timeout
 			
-			var deathThing=deathAnim.instantiate()
-			frog_layer.add_child(deathThing)
-			deathThing.global_position=global_position
+			
 			
 			
 
 
 func bigAttack()->void:
-	var attack=2
+	var attack=randi_range(0,2)
+	bmove_dis.visible=true
 	if attack==0:
+		bmove_lab.text=" Seasons Beatings "
 		enemy_spr_1.play("doublepunch")
 		await get_tree().create_timer(0.0625).timeout
 		for i in range(10):
 			var pawnch=smallPunch.instantiate()
 			if atkDown>0:
-				pawnch.multiplier*=0.5
+				pawnch.multiplier*=0.5	
 			if atkUp>0:
 				pawnch.multiplier*=2
 			frog_layer.add_child(pawnch)
 			await get_tree().create_timer(0.0625*5).timeout
 	if attack==1:
+		bmove_lab.text=" Merry Might "
 		enemy_spr_1.play("present")
 		await get_tree().create_timer(0.75).timeout
 		sprite_2d.visible=true
@@ -264,6 +266,7 @@ func bigAttack()->void:
 		atkUp=21
 		defUp=21
 	if attack==2:
+		bmove_lab.text=" Sleigh Strike "
 		enemy_spr_1.play("kick")
 		animation_player.play("kick")
 		await get_tree().create_timer(0.28).timeout
@@ -277,6 +280,9 @@ func bigAttack()->void:
 		frog_layer.add_child(pawnch)
 		await get_tree().create_timer(1.12).timeout
 		enemy_spr_1.play("kickDone")
+	
+	await get_tree().create_timer(1.5).timeout
+	bmove_dis.visible=false
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area is damager:
@@ -376,4 +382,5 @@ func _on_poison_damage_timeout() -> void:
 
 
 func _on_enemy_spr_1_animation_finished() -> void:
-	enemy_spr_1.play("idle")
+	if health>=1:
+		enemy_spr_1.play("idle")
