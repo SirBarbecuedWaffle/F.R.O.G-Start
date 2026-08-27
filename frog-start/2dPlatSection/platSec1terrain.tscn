@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bb00ptk1p0aa8"]
+
+[sub_resource type="TileSet" id="TileSet_q21vg"]
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+
+[node name="TileMapLayer" type="TileMapLayer" unique_id=1425912341]
+tile_set = SubResource("TileSet_q21vg")
