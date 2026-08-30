@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://bx444xgqxll5x"]
+
+[ext_resource type="Texture2D" uid="uid://bw0yldc33scm" path="res://2dPlatSection/2dPlatAssets/SnowyMontains_Tileset_16x16_v1/SnowParallaxBackground.png" id="1_7f0vd"]
+
+[node name="background" type="Node2D" unique_id=1074976693]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1339453986]
+ignore_camera_scroll = true
+
+[node name="Sky" type="Sprite2D" parent="Parallax2D" unique_id=318103544]
+modulate = Color(0.7539839, 0.75398386, 0.75398386, 1)
+scale = Vector2(6.335, 6.335)
+texture = ExtResource("1_7f0vd")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 80)
+
+[node name="mountain" type="Parallax2D" parent="." unique_id=1666869187]
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(0, 80)
+repeat_size = Vector2(2304, 0)
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="mountain" unique_id=752631126]
+modulate = Color(0.7708395, 0.77083945, 0.77083945, 1)
+texture_repeat = 3
+scale = Vector2(6.335, 6.335)
+texture = ExtResource("1_7f0vd")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 80, 320, 120)
+
+[node name="cloud2" type="Parallax2D" parent="." unique_id=225603813]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(2304, 0)
+autoscroll = Vector2(5, 0)
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="cloud2" unique_id=1775801641]
+modulate = Color(0.7204674, 0.7204675, 0.7204674, 1)
+texture_repeat = 3
+scale = Vector2(6.335, 6.335)
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2304, 648)
+
+[node name="moon" type="Parallax2D" parent="." unique_id=1617962340]
+scroll_scale = Vector2(1.001, 1.1)
+scroll_offset = Vector2(-2172, 21)
+repeat_size = Vector2(2304, 0)
+repeat_times = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="moon" unique_id=1000687927]
+texture_repeat = 1
+position = Vector2(25, 28)
+scale = Vector2(6.335, 6.335)
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2304, 648)
+
+[node name="cloud1" type="Parallax2D" parent="." unique_id=1058776760]
+modulate = Color(1, 1, 1, 0.6745098)
+scroll_scale = Vector2(0.4, 0.4)
+repeat_size = Vector2(2304, 0)
+autoscroll = Vector2(2.5, 0)
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="cloud1" unique_id=647751468]
+modulate = Color(0.72464263, 0.7246426, 0.7246426, 1)
+texture_repeat = 3
+scale = Vector2(6.335, 6.335)
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2304, 648)
+
+[node name="backTrees" type="Parallax2D" parent="." unique_id=1512228254]
+scroll_scale = Vector2(1.1, 1.1)
+scroll_offset = Vector2(5, 5)
+repeat_size = Vector2(2304, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="backTrees" unique_id=248921856]
+modulate = Color(0.7254902, 0.7254902, 0.7254902, 1)
+texture_repeat = 3
+scale = Vector2(6.335, 6.335)
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2304, 648)

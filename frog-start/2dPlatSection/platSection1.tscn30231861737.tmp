@@ -1,0 +1,16 @@
+[gd_scene format=4 uid="uid://coy2nfkap3xyp"]
+
+[ext_resource type="PackedScene" uid="uid://bb00ptk1p0aa8" path="res://2dPlatSection/platSec1terrain.tscn" id="1_2e14g"]
+[ext_resource type="PackedScene" uid="uid://cojquofto4pfb" path="res://2dPlatSection/platChar.tscn" id="2_tuhtl"]
+
+[node name="PlatSection1" type="Node2D" unique_id=1175373895]
+
+[node name="TileMapLayer" parent="." unique_id=1425912341 instance=ExtResource("1_2e14g")]
+tile_map_data = PackedByteArray("AAACAAMAAAACAAIAAAACAAIAAAAEAAAAAAACAAEAAAAHAAIAAAACAAAAAAABAAAAAAABAAMAAAABAAIAAAABAAIAAAAHAAIAAAABAAEAAAAHAAMAAAABAAAAAAABAAAAAAAAAAMAAAABAAIAAAAAAAIAAAAHAAIAAAAAAAEAAAAIAAIAAAAAAAAAAAABAAAAAAD//wMAAAABAAIAAAD//wIAAAAHAAMAAAD//wEAAAAHAAIAAAD//wAAAAABAAAAAAD+/wMAAAABAAIAAAD+/wIAAAABAAEAAAD+/wEAAAABAAEAAAD+/wAAAAABAAAAAAD9/wMAAAAAAAIAAAD9/wIAAAAFAAAAAAD9/wEAAAAIAAIAAAD9/wAAAAABAAAAAAD8/wIAAAAAAAIAAAD8/wEAAAAAAAEAAAD8/wAAAAAAAAAAAAADAAAAAAACAAAAAAADAAEAAAACAAEAAAADAAIAAAACAAIAAAA=")
+
+[node name="CharacterBody2D" parent="." unique_id=664787318 instance=ExtResource("2_tuhtl")]
+position = Vector2(0, -60)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=421179300]
+position = Vector2(0, -60)
+zoom = Vector2(2.5, 2.5)
