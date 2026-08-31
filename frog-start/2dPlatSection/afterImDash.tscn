@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dxcsapqaq4cbi"]
+
+[ext_resource type="Texture2D" uid="uid://dtcxqs5aox6ei" path="res://overworldPlayer/playerAssets/Ninja Frog/Jump (32x32).png" id="1_puws8"]
+
+[sub_resource type="Animation" id="Animation_puws8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(3682719500000, 3682719500000, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_16ap6"]
+resource_name = "fade"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(3682719500000, 3682719500000, 0, 1), Color(3682719500000, 3682719500000, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qc1pi"]
+_data = {
+&"RESET": SubResource("Animation_puws8"),
+&"fade": SubResource("Animation_16ap6")
+}
+
+[node name="Node2D" type="Node2D" unique_id=504296467]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1341156566]
+modulate = Color(3682719500000, 3682719500000, 0, 1)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_puws8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1607994780]
+libraries/ = SubResource("AnimationLibrary_qc1pi")
+autoplay = &"fade"

@@ -205,14 +205,56 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_655eb"]
-size = Vector2(20, 24)
+size = Vector2(16, 24)
+
+[sub_resource type="Animation" id="Animation_j4ree"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_chpk0"]
+resource_name = "dash"
+length = 0.39999999999999997
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(2.454227, 2.454227, 0, 1), Color(2.454227, 2.454227, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jvfjm"]
+_data = {
+&"RESET": SubResource("Animation_j4ree"),
+&"dash": SubResource("Animation_chpk0")
+}
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=664787318]
+z_index = 1
 script = ExtResource("1_j4ree")
+gravity = 525
+speed = 112.5
+jumpStrength = 98.25
+MaxjumpStrength = 1950.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=892500968]
 sprite_frames = SubResource("SpriteFrames_yupk3")
-animation = &"fall"
+animation = &"jump"
 autoplay = "idle"
 
 [node name="collisionbox" type="CollisionShape2D" parent="." unique_id=1676537994]
@@ -228,3 +270,6 @@ debug_color = Color(0.9529412, 0, 0.54901963, 0.60784316)
 [node name="coyoteTime" type="Timer" parent="." unique_id=1469635533]
 wait_time = 0.1
 one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=631589048]
+libraries/ = SubResource("AnimationLibrary_jvfjm")

@@ -3,18 +3,18 @@
 
 shader_type canvas_item;
 
-uniform float rain_amount = 100.0;
-uniform float near_rain_length : hint_range(0.01, 1.0) = 0.002;
-uniform float far_rain_length : hint_range(0.01, 1.0) = 0.001;
-uniform float near_rain_width : hint_range(0.1, 1.0) = 0.05;
-uniform float far_rain_width : hint_range(0.1, 1.0) = 0.025;
+uniform float rain_amount = 2000.0;
+uniform float near_rain_length : hint_range(0.01, 1.0) = 0.02;
+uniform float far_rain_length : hint_range(0.01, 1.0) = 0.01;
+uniform float near_rain_width : hint_range(0.1, 1.0) = 0.1;
+uniform float far_rain_width : hint_range(0.1, 1.0) = 0.05;
 uniform float near_rain_transparency : hint_range(0.1, 1.0) = 1.0;
 uniform float far_rain_transparency : hint_range(0.1, 1.0) = 1.0;
 // Replace the below reference to source_color with hint_color if you are using a version of Godot before 4.0.
 uniform vec4 rain_color : source_color = vec4(0.8, 0.8, 0.8, 1.0);
-uniform float base_rain_speed : hint_range(0.1, 1.0) = 0.0025;
-uniform float additional_rain_speed : hint_range(0.1, 1.0) = 0.025;
-uniform float slant : hint_range(-5.5, 5.5) = 0
+uniform float base_rain_speed : hint_range(0.1, 1.0) = 0.05;
+uniform float additional_rain_speed : hint_range(0.1, 1.0) = 0.15;
+uniform float slant : hint_range(-5.5, 5.5) = -1
 ;
 
 void fragment() {
@@ -27,7 +27,7 @@ void fragment() {
 //	COLOR = texture(TEXTURE,UV);
 
 	vec2 uv = vec2(0.0);
-	float remainder = mod(UV.x - UV.y * slant, 0.1 / rain_amount);
+	float remainder = mod(UV.x - UV.y * slant, 1.0 / rain_amount);
 	uv.x = (UV.x - UV.y * slant) - remainder;
 	float rn = fract(sin(uv.x * rain_amount));
 	uv.y = fract((UV.y + rn));
