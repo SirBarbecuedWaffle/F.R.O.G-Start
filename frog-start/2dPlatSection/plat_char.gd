@@ -13,25 +13,51 @@ var jumpTime:=0.0
 var canJump:=false
 var dashing:=false
 var magic:=10.0
+@export var maxMagic:=10.0
 var dashTime:=0.0
+@onready var mag_bar: Control = $magBar
 @export var magicCount:=10.0
 @onready var afterIm=preload("res://2dPlatSection/afterImDash.tscn")
 @onready var jumpSp=preload("res://overworldPlayer/playerAssets/Ninja Frog/Jump (32x32).png")
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var stamina_bar: StaminaBar = $magBar/StaminaBar
+@onready var regen_mag: Timer = $regenMag
+
+func _ready() -> void:
+	stamina_bar.max_value=maxMagic
 func _process(delta: float) -> void:
+	stamina_bar.value=magic
+	if !(magic<maxMagic):
+		if mag_bar.modulate==Color(1.0, 1.0, 1.0, 1.0):
+			var mTween=create_tween()
+			mTween.tween_property(mag_bar,"modulate",Color(1.0, 1.0, 1.0, 0.0),0.25)
+	else:
+		if mag_bar.modulate==Color(1.0, 1.0, 1.0, 0.0):
+			var mTween=create_tween()
+			mTween.tween_property(mag_bar,"modulate",Color(1.0, 1.0, 1.0, 1.0),0.25)		
+	if curChar==1:
+		if magic>=7.5:
+			stamina_bar.color=Color(18.892, 18.892, 0.0, 1.0)
+		else:
+			stamina_bar.color=Color(0.0, 1.0, 0.0, 1.0)
 	if Input.is_action_just_released("up"):
 		canJump=false
 	
 	
 func _physics_process(delta: float) -> void:
-	
+	if !(regen_mag.time_left>0):
+		if magic<maxMagic:
+			magic+=(maxMagic/5*delta)+(5*delta)
+		else:
+			magic=maxMagic
+			
 	if not is_on_floor():
 		if !dashing:
 			velocity.y+=gravity*delta
 			if velocity.y>500:
 				velocity.y=500
 	else:
-		magic+=10*delta
+		
 		coyote_time.start(0.0)
 	direction=Input.get_axis("left","right")
 	direction2=Input.get_axis("up","down")
@@ -50,8 +76,9 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.flip_h=direction==-1
 	if Input.is_action_just_pressed("space"):
 		if curChar==1:
-			if magic>7.5:
-				magic-=0
+			if magic>=7.5 && !dashing:
+				magic-=7.5
+				regen_mag.start()
 				var oldVelX:=velocity.x
 				var oldVelY=velocity.y
 				if oldVelY>0:
@@ -60,6 +87,10 @@ func _physics_process(delta: float) -> void:
 				dashing=true
 				var xVel=dashStrength*direction
 				var yVel=dashStrength*direction2
+				if xVel==0 && yVel==0:
+					xVel=dashStrength
+					if animated_sprite_2d.flip_h:
+						xVel*=-1
 				var xTween=create_tween()
 				xTween.tween_property(self,"velocity",Vector2(xVel,yVel),0.1)
 				await xTween.finished
@@ -97,7 +128,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		if velocity.y>0:
 			animated_sprite_2d.play("fall")
-		elif velocity.y<0:
+		elif velocity.y<0 || dashing:
 			animated_sprite_2d.play("jump")
 	
 	

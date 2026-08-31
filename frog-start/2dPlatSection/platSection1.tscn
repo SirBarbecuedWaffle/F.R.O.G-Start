@@ -28,6 +28,7 @@ metadata/_edit_horizontal_guides_ = [-358.0]
 layer = -1
 
 [node name="Parallax2D" type="Parallax2D" parent="CanvasLayer2" unique_id=677238017]
+z_index = -2
 texture_repeat = 2
 scroll_offset = Vector2(-1103, -208)
 repeat_size = Vector2(1600, 0)
@@ -51,6 +52,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 320, 80)
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=143011195]
+z_index = -2
 scale = Vector2(0.395, 0.395)
 scroll_scale = Vector2(0.125, 0.05)
 scroll_offset = Vector2(-386.00244, -23)
@@ -65,6 +67,7 @@ region_enabled = true
 region_rect = Rect2(0, 80, 320, 120)
 
 [node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1220625637]
+z_index = -2
 scale = Vector2(0.198, 0.198)
 scroll_scale = Vector2(0.4, 0.2)
 scroll_offset = Vector2(-384.98895, 156)
@@ -86,6 +89,7 @@ region_enabled = true
 region_rect = Rect2(0, 200, 320, 64)
 
 [node name="Parallax2D4" type="Parallax2D" parent="." unique_id=1726594623]
+z_index = -2
 scale = Vector2(0.395, 0.395)
 scroll_scale = Vector2(0.95, 1)
 scroll_offset = Vector2(-386.00244, -583)

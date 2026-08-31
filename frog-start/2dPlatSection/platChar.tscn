@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d6dw0kp5yi82" path="res://overworldPlayer/playerAssets/Ninja Frog/Fall (32x32).png" id="2_chpk0"]
 [ext_resource type="Texture2D" uid="uid://d2f0773sjp1gh" path="res://overworldPlayer/playerAssets/Ninja Frog/Run (32x32).png" id="2_pc8il"]
 [ext_resource type="Texture2D" uid="uid://dtcxqs5aox6ei" path="res://overworldPlayer/playerAssets/Ninja Frog/Jump (32x32).png" id="4_jvfjm"]
+[ext_resource type="Script" uid="uid://bncv6fkcdu0h7" path="res://addons/BarsGalore/StaminaRing/StaminaRing.gd" id="6_chpk0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bkpp0"]
 atlas = ExtResource("2_chpk0")
@@ -245,7 +246,6 @@ _data = {
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=664787318]
-z_index = 1
 script = ExtResource("1_j4ree")
 gravity = 525
 speed = 112.5
@@ -273,3 +273,46 @@ one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=631589048]
 libraries/ = SubResource("AnimationLibrary_jvfjm")
+
+[node name="magBar" type="Control" parent="." unique_id=651321393]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StaminaBar2" type="Control" parent="magBar" unique_id=1537146178]
+anchors_preset = 0
+offset_left = -4.0
+offset_top = -23.0
+offset_right = 160.0
+offset_bottom = 131.0
+scale = Vector2(0.05, 0.05)
+script = ExtResource("6_chpk0")
+value = 10.0
+max_value = 10.0
+point_count = 50
+color = Color(0, 0, 0, 1)
+width = 35.0
+rounded_edges = false
+antialiased = false
+metadata/_custom_type_script = "uid://bncv6fkcdu0h7"
+
+[node name="StaminaBar" type="Control" parent="magBar" unique_id=966547836]
+anchors_preset = 0
+offset_left = -4.0
+offset_top = -23.0
+offset_right = 160.0
+offset_bottom = 131.0
+scale = Vector2(0.05, 0.05)
+script = ExtResource("6_chpk0")
+value = 8.28
+max_value = 10.0
+point_count = 50
+color = Color(0, 0.972549, 0, 1)
+width = 35.0
+rounded_edges = false
+antialiased = false
+metadata/_custom_type_script = "uid://bncv6fkcdu0h7"
+
+[node name="regenMag" type="Timer" parent="." unique_id=407289449]
+one_shot = true
