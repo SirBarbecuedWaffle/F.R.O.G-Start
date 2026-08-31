@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://bw0yldc33scm" path="res://2dPlatSection/2dPlatAssets/SnowyMontains_Tileset_16x16_v1/SnowParallaxBackground.png" id="1_sywrv"]
 [ext_resource type="PackedScene" uid="uid://cojquofto4pfb" path="res://2dPlatSection/platChar.tscn" id="2_tuhtl"]
 [ext_resource type="Shader" uid="uid://crndjm1je4trh" path="res://shaders/snowShader.gdshader" id="4_1nido"]
+[ext_resource type="Shader" uid="uid://dono40ghaf5tj" path="res://addons/godot_retro/shaders/standard/vhs.gdshader" id="6_w23wu"]
+[ext_resource type="Shader" uid="uid://br42f24g55y3f" path="res://addons/godot_retro/samples/common/map4_2d/shr_wind.gdshader" id="8_fjy2b"]
+[ext_resource type="Texture2D" uid="uid://dehd38sccaemp" path="res://addons/godot_retro/samples/common/map4_2d/tex_tree.png" id="9_hbv2v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6mmun"]
 shader = ExtResource("4_1nido")
@@ -19,6 +22,24 @@ shader_parameter/rain_color = Color(0.8, 0.8, 0.8, 1)
 shader_parameter/base_rain_speed = 0.0025
 shader_parameter/additional_rain_speed = 0.025
 shader_parameter/slant = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w23wu"]
+shader = ExtResource("6_w23wu")
+shader_parameter/tape_wave_amount = 0.04
+shader_parameter/tape_crease_amount = 2.5
+shader_parameter/color_displacement = 0.0
+shader_parameter/lines_velocity = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eupf1"]
+shader = ExtResource("8_fjy2b")
+shader_parameter/speed = 2.0
+shader_parameter/minStrength = 0.0
+shader_parameter/maxStrength = 0.3
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 2.0
+shader_parameter/detail = 1.0
+shader_parameter/distortion = 0.7
+shader_parameter/heightOffset = 0.0
 
 [node name="PlatSection1" type="Node2D" unique_id=1175373895]
 script = ExtResource("1_6mmun")
@@ -136,3 +157,42 @@ offset_top = -1606.0
 offset_right = 2868.0
 offset_bottom = 100.0
 color = Color(18.892157, 18.892157, 18.892157, 0)
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=1012565934]
+layer = 0
+
+[node name="Effects" type="Control" parent="CanvasLayer3" unique_id=160154230]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1442.0
+offset_top = 696.0
+offset_right = 1442.0
+offset_bottom = 696.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.025, 3.025)
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="CanvasLayer3/Effects" unique_id=2139577156]
+position = Vector2(-145.78511, -63.471077)
+scale = Vector2(5.635, 4.231)
+copy_mode = 2
+
+[node name="fxDithering" type="ColorRect" parent="CanvasLayer3/Effects/BackBufferCopy" unique_id=825125569]
+material = SubResource("ShaderMaterial_w23wu")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = -100.0
+offset_bottom = -100.0
+
+[node name="texTree" type="Sprite2D" parent="." unique_id=1074167332]
+z_index = -1
+texture_filter = 1
+material = SubResource("ShaderMaterial_eupf1")
+position = Vector2(-1992, -202)
+scale = Vector2(0.610084, 0.610084)
+texture = ExtResource("9_hbv2v")
