@@ -5,6 +5,18 @@ extends CharacterBody2D
 @export var MaxjumpStrength:=2600.0
 @onready var coyote_time: Timer = $coyoteTime
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+@onready var frog_anim: AnimatedSprite2D = $collisionbox/frogAnim
+@onready var steve_anim: AnimatedSprite2D = $collisionbox/steveAnim
+@onready var mask_anim: AnimatedSprite2D = $collisionbox/maskAnim
+@onready var hood_anim: AnimatedSprite2D = $collisionbox/hoodAnim
+@onready var robot_anim: AnimatedSprite2D = $collisionbox/robotAnim
+@onready var joe_anim: AnimatedSprite2D = $collisionbox/joeAnim
+@onready var fox_anim: AnimatedSprite2D = $collisionbox/foxAnim
+@onready var lizard_anim: AnimatedSprite2D = $collisionbox/lizardAnim
+@onready var barrel_anim: AnimatedSprite2D = $collisionbox/barrelAnim
+
+
 @export var curChar:=1
 @export var dashStrength:=300.0
 var direction:=0
@@ -13,15 +25,23 @@ var jumpTime:=0.0
 var canJump:=false
 var dashing:=false
 var magic:=10.0
+var frozen:=false
+var changed:=false
 @export var maxMagic:=10.0
+var changeChar:=0
 var dashTime:=0.0
 @onready var mag_bar: Control = $magBar
 @export var magicCount:=10.0
 @onready var afterIm=preload("res://2dPlatSection/afterImDash.tscn")
 @onready var jumpSp=preload("res://overworldPlayer/playerAssets/Ninja Frog/Jump (32x32).png")
+@onready var frogF=preload("res://2dPlatSection/frogFrames.tres")
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var stamina_bar: StaminaBar = $magBar/StaminaBar
 @onready var regen_mag: Timer = $regenMag
+@onready var open_animator: AnimationPlayer = $transitionAnim/openAnimator
+@onready var close_animator: AnimationPlayer = $transitionAnim/closeAnimator
+@onready var control_3: Control = $transitionAnim/Control3
+@onready var color_rect: ColorRect = $transitionAnim/ColorRect
 
 func _ready() -> void:
 	stamina_bar.max_value=maxMagic
@@ -43,8 +63,47 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_released("up"):
 		canJump=false
 	
+func swapChars(charNum : int)->void:
+	if curChar==1:
+		close_animator.play_backwards("frog")
+	if curChar==2:
+		close_animator.play_backwards("steve")
+	if curChar==3:
+		close_animator.play_backwards("mask")
+	if curChar==4:
+		close_animator.play_backwards("hood")
+	if curChar==5:
+		close_animator.play_backwards("robot")
+	if curChar==6:
+		close_animator.play_backwards("joe")
+	if curChar==7:
+		close_animator.play_backwards("fox")
+	if curChar==8:
+		close_animator.play_backwards("lizard")
+	if curChar==9:
+		close_animator.play_backwards("barrel")
+	
+	
+	changeChar=charNum
+	
 	
 func _physics_process(delta: float) -> void:
+	if steve_anim.animation!=frog_anim.animation:
+		steve_anim.animation=frog_anim.animation
+	if mask_anim.animation!=frog_anim.animation:
+		mask_anim.animation=frog_anim.animation
+	if hood_anim.animation!=frog_anim.animation:
+		hood_anim.animation=frog_anim.animation
+	if robot_anim.animation!=frog_anim.animation:
+		robot_anim.animation=frog_anim.animation
+	if joe_anim.animation!=frog_anim.animation:
+		joe_anim.animation=frog_anim.animation
+	if fox_anim.animation!=frog_anim.animation:
+		fox_anim.animation=frog_anim.animation
+	if lizard_anim.animation!=frog_anim.animation:
+		lizard_anim.animation=frog_anim.animation
+	if barrel_anim.animation!=frog_anim.animation:
+		barrel_anim.animation=frog_anim.animation
 	if !(regen_mag.time_left>0):
 		if magic<maxMagic:
 			magic+=(maxMagic/5*delta)+(5*delta)
@@ -61,20 +120,45 @@ func _physics_process(delta: float) -> void:
 		coyote_time.start(0.0)
 	direction=Input.get_axis("left","right")
 	direction2=Input.get_axis("up","down")
-	if !dashing:
-		velocity.x=lerp(velocity.x,direction*speed,0.3)
+	
+	if Input.is_action_just_pressed("e"):
+		if direction==0 && velocity.y==0 && !frozen:
+			frozen=true
+			#if curChar<9:
+				#swapChars(curChar+1)
+			#else:
+				#swapChars(1)
+			swapChars(randi_range(1,9))
+	
+	if !frozen:
+		if !dashing:
+			velocity.x=lerp(velocity.x,direction*speed,0.3)
+		else:
+			dashTime+=delta
+			if dashTime>0.05:
+				dashTime=0
+				var insta=afterIm.instantiate()
+				if frog_anim.flip_h:
+					insta.scale.x*=-1
+				insta.global_position=global_position
+				get_parent().add_child(insta)
 	else:
-		dashTime+=delta
-		if dashTime>0.05:
-			dashTime=0
-			var insta=afterIm.instantiate()
-			if animated_sprite_2d.flip_h:
-				insta.scale.x*=-1
-			insta.global_position=global_position
-			get_parent().add_child(insta)
+		velocity.x=0
 	if direction!=0:
-		animated_sprite_2d.flip_h=direction==-1
-	if Input.is_action_just_pressed("space"):
+		frog_anim.flip_h=direction==-1
+	steve_anim.flip_h=frog_anim.flip_h
+	mask_anim.flip_h=frog_anim.flip_h
+	hood_anim.flip_h=frog_anim.flip_h
+	robot_anim.flip_h=frog_anim.flip_h
+	joe_anim.flip_h=frog_anim.flip_h
+	fox_anim.flip_h=frog_anim.flip_h
+	if frog_anim.flip_h:
+		lizard_anim.offset.x=25.0
+	else:
+		lizard_anim.offset.x=0.0
+	lizard_anim.flip_h=frog_anim.flip_h
+	barrel_anim.flip_h=frog_anim.flip_h
+	if Input.is_action_just_pressed("space") && !frozen:
 		if curChar==1:
 			if magic>=7.5 && !dashing:
 				magic-=7.5
@@ -89,7 +173,7 @@ func _physics_process(delta: float) -> void:
 				var yVel=dashStrength*direction2
 				if xVel==0 && yVel==0:
 					xVel=dashStrength
-					if animated_sprite_2d.flip_h:
+					if frog_anim.flip_h:
 						xVel*=-1
 				var xTween=create_tween()
 				xTween.tween_property(self,"velocity",Vector2(xVel,yVel),0.1)
@@ -101,7 +185,7 @@ func _physics_process(delta: float) -> void:
 					
 
 
-	if canJump && Input.is_action_pressed("up") && !dashing:
+	if canJump && Input.is_action_pressed("up") && !dashing && !frozen:
 		jumpTime += delta
 		if jumpTime<0.2:
 			var t := jumpTime / 0.2
@@ -113,7 +197,7 @@ func _physics_process(delta: float) -> void:
 		#else:
 			#canJump=false
 	
-	if Input.is_action_pressed("up"):
+	if Input.is_action_pressed("up") && !frozen:
 		if coyote_time.time_left>0:
 			velocity.y=-1*jumpStrength
 			jumpTime=0.0
@@ -122,14 +206,15 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor():
 		if !(velocity.x<2 && velocity.x>-2):
-			animated_sprite_2d.play("walking")
+			frog_anim.play("walking")
+			steve_anim.play("walking")
 		else:
-			animated_sprite_2d.play("idle")	
+			frog_anim.play("idle")
 	else:
 		if velocity.y>0:
-			animated_sprite_2d.play("fall")
+			frog_anim.play("fall")
 		elif velocity.y<0 || dashing:
-			animated_sprite_2d.play("jump")
+			frog_anim.play("jump")
 	
 	
 	move_and_slide()
@@ -138,3 +223,81 @@ func _physics_process(delta: float) -> void:
 	
 func jump(force : int) -> void:
 	velocity.y=-force
+
+#
+#func _on_open_animator_animation_finished(anim_name: StringName) -> void:
+	#await get_tree().create_timer(0.3).timeout
+	#if anim_name=="frog":
+		#curChar=2
+		#steve_anim.visible=true
+		#frog_anim.visible=false
+	#if curChar==2:
+		#close_animator.play("steve")
+
+
+func _on_close_animator_animation_finished(anim_name: StringName) -> void:
+	if frozen && !changed:
+		if anim_name=="frog":
+			frog_anim.visible=false
+		if anim_name=="steve":
+			steve_anim.visible=false
+		if anim_name=="mask":
+			mask_anim.visible=false
+		if anim_name=="hood":
+			hood_anim.visible=false
+		if anim_name=="robot":
+			robot_anim.visible=false
+		if anim_name=="joe":
+			joe_anim.visible=false
+		if anim_name=="fox":
+			fox_anim.visible=false
+		if anim_name=="lizard":
+			lizard_anim.visible=false
+		if anim_name=="barrel":
+			barrel_anim.visible=false
+		color_rect.visible=true
+		await get_tree().create_timer(0.3).timeout
+		changed=true
+		control_3.visible=false
+		close_animator.play("RESET")
+		color_rect.visible=true
+		if changeChar==1:
+			close_animator.play("frog")
+			curChar=1
+			frog_anim.visible=true
+		if changeChar==2:
+			close_animator.play("steve")
+			curChar=2
+			steve_anim.visible=true
+		if changeChar==3:
+			close_animator.play("mask")
+			curChar=3
+			mask_anim.visible=true
+		if changeChar==4:
+			close_animator.play("hood")
+			curChar=4
+			hood_anim.visible=true
+		if changeChar==5:
+			close_animator.play("robot")
+			curChar=5
+			robot_anim.visible=true
+		if changeChar==6:
+			close_animator.play("joe")
+			curChar=6
+			joe_anim.visible=true
+		if changeChar==7:
+			close_animator.play("fox")
+			curChar=7
+			fox_anim.visible=true
+		if changeChar==8:
+			close_animator.play("lizard")
+			curChar=8
+			lizard_anim.visible=true
+		if changeChar==9:
+			close_animator.play("barrel")
+			curChar=9
+			barrel_anim.visible=true
+		
+	elif changed:	
+		frozen=false
+		changed=false

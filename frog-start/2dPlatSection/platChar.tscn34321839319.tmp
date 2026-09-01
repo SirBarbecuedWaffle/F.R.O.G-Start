@@ -1,0 +1,418 @@
+[gd_scene format=3 uid="uid://cojquofto4pfb"]
+
+[ext_resource type="Texture2D" uid="uid://dfpvcs3pn71af" path="res://overworldPlayer/playerAssets/Ninja Frog/Idle (32x32).png" id="1_i0sxt"]
+[ext_resource type="Script" uid="uid://ci54iye4ecdx" path="res://2dPlatSection/plat_char.gd" id="1_j4ree"]
+[ext_resource type="Texture2D" uid="uid://d6dw0kp5yi82" path="res://overworldPlayer/playerAssets/Ninja Frog/Fall (32x32).png" id="2_chpk0"]
+[ext_resource type="Texture2D" uid="uid://d2f0773sjp1gh" path="res://overworldPlayer/playerAssets/Ninja Frog/Run (32x32).png" id="2_pc8il"]
+[ext_resource type="Texture2D" uid="uid://dtcxqs5aox6ei" path="res://overworldPlayer/playerAssets/Ninja Frog/Jump (32x32).png" id="4_jvfjm"]
+[ext_resource type="Script" uid="uid://bncv6fkcdu0h7" path="res://addons/BarsGalore/StaminaRing/StaminaRing.gd" id="6_chpk0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkpp0"]
+atlas = ExtResource("2_chpk0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pc8il"]
+atlas = ExtResource("1_i0sxt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qi7p8"]
+atlas = ExtResource("1_i0sxt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bttba"]
+atlas = ExtResource("1_i0sxt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4ree"]
+atlas = ExtResource("1_i0sxt")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chpk0"]
+atlas = ExtResource("1_i0sxt")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvfjm"]
+atlas = ExtResource("1_i0sxt")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1jq4"]
+atlas = ExtResource("1_i0sxt")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rk8dt"]
+atlas = ExtResource("1_i0sxt")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7ob6"]
+atlas = ExtResource("1_i0sxt")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_535c7"]
+atlas = ExtResource("1_i0sxt")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbnex"]
+atlas = ExtResource("1_i0sxt")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwuvq"]
+atlas = ExtResource("4_jvfjm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7bkx"]
+atlas = ExtResource("2_pc8il")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_af5xh"]
+atlas = ExtResource("2_pc8il")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf8ck"]
+atlas = ExtResource("2_pc8il")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvs62"]
+atlas = ExtResource("2_pc8il")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_le2ro"]
+atlas = ExtResource("2_pc8il")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4uak"]
+atlas = ExtResource("2_pc8il")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ge30"]
+atlas = ExtResource("2_pc8il")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a7dy"]
+atlas = ExtResource("2_pc8il")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txtbf"]
+atlas = ExtResource("2_pc8il")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obao0"]
+atlas = ExtResource("2_pc8il")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mup1"]
+atlas = ExtResource("2_pc8il")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icc1p"]
+atlas = ExtResource("2_pc8il")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yupk3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkpp0")
+}],
+"loop": 1,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pc8il")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qi7p8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bttba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4ree")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chpk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvfjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1jq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rk8dt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7ob6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_535c7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbnex")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwuvq")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7bkx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_af5xh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf8ck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvs62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_le2ro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4uak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ge30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a7dy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txtbf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mup1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icc1p")
+}],
+"loop": 1,
+"name": &"walking",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_655eb"]
+size = Vector2(16, 24)
+
+[sub_resource type="Animation" id="Animation_j4ree"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_chpk0"]
+resource_name = "dash"
+length = 0.39999999999999997
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(2.454227, 2.454227, 0, 1), Color(2.454227, 2.454227, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jvfjm"]
+_data = {
+&"RESET": SubResource("Animation_j4ree"),
+&"dash": SubResource("Animation_chpk0")
+}
+
+[sub_resource type="Animation" id="Animation_jvfjm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(40, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_v1jq4"]
+resource_name = "frog"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(40, 0), Vector2(40, 40)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rk8dt"]
+_data = {
+&"RESET": SubResource("Animation_jvfjm"),
+&"frog": SubResource("Animation_v1jq4")
+}
+
+[sub_resource type="Animation" id="Animation_rk8dt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(40, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g7ob6"]
+resource_name = "frog"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(40, 40), Vector2(40, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_535c7"]
+_data = {
+&"RESET": SubResource("Animation_rk8dt"),
+&"frog": SubResource("Animation_g7ob6")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=664787318]
+script = ExtResource("1_j4ree")
+gravity = 525
+speed = 112.5
+jumpStrength = 98.25
+MaxjumpStrength = 1950.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=892500968]
+sprite_frames = SubResource("SpriteFrames_yupk3")
+animation = &"jump"
+autoplay = "idle"
+
+[node name="collisionbox" type="CollisionShape2D" parent="." unique_id=1676537994]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_655eb")
+
+[node name="hitbox" type="CollisionShape2D" parent="." unique_id=1521179570]
+position = Vector2(0, 4)
+scale = Vector2(0.7, 0.7)
+shape = SubResource("RectangleShape2D_655eb")
+debug_color = Color(0.9529412, 0, 0.54901963, 0.60784316)
+
+[node name="coyoteTime" type="Timer" parent="." unique_id=1469635533]
+wait_time = 0.1
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=631589048]
+libraries/ = SubResource("AnimationLibrary_jvfjm")
+
+[node name="magBar" type="Control" parent="." unique_id=651321393]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StaminaBar2" type="Control" parent="magBar" unique_id=1537146178]
+anchors_preset = 0
+offset_left = -4.0
+offset_top = -23.0
+offset_right = 160.0
+offset_bottom = 131.0
+scale = Vector2(0.05, 0.05)
+script = ExtResource("6_chpk0")
+value = 10.0
+max_value = 10.0
+point_count = 50
+color = Color(0, 0, 0, 1)
+width = 35.0
+rounded_edges = false
+antialiased = false
+metadata/_custom_type_script = "uid://bncv6fkcdu0h7"
+
+[node name="StaminaBar" type="Control" parent="magBar" unique_id=966547836]
+anchors_preset = 0
+offset_left = -4.0
+offset_top = -23.0
+offset_right = 160.0
+offset_bottom = 131.0
+scale = Vector2(0.05, 0.05)
+script = ExtResource("6_chpk0")
+value = 8.28
+max_value = 10.0
+point_count = 50
+color = Color(0, 0.972549, 0, 1)
+width = 35.0
+rounded_edges = false
+antialiased = false
+metadata/_custom_type_script = "uid://bncv6fkcdu0h7"
+
+[node name="regenMag" type="Timer" parent="." unique_id=407289449]
+one_shot = true
+
+[node name="transitionAnim" type="Node2D" parent="." unique_id=2016568498]
+
+[node name="ColorRect" type="ColorRect" parent="transitionAnim" unique_id=1040017680]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 16.0
+offset_right = 20.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, -1)
+color = Color(18.892157, 18.892157, 18.892157, 1)
+
+[node name="openAnimator" type="AnimationPlayer" parent="transitionAnim" unique_id=1589228001]
+libraries/ = SubResource("AnimationLibrary_rk8dt")
+
+[node name="closeAnimator" type="AnimationPlayer" parent="transitionAnim" unique_id=605147859]
+libraries/ = SubResource("AnimationLibrary_535c7")
+
+[connection signal="animation_finished" from="transitionAnim/openAnimator" to="." method="_on_open_animator_animation_finished"]
+[connection signal="animation_finished" from="transitionAnim/closeAnimator" to="." method="_on_close_animator_animation_finished"]
