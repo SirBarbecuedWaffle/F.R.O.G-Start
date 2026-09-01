@@ -20,4 +20,5 @@ func _on_body_entered(body: Node2D) -> void:
 	body.itemPicked=1
 	color_rect.visible=true
 	await get_tree().create_timer(1.3).timeout
-	get_tree().change_scene_to_file("res://overworld/startLevel.tscn")
+	if levelAtt==1:
+		get_tree().change_scene_to_file("res://2dPlatSection/platSection1.tscn")

@@ -7682,7 +7682,6 @@ libraries/ = SubResource("AnimationLibrary_pbmit")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=334568632]
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=675429401]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
