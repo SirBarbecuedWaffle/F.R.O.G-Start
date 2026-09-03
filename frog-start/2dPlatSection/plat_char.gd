@@ -3,8 +3,10 @@ extends CharacterBody2D
 @export var speed:=150.0
 @export var jumpStrength:=130.0
 @export var MaxjumpStrength:=2600.0
+@export var push_force:=20
 @onready var coyote_time: Timer = $coyoteTime
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+signal hackCheck
 
 @onready var frog_anim: AnimatedSprite2D = $collisionbox/frogAnim
 @onready var steve_anim: AnimatedSprite2D = $collisionbox/steveAnim
@@ -25,11 +27,12 @@ var direction2:=0
 var jumpTime:=0.0
 var canJump:=false
 var dashing:=false
+var scanning:=false
 var magic:=10.0
 var ghosting:=false
 var frozen:=false
 var changed:=false
-@export var maxMagic:=7.5
+@export var maxMagic:=10.0
 var changeChar:=0
 var dashTime:=0.0
 @onready var mag_bar: Control = $magBar
@@ -46,8 +49,8 @@ var dashTime:=0.0
 @onready var color_rect: ColorRect = $transitionAnim/ColorRect
 
 func _ready() -> void:
-	for f in CManager.charUnlocked:
-		maxMagic+=f*2.5
+	#for f in CManager.charUnlocked:
+		#maxMagic+=f*2.5
 	stamina_bar.max_value=maxMagic
 	magic=maxMagic
 func _process(delta: float) -> void:
@@ -98,7 +101,11 @@ func swapChars(charNum : int)->void:
 	
 	
 func _physics_process(delta: float) -> void:
-	if steve_anim.animation!=frog_anim.animation:
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider() is RigidBody2D:
+			collision.get_collider().apply_central_impulse(-collision.get_normal() * push_force)
+	if steve_anim.animation!=frog_anim.animation && !scanning:
 		steve_anim.animation=frog_anim.animation
 	if mask_anim.animation!=frog_anim.animation:
 		mask_anim.animation=frog_anim.animation
@@ -149,11 +156,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("e"):
 		if direction==0 && velocity.y==0 && !frozen:
 			frozen=true
-			#if curChar<9:
-				#swapChars(curChar+1)
-			#else:
-				#swapChars(1)
-			swapChars(3)
+			if curChar<9:
+				swapChars(curChar+1)
+			else:
+				swapChars(1)
+			#swapChars(3)
 	
 	if !frozen:
 		if !dashing:
@@ -184,6 +191,12 @@ func _physics_process(delta: float) -> void:
 	lizard_anim.flip_h=frog_anim.flip_h
 	barrel_anim.flip_h=frog_anim.flip_h
 	if Input.is_action_just_pressed("space") :
+		if curChar==2:
+			if !scanning:
+				scanning=true
+				frozen=true
+				steve_anim.play("scan")
+				hackCheck.emit()
 		if curChar==3:
 			if !ghosting:
 				if !frozen && magic>=2.5:
@@ -348,3 +361,15 @@ func _on_close_animator_animation_finished(anim_name: StringName) -> void:
 	elif changed:	
 		frozen=false
 		changed=false
+
+func disableShadow()->void:
+	var flippe=shadow_char.deactivate()
+	animation_player.play("fade")
+	await get_tree().create_timer(0.1).timeout
+	global_position=shadow_char.global_position
+	animation_player.play("RESET")
+	frog_anim.flip_h=flippe
+	frozen=false
+	ghosting=false
+	mask_anim.play("idle")
+	regen_mag.start()

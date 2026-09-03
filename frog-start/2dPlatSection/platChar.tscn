@@ -194,6 +194,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_lvs62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_le2ro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf8ck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_af5xh")
+}],
+"loop": 0,
+"name": &"scan",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bkpp0")
 }, {
 "duration": 1.0,
@@ -2877,9 +2894,10 @@ autoplay = "idle"
 visible = false
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_vos80")
-animation = &"idle"
+animation = &"scan"
 autoplay = "idle"
-frame_progress = 0.936794
+frame = 3
+frame_progress = 1.0
 
 [node name="maskAnim" type="AnimatedSprite2D" parent="collisionbox" unique_id=1345140840]
 visible = false

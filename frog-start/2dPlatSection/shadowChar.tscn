@@ -299,7 +299,7 @@ _data = {
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=664787318]
 visible = false
-collision_layer = 0
+collision_layer = 2147483648
 script = ExtResource("1_o2nno")
 
 [node name="collisionbox" type="CollisionShape2D" parent="." unique_id=1676537994]

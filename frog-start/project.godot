@@ -88,6 +88,7 @@ e={
 2d_physics/layer_5="projectileLayer"
 2d_physics/layer_6="playerInteracting"
 2d_physics/layer_8="cleanse"
+2d_physics/layer_17="Hackable"
 
 [rendering]
 

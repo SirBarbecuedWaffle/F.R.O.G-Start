@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://cudjpcwmlp0by"]
+
+[ext_resource type="Texture2D" uid="uid://dd5uf7b253s6e" path="res://2dPlatSection/2dPlatAssets/box/Box2/Idle.png" id="1_fxws1"]
+[ext_resource type="Script" uid="uid://6k5a6evt0nfd" path="res://2dPlatSection/box.gd" id="1_knq3n"]
+[ext_resource type="Texture2D" uid="uid://bl750mdgssg2k" path="res://2dPlatSection/2dPlatAssets/box/Box2/Hit (28x24).png" id="2_blg4x"]
+[ext_resource type="Texture2D" uid="uid://2r1djxs4yva" path="res://2dPlatSection/2dPlatAssets/hack/hackB.png" id="3_knq3n"]
+[ext_resource type="Texture2D" uid="uid://1pxki3msb6je" path="res://2dPlatSection/2dPlatAssets/hack/hackW.png" id="4_4aqu6"]
+[ext_resource type="PackedScene" uid="uid://c2xfuecdbrcng" path="res://scannerIcon.tscn" id="6_4aqu6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yupk3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eupf1"]
+atlas = ExtResource("1_fxws1")
+region = Rect2(0, 0, 28, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfoe6"]
+atlas = ExtResource("2_blg4x")
+region = Rect2(0, 0, 28, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2ss5"]
+atlas = ExtResource("2_blg4x")
+region = Rect2(28, 0, 28, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arm1d"]
+atlas = ExtResource("2_blg4x")
+region = Rect2(56, 0, 28, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mj1d"]
+atlas = ExtResource("2_blg4x")
+region = Rect2(84, 0, 28, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yupk3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eupf1")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfoe6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2ss5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arm1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mj1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eupf1")
+}],
+"loop": 0,
+"name": &"new_animation",
+"speed": 12.0
+}]
+
+[sub_resource type="Animation" id="Animation_hfoe6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_n2ss5"]
+resource_name = "throb"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.26666668, 0.5, 0.76666665),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_arm1d"]
+_data = {
+&"RESET": SubResource("Animation_hfoe6"),
+&"throb": SubResource("Animation_n2ss5")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3mhs"]
+size = Vector2(10, 10)
+
+[node name="box" type="RigidBody2D" unique_id=305943973]
+angular_damp = 1000.0
+script = ExtResource("1_knq3n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=870540971]
+shape = SubResource("RectangleShape2D_yupk3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D" unique_id=1991058553]
+sprite_frames = SubResource("SpriteFrames_yupk3")
+animation = &"new_animation"
+frame = 4
+frame_progress = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1001969296]
+texture = ExtResource("3_knq3n")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=812633481]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("4_4aqu6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1702231159]
+libraries/ = SubResource("AnimationLibrary_arm1d")
+autoplay = &"throb"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=904322670]
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=204346078]
+shape = SubResource("RectangleShape2D_p3mhs")
+debug_color = Color(1, 0.6, 0.69803923, 0.41960785)
+
+[node name="scannerIcon" parent="." unique_id=256675913 instance=ExtResource("6_4aqu6")]
+scale = Vector2(1.5, 1.5)
+
+[node name="AnimatedSprite2D" parent="scannerIcon" index="0" unique_id=745936784]
+frame_progress = 0.6536466
+
+[node name="AnimationPlayer" parent="scannerIcon" index="1" unique_id=1394139598]
+autoplay = &""
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+
+[editable path="scannerIcon"]

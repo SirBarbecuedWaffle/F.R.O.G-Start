@@ -9,59 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://be6lbfbke4lsp" path="res://2DAssets/deaad.jpg" id="7_gl862"]
 [ext_resource type="PackedScene" uid="uid://cudjpcwmlp0by" path="res://2dPlatSection/box.tscn" id="8_w23wu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w23wu"]
-size = Vector2(772, 288.5)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_w23wu"]
-shader = ExtResource("6_mxyjf")
-shader_parameter/vertJerkOpt = 0.0
-shader_parameter/vertMovementOpt = 0.0
-shader_parameter/bottomStaticOpt = 1.0
-shader_parameter/bottomStaticStrenth = 1.5
-shader_parameter/scalinesOpt = 1.5
-shader_parameter/rgbOffsetOpt = 0.2
-shader_parameter/horzFuzzOpt = 0.5
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjy2b"]
-size = Vector2(578, 207)
-
-[sub_resource type="Animation" id="Animation_fjy2b"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("hackDetector:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -813.3333)]
-}
-
-[sub_resource type="Animation" id="Animation_w23wu"]
-resource_name = "scan"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("hackDetector:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.033333335, 1.4666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1000, -700), Vector2(1000, 1500)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fjy2b"]
-_data = {
-&"RESET": SubResource("Animation_fjy2b"),
-&"scan": SubResource("Animation_w23wu")
-}
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6mmun"]
 shader = ExtResource("4_1nido")
 shader_parameter/rain_amount = 100.0
@@ -157,6 +104,48 @@ scale_max = 0.79999995
 color = Color(0, 0, 0, 1)
 color_ramp = SubResource("GradientTexture1D_eupf1")
 color_initial_ramp = SubResource("GradientTexture1D_fjy2b")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w23wu"]
+size = Vector2(578, 207)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjy2b"]
+size = Vector2(578, 207)
+
+[sub_resource type="Animation" id="Animation_fjy2b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hackDetector:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -813.3333)]
+}
+
+[sub_resource type="Animation" id="Animation_w23wu"]
+resource_name = "scan"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hackDetector:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1000, -700), Vector2(1000, 1500)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fjy2b"]
+_data = {
+&"RESET": SubResource("Animation_fjy2b"),
+&"scan": SubResource("Animation_w23wu")
+}
 
 [node name="PlatSection1" type="Node2D" unique_id=1175373895]
 script = ExtResource("1_6mmun")
@@ -267,70 +256,6 @@ drag_top_margin = 0.0
 drag_right_margin = 0.3
 drag_bottom_margin = 0.0
 
-[node name="hackDetector" type="Area2D" parent="CharacterBody2D/Camera2D" unique_id=1042809638]
-position = Vector2(0, -813.3333)
-collision_layer = 65536
-collision_mask = 65536
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Camera2D/hackDetector" unique_id=1165838578]
-position = Vector2(-999.3333, 35.99997)
-shape = SubResource("RectangleShape2D_w23wu")
-debug_color = Color(0.4745098, 1, 1, 0.41960785)
-
-[node name="Effects" type="Control" parent="CharacterBody2D/Camera2D/hackDetector" unique_id=469446046]
-z_index = 10
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1442.0
-offset_top = 872.0
-offset_right = 1442.0
-offset_bottom = 872.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3.025, 3.025)
-
-[node name="BackBufferCopy" type="BackBufferCopy" parent="CharacterBody2D/Camera2D/hackDetector/Effects" unique_id=1072333686]
-position = Vector2(-145.78511, -63.471077)
-scale = Vector2(5.635, 4.231)
-copy_mode = 2
-
-[node name="fxDithering" type="ColorRect" parent="CharacterBody2D/Camera2D/hackDetector/Effects/BackBufferCopy" unique_id=375980310]
-material = SubResource("ShaderMaterial_w23wu")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -140.1512
-offset_top = -42.920773
-offset_right = -293.76657
-offset_bottom = -238.85788
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(18.892157, 18.892157, 18.892157, 1)
-
-[node name="hackHighlighter" type="Area2D" parent="CharacterBody2D/Camera2D" unique_id=1027467702]
-modulate = Color(1, 1, 0, 1)
-position = Vector2(-4476, -4181)
-collision_layer = 131072
-collision_mask = 131072
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Camera2D/hackHighlighter" unique_id=315174763]
-position = Vector2(427, 1241)
-shape = SubResource("RectangleShape2D_fjy2b")
-debug_color = Color(0.4745098, 1, 1, 0.41960785)
-
-[node name="scanimator" type="AnimationPlayer" parent="CharacterBody2D/Camera2D" unique_id=470780289]
-libraries/ = SubResource("AnimationLibrary_fjy2b")
-speed_scale = 0.5
-
-[node name="hackables" type="Node2D" parent="CharacterBody2D/Camera2D" unique_id=723154160]
-
-[node name="scannerI" type="Node2D" parent="CharacterBody2D/Camera2D" unique_id=1854510278]
-
-[node name="box" parent="CharacterBody2D/Camera2D" unique_id=305943973 instance=ExtResource("8_w23wu")]
-position = Vector2(1895, -209)
-
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1873712331]
 material = SubResource("ShaderMaterial_6mmun")
 offset_left = -407.0
@@ -391,10 +316,73 @@ speed_scale = 2.0
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_hfoe6")
 
-[node name="box" parent="." unique_id=1099914520 instance=ExtResource("8_w23wu")]
+[node name="box" parent="." unique_id=305943973 instance=ExtResource("8_w23wu")]
 position = Vector2(-144, 22)
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=295685596]
 layer = 2
 
+[node name="hackDetector" type="Area2D" parent="CanvasLayer3" unique_id=943540339]
+position = Vector2(0, -813.3333)
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/hackDetector" unique_id=629877143]
+position = Vector2(-57.5, -0.666687)
+shape = SubResource("RectangleShape2D_w23wu")
+debug_color = Color(0.4745098, 1, 1, 0.41960785)
+
+[node name="Effects" type="Control" parent="CanvasLayer3/hackDetector" unique_id=1386318356]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1442.0
+offset_top = 872.0
+offset_right = 1442.0
+offset_bottom = 872.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.025, 3.025)
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="CanvasLayer3/hackDetector/Effects" unique_id=1069344658]
+position = Vector2(-145.78511, -63.471077)
+scale = Vector2(5.635, 4.231)
+copy_mode = 2
+
+[node name="fxDithering" type="ColorRect" parent="CanvasLayer3/hackDetector/Effects/BackBufferCopy" unique_id=865965888]
+material = SubResource("ShaderMaterial_mxyjf")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -134.754
+offset_top = -70.8401
+offset_right = -179.56494
+offset_bottom = -223.96063
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(18.892157, 18.892157, 18.892157, 1)
+
+[node name="hackHighlighter" type="Area2D" parent="CanvasLayer3" unique_id=2045123848]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-1463, -2118)
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/hackHighlighter" unique_id=1041497258]
+position = Vector2(427, 1241)
+shape = SubResource("RectangleShape2D_fjy2b")
+debug_color = Color(0.4745098, 1, 1, 0.41960785)
+
+[node name="scanimator" type="AnimationPlayer" parent="CanvasLayer3" unique_id=2015072045]
+libraries/ = SubResource("AnimationLibrary_fjy2b")
+
+[node name="hackables" type="Node2D" parent="CanvasLayer3" unique_id=1529658535]
+
+[node name="scannerI" type="Node2D" parent="CanvasLayer3" unique_id=1276572768]
+
 [connection signal="hackCheck" from="CharacterBody2D" to="." method="_on_character_body_2d_hack_check"]
+[connection signal="area_entered" from="CanvasLayer3/hackDetector" to="." method="_on_hack_detector_area_entered"]
+[connection signal="area_entered" from="CanvasLayer3/hackHighlighter" to="." method="_on_hack_detector_area_entered"]
+[connection signal="animation_finished" from="CanvasLayer3/scanimator" to="." method="_on_scanimator_animation_finished"]

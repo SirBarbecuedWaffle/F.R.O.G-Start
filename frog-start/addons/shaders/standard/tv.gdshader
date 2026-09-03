@@ -9,11 +9,11 @@ uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
 uniform float vertJerkOpt :hint_range(0,1) = 0;
 uniform float vertMovementOpt :hint_range(0,1) = 0.0;
-uniform float bottomStaticOpt :hint_range(0,5) = 0.0;
-uniform float bottomStaticStrenth :hint_range(0.0, 1.5) = 0.7;
-uniform float scalinesOpt :hint_range(0,6) = 0.8;
+uniform float bottomStaticOpt :hint_range(0,5) = 1.0;
+uniform float bottomStaticStrenth :hint_range(0.0, 1.5) = 1.5;
+uniform float scalinesOpt :hint_range(0,6) = 1.5;
 uniform float rgbOffsetOpt :hint_range(0,2) = 0.2;
-uniform float horzFuzzOpt :hint_range(0,5) = 0.15;
+uniform float horzFuzzOpt :hint_range(0,5) = 0.5;
 
 // Noise functions borrowed from:
 // https://github.com/ashima/webgl-noise/blob/master/src/noise2D.glsl
