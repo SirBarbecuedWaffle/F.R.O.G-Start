@@ -15,6 +15,7 @@ extends CharacterBody2D
 @onready var fox_anim: AnimatedSprite2D = $collisionbox/foxAnim
 @onready var lizard_anim: AnimatedSprite2D = $collisionbox/lizardAnim
 @onready var barrel_anim: AnimatedSprite2D = $collisionbox/barrelAnim
+@onready var shadow_char: CharacterBody2D = $shadowChar
 
 
 @export var curChar:=1
@@ -25,9 +26,10 @@ var jumpTime:=0.0
 var canJump:=false
 var dashing:=false
 var magic:=10.0
+var ghosting:=false
 var frozen:=false
 var changed:=false
-@export var maxMagic:=10.0
+@export var maxMagic:=7.5
 var changeChar:=0
 var dashTime:=0.0
 @onready var mag_bar: Control = $magBar
@@ -44,7 +46,10 @@ var dashTime:=0.0
 @onready var color_rect: ColorRect = $transitionAnim/ColorRect
 
 func _ready() -> void:
+	for f in CManager.charUnlocked:
+		maxMagic+=f*2.5
 	stamina_bar.max_value=maxMagic
+	magic=maxMagic
 func _process(delta: float) -> void:
 	stamina_bar.value=magic
 	if !(magic<maxMagic):
@@ -59,7 +64,12 @@ func _process(delta: float) -> void:
 		if magic>=7.5:
 			stamina_bar.color=Color(18.892, 18.892, 0.0, 1.0)
 		else:
-			stamina_bar.color=Color(0.0, 1.0, 0.0, 1.0)
+			stamina_bar.color=Color(0.333, 1.0, 0.0, 1.0)
+	if curChar==3:
+		if magic>=2.5:
+			stamina_bar.color=Color(10.863, 0.0, 18.892, 1.0)
+		else:
+			stamina_bar.color=Color(0.333, 1.0, 0.0, 1.0)
 	if Input.is_action_just_released("up"):
 		canJump=false
 	
@@ -105,10 +115,25 @@ func _physics_process(delta: float) -> void:
 	if barrel_anim.animation!=frog_anim.animation:
 		barrel_anim.animation=frog_anim.animation
 	if !(regen_mag.time_left>0):
-		if magic<maxMagic:
-			magic+=(maxMagic/5*delta)+(5*delta)
+		if !ghosting:
+			if magic<maxMagic:
+				magic+=(maxMagic/5*delta)+(5*delta)
+			else:
+				magic=maxMagic
 		else:
-			magic=maxMagic
+			if magic>0:
+				magic-=(2.5*delta)
+			else:
+				var flippe=shadow_char.deactivate()
+				animation_player.play("fade")
+				await get_tree().create_timer(0.1).timeout
+				global_position=shadow_char.global_position
+				animation_player.play("RESET")
+				frog_anim.flip_h=flippe
+				frozen=false
+				ghosting=false
+				mask_anim.play("idle")
+				regen_mag.start()
 			
 	if not is_on_floor():
 		if !dashing:
@@ -128,7 +153,7 @@ func _physics_process(delta: float) -> void:
 				#swapChars(curChar+1)
 			#else:
 				#swapChars(1)
-			swapChars(randi_range(1,9))
+			swapChars(3)
 	
 	if !frozen:
 		if !dashing:
@@ -144,7 +169,7 @@ func _physics_process(delta: float) -> void:
 				get_parent().add_child(insta)
 	else:
 		velocity.x=0
-	if direction!=0:
+	if direction!=0 && !ghosting:
 		frog_anim.flip_h=direction==-1
 	steve_anim.flip_h=frog_anim.flip_h
 	mask_anim.flip_h=frog_anim.flip_h
@@ -158,8 +183,30 @@ func _physics_process(delta: float) -> void:
 		lizard_anim.offset.x=0.0
 	lizard_anim.flip_h=frog_anim.flip_h
 	barrel_anim.flip_h=frog_anim.flip_h
-	if Input.is_action_just_pressed("space") && !frozen:
-		if curChar==1:
+	if Input.is_action_just_pressed("space") :
+		if curChar==3:
+			if !ghosting:
+				if !frozen && magic>=2.5:
+					magic-=2.5
+					shadow_char.global_position=global_position
+					shadow_char.velocity=velocity
+					frozen=true
+					ghosting=true
+					mask_anim.pause()
+					shadow_char.activate(mask_anim.frame)
+			else:
+				var flippe=shadow_char.deactivate()
+				animation_player.play("fade")
+				await get_tree().create_timer(0.1).timeout
+				global_position=shadow_char.global_position
+				animation_player.play("RESET")
+				frog_anim.flip_h=flippe
+				frozen=false
+				ghosting=false
+				mask_anim.play("idle")
+				regen_mag.start()
+					
+		if curChar==1 && !frozen:
 			if magic>=7.5 && !dashing:
 				magic-=7.5
 				regen_mag.start()

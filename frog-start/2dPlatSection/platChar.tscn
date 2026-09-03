@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://pab1ccdx0fgw" path="res://overworldPlayer/playerAssets/barrel/Walk.png" id="24_bkpp0"]
 [ext_resource type="Texture2D" uid="uid://c6neur467seiw" path="res://overworldPlayer/playerAssets/joe, fox, robot/fox/Idle.png" id="24_ngj4m"]
 [ext_resource type="Texture2D" uid="uid://ilw3wjxxla72" path="res://overworldPlayer/playerAssets/joe, fox, robot/fox/Run.png" id="26_7csng"]
+[ext_resource type="PackedScene" uid="uid://hp0ch5wr8t3m" path="res://2dPlatSection/shadowChar.tscn" id="32_haetv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_655eb"]
 size = Vector2(16, 24)
@@ -1633,6 +1634,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("collisionbox/maskAnim:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_chpk0"]
 resource_name = "dash"
@@ -1650,10 +1663,27 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(2.454227, 2.454227, 0, 1), Color(2.454227, 2.454227, 0, 1), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_4d1b6"]
+resource_name = "fade"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("collisionbox/maskAnim:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jvfjm"]
 _data = {
 &"RESET": SubResource("Animation_j4ree"),
-&"dash": SubResource("Animation_chpk0")
+&"dash": SubResource("Animation_chpk0"),
+&"fade": SubResource("Animation_4d1b6")
 }
 
 [sub_resource type="Animation" id="Animation_rk8dt"]
@@ -2826,6 +2856,7 @@ _data = {
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=664787318]
+collision_layer = 2
 script = ExtResource("1_j4ree")
 gravity = 525
 speed = 112.5
@@ -2854,9 +2885,10 @@ frame_progress = 0.936794
 visible = false
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_axhga")
-animation = &"walking"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.19777876
+frame = 6
+frame_progress = 0.24994004
 
 [node name="hoodAnim" type="AnimatedSprite2D" parent="collisionbox" unique_id=628244659]
 visible = false
@@ -3136,5 +3168,9 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, -1)
 color = Color(18.892157, 18.892157, 18.892157, 1)
+
+[node name="shadowChar" parent="." unique_id=864133784 instance=ExtResource("32_haetv")]
+top_level = true
+scale = Vector2(0.75, 0.75)
 
 [connection signal="animation_finished" from="transitionAnim/closeAnimator" to="." method="_on_close_animator_animation_finished"]
