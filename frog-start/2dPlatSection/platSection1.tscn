@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cudjpcwmlp0by" path="res://2dPlatSection/box.tscn" id="8_w23wu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w23wu"]
-size = Vector2(772, 288.5)
+size = Vector2(772, 70.730545)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w23wu"]
 shader = ExtResource("6_mxyjf")
@@ -23,7 +23,7 @@ shader_parameter/rgbOffsetOpt = 0.2
 shader_parameter/horzFuzzOpt = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fjy2b"]
-size = Vector2(578, 207)
+size = Vector2(30, 30)
 
 [sub_resource type="Animation" id="Animation_fjy2b"]
 length = 0.001
@@ -42,7 +42,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_w23wu"]
 resource_name = "scan"
-length = 1.5
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -50,10 +50,10 @@ tracks/0/path = NodePath("hackDetector:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.033333335, 1.4666667),
+"times": PackedFloat32Array(0.033333335, 0.56666666),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1000, -700), Vector2(1000, 1500)]
+"values": [Vector2(1000, -700), Vector2(1000, 169.7674)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fjy2b"]
@@ -273,7 +273,7 @@ collision_layer = 65536
 collision_mask = 65536
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Camera2D/hackDetector" unique_id=1165838578]
-position = Vector2(-999.3333, 35.99997)
+position = Vector2(-999.3333, 144.8847)
 shape = SubResource("RectangleShape2D_w23wu")
 debug_color = Color(0.4745098, 1, 1, 0.41960785)
 
@@ -301,9 +301,9 @@ material = SubResource("ShaderMaterial_w23wu")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -140.1512
+offset_left = -171.51753
 offset_top = -42.920773
-offset_right = -293.76657
+offset_right = -269.5965
 offset_bottom = -238.85788
 grow_horizontal = 2
 grow_vertical = 2
@@ -311,12 +311,26 @@ color = Color(18.892157, 18.892157, 18.892157, 1)
 
 [node name="hackHighlighter" type="Area2D" parent="CharacterBody2D/Camera2D" unique_id=1027467702]
 modulate = Color(1, 1, 0, 1)
+z_index = 4
 position = Vector2(-4476, -4181)
+scale = Vector2(0.5, 0.5)
 collision_layer = 131072
 collision_mask = 131072
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Camera2D/hackHighlighter" unique_id=315174763]
-position = Vector2(427, 1241)
+position = Vector2(2.861023e-06, 1)
+shape = SubResource("RectangleShape2D_fjy2b")
+debug_color = Color(0.4745098, 1, 1, 0.41960785)
+
+[node name="hackSpace" type="Area2D" parent="CharacterBody2D/Camera2D/hackHighlighter" unique_id=1468697862]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(0, 11594.334)
+scale = Vector2(0.5, 0.5)
+collision_layer = 131072
+collision_mask = 131072
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Camera2D/hackHighlighter/hackSpace" unique_id=2109777611]
+position = Vector2(2.861023e-06, 1)
 shape = SubResource("RectangleShape2D_fjy2b")
 debug_color = Color(0.4745098, 1, 1, 0.41960785)
 
@@ -392,9 +406,17 @@ randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_hfoe6")
 
 [node name="box" parent="." unique_id=1099914520 instance=ExtResource("8_w23wu")]
-position = Vector2(-144, 22)
+position = Vector2(-68, 22)
+
+[node name="box2" parent="." unique_id=636752685 instance=ExtResource("8_w23wu")]
+position = Vector2(-124, 22)
+
+[node name="box3" parent="." unique_id=2139194528 instance=ExtResource("8_w23wu")]
+position = Vector2(74, 22)
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=295685596]
 layer = 2
 
 [connection signal="hackCheck" from="CharacterBody2D" to="." method="_on_character_body_2d_hack_check"]
+[connection signal="area_entered" from="CharacterBody2D/Camera2D/hackDetector" to="." method="_on_hack_detector_area_entered"]
+[connection signal="animation_finished" from="CharacterBody2D/Camera2D/scanimator" to="." method="_on_scanimator_animation_finished"]

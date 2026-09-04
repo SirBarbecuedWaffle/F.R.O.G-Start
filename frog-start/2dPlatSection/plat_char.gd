@@ -99,6 +99,13 @@ func swapChars(charNum : int)->void:
 	
 	changeChar=charNum
 	
+func confirmScan()->void:
+	steve_anim.play("search")
+
+func failScan()->void:
+	steve_anim.play("idle")
+	scanning=false
+	frozen=false
 	
 func _physics_process(delta: float) -> void:
 	for i in get_slide_collision_count():
@@ -176,7 +183,7 @@ func _physics_process(delta: float) -> void:
 				get_parent().add_child(insta)
 	else:
 		velocity.x=0
-	if direction!=0 && !ghosting:
+	if direction!=0 && !ghosting && !scanning:
 		frog_anim.flip_h=direction==-1
 	steve_anim.flip_h=frog_anim.flip_h
 	mask_anim.flip_h=frog_anim.flip_h
@@ -197,6 +204,9 @@ func _physics_process(delta: float) -> void:
 				frozen=true
 				steve_anim.play("scan")
 				hackCheck.emit()
+				await get_tree().create_timer(0.1).timeout
+				if steve_anim.animation!="scan":
+					steve_anim.play("scan")
 		if curChar==3:
 			if !ghosting:
 				if !frozen && magic>=2.5:

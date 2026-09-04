@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dav6b70nyy5sr"]
+
+[ext_resource type="Script" uid="uid://s3lcmly481yt" path="res://2dPlatSection/hack_trigger.gd" id="1_on02u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3mhs"]
+size = Vector2(10, 10)
+
+[node name="hackTrigger" type="Area2D" unique_id=740942446]
+collision_layer = 65536
+collision_mask = 65536
+script = ExtResource("1_on02u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1380864668]
+shape = SubResource("RectangleShape2D_p3mhs")
+debug_color = Color(1, 0.6, 0.69803923, 0.41960785)
+
+[node name="hackReader" type="Area2D" parent="." unique_id=654009844]
+collision_layer = 131072
+collision_mask = 131072
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hackReader" unique_id=1663880453]
+shape = SubResource("RectangleShape2D_p3mhs")
+debug_color = Color(1, 0.6, 0.69803923, 0.41960785)
+
+[node name="hackReader2" type="Area2D" parent="." unique_id=1367319577]
+collision_layer = 262144
+collision_mask = 262144
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hackReader2" unique_id=368626359]
+shape = SubResource("RectangleShape2D_p3mhs")
+debug_color = Color(1, 0.6, 0.69803923, 0.41960785)
+
+[connection signal="area_entered" from="hackReader" to="." method="_on_hack_reader_area_entered"]
+[connection signal="area_exited" from="hackReader" to="." method="_on_hack_reader_area_exited"]
+[connection signal="area_entered" from="hackReader2" to="." method="_on_hack_reader_2_area_entered"]
+[connection signal="area_exited" from="hackReader2" to="." method="_on_hack_reader_2_area_exited"]

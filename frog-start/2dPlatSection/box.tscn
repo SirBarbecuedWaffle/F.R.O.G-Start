@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://2r1djxs4yva" path="res://2dPlatSection/2dPlatAssets/hack/hackB.png" id="3_knq3n"]
 [ext_resource type="Texture2D" uid="uid://1pxki3msb6je" path="res://2dPlatSection/2dPlatAssets/hack/hackW.png" id="4_4aqu6"]
 [ext_resource type="PackedScene" uid="uid://c2xfuecdbrcng" path="res://scannerIcon.tscn" id="6_4aqu6"]
+[ext_resource type="PackedScene" uid="uid://dav6b70nyy5sr" path="res://2dPlatSection/hack_trigger.tscn" id="6_86vhx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yupk3"]
 
@@ -97,9 +98,6 @@ _data = {
 &"throb": SubResource("Animation_n2ss5")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3mhs"]
-size = Vector2(10, 10)
-
 [node name="box" type="RigidBody2D" unique_id=305943973]
 angular_damp = 1000.0
 script = ExtResource("1_knq3n")
@@ -124,13 +122,7 @@ texture = ExtResource("4_4aqu6")
 libraries/ = SubResource("AnimationLibrary_arm1d")
 autoplay = &"throb"
 
-[node name="Area2D" type="Area2D" parent="." unique_id=904322670]
-collision_layer = 65536
-collision_mask = 65536
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=204346078]
-shape = SubResource("RectangleShape2D_p3mhs")
-debug_color = Color(1, 0.6, 0.69803923, 0.41960785)
+[node name="hackTrigger" parent="." unique_id=740942446 instance=ExtResource("6_86vhx")]
 
 [node name="scannerIcon" parent="." unique_id=256675913 instance=ExtResource("6_4aqu6")]
 scale = Vector2(1.5, 1.5)
@@ -141,6 +133,9 @@ frame_progress = 0.6536466
 [node name="AnimationPlayer" parent="scannerIcon" index="1" unique_id=1394139598]
 autoplay = &""
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="hackTrigger" to="." method="_on_area_2d_area_entered"]
+[connection signal="trigHack" from="hackTrigger" to="." method="_on_hack_trigger_trig_hack"]
+[connection signal="trigHighLight" from="hackTrigger" to="." method="_on_hack_trigger_trig_high_light"]
+[connection signal="trigUnLight" from="hackTrigger" to="." method="_on_hack_trigger_trig_un_light"]
 
 [editable path="scannerIcon"]
