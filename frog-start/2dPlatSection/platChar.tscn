@@ -33,6 +33,11 @@
 [ext_resource type="Texture2D" uid="uid://c6neur467seiw" path="res://overworldPlayer/playerAssets/joe, fox, robot/fox/Idle.png" id="24_ngj4m"]
 [ext_resource type="Texture2D" uid="uid://ilw3wjxxla72" path="res://overworldPlayer/playerAssets/joe, fox, robot/fox/Run.png" id="26_7csng"]
 [ext_resource type="PackedScene" uid="uid://hp0ch5wr8t3m" path="res://2dPlatSection/shadowChar.tscn" id="32_haetv"]
+[ext_resource type="Texture2D" uid="uid://csqjqmpkplmuj" path="res://2dPlatSection/2dPlatAssets/hearts/Heart Container Normal/heart_normal_full.png" id="34_7880n"]
+[ext_resource type="Script" uid="uid://bsf570fwjlayp" path="res://2dPlatSection/hud.gd" id="34_ttlj8"]
+[ext_resource type="Texture2D" uid="uid://c23tpvwagk4mr" path="res://2dPlatSection/2dPlatAssets/hearts/Heart Container Normal/heart_normal_blink_half.png" id="34_vos80"]
+[ext_resource type="Texture2D" uid="uid://ci6vi3otw0xaq" path="res://2dPlatSection/2dPlatAssets/hearts/Heart Container Normal/heart_normal_blink_full.png" id="35_ttlj8"]
+[ext_resource type="Texture2D" uid="uid://dwiepy5ldrca0" path="res://2dPlatSection/2dPlatAssets/hearts/Heart Container Normal/heart_normal_half.png" id="36_i4bj7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_655eb"]
 size = Vector2(16, 24)
@@ -2983,6 +2988,93 @@ _data = {
 &"steve": SubResource("Animation_535c7")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejl1j"]
+atlas = ExtResource("35_ttlj8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7but"]
+atlas = ExtResource("35_ttlj8")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdj0r"]
+atlas = ExtResource("35_ttlj8")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cu11u"]
+atlas = ExtResource("34_vos80")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt3oa"]
+atlas = ExtResource("34_vos80")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iaoae"]
+atlas = ExtResource("34_vos80")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd131"]
+atlas = ExtResource("36_i4bj7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxvuj"]
+atlas = ExtResource("34_7880n")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yupk3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejl1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7but")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdj0r")
+}],
+"loop": 0,
+"name": &"blinkHalf",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cu11u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt3oa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iaoae")
+}],
+"loop": 0,
+"name": &"blinkNone",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iaoae")
+}],
+"loop": 0,
+"name": &"empty",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vd131")
+}],
+"loop": 0,
+"name": &"half",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxvuj")
+}],
+"loop": 0,
+"name": &"whole",
+"speed": 10.0
+}]
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=664787318]
 collision_layer = 2
 script = ExtResource("1_j4ree")
@@ -2990,8 +3082,11 @@ gravity = 525
 speed = 112.5
 jumpStrength = 98.25
 MaxjumpStrength = 1950.0
+maxHealth = 2.0
+health = 2.0
 
 [node name="collisionbox" type="CollisionShape2D" parent="." unique_id=1676537994]
+z_index = 3
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_655eb")
 
@@ -3067,7 +3162,11 @@ animation = &"jump"
 autoplay = "idle"
 frame_progress = 0.87897927
 
-[node name="hitbox" type="CollisionShape2D" parent="." unique_id=1521179570]
+[node name="Area2D" type="Area2D" parent="." unique_id=373327447]
+collision_layer = 4
+collision_mask = 4
+
+[node name="hitbox" type="CollisionShape2D" parent="Area2D" unique_id=1521179570]
 position = Vector2(0, 4)
 scale = Vector2(0.7, 0.7)
 shape = SubResource("RectangleShape2D_655eb")
@@ -3124,6 +3223,7 @@ metadata/_custom_type_script = "uid://bncv6fkcdu0h7"
 one_shot = true
 
 [node name="transitionAnim" type="Node2D" parent="." unique_id=2016568498]
+z_index = 5
 
 [node name="ColorRect" type="ColorRect" parent="transitionAnim" unique_id=1040017680]
 modulate = Color(18.892157, 18.892157, 18.892157, 1)
@@ -3265,7 +3365,7 @@ offset_bottom = 40.0
 
 [node name="ColorRect2" type="ColorRect" parent="transitionAnim/Control3" unique_id=642370647]
 modulate = Color(18.892157, 18.892157, 18.892157, 1)
-z_index = -1
+z_index = -3
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3282,6 +3382,7 @@ color = Color(18.892157, 18.892157, 18.892157, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="transitionAnim/Control3" unique_id=119065442]
 modulate = Color(18.892157, 18.892157, 18.892157, 0)
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3300,4 +3401,93 @@ color = Color(18.892157, 18.892157, 18.892157, 1)
 top_level = true
 scale = Vector2(0.75, 0.75)
 
+[node name="HUD" type="CanvasLayer" parent="." unique_id=924294925]
+layer = 6
+script = ExtResource("34_ttlj8")
+
+[node name="Health" type="Control" parent="HUD" unique_id=341901184]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 2030.0
+offset_bottom = 1041.0
+
+[node name="heart1" type="AnimatedSprite2D" parent="HUD/Health" unique_id=1793712753]
+position = Vector2(55, 981)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_yupk3")
+animation = &"whole"
+autoplay = "whole"
+
+[node name="heart2" type="AnimatedSprite2D" parent="HUD/Health" unique_id=419812851]
+position = Vector2(146, 981)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_yupk3")
+animation = &"whole"
+autoplay = "whole"
+frame_progress = 0.668778
+
+[node name="heart3" type="AnimatedSprite2D" parent="HUD/Health" unique_id=1511704221]
+position = Vector2(237, 981)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_yupk3")
+animation = &"blinkNone"
+autoplay = "whole"
+
+[node name="heart4" type="AnimatedSprite2D" parent="HUD/Health" unique_id=1500954561]
+visible = false
+position = Vector2(328, 981)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_yupk3")
+animation = &"whole"
+autoplay = "whole"
+frame_progress = 0.51886135
+
+[node name="heart5" type="AnimatedSprite2D" parent="HUD/Health" unique_id=1885333963]
+visible = false
+position = Vector2(419.00003, 981)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_yupk3")
+animation = &"whole"
+autoplay = "whole"
+frame_progress = 0.51886135
+
+[node name="heart6" type="AnimatedSprite2D" parent="HUD/Health" unique_id=1583808067]
+visible = false
+position = Vector2(510, 981)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_yupk3")
+animation = &"whole"
+autoplay = "whole"
+frame_progress = 0.51886135
+
+[node name="heart7" type="AnimatedSprite2D" parent="HUD/Health" unique_id=1247636647]
+visible = false
+position = Vector2(601, 981)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_yupk3")
+animation = &"whole"
+autoplay = "whole"
+frame_progress = 0.51886135
+
+[node name="heart8" type="AnimatedSprite2D" parent="HUD/Health" unique_id=1189379225]
+visible = false
+position = Vector2(692, 981)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_yupk3")
+animation = &"whole"
+autoplay = "whole"
+frame_progress = 0.51886135
+
+[node name="heart9" type="AnimatedSprite2D" parent="HUD/Health" unique_id=1757648340]
+visible = false
+position = Vector2(783.00006, 981)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_yupk3")
+animation = &"whole"
+autoplay = "whole"
+frame_progress = 0.51886135
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="animation_finished" from="transitionAnim/closeAnimator" to="." method="_on_close_animator_animation_finished"]
+[connection signal="animation_finished" from="HUD/Health/heart1" to="HUD" method="_on_heart_1_animation_finished"]
+[connection signal="animation_finished" from="HUD/Health/heart2" to="HUD" method="_on_heart_1_animation_finished"]

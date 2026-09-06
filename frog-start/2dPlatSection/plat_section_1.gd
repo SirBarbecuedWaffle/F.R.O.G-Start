@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("left"):
 		if hackTrigs.size()>1:
 			var smlosest=hackTrigs[0]
-			if smlosest!=null:
+			if smlosest!=null && selected!=null:
 				for f in hackTrigs:
 					if f!=null && selected!=null:
 						if f.global_position.x<selected.global_position.x:
@@ -53,7 +53,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("right"):
 		if hackTrigs.size()>1:
 			var smlosest=hackTrigs[0]
-			if smlosest!=null:
+			if smlosest!=null && selected!=null:
 				for f in hackTrigs:
 					if f!=null && selected!=null:
 						if f.global_position.x>selected.global_position.x:
@@ -77,7 +77,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("down"):
 		if hackTrigs.size()>1:
 			var smlosest=hackTrigs[0]
-			if smlosest!=null:
+			if smlosest!=null && selected!=null:
 				for f in hackTrigs:
 					if f!=null && selected!=null:
 						if f.global_position.y>selected.global_position.y:
@@ -101,7 +101,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("up"):
 		if hackTrigs.size()>1:
 			var smlosest=hackTrigs[0]
-			if smlosest!=null:
+			if smlosest!=null && selected!=null:
 				for f in hackTrigs:
 					if f!=null && selected!=null:
 						if f.global_position.y<selected.global_position.y:

@@ -6,6 +6,8 @@ extends CharacterBody2D
 @export var push_force:=20
 @onready var coyote_time: Timer = $coyoteTime
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@export var maxHealth:=3.0
+@export var health:=3.0
 signal hackCheck
 
 @onready var frog_anim: AnimatedSprite2D = $collisionbox/frogAnim
@@ -18,6 +20,7 @@ signal hackCheck
 @onready var lizard_anim: AnimatedSprite2D = $collisionbox/lizardAnim
 @onready var barrel_anim: AnimatedSprite2D = $collisionbox/barrelAnim
 @onready var shadow_char: CharacterBody2D = $shadowChar
+@onready var hud: CanvasLayer = $HUD
 
 
 @export var curChar:=1
@@ -398,3 +401,12 @@ func disableShadow()->void:
 	ghosting=false
 	mask_anim.play("idle")
 	regen_mag.start()
+
+
+func _on_heart_1_animation_finished() -> void:
+	pass # Replace with function body.
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	health-=0.5
+	hud.updateHearts()

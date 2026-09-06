@@ -161,7 +161,7 @@ autoplay = &"throb"
 [node name="hackTrigger" parent="." unique_id=740942446 instance=ExtResource("6_86vhx")]
 
 [node name="scannerIcon" parent="." unique_id=256675913 instance=ExtResource("6_4aqu6")]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.025, 1.025)
 
 [node name="AnimatedSprite2D" parent="scannerIcon" index="0" unique_id=745936784]
 frame_progress = 0.6536466
