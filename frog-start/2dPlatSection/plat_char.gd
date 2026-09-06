@@ -28,7 +28,7 @@ var jumpTime:=0.0
 var canJump:=false
 var dashing:=false
 var scanning:=false
-var magic:=10.0
+@export var magic:=10.0
 var ghosting:=false
 var frozen:=false
 var changed:=false
@@ -54,7 +54,9 @@ func _ready() -> void:
 	stamina_bar.max_value=maxMagic
 	magic=maxMagic
 func _process(delta: float) -> void:
-	stamina_bar.value=magic
+	if(stamina_bar.value!=magic):
+		var mTween=create_tween()
+		mTween.tween_property(stamina_bar,"value",magic,0.25)
 	if !(magic<maxMagic):
 		if mag_bar.modulate==Color(1.0, 1.0, 1.0, 1.0):
 			var mTween=create_tween()
@@ -68,11 +70,19 @@ func _process(delta: float) -> void:
 			stamina_bar.color=Color(18.892, 18.892, 0.0, 1.0)
 		else:
 			stamina_bar.color=Color(0.333, 1.0, 0.0, 1.0)
+	
+	if curChar==2:
+		if magic>=7.5:
+			stamina_bar.color=Color(0.0, 18.892, 18.892, 1.0)
+		else:
+			stamina_bar.color=Color(0.333, 1.0, 0.0, 1.0)
+	
 	if curChar==3:
 		if magic>=2.5:
 			stamina_bar.color=Color(10.863, 0.0, 18.892, 1.0)
 		else:
 			stamina_bar.color=Color(0.333, 1.0, 0.0, 1.0)
+	
 	if Input.is_action_just_released("up"):
 		canJump=false
 	
@@ -101,11 +111,14 @@ func swapChars(charNum : int)->void:
 	
 func confirmScan()->void:
 	steve_anim.play("search")
+	frozen=true
+	scanning=true
 
 func failScan()->void:
 	steve_anim.play("idle")
 	scanning=false
 	frozen=false
+	regen_mag.start()
 	
 func _physics_process(delta: float) -> void:
 	for i in get_slide_collision_count():
@@ -130,10 +143,11 @@ func _physics_process(delta: float) -> void:
 		barrel_anim.animation=frog_anim.animation
 	if !(regen_mag.time_left>0):
 		if !ghosting:
-			if magic<maxMagic:
-				magic+=(maxMagic/5*delta)+(5*delta)
-			else:
-				magic=maxMagic
+			if !scanning:
+				if magic<maxMagic:
+					magic+=(maxMagic/5*delta)+(5*delta)
+				else:
+					magic=maxMagic
 		else:
 			if magic>0:
 				magic-=(2.5*delta)
@@ -198,8 +212,9 @@ func _physics_process(delta: float) -> void:
 	lizard_anim.flip_h=frog_anim.flip_h
 	barrel_anim.flip_h=frog_anim.flip_h
 	if Input.is_action_just_pressed("space") :
-		if curChar==2:
-			if !scanning:
+		if curChar==2 && velocity.y==0:
+			if !scanning && steve_anim.animation!="scan" && magic>=7.5:
+				magic-=2.5
 				scanning=true
 				frozen=true
 				steve_anim.play("scan")

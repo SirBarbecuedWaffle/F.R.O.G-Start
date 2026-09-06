@@ -13,29 +13,111 @@ var selected;
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("space"):
-		if hackTrigs!=[]:
-			hack_space.position.y=0
+		if hackTrigs!=[] && selected!=null:
+			if character_body_2d.magic>=5:
+				character_body_2d.magic-=5
+			else:
+				character_body_2d.magic=0
+			if selected!=null:
+				hackTrigs=[]
+				hack_space.position.y=0
+				scanimator.play("RESET")
+				selected=null;
+			
 	if Input.is_action_just_released("space"):
-		if hackTrigs!=[]:
-			hack_space.position.y=-5000
+		hack_space.position.y=-5000
 	
 	if Input.is_action_just_pressed("left"):
 		if hackTrigs.size()>1:
-			var smlosest=hackTrigs[1]
-			if smlosest==selected:
-				smlosest=hackTrigs[0]
-				print("WAZTHESAME")
-			for f in hackTrigs:
-				if f!=selected:
-					if f.global_position.x<selected.global_position.x:
-						if (selected.global_position.distance_to(f.global_position))<(selected.global_position.distance_to(smlosest.global_position)):
-							print("CHABGEWD")
-							smlosest=selected
-			if smlosest==null:
-				smlosest=hackTrigs[0]
-				print("WAZTHESAME")
+			var smlosest=hackTrigs[0]
 			if smlosest!=null:
-				selected=smlosest
+				for f in hackTrigs:
+					if f!=null && selected!=null:
+						if f.global_position.x<selected.global_position.x:
+							if smlosest.global_position.x<selected.global_position.x:
+								if (selected.global_position.distance_to(f.global_position))<(selected.global_position.distance_to(smlosest.global_position)):
+									if selected.global_position.distance_to(f.global_position)==0:
+										pass
+									else:
+										print("CHABGEWD")
+										smlosest=f
+							else:
+								smlosest=f
+						else:
+							pass
+				if smlosest.global_position.x<selected.global_position.x:
+					selected=smlosest
+			if selected!=null && hackTrigs!=[]:
+				hack_highlighter.global_position=selected.global_position
+	
+	if Input.is_action_just_pressed("right"):
+		if hackTrigs.size()>1:
+			var smlosest=hackTrigs[0]
+			if smlosest!=null:
+				for f in hackTrigs:
+					if f!=null && selected!=null:
+						if f.global_position.x>selected.global_position.x:
+							if smlosest.global_position.x>selected.global_position.x:
+								if (selected.global_position.distance_to(f.global_position))<(selected.global_position.distance_to(smlosest.global_position)):
+									if selected.global_position.distance_to(f.global_position)==0:
+										pass
+									else:
+										print("CHABGEWD")
+										smlosest=f
+							else:
+								smlosest=f
+						else:
+							pass
+				if smlosest.global_position.x>selected.global_position.x:
+					selected=smlosest
+			if selected!=null && hackTrigs!=[]:
+				hack_highlighter.global_position=selected.global_position
+	
+	
+	if Input.is_action_just_pressed("down"):
+		if hackTrigs.size()>1:
+			var smlosest=hackTrigs[0]
+			if smlosest!=null:
+				for f in hackTrigs:
+					if f!=null && selected!=null:
+						if f.global_position.y>selected.global_position.y:
+							if smlosest.global_position.y>selected.global_position.y:
+								if (selected.global_position.distance_to(f.global_position))<(selected.global_position.distance_to(smlosest.global_position)):
+									if selected.global_position.distance_to(f.global_position)==0:
+										pass
+									else:
+										print("CHABGEWD")
+										smlosest=f
+							else:
+								smlosest=f
+						else:
+							pass
+				if smlosest.global_position.y>selected.global_position.y:
+					selected=smlosest
+			if selected!=null && hackTrigs!=[]:
+				hack_highlighter.global_position=selected.global_position
+	
+	
+	if Input.is_action_just_pressed("up"):
+		if hackTrigs.size()>1:
+			var smlosest=hackTrigs[0]
+			if smlosest!=null:
+				for f in hackTrigs:
+					if f!=null && selected!=null:
+						if f.global_position.y<selected.global_position.y:
+							if smlosest.global_position.y<selected.global_position.y:
+								if (selected.global_position.distance_to(f.global_position))<(selected.global_position.distance_to(smlosest.global_position)):
+									if selected.global_position.distance_to(f.global_position)==0:
+										pass
+									else:
+										print("CHABGEWD")
+										smlosest=f
+							else:
+								smlosest=f
+						else:
+							pass
+				if smlosest.global_position.y<selected.global_position.y:
+					selected=smlosest
 		if selected!=null && hackTrigs!=[]:
 			hack_highlighter.global_position=selected.global_position
 
@@ -52,7 +134,8 @@ func _ready() -> void:
 
 
 func _on_character_body_2d_hack_check() -> void:
-	scanimator.play("scan")
+	if scanimator.current_animation!="scan":
+		scanimator.play("scan")
 
 
 func _on_hack_detector_area_entered(area: Area2D) -> void:
@@ -66,6 +149,7 @@ func _on_hack_detector_area_entered(area: Area2D) -> void:
 
 func _on_scanimator_animation_finished(anim_name: StringName) -> void:
 	if hackTrigs!=[]:
+		print(hackTrigs)
 		character_body_2d.confirmScan()
 		await get_tree().create_timer(0.25).timeout
 		var closest=hackTrigs[0]
