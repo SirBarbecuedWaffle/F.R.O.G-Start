@@ -21,6 +21,7 @@ signal hackCheck
 @onready var barrel_anim: AnimatedSprite2D = $collisionbox/barrelAnim
 @onready var shadow_char: CharacterBody2D = $shadowChar
 @onready var hud: CanvasLayer = $HUD
+@onready var dash_col: CollisionShape2D = $dashHitter/dashCol
 
 
 @export var curChar:=1
@@ -57,6 +58,7 @@ func _ready() -> void:
 	stamina_bar.max_value=maxMagic
 	magic=maxMagic
 func _process(delta: float) -> void:
+	
 	if(stamina_bar.value!=magic):
 		var mTween=create_tween()
 		mTween.tween_property(stamina_bar,"value",magic,0.25)
@@ -257,6 +259,8 @@ func _physics_process(delta: float) -> void:
 					velocity.y=0
 				animation_player.play("dash")
 				dashing=true
+				set_collision_mask_value(11, false)
+				dash_col.disabled=false
 				var xVel=dashStrength*direction
 				var yVel=dashStrength*direction2
 				if xVel==0 && yVel==0:
@@ -270,7 +274,8 @@ func _physics_process(delta: float) -> void:
 				xTween2.tween_property(self,"velocity",Vector2(oldVelX/2,0),0.3)
 				await xTween2.finished
 				dashing=false
-					
+				dash_col.disabled=true
+				set_collision_mask_value(11, true)
 
 
 	if canJump && Input.is_action_pressed("up") && !dashing && !frozen:

@@ -178,19 +178,40 @@ func _process(delta: float) -> void:
 		move_explainer.text="Deals heavy damage and applies every debuff to all enemies"
 		move_type.text="Type: ^!@$#%"
 	
-	
+	if moveHovered=="Parry":
+		move_explainer.text="Cleanses and gives a single second of invincibility to your entire party"
+		move_type.text="Type: Buff"
+	if moveHovered=="Frogsicle 2":
+		move_explainer.text="Applies high heals and regen to your entire party"
+		move_type.text="Type: Support"
 	
 	
 	if party_menu.getChar()=="frog":
 		move_1_lab.text="Arrow Barrage"
+		if CManager.charLVL[0]>19:
+			move_1_lab.text="Arrow Barrage 2"
 		move_2_lab.text="Block"
+		if CManager.charLVL[0]>14:
+			move_2_lab.text="Parry"
 		move_3_lab.text="Strike"
+		if CManager.charLVL[0]>4:
+			move_3_lab.text="Pummel"
 		move_4_lab.text="Frogsicle"
+		if CManager.charLVL[0]>9:
+			move_4_lab.text="Frogsicle 2"
 	if party_menu.getChar()=="steve":
 		move_1_lab.text="Overclock"
+		if CManager.charLVL[1]>14:
+			move_1_lab.text="Coffee Break"
 		move_2_lab.text="Zip Bomb"
+		if CManager.charLVL[1]>19:
+			move_2_lab.text="DDoS"
 		move_3_lab.text="Infect"
+		if CManager.charLVL[1]>4:
+			move_3_lab.text="Infect 2"
 		move_4_lab.text="Alt F4"
+		if CManager.charLVL[1]>10:
+			move_4_lab.text="You're Fired"
 	if party_menu.getChar()=="mask":
 		move_1_lab.text="All Skill Baby"
 		move_2_lab.text="Strike"
@@ -255,7 +276,7 @@ func _process(delta: float) -> void:
 	if move_2_lab.text=="Zip Bomb" || move_2_lab.text=="Cannon Barrage":
 		move_2.texture_hover=MultiMoveHover
 		move_2.texture_normal=MultiMoveIcon
-	if move_2_lab.text=="Block" || move_2_lab.text=="Strength Spell":
+	if move_2_lab.text=="Block" || move_2_lab.text=="Strength Spell" || move_2_lab.text=="Parry":
 		move_2.texture_hover=BuffMoveHover
 		move_2.texture_normal=BuffMoveIcon
 	if move_2_lab.text=="Strike":
@@ -275,7 +296,7 @@ func _process(delta: float) -> void:
 	if move_3_lab.text=="Health Potion":
 		move_3.texture_hover=HealMoveHover
 		move_3.texture_normal=HealMoveIcon
-	if move_3_lab.text=="Infect":
+	if move_3_lab.text=="Infect" || move_3_lab.text=="Infect 2":
 		move_3.texture_hover=poisMoveHover
 		move_3.texture_normal=poisMoveIcon
 	if move_3_lab.text=="Paper Jam":
@@ -298,7 +319,7 @@ func _process(delta: float) -> void:
 	if move_4_lab.text=="Fireball" || move_4_lab.text=="Scald":
 		move_4.texture_hover=fireMoveHover
 		move_4.texture_normal=fireMoveIcon	
-	if move_4_lab.text=="Alt F4":
+	if move_4_lab.text=="Alt F4" || move_4_lab.text=="You're Fired":
 		move_4.texture_normal=instaKillIcon
 		move_4.texture_hover=instaKillHover
 	if move_2_lab.text=="Alt F4":
@@ -307,7 +328,7 @@ func _process(delta: float) -> void:
 	if move_4_lab.text=="Electrocute" || move_4_lab.text=="Flashbang":
 		move_4.texture_hover=stunMoveHover
 		move_4.texture_normal=stunMoveIcon
-	if move_4_lab.text=="Frogsicle" || move_4_lab.text=="Coffee Break":
+	if move_4_lab.text=="Frogsicle" || move_4_lab.text=="Coffee Break" || move_4_lab.text=="Frogsicle 2":
 		move_4.texture_hover=HealMoveHover
 		move_4.texture_normal=HealMoveIcon
 	
@@ -323,6 +344,9 @@ func _process(delta: float) -> void:
 	if move_4_lab.text=="DDoS":
 		move_4.texture_hover=glitchHover
 		move_4.texture_normal=glitchIcon
+	if move_2_lab.text=="DDoS":
+		move_2.texture_hover=glitchHover
+		move_2.texture_normal=glitchIcon
 	
 
 func fadeIn()->void:

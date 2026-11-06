@@ -1,17 +1,23 @@
 extends Node2D
 @onready var gpu_particles_2d_2: GPUParticles2D = $GPUParticles2D2
 @onready var character_body_2d: CharacterBody2D = $CharacterBody2D
-@onready var hack_detector: Area2D = $CharacterBody2D/Camera2D/hackDetector
-@onready var hack_highlighter: Area2D = $CharacterBody2D/Camera2D/hackHighlighter
-@onready var scanimator: AnimationPlayer = $CharacterBody2D/Camera2D/scanimator
-@onready var hackables: Node2D = $CharacterBody2D/Camera2D/hackables
-@onready var scanner_i: Node2D = $CharacterBody2D/Camera2D/scannerI
+@onready var hack_detector: Area2D = $Camera2D/hackDetector
+@onready var hack_highlighter: Area2D = $Camera2D/hackHighlighter
+
+@onready var scanimator: AnimationPlayer = $Camera2D/scanimator
+@onready var hackables: Node2D = $Camera2D/hackables
+@onready var scanner_i: Node2D = $Camera2D/scannerI
 var hackTrigs=[]
 var selected;
-@onready var hack_space: Area2D = $CharacterBody2D/Camera2D/hackHighlighter/hackSpace
+var camFollow=true
+@onready var camera_2d: Camera2D = $Camera2D
+@onready var hack_space: Area2D = $Camera2D/hackHighlighter/hackSpace
+@onready var camera_2d_2: Camera2D = $Camera2D2
 
 
 func _process(delta: float) -> void:
+	if camFollow:
+		camera_2d.global_position=character_body_2d.global_position
 	if Input.is_action_just_pressed("space"):
 		if hackTrigs!=[] && selected!=null:
 			if character_body_2d.magic>=5:
@@ -121,6 +127,7 @@ func _process(delta: float) -> void:
 		if selected!=null && hackTrigs!=[]:
 			hack_highlighter.global_position=selected.global_position
 
+
 func _ready() -> void:
 	await get_tree().create_timer(0.75).timeout
 	gpu_particles_2d_2.emitting=false
@@ -160,3 +167,8 @@ func _on_scanimator_animation_finished(anim_name: StringName) -> void:
 		selected=closest
 	else:
 		character_body_2d.failScan()
+
+
+func _on_camera_stopper_body_entered(body: Node2D) -> void:
+	camera_2d.enabled=false
+	camera_2d_2.enabled=true

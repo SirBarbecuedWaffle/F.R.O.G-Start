@@ -3075,8 +3075,10 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttlj8"]
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=664787318]
-collision_layer = 2
+collision_layer = 1026
 script = ExtResource("1_j4ree")
 gravity = 525
 speed = 112.5
@@ -3486,6 +3488,19 @@ sprite_frames = SubResource("SpriteFrames_yupk3")
 animation = &"whole"
 autoplay = "whole"
 frame_progress = 0.51886135
+
+[node name="dashHitter" type="Area2D" parent="." unique_id=663561668]
+position = Vector2(0, 6)
+scale = Vector2(0.46, 0.46)
+collision_layer = 256
+collision_mask = 512
+
+[node name="dashCol" type="CollisionShape2D" parent="dashHitter" unique_id=536841204]
+position = Vector2(0, 3.9999998)
+scale = Vector2(1.745, 1.745)
+shape = SubResource("RectangleShape2D_ttlj8")
+disabled = true
+debug_color = Color(1, 1, 0, 0.41960785)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="animation_finished" from="transitionAnim/closeAnimator" to="." method="_on_close_animator_animation_finished"]

@@ -41,6 +41,8 @@ var curProt=null
 #move preloads
 var strikeMove=preload("res://moves/strike_move.tscn")
 var blockMove=preload("res://moves/block_move.tscn")
+var parryMove=preload("res://moves/parry_move.tscn")
+var frogMove2=preload("res://patches/frogsicle2.tscn")
 var arrowMove=preload("res://moves/arrow_barrage.tscn")
 var frogMove=preload("res://moves/frogsicle.tscn")
 var overclockMove=preload("res://moves/overclock.tscn")
@@ -610,8 +612,14 @@ func _on_move_handler_move_used(move: String) -> void:
 	if move=="Block":
 		var blocked=blockMove.instantiate()
 		frog_layer.add_child(blocked)
+	if move=="Parry":
+		var parried=parryMove.instantiate()
+		frog_layer.add_child(parried)
 	if move=="Frogsicle":
 		var siced=frogMove.instantiate()
+		frog_layer.add_child(siced)
+	if move=="Frogsicle 2":
+		var siced=frogMove2.instantiate()
 		frog_layer.add_child(siced)
 	if move=="Arrow Barrage":
 			var arrowed=arrowMove.instantiate()

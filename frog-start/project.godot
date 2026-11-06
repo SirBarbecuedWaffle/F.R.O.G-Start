@@ -88,6 +88,9 @@ e={
 2d_physics/layer_5="projectileLayer"
 2d_physics/layer_6="playerInteracting"
 2d_physics/layer_8="cleanse"
+2d_physics/layer_9="dashHit"
+2d_physics/layer_10="dashDetector"
+2d_physics/layer_11="dashCollision"
 2d_physics/layer_17="Hackable"
 
 [rendering]
