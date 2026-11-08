@@ -1,6 +1,7 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://cnfcke610dw0p"]
 
 [ext_resource type="Texture2D" uid="uid://d6dw0kp5yi82" path="res://overworldPlayer/playerAssets/Ninja Frog/Fall (32x32).png" id="1_h3b4p"]
+[ext_resource type="Texture2D" uid="uid://csoynefetwsuk" path="res://overworldPlayer/playerAssets/Ninja Frog/Hit (32x32).png" id="2_kyym1"]
 [ext_resource type="Texture2D" uid="uid://dfpvcs3pn71af" path="res://overworldPlayer/playerAssets/Ninja Frog/Idle (32x32).png" id="2_trs52"]
 [ext_resource type="Texture2D" uid="uid://dtcxqs5aox6ei" path="res://overworldPlayer/playerAssets/Ninja Frog/Jump (32x32).png" id="3_kyym1"]
 [ext_resource type="Texture2D" uid="uid://d2f0773sjp1gh" path="res://overworldPlayer/playerAssets/Ninja Frog/Run (32x32).png" id="4_3y02h"]
@@ -8,6 +9,34 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_bkpp0"]
 atlas = ExtResource("1_h3b4p")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3y02h"]
+atlas = ExtResource("2_kyym1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pphxu"]
+atlas = ExtResource("2_kyym1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h681j"]
+atlas = ExtResource("2_kyym1")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehr0s"]
+atlas = ExtResource("2_kyym1")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ssaj"]
+atlas = ExtResource("2_kyym1")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6cxf"]
+atlas = ExtResource("2_kyym1")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8adxc"]
+atlas = ExtResource("2_kyym1")
+region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pc8il"]
 atlas = ExtResource("2_trs52")
@@ -114,6 +143,32 @@ animations = [{
 "loop": 1,
 "name": &"fall",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3y02h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pphxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h681j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehr0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ssaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6cxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8adxc")
+}],
+"loop": 0,
+"name": &"hurt",
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,

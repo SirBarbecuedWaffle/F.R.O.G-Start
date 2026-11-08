@@ -172,3 +172,7 @@ func _on_scanimator_animation_finished(anim_name: StringName) -> void:
 func _on_camera_stopper_body_entered(body: Node2D) -> void:
 	camera_2d.enabled=false
 	camera_2d_2.enabled=true
+
+
+func _on_icicletrigger_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

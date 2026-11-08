@@ -1,89 +1,119 @@
 extends CanvasLayer
-@onready var heart_1: AnimatedSprite2D = $Health/heart1
-@onready var heart_2: AnimatedSprite2D = $Health/heart2
-@onready var heart_3: AnimatedSprite2D = $Health/heart3
-@onready var heart_4: AnimatedSprite2D = $Health/heart4
-@onready var heart_5: AnimatedSprite2D = $Health/heart5
-@onready var heart_6: AnimatedSprite2D = $Health/heart6
-@onready var heart_7: AnimatedSprite2D = $Health/heart7
-@onready var heart_8: AnimatedSprite2D = $Health/heart8
-@onready var heart_9: AnimatedSprite2D = $Health/heart9
+
 @onready var character_body_2d: CharacterBody2D = $".."
+
+@onready var hearts = [
+	$Health/heart1,
+	$Health/heart2,
+	$Health/heart3,
+	$Health/heart4,
+	$Health/heart5,
+	$Health/heart6,
+	$Health/heart7,
+	$Health/heart8,
+	$Health/heart9
+]
+
+var displayed_health: float
 
 
 func _ready() -> void:
-	if character_body_2d.maxHealth>3.0:
-		heart_4.visible=true
-	if character_body_2d.maxHealth>4.0:
-		heart_5.visible=true
-	if character_body_2d.maxHealth>5.0:
-		heart_6.visible=true
-	if character_body_2d.maxHealth>6.0:
-		heart_7.visible=true
-	if character_body_2d.maxHealth>7.0:
-		heart_8.visible=true
-	if character_body_2d.maxHealth>8.0:
-		heart_9.visible=true
-	character_body_2d.health=character_body_2d.maxHealth
-	
-func updateHearts()->void:
-	if heart_1.visible && heart_2.animation=="empty":
-		if character_body_2d.health<0.5:
-			if heart_1.animation=="blinkHalf":
-				heart_1.play("blinkNone")
-			elif heart_1.animation=="whole":
-				heart_1.play("blinkHalf")
-			elif heart_1.animation=="blinkNone":
-				heart_1.play("empty")
-		elif character_body_2d.health<1.0:
-			if heart_1.animation=="whole":
-				heart_1.play("blinkHalf")
-			elif heart_1.animation=="empty":
-				heart_1.play_backwards("blinkNone")
-		else:
-			if character_body_2d.health>1.0:
-				if heart_1.animation=="empty":
-					heart_1.play_backwards("blinkNone")
-				elif heart_1.animation=="blinkNone":
-					heart_1.play_backwards("blinkHalf")
-				else:
-					heart_1.play("whole")
-			elif character_body_2d.health>0.5:
-				if heart_1.animation=="blinkNone":
-					heart_1.play_backwards("blinkHalf")
-				elif heart_1.animation=="empty":
-					heart_1.play_backwards("blinkNone")
-	
-	if heart_2.visible:
-		if character_body_2d.health<1.5:
-			if heart_2.animation=="blinkHalf":
-				heart_2.play("blinkNone")
-			elif heart_2.animation=="whole":
-				heart_2.play("blinkHalf")
-			else:
-				heart_2.play("empty")
-		elif character_body_2d.health<2.0:
-			if heart_2.animation=="whole":
-				heart_2.play("blinkHalf")
-			elif heart_2.animation=="empty":
-				heart_2.play_backwards("blinkNone")
-		else:
-			if character_body_2d.health>2.0:
-				if heart_2.animation=="empty":
-					heart_2.play_backwards("blinkNone")
-				elif heart_2.animation=="blinkNone":
-					heart_2.play_backwards("blinkHalf")
-				else:
-					heart_2.play("whole")
-			elif character_body_2d.health>1.5:
-				if heart_2.animation=="blinkNone":
-					heart_2.play_backwards("blinkHalf")
-				elif heart_2.animation=="empty":
-					heart_2.play_backwards("blinkNone")
-			
-func _process(delta: float) -> void:
-	print(heart_1.animation)
+	for i in range(hearts.size()):
+		var heart: AnimatedSprite2D = hearts[i]
+
+		heart.visible = i < character_body_2d.maxHealth
+
+		if heart.visible:
+			heart.play("whole")
+
+		heart.animation_finished.connect(
+			func(): _on_heart_animation_finished(i)
+		)
+
+	character_body_2d.health = character_body_2d.maxHealth
+	displayed_health = character_body_2d.health
+
+	refresh_hearts()
 
 
-func _on_heart_1_animation_finished() -> void:
-	updateHearts()
+func sync_health() -> void:
+	if displayed_health != character_body_2d.health:
+		advance_health_step()
+
+
+func advance_health_step() -> void:
+	if displayed_health > character_body_2d.health:
+		displayed_health -= 0.5
+
+	elif displayed_health < character_body_2d.health:
+		displayed_health += 0.5
+
+	refresh_hearts()
+
+
+func refresh_hearts() -> void:
+	for i in range(hearts.size()):
+		var heart: AnimatedSprite2D = hearts[i]
+
+		if !heart.visible:
+			continue
+
+		var heart_number = i + 1
+
+		var target_state : String
+
+		if displayed_health >= heart_number:
+			target_state = "whole"
+		elif displayed_health >= heart_number - 0.5:
+			target_state = "half"
+		else:
+			target_state = "empty"
+
+		match target_state:
+
+			"whole":
+				if heart.animation == "empty":
+					heart.play("blinkMax")
+				elif heart.animation == "half":
+					heart.play("blinkFull")
+
+			"half":
+				if heart.animation == "whole":
+					heart.play("blinkHalf")
+				elif heart.animation == "empty":
+					heart.play("blinkNone2Half")
+
+			"empty":
+				if heart.animation == "whole":
+					heart.play("blinkFully")
+				elif heart.animation == "half":
+					heart.play("blinkNone")
+
+func _on_heart_animation_finished(index : int) -> void:
+
+	var heart: AnimatedSprite2D = hearts[index]
+
+	match heart.animation:
+
+		"blinkHalf":
+			heart.play("half")
+
+		"blinkNone":
+			heart.play("empty")
+
+		"blinkFull":
+			heart.play("whole")
+
+		"blinkNone2Half":
+			heart.play("half")
+
+		"blinkFully":
+			heart.play("empty")
+
+		"blinkMax":
+			heart.play("whole")
+
+	refresh_hearts()
+
+	if displayed_health != character_body_2d.health:
+		advance_health_step()

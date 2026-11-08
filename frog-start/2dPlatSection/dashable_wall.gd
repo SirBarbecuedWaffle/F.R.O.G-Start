@@ -14,5 +14,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		animation_player.play("break")
 		tile_map_layer.collision_enabled=false
 		await get_tree().create_timer(5.0).timeout
-		animation_player.play_backwards("break")
 		tile_map_layer.collision_enabled=true
+		animation_player.play_backwards("break")

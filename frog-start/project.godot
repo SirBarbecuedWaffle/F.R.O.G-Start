@@ -91,7 +91,8 @@ e={
 2d_physics/layer_9="dashHit"
 2d_physics/layer_10="dashDetector"
 2d_physics/layer_11="dashCollision"
-2d_physics/layer_17="Hackable"
+2d_physics/layer_12="noHitDuringDash"
+2d_physics/layer_17="icicle"
 
 [rendering]
 

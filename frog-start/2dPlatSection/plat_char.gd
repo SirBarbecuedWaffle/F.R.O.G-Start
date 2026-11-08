@@ -7,8 +7,10 @@ extends CharacterBody2D
 @onready var coyote_time: Timer = $coyoteTime
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @export var maxHealth:=3.0
-@export var health:=3.0
+@export var health:=.0
 signal hackCheck
+@onready var i_frames: Timer = $iFrames
+@onready var iframe_animator: AnimationPlayer = $iframeAnimator
 
 @onready var frog_anim: AnimatedSprite2D = $collisionbox/frogAnim
 @onready var steve_anim: AnimatedSprite2D = $collisionbox/steveAnim
@@ -22,6 +24,7 @@ signal hackCheck
 @onready var shadow_char: CharacterBody2D = $shadowChar
 @onready var hud: CanvasLayer = $HUD
 @onready var dash_col: CollisionShape2D = $dashHitter/dashCol
+@onready var heal_animator: AnimationPlayer = $healAnimator
 
 
 @export var curChar:=1
@@ -51,6 +54,7 @@ var dashTime:=0.0
 @onready var close_animator: AnimationPlayer = $transitionAnim/closeAnimator
 @onready var control_3: Control = $transitionAnim/Control3
 @onready var color_rect: ColorRect = $transitionAnim/ColorRect
+@onready var damage_seer: Area2D = $damageSeer
 
 func _ready() -> void:
 	#for f in CManager.charUnlocked:
@@ -260,6 +264,7 @@ func _physics_process(delta: float) -> void:
 				animation_player.play("dash")
 				dashing=true
 				set_collision_mask_value(11, false)
+				damage_seer.set_collision_mask_value(12, false)
 				dash_col.disabled=false
 				var xVel=dashStrength*direction
 				var yVel=dashStrength*direction2
@@ -276,9 +281,10 @@ func _physics_process(delta: float) -> void:
 				dashing=false
 				dash_col.disabled=true
 				set_collision_mask_value(11, true)
+				damage_seer.set_collision_mask_value(12, true)
 
 
-	if canJump && Input.is_action_pressed("up") && !dashing && !frozen:
+	if canJump && Input.is_action_pressed("up") && !dashing && !frozen && frog_anim.animation!="hurt":
 		jumpTime += delta
 		if jumpTime<0.2:
 			var t := jumpTime / 0.2
@@ -296,18 +302,18 @@ func _physics_process(delta: float) -> void:
 			jumpTime=0.0
 			coyote_time.stop()
 			canJump=true
-	
-	if is_on_floor():
-		if !(velocity.x<2 && velocity.x>-2):
-			frog_anim.play("walking")
-			steve_anim.play("walking")
+	if frog_anim.animation!="hurt":
+		if is_on_floor():
+			if !(velocity.x<2 && velocity.x>-2):
+				frog_anim.play("walking")
+				steve_anim.play("walking")
+			else:
+				frog_anim.play("idle")
 		else:
-			frog_anim.play("idle")
-	else:
-		if velocity.y>0:
-			frog_anim.play("fall")
-		elif velocity.y<0 || dashing:
-			frog_anim.play("jump")
+			if velocity.y>0:
+				frog_anim.play("fall")
+			elif velocity.y<0 || dashing:
+				frog_anim.play("jump")
 	
 	
 	move_and_slide()
@@ -408,10 +414,39 @@ func disableShadow()->void:
 	regen_mag.start()
 
 
-func _on_heart_1_animation_finished() -> void:
-	pass # Replace with function body.
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	health-=0.5
-	hud.updateHearts()
+	if area.damage>0:	
+		if i_frames.time_left==0:
+			if area.knockback:
+				if area.global_position.x<global_position.x:
+					velocity=Vector2(-300,600)
+				else:
+					velocity=Vector2(300,600)
+			health-=area.damage	
+			frog_anim.play("hurt")
+			velocity*=Vector2(-2,-0.25)
+			i_frames.start()
+			damage_seer.global_position.y-=1000
+			iframe_animator.play("blink")
+			Engine.time_scale=0.05
+			await get_tree().create_timer(0.025).timeout
+			Engine.time_scale=1
+	else:
+		health-=area.damage	
+		heal_animator.play("heal")
+	hud.sync_health()
+	if health>maxHealth:
+		health=maxHealth
+	if health<=0:
+		frozen=true
+		await get_tree().create_timer(0.3).timeout
+		get_tree().change_scene_to_file("res://gameOver.tscn")
+func _on_frog_anim_animation_finished() -> void:
+	if frog_anim.animation=="hurt":
+		frog_anim.play("idle")
+
+
+func _on_i_frames_timeout() -> void:
+	damage_seer.global_position.y+=1000
